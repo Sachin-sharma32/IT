@@ -41,10 +41,10 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     </svg>
                     <blockquote>
                         <p className="text-xl font-medium text-gray-900 md:text-2xl dark:text-white">
-                            "Landwind is just awesome. It contains tons of
+                        &quot;Landwind is just awesome. It contains tons of
                             predesigned components and pages starting from login
                             screen to complex dashboard. Perfect choice for your
-                            next SaaS application."
+                            next SaaS application.&quot;
                         </p>
                     </blockquote>
                     <figcaption className="flex items-center justify-center mt-6 space-x-3">

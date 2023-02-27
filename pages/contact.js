@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify";
 import { Alert, Snackbar } from "@mui/material";
 import { useRouter } from "next/router";
 
-const contact = () => {
+const Contact = () => {
     const router = useRouter();
     const [success, setSuccess] = useState(false);
     const [message, setMessage] = useState("");
@@ -267,4 +267,4 @@ const contact = () => {
     );
 };
 
-export default contact;
+export default Contact;

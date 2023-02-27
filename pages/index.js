@@ -11,7 +11,7 @@ import Header6 from "../components/Header6";
 import useOnScreen from "../utils/useOnScreen";
 import sendMail from "../utils/verifyEmail";
 
-const signin = () => {
+const Home = () => {
     const [yOffset, setYOffset] = useState(0);
     const [prev, setPrev] = useState(0);
     const newRef = useRef(null);
@@ -470,4 +470,4 @@ const signin = () => {
     );
 };
 
-export default signin;
+export default Home;
