@@ -13,7 +13,7 @@ const Header = ({ yOffset, prev }) => {
     return (
         <section
             ref={ref}
-            className={`bg-black min-h-screen fixed left-0 top-0 z-0 h-screen w-screen text-white`}
+            className={`bg-gradient-to-b from-blue-200 to-green-200 min-h-screen fixed left-0 top-0 z-0 h-screen w-screen text-white`}
         >
             <div className="flex justify-center items-center h-full w-full sm:p-20 p-6 z-0 relative">
                 <video

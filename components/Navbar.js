@@ -20,7 +20,7 @@ const Navbar = ({ yOffset, prev }) => {
             containerRef.current.classList.remove("-right-[300px]");
             containerRef.current.classList.add("right-0");
         } else {
-            containerRef.current.classList.remove("right-[0px]");
+            containerRef.current.classList.remove("right-0");
             containerRef.current.classList.add("-right-[300px]");
         }
     };

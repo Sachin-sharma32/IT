@@ -33,7 +33,7 @@ export default async function connection(req, res) {
             });
             return;
         }
-        const url = `http://localhost:3001/api/verify?name=${name}&email=${email}&company=${company}&phone=${phone}&message=${message}`;
+        const url = `http://localhost:3000/api/verify?name=${name}&email=${email}&company=${company}&phone=${phone}&message=${message}`;
         const newURL = url.replace(/ /g, "%20");
         sendEmail({
             email: email,

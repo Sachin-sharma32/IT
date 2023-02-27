@@ -25,5 +25,5 @@ export default async function verify(req, res) {
         subject: "New connection made",
         message: message,
     });
-    res.redirect("http://localhost:3001");
+    res.redirect("http://localhost:3000");
 }
