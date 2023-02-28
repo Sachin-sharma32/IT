@@ -17,6 +17,11 @@ module.exports = {
                     "100%": { tranform: "translateX(-100px)" },
                 },
             },
+            fontFamily: {
+                heebo: "Heebo",
+                lobster: "Lobster",
+                poppins: "Poppins",
+            },
         },
     },
     plugins: [],

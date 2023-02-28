@@ -30,8 +30,8 @@ const Header = ({ yOffset, prev }) => {
                         style={{ transform: `translateY(${-yOffset}px)` }}
                         className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white"
                     >
-                        Building digital <br />
-                        products & brands.
+                        Accelerating your <br />
+                        digital success.
                     </h1>
                     <p
                         style={{ transform: `translateY(${yOffset}px)` }}
@@ -58,7 +58,7 @@ const Header = ({ yOffset, prev }) => {
                     className="hidden lg:mt-0 lg:col-span-5 lg:flex w-[50%]"
                     style={{ transform: `translateX(${yOffset * 2}px)` }}
                 >
-                    <img src="/hero.png" alt="hero image" />
+                    <img src="/svg-9.svg" alt="hero image" />
                 </div>
             </div>
         </section>

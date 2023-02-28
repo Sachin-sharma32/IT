@@ -1,11 +1,32 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link as Li } from "react-scroll";
 import Link from "next/link";
 import Image from "next/image";
+import useOnScreen from "../utils/useOnScreen";
 
-const Navbar = ({ yOffset, prev }) => {
+const Navbar = () => {
     const [active, setActive] = useState(0);
     const containerRef = useRef();
+
+    const [yOffset, setYOffset] = useState(0);
+    const [prev, setPrev] = useState(0);
+    const newRef = useRef(null);
+    const isOnScreen = useOnScreen(newRef);
+
+    const handleScroll = () => {
+        setYOffset(window.pageYOffset);
+        yOffset !== undefined && setPrev(yOffset);
+    };
+
+    console.log(newRef.current?.getBoundingClientRect());
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [yOffset]);
 
     const sections = [
         { name: "HOME", id: "home" },
@@ -31,7 +52,8 @@ const Navbar = ({ yOffset, prev }) => {
                     ? { transform: `translateY(${-yOffset}px)` }
                     : { transform: `translateY(0px)` }
             }
-            className=" border-gray-200 py-2.5 bg-transparent backdrop-blur-sm z-50 fixed top-0 left-0 w-full transition-all duration-500"
+            className={`border-gray-200 py-2.5 bg-black bg-opacity-30 backdrop-blur-lg z-50 fixed top-0 left-0 w-full transition-all duration-500`}
+            ref={newRef}
         >
             <div
                 ref={containerRef}
@@ -64,10 +86,10 @@ const Navbar = ({ yOffset, prev }) => {
                 ))}
             </div>
             <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
-                <Link href="/" className=" absolute -top-8 left-4">
+                <Link href="/" className=" absolute -top-18 left-4">
                     <img
                         src="/crop-logo-1.png"
-                        className=" w-32"
+                        className=" w-48"
                         alt="Landwind Logo"
                     />
                 </Link>

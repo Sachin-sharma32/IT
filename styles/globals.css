@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+  font-family: "Heebo";
+  src: url("../public/Heebo-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../public/Poppins-Light.ttf");
+}
+
 html,
 body {
   padding: 0;
