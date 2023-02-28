@@ -11,20 +11,22 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Social from "../utils/Socials";
 import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
+import { useRouter } from "next/router";
 
 if (!global.setImmediate) {
     global.setImmediate = setTimeout;
 }
 
 function MyApp({ Component, pageProps }) {
+    const router = useRouter();
     return (
         <div className=" overflow-x-hidden bg-white font-poppins scroll-smooth">
             <Provider store={store}>
                 <StyledEngineProvider injectFirst>
                     <Navbar />
                     <Component {...pageProps} />
+                    {router.pathname === "/" ? "" : <Footer />}
                     <Social />
-                    <Footer />
                 </StyledEngineProvider>
                 <div
                     className=" fixed bottom-4 right-6 text-white z-50 bg-black overflow-hidden rounded-full cursor-pointer scroll-smooth"

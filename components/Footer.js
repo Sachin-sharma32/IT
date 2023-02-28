@@ -3,9 +3,9 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <footer className="bg-white dark:bg-gray-800 z-40 stick bottom-0">
-            <div className="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10 ">
-                <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-3 justify-items-center">
+        <footer className="bg-gray-800 z-50">
+            <div className="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10 z-50">
+                <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-3 justify-items-center z-50">
                     <div>
                         <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                             Company
