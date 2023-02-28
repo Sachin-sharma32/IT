@@ -15,7 +15,11 @@ const Esg = () => {
                     alt=""
                     className=" brightness-75 w-[33%]"
                 />
-                <img src="/esg-3.jpg" alt="" className=" brightness-75" />
+                <img
+                    src="/esg-3.jpg"
+                    alt=""
+                    className=" brightness-75 w-[34%]"
+                />
                 <h1 className="absolute top-1/2  left-10 text-5xl w-[50%] text-white -translate-y-1/2 leading-[1.4]">
                     Building a equitable and sustainable digital future.
                 </h1>
@@ -149,8 +153,8 @@ const Esg = () => {
                             alt=""
                             className="w-[200px] h-[200px] self-center"
                         />
-                        Our commitment to ESG is an ongoing journey, and we&apos;re
-                        continuously looking for ways to improve our
+                        Our commitment to ESG is an ongoing journey, and
+                        we&apos;re continuously looking for ways to improve our
                         environmental, social, and governance practices. We
                         believe that ESG is not just the right thing to do, but
                         it also makes good business sense.
