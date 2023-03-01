@@ -15,11 +15,10 @@ const Header = ({ yOffset, prev }) => {
         <section
             ref={ref}
             className={`${
-                yOffset < 800 &&
-                "bg-gradient-to-b from-blue-200 to-green-200 min-h-screen fixed left-0 top-0 z-10 h-screen w-screen text-white bg-inherit"
-            }`}
+                yOffset < 1000 ? "" : "opacity-0"
+            } bg-gradient-to-b from-blue-200 to-green-200 min-h-screen fixed left-0 top-0 z-10 w-screen text-white bg-inherit`}
         >
-            <div className="flex justify-center items-center h-full w-full sm:p-20 p-6 z-10 relative">
+            <div className="flex justify-center items-center h-screen w-full sm:p-20 p-6 z-10 relative">
                 <video
                     ref={videoRef}
                     autoPlay

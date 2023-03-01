@@ -36,7 +36,7 @@ const Home = () => {
 
     return (
         <div className=" min-h-[100vh] flex justify-center items-center bg-[#f8f8f8]">
-            <div className="flex flex-col">
+            <div className="flex flex-col bg-[#f8f8f8]">
                 <div id="home"></div>
                 <Navbar yOffset={yOffset} prev={prev} />
                 <Header yOffset={yOffset} prev={prev} />

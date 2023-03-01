@@ -10,6 +10,7 @@ import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialIcon from "@mui/material/SpeedDialIcon";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
 import { useSelector } from "react-redux";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const actions = [
     {
@@ -18,9 +19,9 @@ const actions = [
         url: "https://instagram.com/it_xccelerate?igshid=YmMyMTA2M2Y=",
     },
     {
-        icon: <FacebookIcon />,
+        icon: <LinkedInIcon />,
         name: "Facebook",
-        url: "https://www.facebook.com/profile.php?id=100089863353239&mibextid=LQQJ4d",
+        url: "https://instagram.com/it_xccelerate?igshid=YmMyMTA2M2Y=",
     },
     {
         icon: <TwitterIcon />,
@@ -30,7 +31,7 @@ const actions = [
     {
         icon: <TelegramIcon />,
         name: "Telegram",
-        url: "https://t.me/+PFpcobYVHjU4NjZl",
+        url: "https://t.me/+RveSAODvj0hjYTZl",
     },
 ];
 

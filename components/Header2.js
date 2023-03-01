@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 
 const Header2 = ({ yOffset, prev }) => {
     return (
-        <section className=" z-40 mt-[100vh] bg-[#f8f8f8]">
+        <section className=" z-40 mt-[100vh] bg-[#f8f8f8he]">
             <div className=" p-4 z-40">
                 <Marquee
                     className=" w-screen"
