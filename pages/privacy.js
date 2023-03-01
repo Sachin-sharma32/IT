@@ -3,7 +3,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 const Privacy = () => {
     return (
-        <div>
+        <div className="">
             <div className=" bg-blue-500 h-[40vh] flex items-end">
                 <h1 className=" text-5xl text-white mb-10 ml-10 uppercase">
                     PRIVACY STATEMENT

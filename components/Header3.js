@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Header3 = ({ yOffset, prev }) => {
     return (
         <section
-            className=" relative  z-40 px-10 bg-white path  bg-[url('/bg-2.jpg')]"
+            className=" relative  z-40 px-10 bg-white path  bg-[url('/bg-11.jpg')] header-3"
             id="features"
         >
             {/* <img

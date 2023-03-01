@@ -12,19 +12,21 @@ const Header4 = ({ yOffset, prev }) => {
     console.log(count);
     const data = [
         { name: "Python", image: "/python.png" },
+        { name: "Docker", image: "/docker.png" },
+        { name: "ReactJS", image: "/react.png" },
+        { name: "MongoDB", image: "/mongodb.png" },
+        { name: "Kubernetes", image: "/kubernetes.png" },
+        { name: "NodeJS", image: "/nodejs.png" },
+        { name: "AWS", image: "/aws.png" },
         { name: "PHP", image: "/php.png" },
         { name: "Java", image: "/java.png" },
-        { name: "NodeJS", image: "/nodejs.png" },
         { name: "Ruby", image: "/ruby.png" },
         { name: "React Native", image: "/reactnative.png" },
         { name: "angular", image: "/angular.png" },
-        { name: "ReactJS", image: "/react.png" },
         { name: "swift", image: "/swift.png" },
         { name: "kotlin", image: "/kotlin.png" },
         { name: "Rails", image: "/rails.png" },
         { name: "Firebase", image: "/firebase.png" },
-        { name: "AWS", image: "/aws.png" },
-        { name: "MongoDB", image: "/mongodb.png" },
         { name: ".NET", image: "/net.png" },
     ];
     return (

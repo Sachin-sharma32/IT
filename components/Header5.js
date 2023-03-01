@@ -26,10 +26,42 @@ const Header5 = ({ yOffset, header5Ref }) => {
             childRef.current.classList.remove("bottom-0");
         }
     }, [yOffset]);
+    const data = [
+        {
+            title: "&quot;Working with IT Xcelerate was a game-changer for my business. They developed a custom software solution that streamlined our operations and increased our efficiency. The team was professional, responsive, and delivered the project on time and on budget. I highly recommend their services!&quot;",
+            author: "John D.",
+            position: "CEO of Reddhr",
+        },
+        {
+            title: "&quot;sachin is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS sachin.&quot;",
+            author: "Micheal Gough",
+            position: "CEO of Google",
+        },
+        {
+            title: "&quot;IT Xcelerate has been an invaluable partner for our business. They have helped us navigate complex IT challenges and provided us with innovative solutions to improve our operations. Their team is professional, knowledgeable, and always goes the extra mile to ensure our satisfaction. I highly recommend IT Xcelerate to any business looking for top-notch IT services.&quot;",
+            author: "Tom L.",
+            position: "COO of JKL Logistics",
+        },
+        {
+            title: "&quot;I was impressed with IT Xcelerate&apos;s attention to detail and ability to understand our unique business needs. They provided us with a customized mobile app that has been a game-changer for our customer engagement and retention. I would recommend IT Xcelerate to any business looking to leverage technology to improve their operations..&quot;",
+            author: "Rachel S.",
+            position: "Owner of GHI Restaurant",
+        },
+        {
+            title: "&quot;I&apos;ve been working with IT Xcelerate for years and they have consistently provided high-quality IT support and solutions. Their team is knowledgeable, responsive, and always goes above and beyond to ensure our technology needs are met. I highly recommend IT Xcelerate to any business looking for reliable IT services.&quot;",
+            author: "Mark R.",
+            position: "CFO of TBFE",
+        },
+        {
+            title: "  &quot;IT Xcelerate exceeded my expectations for our web development project. They not only created a beautiful and functional website, but they also provided excellent customer service throughout the entire process. I would definitely use them again for future projects.&quot;",
+            author: "Sarah T.",
+            position: "Marketing Manager at MulberryStudio",
+        },
+    ];
     return (
         <section
             ref={header5Ref}
-            className=" z-40 h-[420vh] relative flex justify-center bg-[#ffffff] text-black path-top"
+            className=" z-40 h-[420vh] relative flex justify-center  text-white bg-gradient-to-tr from-[#fa3a3a] to-[#9e0101] path-top"
             id="testimonials"
         >
             <div
@@ -51,12 +83,12 @@ const Header5 = ({ yOffset, header5Ref }) => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ duration: 3 }}
+                    transition={{ duration: 2 }}
                     exit={{ opacity: 0 }}
                     className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 -translate-x-1/2 `}
                 >
                     <svg
-                        className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
+                        className="h-12 mx-auto mb-3 text-white"
                         viewBox="0 0 24 27"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +99,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                         />
                     </svg>
                     <blockquote>
-                        <p className="text-xl font-medium text-gray-900 md:text-2xl w-[1000px]">
+                        <p className="text-xl font-medium text-white md:text-2xl w-[1000px]">
                             &quot;Working with IT Xcelerate was a game-changer
                             for my business. They developed a custom software
                             solution that streamlined our operations and
@@ -78,10 +110,10 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     </blockquote>
                     <figcaption className="flex items-center justify-center mt-6 space-x-3">
                         <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                            <div className="pr-3 font-medium text-gray-900 ">
+                            <div className="pr-3 font-medium text-white ">
                                 John D.
                             </div>
-                            <div className="pl-3 text-sm font-light text-gray-500">
+                            <div className="pl-3 text-sm font-light text-white">
                                 CEO of Reddhr
                             </div>
                         </div>
@@ -90,12 +122,12 @@ const Header5 = ({ yOffset, header5Ref }) => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ duration: 3 }}
+                    transition={{ duration: 2 }}
                     exit={{ opacity: 0 }}
                     className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[60vw]`}
                 >
                     <svg
-                        className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
+                        className="h-12 mx-auto mb-3 text-white text-white"
                         viewBox="0 0 24 27"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +138,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                         />
                     </svg>
                     <blockquote>
-                        <p className="text-xl font-medium text-gray-900 md:text-2xl w-[1000px]">
+                        <p className="text-xl font-medium text-white md:text-2xl w-[1000px]">
                             &quot;sachin is just awesome. It contains tons of
                             predesigned components and pages starting from login
                             screen to complex dashboard. Perfect choice for your
@@ -115,10 +147,10 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     </blockquote>
                     <figcaption className="flex items-center justify-center mt-6 space-x-3">
                         <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                            <div className="pr-3 font-medium text-gray-900 ">
+                            <div className="pr-3 font-medium text-white ">
                                 Micheal Gough
                             </div>
-                            <div className="pl-3 text-sm font-light text-gray-500">
+                            <div className="pl-3 text-sm font-light text-white">
                                 CEO at Google
                             </div>
                         </div>
@@ -127,12 +159,12 @@ const Header5 = ({ yOffset, header5Ref }) => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ duration: 3 }}
+                    transition={{ duration: 2 }}
                     exit={{ opacity: 0 }}
                     className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[160vw]`}
                 >
                     <svg
-                        className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
+                        className="h-12 mx-auto mb-3 text-white text-white"
                         viewBox="0 0 24 27"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +175,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                         />
                     </svg>
                     <blockquote>
-                        <p className="text-xl font-medium text-gray-900 md:text-2xl w-[1000px]">
+                        <p className="text-xl font-medium text-white md:text-2xl w-[1000px]">
                             &quot;IT Xcelerate has been an invaluable partner
                             for our business. They have helped us navigate
                             complex IT challenges and provided us with
@@ -156,10 +188,10 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     </blockquote>
                     <figcaption className="flex items-center justify-center mt-6 space-x-3">
                         <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                            <div className="pr-3 font-medium text-gray-900 ">
+                            <div className="pr-3 font-medium text-white ">
                                 Tom L.
                             </div>
-                            <div className="pl-3 text-sm font-light text-gray-500">
+                            <div className="pl-3 text-sm font-light text-white">
                                 COO of JKL Logistics
                             </div>
                         </div>
@@ -168,12 +200,12 @@ const Header5 = ({ yOffset, header5Ref }) => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ duration: 3 }}
+                    transition={{ duration: 2 }}
                     exit={{ opacity: 0 }}
                     className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[260vw]`}
                 >
                     <svg
-                        className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
+                        className="h-12 mx-auto mb-3 text-white text-white"
                         viewBox="0 0 24 27"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -184,7 +216,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                         />
                     </svg>
                     <blockquote>
-                        <p className="text-xl font-medium text-gray-900 md:text-2xl w-[1000px]">
+                        <p className="text-xl font-medium text-white md:text-2xl w-[1000px]">
                             &quot;I was impressed with IT Xcelerate&apos;s
                             attention to detail and ability to understand our
                             unique business needs. They provided us with a
@@ -197,10 +229,10 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     </blockquote>
                     <figcaption className="flex items-center justify-center mt-6 space-x-3">
                         <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                            <div className="pr-3 font-medium text-gray-900 ">
+                            <div className="pr-3 font-medium text-white ">
                                 Rachel S.
                             </div>
-                            <div className="pl-3 text-sm font-light text-gray-500">
+                            <div className="pl-3 text-sm font-light text-white">
                                 Owner of GHI Restaurant
                             </div>
                         </div>
@@ -209,12 +241,12 @@ const Header5 = ({ yOffset, header5Ref }) => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ duration: 3 }}
+                    transition={{ duration: 2 }}
                     exit={{ opacity: 0 }}
                     className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[360vw]`}
                 >
                     <svg
-                        className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
+                        className="h-12 mx-auto mb-3 text-white text-white"
                         viewBox="0 0 24 27"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -225,7 +257,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                         />
                     </svg>
                     <blockquote>
-                        <p className="text-xl font-medium text-gray-900 md:text-2xl w-[1000px]">
+                        <p className="text-xl font-medium text-white md:text-2xl w-[1000px]">
                             &quot;I&apos;ve been working with IT Xcelerate for
                             years and they have consistently provided
                             high-quality IT support and solutions. Their team is
@@ -237,10 +269,10 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     </blockquote>
                     <figcaption className="flex items-center justify-center mt-6 space-x-3">
                         <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                            <div className="pr-3 font-medium text-gray-900 ">
+                            <div className="pr-3 font-medium text-white ">
                                 Mark R.
                             </div>
-                            <div className="pl-3 text-sm font-light text-gray-500">
+                            <div className="pl-3 text-sm font-light text-white">
                                 CFO of TBFE
                             </div>
                         </div>
@@ -249,12 +281,12 @@ const Header5 = ({ yOffset, header5Ref }) => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ duration: 3 }}
+                    transition={{ duration: 2 }}
                     exit={{ opacity: 0 }}
                     className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[460vw]`}
                 >
                     <svg
-                        className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
+                        className="h-12 mx-auto mb-3 text-white text-white"
                         viewBox="0 0 24 27"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -265,7 +297,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                         />
                     </svg>
                     <blockquote>
-                        <p className="text-xl font-medium text-gray-900 md:text-2xl w-[1000px]">
+                        <p className="text-xl font-medium text-white md:text-2xl w-[1000px]">
                             &quot;IT Xcelerate exceeded my expectations for our
                             web development project. They not only created a
                             beautiful and functional website, but they also
@@ -276,10 +308,10 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     </blockquote>
                     <figcaption className="flex items-center justify-center mt-6 space-x-3">
                         <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                            <div className="pr-3 font-medium text-gray-900 ">
+                            <div className="pr-3 font-medium text-white ">
                                 Sarah T.
                             </div>
-                            <div className="pl-3 text-sm font-light text-gray-500">
+                            <div className="pl-3 text-sm font-light text-white">
                                 Marketing Manager at MulberryStudio
                             </div>
                         </div>

@@ -37,8 +37,8 @@ const Home = () => {
     }, [yOffset]);
 
     return (
-        <div className=" min-h-[100vh] flex justify-center items-center bg-[#f8f8f8]">
-            <div className="flex flex-col bg-[#f8f8f8]">
+        <div className=" min-h-[100vh] flex justify-center items-center">
+            <div className="flex flex-col">
                 <div id="home"></div>
                 <Navbar yOffset={yOffset} prev={prev} />
                 <Header yOffset={yOffset} prev={prev} />
@@ -54,7 +54,7 @@ const Home = () => {
                 <Header6 yOffset={yOffset} prev={prev} />
                 <section
                     ref={newRef}
-                    className=" min-h-[100vh]  overflow-hidden  z-40 px-10 bg-[#f8f8f8]"
+                    className=" min-h-[100vh]  overflow-hidden  z-40 px-10  header-4 "
                     id="pricing"
                 >
                     <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
@@ -72,10 +72,10 @@ const Home = () => {
                             }
                             className="max-w-screen-md mx-auto mb-8 text-center lg:mb-12 "
                         >
-                            <h2 className="mb-4 text-3xl font-extrabold tracking-tight">
+                            <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-white">
                                 Designed for business teams like yours
                             </h2>
-                            <p className=" mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
+                            <p className=" mb-5 font-light text-white sm:text-xl ">
                                 Here at Landwind we focus on markets where
                                 technology, innovation, and capital can unlock
                                 long-term value and drive economic growth.
@@ -799,7 +799,6 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <hr />
                 </section>
                 <Footer />
             </div>

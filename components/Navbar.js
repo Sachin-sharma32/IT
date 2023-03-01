@@ -22,7 +22,7 @@ const Navbar = () => {
         yOffset !== undefined && setPrev(yOffset);
     };
 
-    console.log(newRef.current?.getBoundingClientRect());
+    console.log(newRef.current?.getBoundingClientRect().y);
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
@@ -57,7 +57,8 @@ const Navbar = () => {
                         ? { transform: `translateY(${-yOffset}px)` }
                         : { transform: `translateY(0px)` }
                 }
-                className={` border-gray-200 py-2.5 bg-white  z-[49] fixed top-0 left-0 w-full transition-all duration-500 overflow-hidden`}
+                className={`
+                  bg-white border-gray-200 py-2.5  z-[49] fixed top-0 left-0 w-full transition-all duration-500 overflow-hidden`}
                 ref={newRef}
             >
                 <div

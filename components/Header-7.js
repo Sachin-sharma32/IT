@@ -16,14 +16,14 @@ const Header7 = () => {
         { name: "Social Media", image: "/svg-20.svg" },
     ];
     return (
-        <div className=" flex flex-col  justify-center items-center p-10 z-40 pb-20">
+        <div className=" flex flex-col  justify-center items-center p-10 z-40 pb-20 bg-gradient-to-tr from-[#0685e1] to-[#0135a0]">
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1, y: [50, 0] }}
                 transition={{ duration: 1.5 }}
                 className="text-gray-500 sm:text-lg dark:text-gray-400 flex flex-col gap-10"
             >
-                <h2 className=" text-center mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-black">
+                <h2 className=" text-center mb-4 text-3xl font-extrabold tracking-tight text-white">
                     Industries We Cater
                 </h2>
                 <div className="grid grid-cols-3 gap-10">

@@ -35,37 +35,37 @@ const Header6 = ({ yOffset, prev }) => {
             details:
                 "We use the latest technologies and tools to build high-quality web and app solutions. This includes using programming languages such as Java, Python, PHP, and Swift, as well as utilizing popular frameworks such as React, Angular, and Vue.js.",
         },
-        {
-            title: "Can you provide references or case studies from past clients?",
-            details:
-                "Yes, we can provide references and case studies from our past clients upon request. We are proud of our work and happy to showcase our success stories.",
-        },
-        {
-            title: "What is your pricing model and how do you determine project costs?",
-            details:
-                "Our pricing model is based on the scope and complexity of the project, as well as the amount of development time required. We provide transparent pricing and work with our clients to establish a realistic budget for the project.",
-        },
-        {
-            title: "How do you ensure that the website or app is user-friendly and intuitive?",
-            details:
-                "We conduct thorough user testing and design reviews throughout the development process to ensure that the website or app is user-friendly and intuitive. We also follow industry-standard best practices for usability and user experience design.",
-        },
-        {
-            title: "What is your project management methodology and how will I be updated on the progress of my project?",
-            details:
-                "We follow an agile project management methodology, which involves regular communication and updates with our clients. We provide regular progress reports and hold regular meetings to ensure that the project is progressing smoothly.",
-        },
-        {
-            title: "Do you offer any guarantees or warranties on your web and app development services?",
-            details:
-                "Yes, we offer guarantees and warranties on our web and app development services. We stand behind our work and will work with you to resolve any issues that arise after launch.",
-        },
+        // {
+        //     title: "Can you provide references or case studies from past clients?",
+        //     details:
+        //         "Yes, we can provide references and case studies from our past clients upon request. We are proud of our work and happy to showcase our success stories.",
+        // },
+        // {
+        //     title: "What is your pricing model and how do you determine project costs?",
+        //     details:
+        //         "Our pricing model is based on the scope and complexity of the project, as well as the amount of development time required. We provide transparent pricing and work with our clients to establish a realistic budget for the project.",
+        // },
+        // {
+        //     title: "How do you ensure that the website or app is user-friendly and intuitive?",
+        //     details:
+        //         "We conduct thorough user testing and design reviews throughout the development process to ensure that the website or app is user-friendly and intuitive. We also follow industry-standard best practices for usability and user experience design.",
+        // },
+        // {
+        //     title: "What is your project management methodology and how will I be updated on the progress of my project?",
+        //     details:
+        //         "We follow an agile project management methodology, which involves regular communication and updates with our clients. We provide regular progress reports and hold regular meetings to ensure that the project is progressing smoothly.",
+        // },
+        // {
+        //     title: "Do you offer any guarantees or warranties on your web and app development services?",
+        //     details:
+        //         "Yes, we offer guarantees and warranties on our web and app development services. We stand behind our work and will work with you to resolve any issues that arise after launch.",
+        // },
     ];
 
     return (
         <section
             ref={containerRef}
-            className=" z-30 h-fit flex items-center bg-white"
+            className=" z-30 h-fit flex items-center bg-gradient-to-tr from-[#ff6f3b] to-[#b23b29]"
             id="faqs"
         >
             <div className="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-24 lg:px-6 flex justify-center flex-col py-20">
@@ -81,7 +81,7 @@ const Header6 = ({ yOffset, prev }) => {
                               }
                             : {}
                     }
-                    className="mb-6 text-3xl font-extrabold tracking-tight text-center z-0 text-gray-900 lg:mb-8 lg:text-3xl "
+                    className="mb-6 text-3xl font-extrabold tracking-tight text-center z-0 text-white lg:mb-8 lg:text-3xl "
                 >
                     Frequently asked questions
                 </h2>
@@ -108,10 +108,12 @@ const Header6 = ({ yOffset, prev }) => {
                                       }
                                     : {}
                             }
-                            className="bg-inherit  py-4"
+                            className="bg-inherit  py-4 text-white"
                         >
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon className="" />}
+                                expandIcon={
+                                    <ExpandMoreIcon className=" text-white" />
+                                }
                             >
                                 <div>{item.title}</div>
                             </AccordionSummary>
