@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import sendMail from "../utils/verifyEmail";
 import axios from "axios";
+import Typewriter from "typewriter-effect";
 
 const Header = ({ yOffset, prev }) => {
     const ref = useRef(null);
@@ -13,7 +14,10 @@ const Header = ({ yOffset, prev }) => {
     return (
         <section
             ref={ref}
-            className={`bg-gradient-to-b from-blue-200 to-green-200 min-h-screen fixed left-0 top-0 z-10 h-screen w-screen text-white`}
+            className={`${
+                yOffset < 800 &&
+                "bg-gradient-to-b from-blue-200 to-green-200 min-h-screen fixed left-0 top-0 z-10 h-screen w-screen text-white bg-inherit"
+            }`}
         >
             <div className="flex justify-center items-center h-full w-full sm:p-20 p-6 z-10 relative">
                 <video
@@ -28,21 +32,24 @@ const Header = ({ yOffset, prev }) => {
                 <div className="mr-auto place-self-center lg:col-span-7">
                     <h1
                         style={{ transform: `translateY(${-yOffset}px)` }}
-                        className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white"
+                        className=" mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white z-50"
                     >
-                        Accelerating your <br />
-                        digital success.
+                        <span className="text-purple-500">Accelerating</span>{" "}
+                        your digital <br />
+                        <span>
+                            <Typewriter
+                                options={{
+                                    strings: ["success."],
+                                    autoStart: true,
+                                    loop: true,
+                                    pauseFor: 2500,
+                                }}
+                                className="text-white z-50"
+                            />
+                        </span>
                     </h1>
-                    <p
-                        style={{ transform: `translateY(${yOffset}px)` }}
-                        className="max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl"
-                    >
-                        IT Xcelerate is a leading provider of technology
-                        solutions for businesses of all sizes. Our mission is to
-                        help our clients leverage the power of technology to
-                        achieve their goals and succeed in the digital age.
-                    </p>
-                    <div
+
+                    {/* <div
                         className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4 z-0"
                         style={{ transform: `translateY(${yOffset}px)` }}
                     >
@@ -52,14 +59,14 @@ const Header = ({ yOffset, prev }) => {
                         >
                             CONNECT
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
-                <div
+                {/* <div
                     className="hidden lg:mt-0 lg:col-span-5 lg:flex w-[50%]"
                     style={{ transform: `translateX(${yOffset * 2}px)` }}
                 >
                     <img src="/svg-9.svg" alt="hero image" />
-                </div>
+                </div> */}
             </div>
         </section>
     );

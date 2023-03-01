@@ -20,12 +20,17 @@ if (!global.setImmediate) {
 function MyApp({ Component, pageProps }) {
     const router = useRouter();
     return (
-        <div className=" overflow-x-hidden bg-white font-poppins scroll-smooth">
+        <div className=" overflow-x-hidden font-poppins scroll-smooth">
             <Provider store={store}>
                 <StyledEngineProvider injectFirst>
-                    <Navbar />
+                    {router.pathname === "/contact" ? "" : <Navbar />}
                     <Component {...pageProps} />
-                    {router.pathname === "/" ? "" : <Footer />}
+                    {router.pathname === "/" ||
+                    router.pathname === "/contact" ? (
+                        ""
+                    ) : (
+                        <Footer />
+                    )}
                     <Social />
                 </StyledEngineProvider>
                 <div

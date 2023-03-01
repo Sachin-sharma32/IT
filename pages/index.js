@@ -10,6 +10,8 @@ import Header5 from "../components/Header5";
 import Header6 from "../components/Header6";
 import useOnScreen from "../utils/useOnScreen";
 import sendMail from "../utils/verifyEmail";
+import EastIcon from "@mui/icons-material/East";
+import Link from "next/link";
 
 const Home = () => {
     const [yOffset, setYOffset] = useState(0);
@@ -33,7 +35,7 @@ const Home = () => {
     }, [yOffset]);
 
     return (
-        <div className=" min-h-[100vh] flex justify-center items-center">
+        <div className=" min-h-[100vh] flex justify-center items-center bg-[#f8f8f8]">
             <div className="flex flex-col">
                 <div id="home"></div>
                 <Navbar yOffset={yOffset} prev={prev} />
@@ -49,7 +51,7 @@ const Home = () => {
                 <Header6 yOffset={yOffset} prev={prev} />
                 <section
                     ref={newRef}
-                    className=" h-full  overflow-hidden  z-40 bg-black px-10"
+                    className=" min-h-[100vh]  overflow-hidden  z-40 px-10 bg-[#ffffff]"
                     id="pricing"
                 >
                     <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
@@ -65,7 +67,7 @@ const Home = () => {
                                       }
                                     : {}
                             }
-                            className="max-w-screen-md mx-auto mb-8 text-center lg:mb-12 text-white"
+                            className="max-w-screen-md mx-auto mb-8 text-center lg:mb-12 "
                         >
                             <h2 className="mb-4 text-3xl font-extrabold tracking-tight">
                                 Designed for business teams like yours
@@ -92,240 +94,460 @@ const Home = () => {
                                           }
                                         : {}
                                 }
-                                className=" origin-bottom-right flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
+                                className=" card  origin-bottom-right text-gray-900 h-[550px] w-[380px]"
                             >
-                                <h3 className="mb-4 text-2xl font-semibold">
-                                    Starter
-                                </h3>
-                                <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                                    Best option for personal use & for your next
-                                    project.
-                                </p>
-                                <div className="flex items-baseline justify-center my-8">
-                                    <span className="mr-2 text-5xl font-extrabold">
-                                        $29
-                                    </span>
-                                    <span className="text-gray-500 dark:text-gray-400">
-                                        month
-                                    </span>
+                                <div className="card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-[380px]">
+                                    <h3 className="mb-4 text-2xl font-semibold">
+                                        Basic Plan
+                                    </h3>
+                                    <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                                        Best option for personal small and
+                                        medium size projects.
+                                    </p>
+                                    <div className="flex items-baseline justify-center my-8">
+                                        <span className="mr-2 text-5xl font-extrabold">
+                                            $199
+                                        </span>
+                                        {/* <span className="text-gray-500 dark:text-gray-400">
+                                            month
+                                        </span> */}
+                                    </div>
+                                    <ul
+                                        role="list"
+                                        className="mb-8 space-y-4 text-left"
+                                    >
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>5-6 Pages</span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Small Business, Portfolio
+                                            </span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Responsive Design and mobile
+                                                optimization
+                                            </span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Embed photos, videos and music
+                                                in your project
+                                            </span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>One language only</span>
+                                        </li>
+                                    </ul>
+                                    <div className=" absolute bottom-0 right-0 flex gap-1 items-center hover:gap-2 transition-all duration-300  text-purple-500 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:  dark:focus:ring-purple-900">
+                                        See All
+                                        <EastIcon />
+                                    </div>
                                 </div>
-                                <ul
-                                    role="list"
-                                    className="mb-8 space-y-4 text-left"
-                                >
-                                    <li className="flex items-center space-x-3">
-                                        <svg
-                                            className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd"
-                                            ></path>
-                                        </svg>
-                                        <span>Individual configuration</span>
-                                    </li>
-                                    <li className="flex items-center space-x-3">
-                                        <svg
-                                            className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd"
-                                            ></path>
-                                        </svg>
-                                        <span>No setup, or hidden fees</span>
-                                    </li>
-                                    <li className="flex items-center space-x-3">
-                                        <svg
-                                            className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd"
-                                            ></path>
-                                        </svg>
-                                        <span>
-                                            Team size:{" "}
-                                            <span className="font-semibold">
-                                                1 developer
+                                <div className="card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-[380px]">
+                                    <ul
+                                        role="list"
+                                        className="mb-8 space-y-4 text-left"
+                                    >
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Basic SEO and Google Analytics
                                             </span>
-                                        </span>
-                                    </li>
-                                    <li className="flex items-center space-x-3">
-                                        <svg
-                                            className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd"
-                                            ></path>
-                                        </svg>
-                                        <span>
-                                            Premium support:{" "}
-                                            <span className="font-semibold">
-                                                6 months
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Lightweight design with Material
+                                                UI
                                             </span>
-                                        </span>
-                                    </li>
-                                    <li className="flex items-center space-x-3">
-                                        <svg
-                                            className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd"
-                                            ></path>
-                                        </svg>
-                                        <span>
-                                            Free updates:{" "}
-                                            <span className="font-semibold">
-                                                6 months
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Includes web hosting and domain
+                                                (.com) for 1 year
                                             </span>
-                                        </span>
-                                    </li>
-                                </ul>
-                                <a
-                                    href="#"
-                                    className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
-                                >
-                                    Get started
-                                </a>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Includes email accounts setup
+                                            </span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Includes traning and support via
+                                                email or call
+                                            </span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>Go live within 1 week</span>
+                                        </li>
+                                    </ul>
+                                    <Link
+                                        href="/contact"
+                                        className=" text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
+                                    >
+                                        CONNECT
+                                    </Link>
+                                </div>
                             </div>
-                            <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-                                <h3 className="mb-4 text-2xl font-semibold">
-                                    Company
-                                </h3>
-                                <p className="font-light text-gray-500 sm:text-lg ">
-                                    Relevant for multiple users, extended &
-                                    premium support.
-                                </p>
-                                <div className="flex items-baseline justify-center my-8">
-                                    <span className="mr-2 text-5xl font-extrabold">
-                                        $99
-                                    </span>
-                                    <span className="text-gray-500">month</span>
+                            <div className=" card  origin-bottom-right text-gray-900 h-[550px] w-[380px]">
+                                <div className="card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-[380px]">
+                                    <h3 className="mb-4 text-2xl font-semibold">
+                                        Advanced Plan
+                                    </h3>
+                                    <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                                        Best option for medium to large size
+                                        projects.
+                                    </p>
+                                    <div className="flex items-baseline justify-center my-8">
+                                        <span className="mr-2 text-5xl font-extrabold">
+                                            $499
+                                        </span>
+                                        {/* <span className="text-gray-500 dark:text-gray-400">
+                                            month
+                                        </span> */}
+                                    </div>
+                                    <ul
+                                        role="list"
+                                        className="mb-8 space-y-4 text-left"
+                                    >
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>9-12 Pages</span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Small Business, Portfolio, Blog
+                                            </span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Responsive Design and mobile
+                                                optimization
+                                            </span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Embed photos, videos and music
+                                                in your project
+                                            </span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>Bilingual (2 languages)</span>
+                                        </li>
+                                    </ul>
+                                    <div className=" absolute bottom-0 right-0 flex gap-1 items-center hover:gap-2 transition-all duration-300  text-purple-500 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:  dark:focus:ring-purple-900">
+                                        See All
+                                        <EastIcon />
+                                    </div>
                                 </div>
-                                <ul
-                                    role="list"
-                                    className="mb-8 space-y-4 text-left"
-                                >
-                                    <li className="flex items-center space-x-3">
-                                        <svg
-                                            className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd"
-                                            ></path>
-                                        </svg>
-                                        <span>Individual configuration</span>
-                                    </li>
-                                    <li className="flex items-center space-x-3">
-                                        <svg
-                                            className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd"
-                                            ></path>
-                                        </svg>
-                                        <span>No setup, or hidden fees</span>
-                                    </li>
-                                    <li className="flex items-center space-x-3">
-                                        <svg
-                                            className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd"
-                                            ></path>
-                                        </svg>
-                                        <span>
-                                            Team size:{" "}
-                                            <span className="font-semibold">
-                                                10 developers
+                                <div className="card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-[380px]">
+                                    <ul
+                                        role="list"
+                                        className="mb-8 space-y-4 text-left"
+                                    >
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Basic SEO and Google Analytics
                                             </span>
-                                        </span>
-                                    </li>
-                                    <li className="flex items-center space-x-3">
-                                        <svg
-                                            className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd"
-                                            ></path>
-                                        </svg>
-                                        <span>
-                                            Premium support:{" "}
-                                            <span className="font-semibold">
-                                                24 months
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Lightweight design with Material
+                                                UI
                                             </span>
-                                        </span>
-                                    </li>
-                                    <li className="flex items-center space-x-3">
-                                        <svg
-                                            className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd"
-                                            ></path>
-                                        </svg>
-                                        <span>
-                                            Free updates:{" "}
-                                            <span className="font-semibold">
-                                                24 months
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Includes web hosting and domain
+                                                (.com) for 1 year
                                             </span>
-                                        </span>
-                                    </li>
-                                </ul>
-                                <a
-                                    href="#"
-                                    className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
-                                >
-                                    Get started
-                                </a>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Includes email accounts setup
+                                            </span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Includes traning and support via
+                                                email or call
+                                            </span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>Go live within 1 week</span>
+                                        </li>
+                                    </ul>
+                                    <Link
+                                        href="/contact"
+                                        className=" text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
+                                    >
+                                        CONNECT
+                                    </Link>
+                                </div>
                             </div>
                             <div
                                 style={
@@ -342,129 +564,241 @@ const Home = () => {
                                           }
                                         : {}
                                 }
-                                className=" origin-bottom-left flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
+                                className=" card  origin-bottom-left text-gray-900 h-[550px] w-[380px]"
                             >
-                                <h3 className="mb-4 text-2xl font-semibold">
-                                    Enterprise
-                                </h3>
-                                <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                                    Best for large scale uses and extended
-                                    redistribution rights.
-                                </p>
-                                <div className="flex items-baseline justify-center my-8">
-                                    <span className="mr-2 text-5xl font-extrabold">
-                                        $499
-                                    </span>
-                                    <span className="text-gray-500 dark:text-gray-400">
-                                        /month
-                                    </span>
+                                <div className="card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-[380px]">
+                                    <h3 className="mb-4 text-2xl font-semibold">
+                                        Pro Plan
+                                    </h3>
+                                    <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                                        Best option for large scale serious
+                                        product.
+                                    </p>
+                                    <div className="flex items-baseline justify-center my-8">
+                                        <span className="mr-2 text-5xl font-extrabold">
+                                            $999
+                                        </span>
+                                        {/* <span className="text-gray-500 dark:text-gray-400">
+                                            month
+                                        </span> */}
+                                    </div>
+                                    <ul
+                                        role="list"
+                                        className="mb-8 space-y-4 text-left"
+                                    >
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>15-50 Pages</span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Blog, protfolio, eCatalogue
+                                            </span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Responsive Design and mobile
+                                                optimization
+                                            </span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Embed photos, videos and music
+                                                in your project
+                                            </span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>Upto 4 languages</span>
+                                        </li>
+                                    </ul>
+                                    <div className=" absolute bottom-0 right-0 flex gap-1 items-center hover:gap-2 transition-all duration-300  text-purple-500 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:  dark:focus:ring-purple-900">
+                                        See All
+                                        <EastIcon />
+                                    </div>
                                 </div>
-                                <ul
-                                    role="list"
-                                    className="mb-8 space-y-4 text-left"
-                                >
-                                    <li className="flex items-center space-x-3">
-                                        <svg
-                                            className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd"
-                                            ></path>
-                                        </svg>
-                                        <span>Individual configuration</span>
-                                    </li>
-                                    <li className="flex items-center space-x-3">
-                                        <svg
-                                            className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd"
-                                            ></path>
-                                        </svg>
-                                        <span>No setup, or hidden fees</span>
-                                    </li>
-                                    <li className="flex items-center space-x-3">
-                                        <svg
-                                            className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd"
-                                            ></path>
-                                        </svg>
-                                        <span>
-                                            Team size:{" "}
-                                            <span className="font-semibold">
-                                                100+ developers
+                                <div className="card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-[380px]">
+                                    <ul
+                                        role="list"
+                                        className="mb-8 space-y-4 text-left"
+                                    >
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Advanced SEO and Google
+                                                Analytics
                                             </span>
-                                        </span>
-                                    </li>
-                                    <li className="flex items-center space-x-3">
-                                        <svg
-                                            className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd"
-                                            ></path>
-                                        </svg>
-                                        <span>
-                                            Premium support:{" "}
-                                            <span className="font-semibold">
-                                                36 months
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Complex web designs using
+                                                cutting edge tools
                                             </span>
-                                        </span>
-                                    </li>
-                                    <li className="flex items-center space-x-3">
-                                        <svg
-                                            className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd"
-                                            ></path>
-                                        </svg>
-                                        <span>
-                                            Free updates:{" "}
-                                            <span className="font-semibold">
-                                                36 months
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Includes web hosting and domain
+                                                (.com) for 1 year
                                             </span>
-                                        </span>
-                                    </li>
-                                </ul>
-                                <a
-                                    href="#"
-                                    className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
-                                >
-                                    Get started
-                                </a>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Includes email accounts setup
+                                            </span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>
+                                                Includes traning and support via
+                                                email or call or video
+                                                conference.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-center space-x-3">
+                                            <svg
+                                                className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            <span>Go live within 2 week</span>
+                                        </li>
+                                    </ul>
+                                    <Link
+                                        href="/contact"
+                                        className=" w-full text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
+                                    >
+                                        CONNECT
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <Footer />
+                    <hr />
                 </section>
+                <Footer />
             </div>
         </div>
     );

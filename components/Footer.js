@@ -3,11 +3,11 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 z-50">
+        <footer className=" z-50 bg-[#f8f8f8]">
             <div className="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10 z-50">
                 <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-3 justify-items-center z-50">
                     <div>
-                        <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                        <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
                             Company
                         </h3>
                         <ul className="text-gray-500 dark:text-gray-400">
@@ -40,7 +40,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                        <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:">
                             Help center
                         </h3>
                         <ul className="text-gray-500 dark:text-gray-400">
@@ -67,7 +67,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                        <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:">
                             Legal
                         </h3>
                         <ul className="text-gray-500 dark:text-gray-400">
@@ -99,7 +99,7 @@ const Footer = () => {
                 <div className="text-center flex flex-col justify-center">
                     <Link
                         href="#"
-                        className=" flex items-center justify-center mb-10 text-2xl font-semibold text-gray-900 dark:text-white relative"
+                        className=" flex items-center justify-center mb-10 text-2xl font-semibold text-gray-900 dark: relative"
                     >
                         <img
                             src="./crop-logo-1.png"
@@ -114,7 +114,7 @@ const Footer = () => {
                         <li>
                             <Link
                                 href="#"
-                                className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
+                                className="text-gray-500 hover:text-gray-900 dark:hover: dark:text-gray-400"
                             >
                                 <svg
                                     className="w-5 h-5"
@@ -133,7 +133,7 @@ const Footer = () => {
                         <li>
                             <Link
                                 href="#"
-                                className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
+                                className="text-gray-500 hover:text-gray-900 dark:hover: dark:text-gray-400"
                             >
                                 <svg
                                     className="w-5 h-5"
@@ -152,7 +152,7 @@ const Footer = () => {
                         <li>
                             <Link
                                 href="#"
-                                className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
+                                className="text-gray-500 hover:text-gray-900 dark:hover: dark:text-gray-400"
                             >
                                 <svg
                                     className="w-5 h-5"
@@ -167,7 +167,7 @@ const Footer = () => {
                         <li>
                             <Link
                                 href="#"
-                                className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
+                                className="text-gray-500 hover:text-gray-900 dark:hover: dark:text-gray-400"
                             >
                                 <svg
                                     className="w-5 h-5"
@@ -186,7 +186,7 @@ const Footer = () => {
                         <li>
                             <Link
                                 href="#"
-                                className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
+                                className="text-gray-500 hover:text-gray-900 dark:hover: dark:text-gray-400"
                             >
                                 <svg
                                     className="w-5 h-5"

@@ -13,14 +13,9 @@ import { useSelector } from "react-redux";
 
 const actions = [
     {
-        icon: <YouTubeIcon className=" text-red-500" />,
-        name: "Youtube",
-        url: "https://www.youtube.com/@TheVidoesForEverything",
-    },
-    {
         icon: <InstagramIcon className=" text-black" />,
         name: "Instagram",
-        url: "https://instagram.com/the.blogforeverything?igshid=YmMyMTA2M2Y=",
+        url: "https://instagram.com/it_xccelerate?igshid=YmMyMTA2M2Y=",
     },
     {
         icon: <FacebookIcon />,
@@ -30,7 +25,7 @@ const actions = [
     {
         icon: <TwitterIcon />,
         name: "Twitter",
-        url: "https://twitter.com/parallelquotes/status/1059298596196114433?s=12&t=Qx1DqWgqxc1LNBztel4doA",
+        url: "https://twitter.com/itxccelerate/status/1630569929710899201?s=46&t=CkXjIjsjO4tMLkygtRHk_A",
     },
     {
         icon: <TelegramIcon />,

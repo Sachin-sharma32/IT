@@ -3,10 +3,7 @@ import { motion } from "framer-motion";
 
 const Header3 = ({ yOffset, prev }) => {
     return (
-        <section
-            className="bg-gray-50 dark:bg-gray-800 z-40 px-10"
-            id="features"
-        >
+        <section className="  z-40 px-10 bg-[#ffffff] path pb-32" id="features">
             <div className="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
                 <div className="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
                     <motion.div
@@ -15,7 +12,7 @@ const Header3 = ({ yOffset, prev }) => {
                         transition={{ duration: 1.5 }}
                         className="text-gray-500 sm:text-lg dark:text-gray-400"
                     >
-                        <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+                        <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-black">
                             Work with tools you already use
                         </h2>
                         <p className="mb-8 font-light lg:text-xl">
@@ -41,7 +38,7 @@ const Header3 = ({ yOffset, prev }) => {
                                         clip-rule="evenodd"
                                     ></path>
                                 </svg>
-                                <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
+                                <span className="text-base font-medium leading-tight text-gray-900 dark:text-black">
                                     Continuous integration and deployment
                                 </span>
                             </li>
@@ -58,7 +55,7 @@ const Header3 = ({ yOffset, prev }) => {
                                         clip-rule="evenodd"
                                     ></path>
                                 </svg>
-                                <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
+                                <span className="text-base font-medium leading-tight text-gray-900 dark:text-black">
                                     Development workflow
                                 </span>
                             </li>
@@ -75,7 +72,7 @@ const Header3 = ({ yOffset, prev }) => {
                                         clip-rule="evenodd"
                                     ></path>
                                 </svg>
-                                <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
+                                <span className="text-base font-medium leading-tight text-gray-900 dark:text-black">
                                     Knowledge management
                                 </span>
                             </li>
@@ -108,7 +105,7 @@ const Header3 = ({ yOffset, prev }) => {
                         alt="feature image 2"
                     />
                     <div className="text-gray-500 sm:text-lg dark:text-gray-400">
-                        <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+                        <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-black">
                             We invest in the world’s potential
                         </h2>
                         <p className="mb-8 font-light lg:text-xl">
@@ -134,7 +131,7 @@ const Header3 = ({ yOffset, prev }) => {
                                         clip-rule="evenodd"
                                     ></path>
                                 </svg>
-                                <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
+                                <span className="text-base font-medium leading-tight text-gray-900 dark:text-black">
                                     Dynamic reports and dashboards
                                 </span>
                             </li>
@@ -151,7 +148,7 @@ const Header3 = ({ yOffset, prev }) => {
                                         clip-rule="evenodd"
                                     ></path>
                                 </svg>
-                                <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
+                                <span className="text-base font-medium leading-tight text-gray-900 dark:text-black">
                                     Templates for everyone
                                 </span>
                             </li>
@@ -168,7 +165,7 @@ const Header3 = ({ yOffset, prev }) => {
                                         clip-rule="evenodd"
                                     ></path>
                                 </svg>
-                                <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
+                                <span className="text-base font-medium leading-tight text-gray-900 dark:text-black">
                                     Development workflow
                                 </span>
                             </li>
@@ -185,7 +182,7 @@ const Header3 = ({ yOffset, prev }) => {
                                         clip-rule="evenodd"
                                     ></path>
                                 </svg>
-                                <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
+                                <span className="text-base font-medium leading-tight text-gray-900 dark:text-black">
                                     Limitless business automation
                                 </span>
                             </li>
@@ -202,7 +199,7 @@ const Header3 = ({ yOffset, prev }) => {
                                         clip-rule="evenodd"
                                     ></path>
                                 </svg>
-                                <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
+                                <span className="text-base font-medium leading-tight text-gray-900 dark:text-black">
                                     Knowledge management
                                 </span>
                             </li>

@@ -20,7 +20,7 @@ const Esg = () => {
                     alt=""
                     className=" brightness-75 w-[34%]"
                 />
-                <h1 className="absolute top-1/2  left-10 text-5xl w-[50%] text-white -translate-y-1/2 leading-[1.4]">
+                <h1 className="absolute top-1/2  left-10 text-5xl w-[50%] text-white -translate-y-1/2 leading-[1.4] font-extrabold">
                     Building a equitable and sustainable digital future.
                 </h1>
             </div>
@@ -44,7 +44,7 @@ const Esg = () => {
                     ENVIRONMENTAL COMMITMENT
                 </h2>
                 <div className="flex gap-10 justify-center">
-                    <div className=" w-[300px] px-10 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
+                    <div className=" w-[300px] px-4 leading-[1.9] hover:scale-110 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
                         <img
                             src="/svg-1.svg"
                             alt=""
@@ -57,18 +57,17 @@ const Esg = () => {
                         that address climate change and promote sustainable
                         practices.
                     </div>
-                    <div className=" w-[300px] px-10 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
+                    <div className=" w-[300px] px-4 leading-[1.9] hover:scale-110 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
                         <img
                             src="/svg-2.svg"
                             alt=""
-                            className="w-[200px] h-[200px] self-center"
+                            className="w-[200px] h-[200px]  self-center"
                         />
                         To minimize our environmental impact, we use
                         energy-efficient technologies and implement waste
                         reduction and recycling programs. We also ensure that
                         our supply chain partners and vendors share our
-                        commitment to environmental sustainability. Social
-                        Responsibility
+                        commitment to environmental sustainability.
                     </div>
                 </div>
             </div>
@@ -77,7 +76,7 @@ const Esg = () => {
                     SOCIAL RESPONSIBILITIES
                 </h2>
                 <div className="flex gap-10 justify-center">
-                    <div className=" w-[300px] px-10 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
+                    <div className=" w-[300px] px-4 leading-[1.9] hover:scale-110 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
                         <img
                             src="/svg-3.svg"
                             alt=""
@@ -89,7 +88,7 @@ const Esg = () => {
                         equity, and inclusion in our workplace and our
                         communities.
                     </div>
-                    <div className=" w-[300px] px-10 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
+                    <div className=" w-[300px] px-4 leading-[1.9] hover:scale-110 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
                         <img
                             src="/svg-4.svg"
                             alt=""
@@ -102,7 +101,7 @@ const Esg = () => {
                         and skills to support community initiatives that align
                         with our values and mission.
                     </div>
-                    <div className=" w-[300px] px-10 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
+                    <div className=" w-[300px] px-4 leading-[1.9] hover:scale-110 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
                         <img
                             src="/svg-5.svg"
                             alt=""
@@ -121,7 +120,7 @@ const Esg = () => {
                     GOVERNANCE POLICIES
                 </h2>
                 <div className="flex gap-10 justify-center">
-                    <div className=" w-[300px] px-10 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
+                    <div className=" w-[300px] px-4 leading-[1.9] hover:scale-110 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
                         <img
                             src="/svg-6.svg"
                             alt=""
@@ -134,7 +133,7 @@ const Esg = () => {
                         operate in compliance with all relevant laws and
                         regulations.
                     </div>
-                    <div className=" w-[300px] px-10 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
+                    <div className=" w-[300px] px-4 leading-[1.9] hover:scale-110 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
                         <img
                             src="/svg-7.svg"
                             alt=""
@@ -147,7 +146,7 @@ const Esg = () => {
                         to ensure that we meet the highest standards of
                         corporate responsibility.
                     </div>
-                    <div className=" w-[300px] px-10 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
+                    <div className=" w-[300px] px-4 leading-[1.9] hover:scale-110 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
                         <img
                             src="/svg-8.svg"
                             alt=""

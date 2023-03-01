@@ -3,10 +3,10 @@ import Marquee from "react-fast-marquee";
 
 const Header2 = ({ yOffset, prev }) => {
     return (
-        <section className="bg-black z-40 mt-[100vh]">
+        <section className=" z-40 mt-[100vh] bg-[#f8f8f8]">
             <div className=" p-4 z-40">
                 <Marquee
-                    className="bg-black w-screen"
+                    className=" w-screen"
                     gradient={false}
                     speed={50}
                 >
@@ -19,7 +19,7 @@ const Header2 = ({ yOffset, prev }) => {
                             className="flex items-center lg:justify-center"
                         >
                             <svg
-                                className="h-9 hover:text-white dark:hover:black"
+                                className="h-9 hover:text-black dark:hover:black"
                                 viewBox="0 0 125 35"
                                 fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ const Header2 = ({ yOffset, prev }) => {
                             className="flex items-center lg:justify-center"
                         >
                             <svg
-                                className="h-9 hover:text-gray-900 dark:hover:text-white"
+                                className="h-9 hover:text-gray-900 dark:hover:text-black"
                                 viewBox="0 0 86 29"
                                 fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ const Header2 = ({ yOffset, prev }) => {
                             className="flex items-center lg:justify-center"
                         >
                             <svg
-                                className="h-8 hover:text-gray-900 dark:hover:text-white"
+                                className="h-8 hover:text-gray-900 dark:hover:text-black"
                                 viewBox="0 0 151 34"
                                 fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ const Header2 = ({ yOffset, prev }) => {
                             className="flex items-center lg:justify-center"
                         >
                             <svg
-                                className="h-9 hover:text-white"
+                                className="h-9 hover:text-black"
                                 viewBox="0 0 124 38"
                                 fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@ const Header2 = ({ yOffset, prev }) => {
                             className="flex items-center lg:justify-center"
                         >
                             <svg
-                                className="h-9 hover:text-gray-900 dark:hover:text-white"
+                                className="h-9 hover:text-gray-900 dark:hover:text-black"
                                 viewBox="0 0 137 37"
                                 fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -184,7 +184,7 @@ const Header2 = ({ yOffset, prev }) => {
                             className="flex items-center lg:justify-center"
                         >
                             <svg
-                                className="h-6 hover:text-gray-900 dark:hover:text-white"
+                                className="h-6 hover:text-gray-900 dark:hover:text-black"
                                 viewBox="0 0 124 21"
                                 fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
