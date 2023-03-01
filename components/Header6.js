@@ -88,6 +88,7 @@ const Header6 = ({ yOffset, prev }) => {
                 <div className="max-w-screen-md mx-auto">
                     {data.map((item, i) => (
                         <Accordion
+                            key={i}
                             style={
                                 isOnScreen &&
                                 containerRef.current?.getBoundingClientRect()

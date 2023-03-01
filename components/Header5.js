@@ -168,13 +168,14 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     </svg>
                     <blockquote>
                         <p className="text-xl font-medium text-gray-900 md:text-2xl w-[1000px]">
-                            &quot;I was impressed with IT Xcelerate's attention
-                            to detail and ability to understand our unique
-                            business needs. They provided us with a customized
-                            mobile app that has been a game-changer for our
-                            customer engagement and retention. I would recommend
-                            IT Xcelerate to any business looking to leverage
-                            technology to improve their operations..&quot;
+                            &quot;I was impressed with IT Xcelerate&apos;s
+                            attention to detail and ability to understand our
+                            unique business needs. They provided us with a
+                            customized mobile app that has been a game-changer
+                            for our customer engagement and retention. I would
+                            recommend IT Xcelerate to any business looking to
+                            leverage technology to improve their
+                            operations..&quot;
                         </p>
                     </blockquote>
                     <figcaption className="flex items-center justify-center mt-6 space-x-3">
@@ -204,13 +205,13 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     </svg>
                     <blockquote>
                         <p className="text-xl font-medium text-gray-900 md:text-2xl w-[1000px]">
-                            &quot;I've been working with IT Xcelerate for years
-                            and they have consistently provided high-quality IT
-                            support and solutions. Their team is knowledgeable,
-                            responsive, and always goes above and beyond to
-                            ensure our technology needs are met. I highly
-                            recommend IT Xcelerate to any business looking for
-                            reliable IT services.&quot;
+                            &quot;I&apos;ve been working with IT Xcelerate for
+                            years and they have consistently provided
+                            high-quality IT support and solutions. Their team is
+                            knowledgeable, responsive, and always goes above and
+                            beyond to ensure our technology needs are met. I
+                            highly recommend IT Xcelerate to any business
+                            looking for reliable IT services.&quot;
                         </p>
                     </blockquote>
                     <figcaption className="flex items-center justify-center mt-6 space-x-3">
