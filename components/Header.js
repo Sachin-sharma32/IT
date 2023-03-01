@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import sendMail from "../utils/verifyEmail";
 import axios from "axios";
 import Typewriter from "typewriter-effect";
+import { motion } from "framer-motion";
 
 const Header = ({ yOffset, prev }) => {
     const ref = useRef(null);
@@ -15,10 +16,14 @@ const Header = ({ yOffset, prev }) => {
         <section
             ref={ref}
             className={`${
-                yOffset < 1000 ? "" : "opacity-0"
+                yOffset < 700 ? "" : "opacity-0"
             } bg-gradient-to-b from-blue-200 to-green-200 min-h-screen fixed left-0 top-0 z-10 w-screen text-white bg-inherit`}
         >
-            <div className="flex justify-center items-center h-screen w-full sm:p-20 p-6 z-10 relative">
+            <motion.div
+                initial={{ y: [100, 0], opacity: 0 }}
+                whileInView={{ y: [0, 0], opacity: 1 }}
+                className="flex justify-center items-center h-screen w-full sm:p-20 p-6 z-10 relative"
+            >
                 <video
                     ref={videoRef}
                     autoPlay
@@ -30,7 +35,7 @@ const Header = ({ yOffset, prev }) => {
                 </video>
                 <div className="mr-auto place-self-center lg:col-span-7">
                     <h1
-                        style={{ transform: `translateY(${-yOffset}px)` }}
+                        style={{ transform: `translateY(${yOffset}px)` }}
                         className=" mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white z-50"
                     >
                         <span className="text-purple-500">Accelerating</span>{" "}
@@ -66,7 +71,7 @@ const Header = ({ yOffset, prev }) => {
                 >
                     <img src="/svg-9.svg" alt="hero image" />
                 </div> */}
-            </div>
+            </motion.div>
         </section>
     );
 };

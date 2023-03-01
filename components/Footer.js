@@ -17,6 +17,11 @@ const Footer = () => {
                         </h3>
                         <ul className="text-gray-500 dark:text-gray-400">
                             <li className="mb-4">
+                                <Link href="/next" className=" hover:underline">
+                                    Navigate Your Next
+                                </Link>
+                            </li>
+                            <li className="mb-4">
                                 <Link
                                     href="/about"
                                     className=" hover:underline"
@@ -35,6 +40,14 @@ const Footer = () => {
                             <li className="mb-4">
                                 <Link href="/esg" className="hover:underline">
                                     ESG
+                                </Link>
+                            </li>
+                            <li className="mb-4">
+                                <Link
+                                    href="/invest"
+                                    className="hover:underline"
+                                >
+                                    Invest
                                 </Link>
                             </li>
                             <li className="mb-4">
@@ -65,7 +78,10 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li className="mb-4">
-                                <Link href="#" className="hover:underline">
+                                <Link
+                                    href="/connect"
+                                    className="hover:underline"
+                                >
                                     Contact Us
                                 </Link>
                             </li>
@@ -95,6 +111,30 @@ const Footer = () => {
                             <li className="mb-4">
                                 <Link href="/terms" className="hover:underline">
                                     Terms
+                                </Link>
+                            </li>
+                            <li className="mb-4">
+                                <Link
+                                    href="/cookie"
+                                    className="hover:underline"
+                                >
+                                    Cookie Policy
+                                </Link>
+                            </li>
+                            <li className="mb-4">
+                                <Link
+                                    href="/slaveryStatement"
+                                    className="hover:underline"
+                                >
+                                    Slavery Statement
+                                </Link>
+                            </li>
+                            <li className="mb-4">
+                                <Link
+                                    href="/paymentGuide"
+                                    className="hover:underline"
+                                >
+                                    Payment Guide for Suppliers
                                 </Link>
                             </li>
                         </ul>

@@ -12,6 +12,8 @@ import useOnScreen from "../utils/useOnScreen";
 import sendMail from "../utils/verifyEmail";
 import EastIcon from "@mui/icons-material/East";
 import Link from "next/link";
+import Header7 from "../components/Header-7";
+import { motion } from "framer-motion";
 
 const Home = () => {
     const [yOffset, setYOffset] = useState(0);
@@ -48,10 +50,11 @@ const Home = () => {
                     prev={prev}
                     header5Ref={header5Ref}
                 />
+                <Header7 />
                 <Header6 yOffset={yOffset} prev={prev} />
                 <section
                     ref={newRef}
-                    className=" min-h-[100vh]  overflow-hidden  z-40 px-10 bg-[#ffffff]"
+                    className=" min-h-[100vh]  overflow-hidden  z-40 px-10 bg-[#f8f8f8]"
                     id="pricing"
                 >
                     <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
@@ -79,7 +82,7 @@ const Home = () => {
                             </p>
                         </div>
                         <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0 z-40 ">
-                            <div
+                            <motion.div
                                 style={
                                     typeof window !== "undefined" &&
                                     window.innerWidth > 1000 &&
@@ -321,7 +324,7 @@ const Home = () => {
                                         CONNECT
                                     </Link>
                                 </div>
-                            </div>
+                            </motion.div>
                             <div className=" card  origin-bottom-right text-gray-900 h-[550px] w-[380px]">
                                 <div className="card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-[380px]">
                                     <h3 className="mb-4 text-2xl font-semibold">

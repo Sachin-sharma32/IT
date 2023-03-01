@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import useOnScreen from "../utils/useOnScreen";
+import { motion } from "framer-motion";
 
 const Header5 = ({ yOffset, header5Ref }) => {
     const childRef = useRef(null);
@@ -47,7 +48,11 @@ const Header5 = ({ yOffset, header5Ref }) => {
                 }
                 className=" bg-transparent top-0 h-screen gap-10 bg-black"
             >
-                <figure
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 3 }}
+                    exit={{ opacity: 0 }}
                     className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 -translate-x-1/2 `}
                 >
                     <svg
@@ -81,8 +86,12 @@ const Header5 = ({ yOffset, header5Ref }) => {
                             </div>
                         </div>
                     </figcaption>
-                </figure>
-                <figure
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 3 }}
+                    exit={{ opacity: 0 }}
                     className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[60vw]`}
                 >
                     <svg
@@ -114,8 +123,12 @@ const Header5 = ({ yOffset, header5Ref }) => {
                             </div>
                         </div>
                     </figcaption>
-                </figure>
-                <figure
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 3 }}
+                    exit={{ opacity: 0 }}
                     className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[160vw]`}
                 >
                     <svg
@@ -151,8 +164,12 @@ const Header5 = ({ yOffset, header5Ref }) => {
                             </div>
                         </div>
                     </figcaption>
-                </figure>
-                <figure
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 3 }}
+                    exit={{ opacity: 0 }}
                     className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[260vw]`}
                 >
                     <svg
@@ -188,8 +205,12 @@ const Header5 = ({ yOffset, header5Ref }) => {
                             </div>
                         </div>
                     </figcaption>
-                </figure>
-                <figure
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 3 }}
+                    exit={{ opacity: 0 }}
                     className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[360vw]`}
                 >
                     <svg
@@ -224,8 +245,12 @@ const Header5 = ({ yOffset, header5Ref }) => {
                             </div>
                         </div>
                     </figcaption>
-                </figure>
-                <figure
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 3 }}
+                    exit={{ opacity: 0 }}
                     className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[460vw]`}
                 >
                     <svg
@@ -259,7 +284,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                             </div>
                         </div>
                     </figcaption>
-                </figure>
+                </motion.div>
             </div>
         </section>
     );

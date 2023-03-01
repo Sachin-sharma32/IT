@@ -12,6 +12,7 @@ import Footer from "../components/Footer";
 import Social from "../utils/Socials";
 import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
 import { useRouter } from "next/router";
+import { motion, useScroll } from "framer-motion";
 
 if (!global.setImmediate) {
     global.setImmediate = setTimeout;
@@ -19,8 +20,14 @@ if (!global.setImmediate) {
 
 function MyApp({ Component, pageProps }) {
     const router = useRouter();
+    const { scrollYProgress } = useScroll();
+
     return (
         <div className=" overflow-x-hidden font-poppins scroll-smooth bg-[#f8f8f8]">
+            <motion.div
+                style={{ scaleX: scrollYProgress }}
+                className="progress-bar z-50 rounded-full"
+            />
             <Provider store={store}>
                 <StyledEngineProvider injectFirst>
                     {router.pathname === "/contact" ? "" : <Navbar />}
