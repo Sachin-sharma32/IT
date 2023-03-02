@@ -100,7 +100,7 @@ const Contact = () => {
                                         props.errors.name && props.touched.name
                                             ? "border-red-500 placeholder:text-red-500 text-red-500"
                                             : "text-gray-700 border-gray-200 focus:border-gray-500"
-                                    } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
+                                    } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:shadow-2xl transition-all duration-500`}
                                     id="name"
                                     type="text"
                                     placeholder="Name"
@@ -127,7 +127,7 @@ const Contact = () => {
                                         props.touched.email
                                             ? "border-red-500 placeholder:text-red-500 text-red-500"
                                             : "text-gray-700 border-gray-200 focus:border-gray-500"
-                                    } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
+                                    } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:shadow-2xl transition-all duration-500`}
                                     id="email"
                                     type="text"
                                     placeholder="examaple@gmail.com"
@@ -154,7 +154,7 @@ const Contact = () => {
                                         props.touched.company
                                             ? "border-red-500 placeholder:text-red-500 text-red-500"
                                             : "text-gray-700 border-gray-200 focus:border-gray-500"
-                                    } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
+                                    } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:shadow-2xl transition-all duration-500`}
                                     id="company"
                                     type="text"
                                     placeholder="Company"
@@ -182,7 +182,7 @@ const Contact = () => {
                                         props.touched.phone
                                             ? "border-red-500 placeholder:text-red-500 text-red-500"
                                             : "text-gray-700 border-gray-200 focus:border-gray-500"
-                                    } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
+                                    } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:shadow-2xl transition-all duration-500`}
                                     id="phone"
                                     type="text"
                                     placeholder="1234567890"
@@ -210,7 +210,7 @@ const Contact = () => {
                                         props.touched.message
                                             ? "border-red-500 placeholder:text-red-500 text-red-500"
                                             : "text-gray-700 border-gray-200 focus:border-gray-500"
-                                    } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
+                                    } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:shadow-2xl transition-all duration-500`}
                                     id="message"
                                     type="text"
                                     placeholder="Type your queries here...."
