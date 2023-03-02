@@ -149,3 +149,18 @@ const Privacy = () => {
 };
 
 export default Privacy;
+
+
+Privacy.getInitialProps = async (context) => {
+    return {
+        title: "ITXcelerate - Privacy",
+        image: "/logo-3.png",
+        summery:
+        "At IT Xcelerate, we are committed to protecting your privacy and maintaining the confidentiality of your personal information. This privacy statement outlines how we collect, use, and protect your personal information when you visit our website or use our services.",
+        keywords:
+            "IT, ITXcelerate, Home, Best, it services, tech, startup, technology",
+        type: "website",
+        imageAlt: "ITXclererate logo",
+        parameter: "privacy",
+    };
+};

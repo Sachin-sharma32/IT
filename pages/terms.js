@@ -104,3 +104,18 @@ const Terms = () => {
 };
 
 export default Terms;
+
+
+Terms.getInitialProps = async (context) => {
+    return {
+        title: "ITXcelerate - Terms Of Use",
+        image: "/logo-3.png",
+        summery:
+        "We make every effort to ensure that the information on our website is accurate and up-to-date. However, we do not guarantee the accuracy, completeness, or reliability of any information on our website. We reserve the right to modify, update, or remove any content on our website without prior notice.",
+        keywords:
+            "IT, ITXcelerate, Home, Best, it services, tech, startup, technology",
+        type: "website",
+        imageAlt: "ITXclererate logo",
+        parameter: "terms",
+    };
+};

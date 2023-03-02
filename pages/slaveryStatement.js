@@ -2,7 +2,7 @@ import React from "react";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { motion } from "framer-motion";
 
-const Cookie = () => {
+const SlaveryStatement = () => {
     return (
         <div>
             <div className=" bg-pink-500 h-[40vh] flex items-end">
@@ -155,4 +155,19 @@ const Cookie = () => {
     );
 };
 
-export default Cookie;
+export default SlaveryStatement;
+
+
+SlaveryStatement.getInitialProps = async (context) => {
+    return {
+        title: "ITXcelerate - Slavery Statement",
+        image: "/logo-3.png",
+        summery:
+        "IT Xcelerate is committed to preventing and eradicating modern slavery in all forms within our operations and supply chain. We recognize the responsibility that comes with our role as a business and are dedicated to upholding our ethical values and principles.",
+        keywords:
+            "IT, ITXcelerate, Home, Best, it services, tech, startup, technology",
+        type: "website",
+        imageAlt: "ITXclererate logo",
+        parameter: "slaveryStatement",
+    };
+};

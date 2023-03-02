@@ -268,3 +268,17 @@ const Contact = () => {
 };
 
 export default Contact;
+
+Contact.getInitialProps = async (context) => {
+    return {
+        title: "ITXcelerate",
+        image: "/logo-3.png",
+        summery:
+            "Delivering exceptional customer service and ensuring that our clients are satisfied with every aspect of our services. From our initial consultation to post-project support, we strive to provide a seamless and stress-free experience for our clients.",
+        keywords:
+            "IT, ITXcelerate, Home, Best, it services, tech, startup, technology",
+        type: "website",
+        imageAlt: "ITXclererate logo",
+        parameter: "contact",
+    };
+};

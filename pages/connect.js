@@ -1,7 +1,7 @@
 import React from "react";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-const Privacy = () => {
+const Connect = () => {
     return (
         <div>
             <div className=" bg-blue-500 h-[40vh] flex items-end">
@@ -65,4 +65,18 @@ const Privacy = () => {
     );
 };
 
-export default Privacy;
+export default Connect;
+
+Connect.getInitialProps = async (context) => {
+    return {
+        title: "ITXcelerate - Connect",
+        image: "/logo-3.png",
+        summery:
+            "We are always here to help you with your web development and app development needs. If you have any questions, comments, or concerns, please don't hesitate to reach out to us using the contact information provided below.",
+        keywords:
+            "IT, ITXcelerate, Home, Best, it services, tech, startup, technology",
+        type: "website",
+        imageAlt: "ITXclererate logo",
+        parameter: "connect",
+    };
+};

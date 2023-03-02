@@ -165,3 +165,17 @@ const Esg = () => {
 };
 
 export default Esg;
+
+Esg.getInitialProps = async (context) => {
+    return {
+        title: "ITXcelerate - ESG",
+        image: "/logo-3.png",
+        summery:
+            "We're committed to making a positive impact on the environment, society, and governance through our business practices and operations.",
+        keywords:
+            "IT, ITXcelerate, Home, Best, it services, tech, startup, technology",
+        type: "website",
+        imageAlt: "ITXclererate logo",
+        parameter: "esg",
+    };
+};

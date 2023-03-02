@@ -1,7 +1,7 @@
 import React from "react";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-const Privacy = () => {
+const Trademarks = () => {
     return (
         <div>
             <div className=" bg-green-500 h-[40vh] flex items-end">
@@ -113,4 +113,18 @@ const Privacy = () => {
     );
 };
 
-export default Privacy;
+export default Trademarks;
+
+Trademarks.getInitialProps = async (context) => {
+    return {
+        title: "ITXcelerate - Trademarks",
+        image: "/logo-3.png",
+        summery:
+            "IT Xcelerate is a registered trademark of our company. The IT Xcelerate logo, as well as other logos and graphics used on our website, are also trademarks of IT Xcelerate. These trademarks are protected by national and international trademark laws.",
+        keywords:
+            "IT, ITXcelerate, Home, Best, it services, tech, startup, technology",
+        type: "website",
+        imageAlt: "ITXclererate logo",
+        parameter: "trademarks",
+    };
+};

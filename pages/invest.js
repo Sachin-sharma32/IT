@@ -168,3 +168,17 @@ const Invest = () => {
 };
 
 export default Invest;
+
+Invest.getInitialProps = async (context) => {
+    return {
+        title: "ITXcelerate - Invest",
+        image: "/logo-3.png",
+        summery:
+            "As a leading IT services company, we are committed to delivering innovative and reliable solutions to businesses across various industries. Our mission is to help our clients accelerate their growth and achieve their business objectives through technology, and we believe that our strong business model, experienced leadership team, and commitment to environmental, social, and governance practices make us a compelling investment opportunity.",
+        keywords:
+            "IT, ITXcelerate, Home, Best, it services, tech, startup, technology",
+        type: "website",
+        imageAlt: "ITXclererate logo",
+        parameter: "invest",
+    };
+};

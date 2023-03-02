@@ -150,3 +150,17 @@ const Cookie = () => {
 };
 
 export default Cookie;
+
+Cookie.getInitialProps = async (context) => {
+    return {
+        title: "ITXcelerate - Cookie",
+        image: "/logo-3.png",
+        summery:
+            "At IT Xcelerate, we are committed to providing you with the best possible browsing experience on our website. To achieve this, we use cookies and similar technologies. This Cookie Policy explains how we use cookies, what they are used for, and how you can manage them.",
+        keywords:
+            "IT, ITXcelerate, Home, Best, it services, tech, startup, technology",
+        type: "website",
+        imageAlt: "ITXclererate logo",
+        parameter: "cookie",
+    };
+};

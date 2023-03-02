@@ -129,3 +129,18 @@ const PaymentGuide = () => {
 };
 
 export default PaymentGuide;
+
+
+PaymentGuide.getInitialProps = async (context) => {
+    return {
+        title: "ITXcelerate - Payment Guide",
+        image: "/logo-3.png",
+        summery:
+        "At IT Xcelerate, we are dedicated to building and maintaining strong relationships with our suppliers. We understand that timely payment is essential to maintaining these relationships, and we have developed this Payment Guide for Suppliers to ensure that our payment processes are transparent, consistent, and efficient.",
+        keywords:
+            "IT, ITXcelerate, Home, Best, it services, tech, startup, technology",
+        type: "website",
+        imageAlt: "ITXclererate logo",
+        parameter: "paymentGuide",
+    };
+};

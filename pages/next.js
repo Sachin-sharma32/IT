@@ -40,3 +40,18 @@ const Next = () => {
 };
 
 export default Next;
+
+
+Next.getInitialProps = async (context) => {
+    return {
+        title: "ITXcelerate - Navigate Your Next",
+        image: "/logo-3.png",
+        summery:
+        "Welcome to 'Navigate Your Next'! At IT Xcelerate, we understand the challenges that come with digital transformation and how it can impact businesses of all sizes. Our goal is to help you navigate the complexities of the digital landscape and help you reach your goals.",
+        keywords:
+            "IT, ITXcelerate, Home, Best, it services, tech, startup, technology",
+        type: "website",
+        imageAlt: "ITXclererate logo",
+        parameter: "next",
+    };
+};
