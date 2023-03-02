@@ -19,7 +19,7 @@ const Connect = () => {
             </button>
             <div className="flex flex-col p-10 gap-8 leading-[1.9] font-[400] text-[#444444] mt-10">
                 <div>
-                    <p className=" text-xl font-semibold bg-yellow-200 pl-10 p-2 border-l-8">
+                    <p className=" text-xl font-semibold bg-purple-200 pl-10 p-2 border-l-8 border-purple-500 rounded-lg">
                         Thank you for your interest in IT Xcelerate. We are
                         always here to help you with your web development and
                         app development needs. If you have any questions,

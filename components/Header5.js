@@ -61,7 +61,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
     return (
         <section
             ref={header5Ref}
-            className=" z-40 md:h-[320vh] h-[200vh]  lg:h-[420vh] relative flex justify-center  text-white bg-gradient-to-tr from-[#fa3a3a] to-[#9e0101] path-top"
+            className=" z-40 md:h-[320vh] h-[200vh]  lg:h-[420vh] relative flex justify-center  text-white bg-gradient-to-tr from-[#c10000] to-[#9e0101] path-top"
             id="testimonials"
         >
             <div

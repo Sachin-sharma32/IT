@@ -94,7 +94,15 @@ a {
   position: relative; 
   
 }
-  
+
+.link{
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #d8bbf7 50%);
+  background-size: 240%;
+}
+.link:hover{
+  background-position: 100%;
+  color:white;
+}  
   .card__side {
     transition: all .8s ease;
     position: absolute;
@@ -127,7 +135,7 @@ a {
   left: 0;
   right: 0;
   height: 5px;
-  background: #7db5fb;
+  background: #817dfb;
 }
 
 .swiper-pagination{
