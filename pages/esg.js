@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Esg = () => {
     return (
-        <div className="min-h-screen flex flex-col gap-20 pb-20">
+        <div className="min-h-screen flex flex-col gap-20 pb-20 px-10">
             <div className=" h-screen flex relative">
                 <img
                     src="/esg-1.jpg"
@@ -43,7 +43,7 @@ const Esg = () => {
                 <h2 className="  text-3xl font-semibold text-center">
                     ENVIRONMENTAL COMMITMENT
                 </h2>
-                <div className="flex gap-10 justify-center">
+                <div className="flex gap-10 justify-center flex-col md:flex-row items-center">
                     <div className=" w-[300px] px-4 leading-[1.9] hover:scale-110 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
                         <img
                             src="/svg-1.svg"
@@ -75,7 +75,7 @@ const Esg = () => {
                 <h2 className="  text-3xl font-semibold text-center">
                     SOCIAL RESPONSIBILITIES
                 </h2>
-                <div className="flex gap-10 justify-center">
+                <div className="flex gap-10 justify-center flex-col md:flex-row items-center">
                     <div className=" w-[300px] px-4 leading-[1.9] hover:scale-110 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
                         <img
                             src="/svg-3.svg"
@@ -119,7 +119,7 @@ const Esg = () => {
                 <h2 className="  text-3xl font-semibold text-center">
                     GOVERNANCE POLICIES
                 </h2>
-                <div className="flex gap-10 justify-center">
+                <div className="flex gap-10 justify-center flex-col md:flex-row items-center">
                     <div className=" w-[300px] px-4 leading-[1.9] hover:scale-110 py-4 flex flex-col gap-4  shadow-2xl rounded-lg cursor-default hover:-translate-y-4 transition-all duration-500">
                         <img
                             src="/svg-6.svg"

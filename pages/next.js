@@ -8,7 +8,7 @@ const Next = () => {
                     NAVIGATE YOUR NEXT
                 </h1>
             </div>
-            <div className="flex p-10 gap-10">
+            <div className="flex p-10 gap-10 flex-col md:flex-row">
                 <div className="flex flex-col gap-4">
                     <h2 className=" text-4xl font-bold h-10">OVERVIEW</h2>
                     <p className="leading-[1.9] font-[100] text-xl">

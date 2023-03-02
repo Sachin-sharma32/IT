@@ -81,11 +81,11 @@ const Header6 = ({ yOffset, prev }) => {
                               }
                             : {}
                     }
-                    className="mb-6 text-3xl font-extrabold tracking-tight text-center z-0 text-white lg:mb-8 lg:text-3xl "
+                    className="mb-6 text-3xl px-10 font-extrabold tracking-tight text-center z-0 text-white lg:mb-8 lg:text-3xl "
                 >
                     Frequently asked questions
                 </h2>
-                <div className="max-w-screen-md mx-auto">
+                <div className="max-w-screen-md mx-auto px-14">
                     {data.map((item, i) => (
                         <Accordion
                             key={i}

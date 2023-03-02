@@ -20,7 +20,7 @@ const Header3 = ({ yOffset, prev }) => {
                         transition={{ duration: 1.5 }}
                         className="text-gray-500 sm:text-lg dark:text-gray-400"
                     >
-                        <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark">
+                        <h2 className="mb-4 text-xl sm:text-3xl px-4 sm:px-0 font-extrabold tracking-tight text-gray-900">
                             Why choose IT Xcelerate for Web App Development ?
                         </h2>
                         {/* <p className="mb-8 font-light lg:text-xl">
@@ -31,7 +31,7 @@ const Header3 = ({ yOffset, prev }) => {
                         </p> */}
                         <ul
                             role="list"
-                            className="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700"
+                            className="pt-8 space-y-5 px-4 border-t border-gray-200 my-7 dark:border-gray-700"
                         >
                             <li className="flex space-x-3">
                                 <svg

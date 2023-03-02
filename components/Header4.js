@@ -31,15 +31,15 @@ const Header4 = ({ yOffset, prev }) => {
     ];
     return (
         <section
-            className="z-30 px-10 bg-[#f8f8f8] py-20 max-w-[100vw]"
+            className="z-30 px-10 bg-[#f8f8f8] py-20"
             id="achievements"
             ref={ref}
         >
-            <div className="flex flex-col gap-10 relative">
-                <h3 className=" text-3xl font-bold text-center">
+            <div className="flex flex-col gap-10 relative justify-center items-center w-full">
+                <h3 className=" text-3xl font-bold text-center px-4 sm:px-0">
                     Web App Technologies We Use
                 </h3>
-                <div className="grid grid-cols-4 gap-10">
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
                     {data.map((item, i) => (
                         <motion.div
                             animate={{ y: [100, 0] }}
@@ -47,7 +47,9 @@ const Header4 = ({ yOffset, prev }) => {
                             key={i}
                             className="bg-white shadow-lg rounded-lg p-10 flex gap-2 flex-col items-center cursor-default hover:scale-110 transition-all duration-500 hover:-translate-y-4"
                         >
-                            <img src={item.image} alt="" className="w-32" />
+                            <div className=" bg-purple-100 p-10 rounded-full">
+                                <img src={item.image} alt="" className="w-12" />
+                            </div>
                             <h5 className="text-2xl uppercase">{item.name}</h5>
                         </motion.div>
                     ))}

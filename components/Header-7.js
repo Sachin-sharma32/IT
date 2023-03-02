@@ -24,16 +24,24 @@ const Header7 = () => {
                 className="text-gray-500 sm:text-lg dark:text-gray-400 flex flex-col gap-10"
             >
                 <h2 className=" text-center mb-4 text-3xl font-extrabold tracking-tight text-white">
-                    Industries We Cater
+                    INDUSTRIES WE CATER
                 </h2>
-                <div className="grid grid-cols-3 gap-10">
+                <div className="grid md:grid-cols-2  lg:grid-cols-3 gap-10 px-10">
                     {data.map((item, i) => (
                         <div
                             key={i}
-                            className="bg-white shadow-lg rounded-lg p-10 flex gap-6 items-center cursor-default hover:scale-110 transition-all duration-500 hover:-translate-y-4"
+                            className="bg-white shadow-lg rounded-lg p-4 flex flex-col justify-center gap-6 items-center cursor-default hover:scale-110 transition-all duration-500 hover:-translate-y-4"
                         >
-                            <img src={item.image} alt="" className="w-32" />
-                            <h5 className="text-2xl uppercase">{item.name}</h5>
+                            <div>
+                                <div className=" bg-purple-100 rounded-full p-4 flex justify-center items-center h-32 w-32">
+                                    <img
+                                        src={item.image}
+                                        alt=""
+                                        className="w-20"
+                                    />
+                                </div>
+                            </div>
+                            <h5 className="text-2xl uppercase text-center">{item.name}</h5>
                         </div>
                     ))}
                 </div>

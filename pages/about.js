@@ -32,8 +32,8 @@ const About = () => {
     ];
     return (
         <div className=" pb-32 leading-[1.9] font-[400] text-[#444444]">
-            <div className=" h-screen flex gap-10 flex-col">
-                <div className=" bg-purple-500 h-[40vh] flex items-end">
+            <div className=" min-h-screen flex gap-10 flex-col">
+                <div className=" bg-purple-500 min-h-[40vh] flex items-end">
                     <h1 className=" text-5xl text-white mb-10 ml-10 uppercase">
                         About Us
                     </h1>
@@ -62,14 +62,14 @@ const About = () => {
                         key={i}
                         className={`${
                             i % 2 === 0 ? "flex-row-reverse" : ""
-                        } relative h-fit w-fit flex items-center`}
+                        } relative h-fit w-fit flex items-center flex-col md:flex-row`}
                     >
                         {i % 2 === 0 ? (
                             <motion.img
                                 whileInView={{ x: [-500, 0] }}
                                 transition={{ duration: 1 }}
                                 src={item.image}
-                                className="brightness-50 h-full w-[40%]"
+                                className="brightness-50 h-full w-[40%] hidden md:flex"
                                 alt=""
                             />
                         ) : (
@@ -77,11 +77,16 @@ const About = () => {
                                 whileInView={{ x: [500, 0] }}
                                 transition={{ duration: 1 }}
                                 src={item.image}
-                                className="brightness-50 h-full w-[40%]"
+                                className="brightness-50 h-full w-[40%] hidden md:flex"
                                 alt=""
                             />
                         )}
-                        <div className="bg-gradient-to-r bg-white shadow-lg w-[50vw] p-10 text-black h-fit text-lg">
+                        <img
+                            src={item.image}
+                            className="brightness-50 h-full w-[100%] md:hidden"
+                            alt=""
+                        />
+                        <div className="bg-gradient-to-r bg-white shadow-lg w-full md:w-[50vw] p-10 text-black h-fit text-lg">
                             {item.title}
                         </div>
                     </div>

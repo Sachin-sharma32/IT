@@ -54,7 +54,7 @@ const Home = () => {
                 <Header6 yOffset={yOffset} prev={prev} />
                 <section
                     ref={newRef}
-                    className=" min-h-[100vh]  overflow-hidden  z-40 px-10  header-4 "
+                    className=" min-h-[100vh]  overflow-hidden z-40  header-4 "
                     id="pricing"
                 >
                     <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
@@ -70,7 +70,7 @@ const Home = () => {
                                       }
                                     : {}
                             }
-                            className="max-w-screen-md mx-auto mb-8 text-center lg:mb-12 "
+                            className="max-w-screen-md px-14 mx-auto mb-8 text-center lg:mb-12 "
                         >
                             <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-white">
                                 Designed for business teams like yours
@@ -81,7 +81,7 @@ const Home = () => {
                                 long-term value and drive economic growth.
                             </p>
                         </div>
-                        <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0 z-40 ">
+                        <div className="space-y-8 justify-items-center grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0 z-40">
                             <motion.div
                                 style={
                                     typeof window !== "undefined" &&
@@ -97,9 +97,9 @@ const Home = () => {
                                           }
                                         : {}
                                 }
-                                className=" card  origin-bottom-right text-gray-900 h-[550px] w-[380px]"
+                                className=" card  origin-bottom-right text-gray-900 h-[550px] w-[300px] sm:w-[380px] flex"
                             >
-                                <div className="card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-[380px]">
+                                <div className="card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] sm:w-[380px]  w-inherit">
                                     <h3 className="mb-4 text-2xl font-semibold">
                                         Basic Plan
                                     </h3>
@@ -208,7 +208,7 @@ const Home = () => {
                                         <EastIcon />
                                     </div>
                                 </div>
-                                <div className="card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-[380px]">
+                                <div className="card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-inherit">
                                     <ul
                                         role="list"
                                         className="mb-8 space-y-4 text-left"
@@ -321,12 +321,12 @@ const Home = () => {
                                         href="/contact"
                                         className=" text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
                                     >
-                                        CONNECT
+                                        CONFIGURE
                                     </Link>
                                 </div>
                             </motion.div>
-                            <div className=" card  origin-bottom-right text-gray-900 h-[550px] w-[380px]">
-                                <div className="card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-[380px]">
+                            <div className=" card  origin-bottom-right text-gray-900 h-[550px] w-[300px] sm:w-[380px]">
+                                <div className="card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-inherit">
                                     <h3 className="mb-4 text-2xl font-semibold">
                                         Advanced Plan
                                     </h3>
@@ -435,7 +435,7 @@ const Home = () => {
                                         <EastIcon />
                                     </div>
                                 </div>
-                                <div className="card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-[380px]">
+                                <div className="card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-inherit">
                                     <ul
                                         role="list"
                                         className="mb-8 space-y-4 text-left"
@@ -548,7 +548,7 @@ const Home = () => {
                                         href="/contact"
                                         className=" text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
                                     >
-                                        CONNECT
+                                        CONFIGURE
                                     </Link>
                                 </div>
                             </div>
@@ -567,9 +567,9 @@ const Home = () => {
                                           }
                                         : {}
                                 }
-                                className=" card  origin-bottom-left text-gray-900 h-[550px] w-[380px]"
+                                className=" card  origin-bottom-left text-gray-900 h-[550px] w-[300px] sm:w-[380px]"
                             >
-                                <div className="card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-[380px]">
+                                <div className="card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-inherit">
                                     <h3 className="mb-4 text-2xl font-semibold">
                                         Pro Plan
                                     </h3>
@@ -678,7 +678,7 @@ const Home = () => {
                                         <EastIcon />
                                     </div>
                                 </div>
-                                <div className="card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-[380px]">
+                                <div className="card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-inherit">
                                     <ul
                                         role="list"
                                         className="mb-8 space-y-4 text-left"
@@ -793,7 +793,7 @@ const Home = () => {
                                         href="/contact"
                                         className=" w-full text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
                                     >
-                                        CONNECT
+                                        CONFIGURE
                                     </Link>
                                 </div>
                             </div>
