@@ -16,7 +16,7 @@ const Header7 = () => {
         { name: "Social Media", image: "/svg-20.svg" },
     ];
     return (
-        <div className=" flex flex-col  justify-center items-center p-10 z-40 pb-20 bg-gradient-to-tr from-[#0685e1] to-[#0135a0]">
+        <div className=" flex flex-col  justify-center items-center p-10 z-40 pb-20 bg-gradient-to-tr from-blue-400 to-blue-700">
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1, y: [50, 0] }}
@@ -41,7 +41,9 @@ const Header7 = () => {
                                     />
                                 </div>
                             </div>
-                            <h5 className="text-2xl uppercase text-center">{item.name}</h5>
+                            <h5 className="text-2xl uppercase text-center">
+                                {item.name}
+                            </h5>
                         </div>
                     ))}
                 </div>

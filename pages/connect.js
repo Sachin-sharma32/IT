@@ -1,9 +1,10 @@
 import React from "react";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import Smooth from "../utils/Smooth";
 
 const Connect = () => {
     return (
-        <div>
+        <Smooth>
             <div className=" bg-blue-500 h-[40vh] flex items-end">
                 <h1 className=" text-5xl text-white mb-10 ml-10 uppercase">
                     CONTACT US
@@ -61,7 +62,7 @@ const Connect = () => {
                     </p>
                 </div>
             </div>
-        </div>
+        </Smooth>
     );
 };
 

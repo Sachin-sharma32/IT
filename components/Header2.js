@@ -3,13 +3,9 @@ import Marquee from "react-fast-marquee";
 
 const Header2 = ({ yOffset, prev }) => {
     return (
-        <section className=" z-40 mt-[100vh] bg-[#f8f8f8he]">
+        <section className=" z-40 mt-[100vh] bg-gradient-to-r from-green-50 to-green-200">
             <div className=" p-4 z-40">
-                <Marquee
-                    className=" w-screen"
-                    gradient={false}
-                    speed={50}
-                >
+                <Marquee className=" w-screen" gradient={false} speed={50}>
                     <div
                         style={{ transform: `translateX(${-yOffset - 10}px)` }}
                         className="flex gap-20 dark:text-gray-400"

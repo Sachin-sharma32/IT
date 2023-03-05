@@ -65,7 +65,7 @@ const Header6 = ({ yOffset, prev }) => {
     return (
         <section
             ref={containerRef}
-            className=" z-30 h-fit flex items-center bg-gradient-to-tr from-[#ff6f3b] to-[#b23b29]"
+            className=" z-30 h-fit flex items-center bg-gradient-to-tr from-green-200 to-green-700"
             id="faqs"
         >
             <div className="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-24 lg:px-6 flex justify-center flex-col py-20">

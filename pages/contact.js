@@ -7,6 +7,7 @@ import axios from "axios";
 import { ToastContainer } from "react-toastify";
 import { Alert, Snackbar } from "@mui/material";
 import { useRouter } from "next/router";
+import Smooth from "../utils/Smooth";
 
 const Contact = () => {
     const router = useRouter();
@@ -53,178 +54,183 @@ const Contact = () => {
     };
     console.log(success);
     return (
-        <div className=" px-2 py-10 min-h-screen w-screen flex justify-center items-center bg-gradient-to-r from-blue-200 to-orange-200 effect">
-            <Snackbar
-                open={success}
-                autoHideDuration={3000}
-                onClose={() => {
-                    setSuccess(false);
-                }}
-                anchorOrigin={{ vertical: "top", horizontal: "center" }}
-                className="mt-10"
-            >
-                <Alert
+        <Smooth>
+            <div className=" px-2 py-10 min-h-screen w-screen flex justify-center items-center bg-gradient-to-r from-blue-200 to-green-200 effect">
+                <Snackbar
+                    open={success}
+                    autoHideDuration={3000}
                     onClose={() => {
                         setSuccess(false);
                     }}
-                    severity="success"
+                    anchorOrigin={{ vertical: "top", horizontal: "center" }}
+                    className="mt-10"
                 >
-                    {message}
-                </Alert>
-            </Snackbar>
-            <div className=" bg-black p-4 h-10 w-10 rounded-full flex justify-center items-center cursor-pointer overflow-hidden fixed top-4 left-4">
-                <Link href="/">
-                    <ArrowBackIosIcon className="text-white ml-2 transition-all duration-500 z-0 hover:trans hover:scale-105 hover:-translate-x-1" />
-                </Link>
-            </div>
-            <Formik
-                initialValues={initialValues}
-                validationSchema={validationObject}
-                validateOnBlur={true}
-                validateOnChange={true}
-                onSubmit={submitHandler}
-            >
-                {(props) => (
-                    <Form className=" w-[400px] sm:w-[500px] flex flex-col bg-white p-10 rounded-lg">
-                        <div className="flex flex-wrap  mb-6">
-                            <div className="w-full px-3">
-                                <label
-                                    className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                    for="name"
-                                >
-                                    Name
-                                </label>
-                                <Field
-                                    name="name"
-                                    className={`${
-                                        props.errors.name && props.touched.name
-                                            ? "border-red-500 placeholder:text-red-500 text-red-500"
-                                            : "text-gray-700 border-gray-200 focus:border-gray-500"
-                                    } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:shadow-2xl transition-all duration-500`}
-                                    id="name"
-                                    type="text"
-                                    placeholder="Name"
-                                />
-                                {props.errors.name && props.touched.name && (
-                                    <p className="text-gray-600 text-xs italic">
-                                        {props.errors.name}
-                                    </p>
-                                )}
+                    <Alert
+                        onClose={() => {
+                            setSuccess(false);
+                        }}
+                        severity="success"
+                    >
+                        {message}
+                    </Alert>
+                </Snackbar>
+                <div className=" bg-black p-4 h-10 w-10 rounded-full flex justify-center items-center cursor-pointer overflow-hidden fixed top-4 left-4">
+                    <Link href="/">
+                        <ArrowBackIosIcon className="text-white ml-2 transition-all duration-500 z-0 hover:trans hover:scale-105 hover:-translate-x-1" />
+                    </Link>
+                </div>
+                <Formik
+                    initialValues={initialValues}
+                    validationSchema={validationObject}
+                    validateOnBlur={true}
+                    validateOnChange={true}
+                    onSubmit={submitHandler}
+                >
+                    {(props) => (
+                        <Form className=" w-[400px] sm:w-[500px] flex flex-col bg-white p-10 rounded-lg">
+                            <div className="flex flex-wrap  mb-6">
+                                <div className="w-full px-3">
+                                    <label
+                                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        for="name"
+                                    >
+                                        Name
+                                    </label>
+                                    <Field
+                                        name="name"
+                                        className={`${
+                                            props.errors.name &&
+                                            props.touched.name
+                                                ? "border-red-500 placeholder:text-red-500 text-red-500"
+                                                : "text-gray-700 border-gray-200 focus:border-gray-500"
+                                        } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:shadow-2xl transition-all duration-500`}
+                                        id="name"
+                                        type="text"
+                                        placeholder="Name"
+                                    />
+                                    {props.errors.name &&
+                                        props.touched.name && (
+                                            <p className="text-gray-600 text-xs italic">
+                                                {props.errors.name}
+                                            </p>
+                                        )}
+                                </div>
                             </div>
-                        </div>
-                        <div className="flex flex-wrap  mb-6">
-                            <div className="w-full px-3">
-                                <label
-                                    className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                    for="email"
-                                >
-                                    Email
-                                </label>
-                                <Field
-                                    name="email"
-                                    className={`${
-                                        props.errors.email &&
-                                        props.touched.email
-                                            ? "border-red-500 placeholder:text-red-500 text-red-500"
-                                            : "text-gray-700 border-gray-200 focus:border-gray-500"
-                                    } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:shadow-2xl transition-all duration-500`}
-                                    id="email"
-                                    type="text"
-                                    placeholder="examaple@gmail.com"
-                                />
-                                {props.errors.email && props.touched.email && (
-                                    <p className="text-gray-600 text-xs italic">
-                                        {props.errors.email}
-                                    </p>
-                                )}
+                            <div className="flex flex-wrap  mb-6">
+                                <div className="w-full px-3">
+                                    <label
+                                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        for="email"
+                                    >
+                                        Email
+                                    </label>
+                                    <Field
+                                        name="email"
+                                        className={`${
+                                            props.errors.email &&
+                                            props.touched.email
+                                                ? "border-red-500 placeholder:text-red-500 text-red-500"
+                                                : "text-gray-700 border-gray-200 focus:border-gray-500"
+                                        } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:shadow-2xl transition-all duration-500`}
+                                        id="email"
+                                        type="text"
+                                        placeholder="examaple@gmail.com"
+                                    />
+                                    {props.errors.email &&
+                                        props.touched.email && (
+                                            <p className="text-gray-600 text-xs italic">
+                                                {props.errors.email}
+                                            </p>
+                                        )}
+                                </div>
                             </div>
-                        </div>
-                        <div className="flex flex-wrap  mb-6">
-                            <div className="w-full px-3">
-                                <label
-                                    className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                    for="company"
-                                >
-                                    Company
-                                </label>
-                                <Field
-                                    name="company"
-                                    className={`${
-                                        props.errors.company &&
-                                        props.touched.company
-                                            ? "border-red-500 placeholder:text-red-500 text-red-500"
-                                            : "text-gray-700 border-gray-200 focus:border-gray-500"
-                                    } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:shadow-2xl transition-all duration-500`}
-                                    id="company"
-                                    type="text"
-                                    placeholder="Company"
-                                />
-                                {props.errors.company &&
-                                    props.touched.company && (
-                                        <p className="text-gray-600 text-xs italic">
-                                            {props.errors.company}
-                                        </p>
-                                    )}
+                            <div className="flex flex-wrap  mb-6">
+                                <div className="w-full px-3">
+                                    <label
+                                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        for="company"
+                                    >
+                                        Company
+                                    </label>
+                                    <Field
+                                        name="company"
+                                        className={`${
+                                            props.errors.company &&
+                                            props.touched.company
+                                                ? "border-red-500 placeholder:text-red-500 text-red-500"
+                                                : "text-gray-700 border-gray-200 focus:border-gray-500"
+                                        } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:shadow-2xl transition-all duration-500`}
+                                        id="company"
+                                        type="text"
+                                        placeholder="Company"
+                                    />
+                                    {props.errors.company &&
+                                        props.touched.company && (
+                                            <p className="text-gray-600 text-xs italic">
+                                                {props.errors.company}
+                                            </p>
+                                        )}
+                                </div>
                             </div>
-                        </div>
-                        <div className="flex flex-wrap  mb-6">
-                            <div className="w-full px-3">
-                                <label
-                                    className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                    for="phone"
-                                >
-                                    Phone
-                                </label>
-                                <Field
-                                    name="phone"
-                                    className={`${
-                                        props.errors.phone &&
-                                        props.touched.phone
-                                            ? "border-red-500 placeholder:text-red-500 text-red-500"
-                                            : "text-gray-700 border-gray-200 focus:border-gray-500"
-                                    } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:shadow-2xl transition-all duration-500`}
-                                    id="phone"
-                                    type="text"
-                                    placeholder="1234567890"
-                                />
-                                {props.errors.phone && props.touched.phone && (
-                                    <p className="text-gray-600 text-xs italic">
-                                        {props.errors.phone}
-                                    </p>
-                                )}
+                            <div className="flex flex-wrap  mb-6">
+                                <div className="w-full px-3">
+                                    <label
+                                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        for="phone"
+                                    >
+                                        Phone
+                                    </label>
+                                    <Field
+                                        name="phone"
+                                        className={`${
+                                            props.errors.phone &&
+                                            props.touched.phone
+                                                ? "border-red-500 placeholder:text-red-500 text-red-500"
+                                                : "text-gray-700 border-gray-200 focus:border-gray-500"
+                                        } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:shadow-2xl transition-all duration-500`}
+                                        id="phone"
+                                        type="text"
+                                        placeholder="1234567890"
+                                    />
+                                    {props.errors.phone &&
+                                        props.touched.phone && (
+                                            <p className="text-gray-600 text-xs italic">
+                                                {props.errors.phone}
+                                            </p>
+                                        )}
+                                </div>
                             </div>
-                        </div>
-                        <div className="flex flex-wrap  mb-6">
-                            <div className="w-full px-3">
-                                <label
-                                    className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                    for="message"
-                                >
-                                    Message
-                                </label>
-                                <Field
-                                    as="textarea"
-                                    name="message"
-                                    className={`${
-                                        props.errors.message &&
-                                        props.touched.message
-                                            ? "border-red-500 placeholder:text-red-500 text-red-500"
-                                            : "text-gray-700 border-gray-200 focus:border-gray-500"
-                                    } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:shadow-2xl transition-all duration-500`}
-                                    id="message"
-                                    type="text"
-                                    placeholder="Type your queries here...."
-                                    rows={5}
-                                />
-                                {props.errors.message &&
-                                    props.touched.message && (
-                                        <p className="text-gray-600 text-xs italic">
-                                            {props.errors.message}
-                                        </p>
-                                    )}
+                            <div className="flex flex-wrap  mb-6">
+                                <div className="w-full px-3">
+                                    <label
+                                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        for="message"
+                                    >
+                                        Message
+                                    </label>
+                                    <Field
+                                        as="textarea"
+                                        name="message"
+                                        className={`${
+                                            props.errors.message &&
+                                            props.touched.message
+                                                ? "border-red-500 placeholder:text-red-500 text-red-500"
+                                                : "text-gray-700 border-gray-200 focus:border-gray-500"
+                                        } appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:shadow-2xl transition-all duration-500`}
+                                        id="message"
+                                        type="text"
+                                        placeholder="Type your queries here...."
+                                        rows={5}
+                                    />
+                                    {props.errors.message &&
+                                        props.touched.message && (
+                                            <p className="text-gray-600 text-xs italic">
+                                                {props.errors.message}
+                                            </p>
+                                        )}
+                                </div>
                             </div>
-                        </div>
-                        {/* <div className="flex flex-wrap  mb-10">
+                            {/* <div className="flex flex-wrap  mb-10">
                     <div className="w-full px-3 mb-6 md:mb-0">
                         <label
                             className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -253,17 +259,18 @@ const Contact = () => {
                         </div>
                     </div>
                 </div> */}
-                        <button
-                            disabled={!props.isValid}
-                            className="flex-shrink-0 disabled:bg-gray-500 disabled:hover:bg-gray-500 disabled:border-gray-500 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded justify-end"
-                            type="submit"
-                        >
-                            Submit
-                        </button>
-                    </Form>
-                )}
-            </Formik>
-        </div>
+                            <button
+                                disabled={!props.isValid}
+                                className="flex-shrink-0 disabled:bg-gray-500 disabled:hover:bg-gray-500 disabled:border-gray-500 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded justify-end"
+                                type="submit"
+                            >
+                                Submit
+                            </button>
+                        </Form>
+                    )}
+                </Formik>
+            </div>
+        </Smooth>
     );
 };
 

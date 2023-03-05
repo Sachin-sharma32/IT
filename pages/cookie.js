@@ -1,9 +1,10 @@
 import React from "react";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import Smooth from "../utils/Smooth";
 
 const Cookie = () => {
     return (
-        <div>
+        <Smooth>
             <div className=" bg-gray-500 h-[40vh] flex items-end">
                 <h1 className=" text-5xl text-white mb-10 ml-10 uppercase">
                     COOKIE POLICY
@@ -130,7 +131,7 @@ const Cookie = () => {
                         Policy.
                     </p>
                 </div>
-                <div className=" bg-yellow-100 border-l-8 pl-10">
+                <div className=" bg-purple-100 border-l-8 rounded-lg border-purple-500 pl-10">
                     If you have any questions or concerns about this Cookie
                     Policy or our use of cookies, please contact us at{" "}
                     <span className="font-extrabold italic">
@@ -145,7 +146,7 @@ const Cookie = () => {
                     </h4>
                 </div>
             </div>
-        </div>
+        </Smooth>
     );
 };
 

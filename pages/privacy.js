@@ -1,9 +1,10 @@
 import React from "react";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import Smooth from "../utils/Smooth";
 
 const Privacy = () => {
     return (
-        <div className="">
+        <Smooth className="">
             <div className=" bg-blue-500 h-[40vh] flex items-end">
                 <h1 className=" text-5xl text-white mb-10 ml-10 uppercase">
                     PRIVACY STATEMENT
@@ -144,7 +145,7 @@ const Privacy = () => {
                     </h4>
                 </div>
             </div>
-        </div>
+        </Smooth>
     );
 };
 

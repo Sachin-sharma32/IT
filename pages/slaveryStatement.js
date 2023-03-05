@@ -1,10 +1,11 @@
 import React from "react";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { motion } from "framer-motion";
+import Smooth from "../utils/Smooth";
 
 const SlaveryStatement = () => {
     return (
-        <div>
+        <Smooth>
             <div className=" bg-pink-500 h-[40vh] flex items-end">
                 <h1 className=" text-5xl text-white mb-10 ml-10 uppercase">
                     MODERN SLAVERY STATEMENT
@@ -151,19 +152,18 @@ const SlaveryStatement = () => {
                     </h4>
                 </div>
             </div>
-        </div>
+        </Smooth>
     );
 };
 
 export default SlaveryStatement;
-
 
 SlaveryStatement.getInitialProps = async (context) => {
     return {
         title: "ITXcelerate - Slavery Statement",
         image: "/logo-3.png",
         summery:
-        "IT Xcelerate is committed to preventing and eradicating modern slavery in all forms within our operations and supply chain. We recognize the responsibility that comes with our role as a business and are dedicated to upholding our ethical values and principles.",
+            "IT Xcelerate is committed to preventing and eradicating modern slavery in all forms within our operations and supply chain. We recognize the responsibility that comes with our role as a business and are dedicated to upholding our ethical values and principles.",
         keywords:
             "IT, ITXcelerate, Home, Best, it services, tech, startup, technology",
         type: "website",

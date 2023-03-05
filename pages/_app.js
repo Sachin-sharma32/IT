@@ -14,6 +14,7 @@ import Social from "../utils/Socials";
 import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
 import { useRouter } from "next/router";
 import { motion, useScroll } from "framer-motion";
+import Smooth from "../utils/Smooth";
 
 if (!global.setImmediate) {
     global.setImmediate = setTimeout;
@@ -24,7 +25,7 @@ function MyApp({ Component, pageProps }) {
     const { scrollYProgress } = useScroll();
 
     return (
-        <div className=" overflow-x-hidden font-poppins scroll-smooth bg-[#f8f8f8]">
+        <div className=" overflow-x-hidden font-roboto scroll-smooth bg-[#f8f8f8]">
             <Head>
                 <title>ITXcelerate - {pageProps.title}</title>
                 <link rel="icon" type="image/png" href={`/logo-3.png`} />
@@ -61,19 +62,21 @@ function MyApp({ Component, pageProps }) {
             </Head>
             <motion.div
                 style={{ scaleX: scrollYProgress }}
-                className="progress-bar z-50 rounded-full"
+                className="progress-bar z-[100] rounded-full"
             />
             <Provider store={store}>
                 <StyledEngineProvider injectFirst>
-                    {router.pathname === "/contact" ? "" : <Navbar />}
-                    <Component {...pageProps} />
-                    {router.pathname === "/" ||
-                    router.pathname === "/contact" ? (
-                        ""
-                    ) : (
-                        <Footer />
-                    )}
-                    <Social />
+                    <Smooth>
+                        {router.pathname === "/contact" ? "" : <Navbar />}
+                        <Component {...pageProps} />
+                        {router.pathname === "/" ||
+                        router.pathname === "/contact" ? (
+                            ""
+                        ) : (
+                            <Footer />
+                        )}
+                        <Social />
+                    </Smooth>
                 </StyledEngineProvider>
                 <div
                     className=" fixed bottom-4 right-6 text-white z-50 bg-black overflow-hidden rounded-full cursor-pointer scroll-smooth"

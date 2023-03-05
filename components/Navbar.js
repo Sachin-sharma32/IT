@@ -39,7 +39,7 @@ const Navbar = () => {
     const sections = [
         { name: "HOME", id: "home" },
         { name: "FEATURES", id: "features" },
-        { name: "ACHIEVEMENTS", id: "achievements" },
+        { name: "TECHNOLOGIES", id: "achievements" },
         { name: "TESTIMONIALS", id: "testimonials" },
         { name: "FAQs", id: "faqs" },
         { name: "PRICING", id: "pricing" },

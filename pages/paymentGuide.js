@@ -1,10 +1,11 @@
 import React from "react";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { motion } from "framer-motion";
+import Smooth from "../utils/Smooth";
 
 const PaymentGuide = () => {
     return (
-        <div>
+        <Smooth>
             <div className=" bg-cyan-500 h-[40vh] flex items-end">
                 <h1 className=" text-5xl text-white mb-10 ml-10 uppercase">
                     PAYMENT GUIDE FOR SUPPLIERS
@@ -124,19 +125,18 @@ const PaymentGuide = () => {
                     </h4>
                 </div>
             </div>
-        </div>
+        </Smooth>
     );
 };
 
 export default PaymentGuide;
-
 
 PaymentGuide.getInitialProps = async (context) => {
     return {
         title: "ITXcelerate - Payment Guide",
         image: "/logo-3.png",
         summery:
-        "At IT Xcelerate, we are dedicated to building and maintaining strong relationships with our suppliers. We understand that timely payment is essential to maintaining these relationships, and we have developed this Payment Guide for Suppliers to ensure that our payment processes are transparent, consistent, and efficient.",
+            "At IT Xcelerate, we are dedicated to building and maintaining strong relationships with our suppliers. We understand that timely payment is essential to maintaining these relationships, and we have developed this Payment Guide for Suppliers to ensure that our payment processes are transparent, consistent, and efficient.",
         keywords:
             "IT, ITXcelerate, Home, Best, it services, tech, startup, technology",
         type: "website",

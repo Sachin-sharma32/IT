@@ -31,7 +31,7 @@ const Header = ({ yOffset, prev }) => {
                     loop
                     className=" brightness-50 absolute w-full min-h-[1000px]"
                 >
-                    <source src="/video-2.mp4" type="video/mp4" />
+                    <source src="/video-1.mp4" type="video/mp4" />
                 </video>
                 <div className="mr-auto place-self-center lg:col-span-7">
                     <h1

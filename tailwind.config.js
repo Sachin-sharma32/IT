@@ -21,6 +21,7 @@ module.exports = {
                 heebo: "Heebo",
                 lobster: "Lobster",
                 poppins: "Poppins",
+                roboto: "Roboto",
             },
         },
     },

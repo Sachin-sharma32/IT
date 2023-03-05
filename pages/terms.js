@@ -1,8 +1,9 @@
 import React from "react";
+import Smooth from "../utils/Smooth";
 
 const Terms = () => {
     return (
-        <div>
+        <Smooth>
             <div className=" bg-orange-500 h-[40vh] flex items-end">
                 <h1 className=" text-5xl text-white mb-10 ml-10 uppercase">
                     TERMS TO USE
@@ -52,14 +53,14 @@ const Terms = () => {
                 <div>
                     <h2 className=" text-2xl">Disclaimer of Warranties</h2>
                     <p>
-                        Our website and its contents are provided &quot;as is&quot;
-                        without warranty of any kind, either express or implied,
-                        including, but not limited to, the implied warranties of
-                        merchantability, fitness for a particular purpose, or
-                        non-infringement. We do not warrant that our website
-                        will be uninterrupted or error-free, or that our website
-                        or its server is free of viruses or other harmful
-                        components.
+                        Our website and its contents are provided &quot;as
+                        is&quot; without warranty of any kind, either express or
+                        implied, including, but not limited to, the implied
+                        warranties of merchantability, fitness for a particular
+                        purpose, or non-infringement. We do not warrant that our
+                        website will be uninterrupted or error-free, or that our
+                        website or its server is free of viruses or other
+                        harmful components.
                     </p>
                 </div>
                 <div>
@@ -99,19 +100,18 @@ const Terms = () => {
                     </h4>
                 </div>
             </div>
-        </div>
+        </Smooth>
     );
 };
 
 export default Terms;
-
 
 Terms.getInitialProps = async (context) => {
     return {
         title: "ITXcelerate - Terms Of Use",
         image: "/logo-3.png",
         summery:
-        "We make every effort to ensure that the information on our website is accurate and up-to-date. However, we do not guarantee the accuracy, completeness, or reliability of any information on our website. We reserve the right to modify, update, or remove any content on our website without prior notice.",
+            "We make every effort to ensure that the information on our website is accurate and up-to-date. However, we do not guarantee the accuracy, completeness, or reliability of any information on our website. We reserve the right to modify, update, or remove any content on our website without prior notice.",
         keywords:
             "IT, ITXcelerate, Home, Best, it services, tech, startup, technology",
         type: "website",
