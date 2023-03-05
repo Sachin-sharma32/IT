@@ -278,7 +278,7 @@ const Navbar = () => {
                                     </li>
                                 </ul>
                             </div>
-                            <div className=" py-6 hidden md:flex flex-col">
+                            <div className=" py-6 hidden md:flex flex-col  w-full">
                                 <h3 className="mb-6 text-sm font-semibold  uppercase pl-2 text-center md:text-start">
                                     Help center
                                 </h3>

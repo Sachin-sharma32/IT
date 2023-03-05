@@ -42,7 +42,7 @@ export default function Social() {
             style={{ position: "fixed", bottom: 2, left: 2 }}
             className={`${
                 mode === "light" ? "" : ""
-            } flex h-12 bg-transparent w-10 z-50`}
+            } flex h-10 bg-transparent w-10 z-50`}
         >
             <SpeedDial
                 ariaLabel="SpeedDial basic example"
@@ -53,7 +53,7 @@ export default function Social() {
                             mode === "dark" ? "white" : "black"
                         }`,
                         color: `${mode === "dark" ? "black" : "white"}`,
-                        width: "40px",
+                        width: "37px",
                         height: "45px",
                     },
                 }}
