@@ -26,14 +26,14 @@ export default async function connection(req, res) {
                 userName: name,
                 adminName: "Sachin",
                 userEmail: email,
-                adminEmail: "sachin2sharma001@gmail.com",
+                adminEmail: "cnrahul.noble@gmail.com",
                 phone,
                 subject: "Query from existing connection.",
                 message: message,
             });
             return;
         }
-        const url = `http://localhost:3000/api/verify?name=${name}&email=${email}&company=${company}&phone=${phone}&message=${message}`;
+        const url = `https://www.itxcelerate.com//api/verify?name=${name}&email=${email}&company=${company}&phone=${phone}&message=${message}`;
         const newURL = url.replace(/ /g, "%20");
         sendEmail({
             email: email,

@@ -6,8 +6,8 @@ const alertEmail = (data) => {
     const transporter = nodemailer.createTransport({
         host: "smtp.zoho.in",
         auth: {
-            user: "contact@theblogforeverything.com",
-            pass: "Feb@2023",
+            user: "sachin.sharma@itxcelerate.com",
+            pass: "mhqZw4l*",
         },
     });
     console.log(transporter);
@@ -22,7 +22,7 @@ const alertEmail = (data) => {
     );
 
     const options = {
-        from: "contact@theblogforeverything.com",
+        from: "sachin.sharma@itxcelerate.com",
         to: data.adminEmail,
         subject: data.subject,
         html: emailHtml,

@@ -14,10 +14,7 @@ import * as React from "react";
 import { Column } from "@react-email/column";
 import { Row } from "@react-email/row";
 
-export default function Email({
-    username = "zenorocha",
-    link = "https://theblogforeverything.com",
-}) {
+export default function Email({ username = "zenorocha", link }) {
     return (
         <Html>
             <Head />
