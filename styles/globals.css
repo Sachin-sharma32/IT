@@ -211,10 +211,8 @@ a {
     background-position: center;
     background-repeat: no-repeat;
 }
-.header-4{
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(/texture-2.jpg);
+
+.header-4::-webkit-scrollbar{
+  width: 0;
+  height: 0;
 }

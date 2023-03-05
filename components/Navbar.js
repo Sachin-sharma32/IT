@@ -56,10 +56,10 @@ const Navbar = () => {
 
     const toggleShow = () => {
         setActive((curr) => !curr);
-        if (popupRef.current.classList.contains("-translate-y-[100vh]")) {
-            popupRef.current.classList.remove("-translate-y-[100vh]");
+        if (popupRef.current.classList.contains("-translate-y-[150vh]")) {
+            popupRef.current.classList.remove("-translate-y-[150vh]");
         } else {
-            popupRef.current.classList.add("-translate-y-[100vh]");
+            popupRef.current.classList.add("-translate-y-[150vh]");
         }
     };
 
@@ -117,7 +117,7 @@ const Navbar = () => {
                         <div className="flex items-center lg:order-2 gap-2 bg-white">
                             <Link
                                 href="/contact"
-                                className=" z-50 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
+                                className=" z-50 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 md:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
                             >
                                 Let&apos;s Talk
                             </Link>
@@ -125,10 +125,10 @@ const Navbar = () => {
                                 <button
                                     data-collapse-toggle="mobile-menu-2"
                                     type="button"
-                                    className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                                    className="inline-flex z-50 items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-200 dark:text-black hover:text-white transition-all duration-300 dark:hover:bg-purple-500 dark:focus:ring-purple-500"
                                     aria-controls="mobile-menu-2"
                                     aria-expanded="false"
-                                    onClick={handleContainer}
+                                    onClick={toggleShow}
                                 >
                                     <span className="sr-only">
                                         Open main menu
@@ -213,22 +213,22 @@ const Navbar = () => {
                     </div>
                     <div
                         ref={popupRef}
-                        className=" h-[50vh] z-40 -translate-y-[100vh] gap-4 transition-all duration-500 absolute top-16 w-[100%] bg-white overflow-hidden"
+                        className="h-screen md:h-[50vh] z-40 -translate-y-[150vh] gap-4 transition-all duration-500 absolute top-16 w-[100%] bg-white overflow-hidden"
                     >
-                        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5 justify-items-center z-50 h-full">
-                            <div className=" col-span-2">
+                        <div className="md:grid gap-2 md:gap-4 md:grid-cols-5 lg:grid-cols-5 px-4 md:px-0 pt-20 md:pt-0 justify-items-center text-lg z-50 h-full md:flex-none  flex md:justify-start justify-center">
+                            <div className=" col-span-2 hidden md:flex">
                                 <img
                                     src="/bs-5.jpg"
                                     className=" h-full w- col-span-3"
                                     alt=""
                                 />
                             </div>
-                            <div className=" py-6 w-full">
-                                <h3 className="mb-6 text-sm font-semibold  uppercase pl-2">
+                            <div className=" py-6 pr-4 text-center md:text-start">
+                                <h3 className="mb-6 text-sm font-semibold  uppercase pl-2  text-center md:text-start">
                                     Company
                                 </h3>
-                                <ul className="text-gray-500 dark:text-gray-400">
-                                    <li className="mb-4 w-[500px]">
+                                <ul className="text-gray-500 dark:text-gray-400 grid md:grid-cols-1 md:justify-items-start justify-items-center w-full">
+                                    <li className="mb-4 md:w-[500px]">
                                         <Link
                                             href="/next"
                                             className="link transition-all duration-500 px-2 py-1 w-[500px]"
@@ -278,11 +278,11 @@ const Navbar = () => {
                                     </li>
                                 </ul>
                             </div>
-                            <div className=" py-6 w-full">
-                                <h3 className="mb-6 text-sm font-semibold  uppercase dark: pl-2">
+                            <div className=" py-6 hidden md:flex flex-col">
+                                <h3 className="mb-6 text-sm font-semibold  uppercase pl-2 text-center md:text-start">
                                     Help center
                                 </h3>
-                                <ul className="text-gray-500 dark:text-gray-400">
+                                <ul className="text-gray-500 dark:text-gray-400 grid md:grid-cols-1 md:justify-items-start justify-items-center">
                                     <li className="mb-4">
                                         <a
                                             href="https://t.me/+RveSAODvj0hjYTZl"
@@ -333,11 +333,11 @@ const Navbar = () => {
                                     </li>
                                 </ul>
                             </div>
-                            <div className=" py-6 w-full pr-4">
+                            <div className=" py-6 pr-4 text-center md:text-start">
                                 <h3 className="mb-6 text-sm font-semibold  uppercase dark: pl-2">
                                     Legal
                                 </h3>
-                                <ul className="text-gray-500 dark:text-gray-400">
+                                <ul className="text-gray-500 dark:text-gray-400 grid md:grid-cols-1 md:justify-items-start justify-items-center">
                                     <li className="mb-4">
                                         <Link
                                             href="/privacy"
@@ -346,10 +346,10 @@ const Navbar = () => {
                                             Privacy Policy
                                         </Link>
                                     </li>
-                                    <li className="mb-4 w-[400px]">
+                                    <li className="mb-4 md:w-[400px]">
                                         <Link
                                             href="/trademarks"
-                                            className="link transition-all duration-500 px-2 py-1 w-[400px]"
+                                            className="link transition-all duration-500 px-2 py-1 md:w-[400px]"
                                         >
                                             Trademarks
                                         </Link>

@@ -61,7 +61,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
     return (
         <section
             ref={header5Ref}
-            className=" z-40 md:h-[320vh] h-[200vh]  lg:h-[420vh] relative flex justify-center  text-white bg-gradient-to-tr from-green-200 to-green-700 path-top"
+            className=" z-40 md:h-[320vh] h-[200vh]  lg:h-[420vh] relative flex justify-center  text-black bg-gradient-to-tr from-green-50 to-green-100 path-top"
             id="testimonials"
         >
             <div
@@ -88,7 +88,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     className={` flex flex-col justify-center  w-[100vw] items-center absolute top-1/2 -translate-y-1/2 -translate-x-1/2 `}
                 >
                     <svg
-                        className="h-12 mx-auto mb-3 text-white"
+                        className="h-12 mx-auto mb-3 text-black"
                         viewBox="0 0 24 27"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +99,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                         />
                     </svg>
                     <blockquote>
-                        <p className="text-base font-medium text-white md:text-2xl w-[90vw]">
+                        <p className="text-base font-medium text-black md:text-2xl w-[90vw]">
                             &quot;Working with IT Xcelerate was a game-changer
                             for my business. They developed a custom software
                             solution that streamlined our operations and
@@ -110,10 +110,10 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     </blockquote>
                     <figcaption className="flex items-center justify-center mt-6 space-x-3">
                         <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                            <div className="pr-3 font-medium text-white ">
+                            <div className="pr-3 font-medium text-black ">
                                 John D.
                             </div>
-                            <div className="pl-3 text-sm font-light text-white">
+                            <div className="pl-3 text-sm font-light text-black">
                                 CEO of Reddhr
                             </div>
                         </div>
@@ -127,7 +127,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[60vw]`}
                 >
                     <svg
-                        className="h-12 mx-auto mb-3 text-white text-white"
+                        className="h-12 mx-auto mb-3 text-black text-black"
                         viewBox="0 0 24 27"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +138,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                         />
                     </svg>
                     <blockquote>
-                        <p className="text-base font-medium text-white md:text-2xl w-[90vw]">
+                        <p className="text-base font-medium text-black md:text-2xl w-[90vw]">
                             &quot;sachin is just awesome. It contains tons of
                             predesigned components and pages starting from login
                             screen to complex dashboard. Perfect choice for your
@@ -147,10 +147,10 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     </blockquote>
                     <figcaption className="flex items-center justify-center mt-6 space-x-3">
                         <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                            <div className="pr-3 font-medium text-white ">
+                            <div className="pr-3 font-medium text-black ">
                                 Micheal Gough
                             </div>
-                            <div className="pl-3 text-sm font-light text-white">
+                            <div className="pl-3 text-sm font-light text-black">
                                 CEO at Google
                             </div>
                         </div>
@@ -164,7 +164,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[160vw]`}
                 >
                     <svg
-                        className="h-12 mx-auto mb-3 text-white text-white"
+                        className="h-12 mx-auto mb-3 text-black text-black"
                         viewBox="0 0 24 27"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +175,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                         />
                     </svg>
                     <blockquote>
-                        <p className="text-base font-medium text-white md:text-2xl w-[90vw]">
+                        <p className="text-base font-medium text-black md:text-2xl w-[90vw]">
                             &quot;IT Xcelerate has been an invaluable partner
                             for our business. They have helped us navigate
                             complex IT challenges and provided us with
@@ -188,10 +188,10 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     </blockquote>
                     <figcaption className="flex items-center justify-center mt-6 space-x-3">
                         <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                            <div className="pr-3 font-medium text-white ">
+                            <div className="pr-3 font-medium text-black ">
                                 Tom L.
                             </div>
-                            <div className="pl-3 text-sm font-light text-white">
+                            <div className="pl-3 text-sm font-light text-black">
                                 COO of JKL Logistics
                             </div>
                         </div>
@@ -205,7 +205,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[260vw]`}
                 >
                     <svg
-                        className="h-12 mx-auto mb-3 text-white text-white"
+                        className="h-12 mx-auto mb-3 text-black text-black"
                         viewBox="0 0 24 27"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -216,7 +216,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                         />
                     </svg>
                     <blockquote>
-                        <p className="text-base font-medium text-white md:text-2xl w-[90vw]">
+                        <p className="text-base font-medium text-black md:text-2xl w-[90vw]">
                             &quot;I was impressed with IT Xcelerate&apos;s
                             attention to detail and ability to understand our
                             unique business needs. They provided us with a
@@ -229,10 +229,10 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     </blockquote>
                     <figcaption className="flex items-center justify-center mt-6 space-x-3">
                         <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                            <div className="pr-3 font-medium text-white ">
+                            <div className="pr-3 font-medium text-black ">
                                 Rachel S.
                             </div>
-                            <div className="pl-3 text-sm font-light text-white">
+                            <div className="pl-3 text-sm font-light text-black">
                                 Owner of GHI Restaurant
                             </div>
                         </div>
@@ -246,7 +246,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[360vw]`}
                 >
                     <svg
-                        className="h-12 mx-auto mb-3 text-white text-white"
+                        className="h-12 mx-auto mb-3 text-black text-black"
                         viewBox="0 0 24 27"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -257,7 +257,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                         />
                     </svg>
                     <blockquote>
-                        <p className="text-base font-medium text-white md:text-2xl w-[90vw]">
+                        <p className="text-base font-medium text-black md:text-2xl w-[90vw]">
                             &quot;I&apos;ve been working with IT Xcelerate for
                             years and they have consistently provided
                             high-quality IT support and solutions. Their team is
@@ -269,10 +269,10 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     </blockquote>
                     <figcaption className="flex items-center justify-center mt-6 space-x-3">
                         <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                            <div className="pr-3 font-medium text-white ">
+                            <div className="pr-3 font-medium text-black ">
                                 Mark R.
                             </div>
-                            <div className="pl-3 text-sm font-light text-white">
+                            <div className="pl-3 text-sm font-light text-black">
                                 CFO of TBFE
                             </div>
                         </div>
@@ -286,7 +286,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[460vw]`}
                 >
                     <svg
-                        className="h-12 mx-auto mb-3 text-white text-white"
+                        className="h-12 mx-auto mb-3 text-black text-black"
                         viewBox="0 0 24 27"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -297,7 +297,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                         />
                     </svg>
                     <blockquote>
-                        <p className="text-base font-medium text-white md:text-2xl w-[90vw]">
+                        <p className="text-base font-medium text-black md:text-2xl w-[90vw]">
                             &quot;IT Xcelerate exceeded my expectations for our
                             web development project. They not only created a
                             beautiful and functional website, but they also
@@ -308,10 +308,10 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     </blockquote>
                     <figcaption className="flex items-center justify-center mt-6 space-x-3">
                         <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                            <div className="pr-3 font-medium text-white ">
+                            <div className="pr-3 font-medium text-black ">
                                 Sarah T.
                             </div>
-                            <div className="pl-3 text-sm font-light text-white">
+                            <div className="pl-3 text-sm font-light text-black">
                                 Marketing Manager at MulberryStudio
                             </div>
                         </div>

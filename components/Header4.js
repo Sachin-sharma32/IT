@@ -10,6 +10,7 @@ const Header4 = ({ yOffset, prev }) => {
     const sliderRef = useRef();
     const [count, setCount] = useState(0);
     console.log(count);
+    const imageRef = useRef(null);
     const data = [
         { name: "Python", image: "/python.png" },
         { name: "Docker", image: "/docker.png" },
@@ -29,9 +30,10 @@ const Header4 = ({ yOffset, prev }) => {
         { name: "Firebase", image: "/firebase.png" },
         { name: ".NET", image: "/net.png" },
     ];
+
     return (
         <section
-            className="z-30 px-10 bg-[#f8f8f8] py-20"
+            className="z-30 px-10 bg-gradient-to-tr py-20 w-[100%]"
             id="achievements"
             ref={ref}
         >
@@ -39,16 +41,21 @@ const Header4 = ({ yOffset, prev }) => {
                 <h3 className=" text-3xl font-bold text-center px-4 sm:px-0">
                     Web App Technologies We Use
                 </h3>
-                <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+                <div className="sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 flex overflow-x-scroll header-4 w-screen px-10 py-4">
                     {data.map((item, i) => (
                         <motion.div
                             animate={{ y: [100, 0] }}
                             transition={{ duration: 1 }}
                             key={i}
-                            className="bg-white shadow-lg rounded-lg p-10 flex gap-2 flex-col items-center cursor-default hover:scale-110 transition-all duration-500 hover:-translate-y-4"
+                            className=" shadow-lg rounded-lg p-10 flex gap-2 min-w-[250px] flex-col items-center hover:text-purple-500 cursor-default grayscale hover:scale-110 transition-all hover:grayscale-0 duration-500 hover:-translate-y-4"
                         >
                             <div className=" bg-purple-100 p-10 rounded-full">
-                                <img src={item.image} alt="" className="w-12" />
+                                <img
+                                    ref={imageRef}
+                                    src={item.image}
+                                    alt=""
+                                    className="w-12 transition-all duration-300"
+                                />
                             </div>
                             <h5 className="text-2xl uppercase">{item.name}</h5>
                         </motion.div>

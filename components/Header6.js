@@ -65,7 +65,7 @@ const Header6 = ({ yOffset, prev }) => {
     return (
         <section
             ref={containerRef}
-            className=" z-30 h-fit flex items-center bg-gradient-to-tr from-green-200 to-green-700"
+            className=" z-30 h-fit flex items-center bg-gradient-to-tr from-green-50 to-green-100"
             id="faqs"
         >
             <div className="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-24 lg:px-6 flex justify-center flex-col py-20">
@@ -81,7 +81,7 @@ const Header6 = ({ yOffset, prev }) => {
                               }
                             : {}
                     }
-                    className="mb-6 text-3xl px-10 font-extrabold tracking-tight text-center z-0 text-white lg:mb-8 lg:text-3xl "
+                    className="mb-6 text-3xl px-10 font-extrabold tracking-tight text-center z-0 text-black lg:mb-8 lg:text-3xl "
                 >
                     Frequently asked questions
                 </h2>
@@ -108,11 +108,11 @@ const Header6 = ({ yOffset, prev }) => {
                                       }
                                     : {}
                             }
-                            className="bg-inherit  py-4 text-white"
+                            className="bg-inherit  py-4 text-black"
                         >
                             <AccordionSummary
                                 expandIcon={
-                                    <ExpandMoreIcon className=" text-white" />
+                                    <ExpandMoreIcon className=" text-black" />
                                 }
                             >
                                 <div>{item.title}</div>

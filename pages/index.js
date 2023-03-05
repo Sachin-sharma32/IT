@@ -54,7 +54,7 @@ const Home = () => {
                 <Header6 yOffset={yOffset} prev={prev} />
                 <section
                     ref={newRef}
-                    className=" min-h-[100vh]  overflow-hidden z-40  header-4 "
+                    className=" min-h-[100vh]  overflow-hidden z-40 bg-gradient-to-tr from-blue-50 to-blue-100"
                     id="pricing"
                 >
                     <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
@@ -72,10 +72,10 @@ const Home = () => {
                             }
                             className="max-w-screen-md px-14 mx-auto mb-8 text-center lg:mb-12 "
                         >
-                            <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-white">
+                            <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-black">
                                 Designed for business teams like yours
                             </h2>
-                            <p className=" mb-5 font-light text-white sm:text-xl ">
+                            <p className=" mb-5 font-light text-black sm:text-xl ">
                                 Here at Landwind we focus on markets where
                                 technology, innovation, and capital can unlock
                                 long-term value and drive economic growth.
