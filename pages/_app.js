@@ -79,7 +79,7 @@ function MyApp({ Component, pageProps }) {
                     </Smooth>
                 </StyledEngineProvider>
                 <div
-                    className=" fixed bottom-[16px] right-6 text-white z-50 bg-black overflow-hidden rounded-full cursor-pointer scroll-smooth"
+                    className=" fixed bottom-[16px] hidden sm:flex right-6 text-white z-50 bg-black overflow-hidden rounded-full cursor-pointer scroll-smooth"
                     onClick={() => {
                         window.scrollTo({
                             top: 0,
