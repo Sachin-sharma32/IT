@@ -66,8 +66,8 @@ const About = () => {
                         <div
                             key={i}
                             className={`${
-                                i % 2 === 0 ? "flex-row-reverse" : ""
-                            } relative h-fit w-fit flex items-center flex-col md:flex-row`}
+                                i % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
+                            } relative h-fit w-fit flex items-center flex-col `}
                         >
                             {i % 2 === 0 ? (
                                 <motion.img
