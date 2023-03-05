@@ -11,7 +11,7 @@ const Footer = () => {
         <footer className=" z-50 bg-[#282828] text-white px-10">
             <div className="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10 z-50">
                 <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-3 justify-items-center z-50">
-                    <div className=" w-full">
+                    <div className=" w-full sm:w-fit">
                         <h3 className="mb-6 text-sm font-semibold  uppercase">
                             Company
                         </h3>
