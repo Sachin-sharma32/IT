@@ -5,11 +5,24 @@ import Image from "next/image";
 import useOnScreen from "../utils/useOnScreen";
 import { useRouter } from "next/router";
 import CloseIcon from "@mui/icons-material/Close";
+import { client } from "../sanity";
+import query from "../queries/getAllPosts";
+import { useDispatch } from "react-redux";
+import { setPosts } from "../redux/slices";
 
 const Navbar = () => {
     const [active, setActive] = useState(0);
     const [open, setOpen] = useState(false);
     const containerRef = useRef();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const data = async () => {
+            const posts = await client.fetch(query);
+            dispatch(setPosts(posts));
+        };
+        data();
+    }, []);
 
     const router = useRouter();
     console.log(router.pathname);
@@ -216,13 +229,21 @@ const Navbar = () => {
                         className="h-screen md:h-[50vh] z-40 -translate-y-[150vh] gap-4 transition-all duration-500 absolute top-16 w-[100%] bg-white overflow-hidden"
                     >
                         <div className="md:grid gap-2 md:gap-4 md:grid-cols-5 lg:grid-cols-5 px-4 md:px-0 pt-20 md:pt-0 justify-items-center text-lg z-50 h-full md:flex-none  flex md:justify-start justify-center">
-                            <div className=" col-span-2 hidden md:flex">
+                            <Link
+                                href={"/blog"}
+                                className=" col-span-2 hidden md:flex relative"
+                            >
                                 <img
                                     src="/bs-5.jpg"
-                                    className=" h-full w- col-span-3"
+                                    className=" h-full w- col-span-3 brightness-50"
                                     alt=""
                                 />
-                            </div>
+                                <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                    <h3 className=" text-white text-5xl link transition-all duration-500 cursor-pointer px-4">
+                                        BLOG
+                                    </h3>
+                                </div>
+                            </Link>
                             <div className=" py-6 pr-4 text-center md:text-start">
                                 <h3 className="mb-6 text-sm font-semibold  uppercase pl-2  text-center md:text-start">
                                     Company
@@ -271,7 +292,7 @@ const Navbar = () => {
                                     <li className="mb-4">
                                         <Link
                                             href="/blog"
-                                            className="link transition-all duration-500 px-2 py-1"
+                                            className="link bg-green-200 text-black transition-all duration-500 px-2 py-1"
                                         >
                                             Blog
                                         </Link>

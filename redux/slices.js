@@ -4,6 +4,7 @@ const initialState = {
     error: false,
     success: false,
     message: "",
+    posts: [],
 };
 
 const baseSlice = createSlice({
@@ -19,8 +20,12 @@ const baseSlice = createSlice({
         setMessage: (state, action) => {
             state.message = action.payload;
         },
+        setPosts: (state, action) => {
+            state.posts = action.payload;
+            console.log(state.posts);
+        },
     },
 });
 
-const { setError, setSuccess, setMessage } = baseSlice.actions;
+export const { setError, setSuccess, setMessage, setPosts } = baseSlice.actions;
 export default baseSlice.reducer;
