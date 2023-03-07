@@ -85,7 +85,7 @@ const Navbar = () => {
                         : { transform: `translateY(0px)` }
                 }
                 className={`
-                  bg-white h-16 border-gray-200 fixed top-0 left-0 w-full transition-all duration-500 border-b `}
+                  b h-16 border-gray-200 fixed top-0 left-0 w-full transition-all duration-500 border-b `}
                 ref={newRef}
             >
                 <div className=" h-full relative">
@@ -119,10 +119,10 @@ const Navbar = () => {
                         ))}
                     </div>
                     <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto h-full overflow-hidden bg-white">
-                        <Link href="/" className="h-[20px] bg-white z-50">
+                        <Link href="/" className="h-[20px] bg-white ">
                             <img
                                 src="/logo-2.png"
-                                className=" w-48  absolute -top-[67px] left-4 z-50"
+                                className=" w-48  absolute -top-[67px] left-4 "
                                 alt="ITXcelerate logo"
                             />
                         </Link>
@@ -130,7 +130,7 @@ const Navbar = () => {
                         <div className="flex items-center lg:order-2 gap-2 bg-white">
                             <Link
                                 href="/contact"
-                                className=" z-50 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 md:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
+                                className=" rounded-full  text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium  text-sm px-4 lg:px-5 py-2 lg:py-2.5 md:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
                             >
                                 Let&apos;s Talk
                             </Link>
@@ -138,7 +138,7 @@ const Navbar = () => {
                                 <button
                                     data-collapse-toggle="mobile-menu-2"
                                     type="button"
-                                    className="inline-flex z-50 items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-200 dark:text-black hover:text-white transition-all duration-300 dark:hover:bg-purple-500 dark:focus:ring-purple-500"
+                                    className="inline-flex  items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-200 dark:text-black hover:text-white transition-all duration-300 dark:hover:bg-purple-500 dark:focus:ring-purple-500"
                                     aria-controls="mobile-menu-2"
                                     aria-expanded="false"
                                     onClick={toggleShow}
@@ -174,7 +174,7 @@ const Navbar = () => {
                             )}
                         </div>
                         <div
-                            className="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1 z-50 h-full bg-white"
+                            className="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1  h-full bg"
                             id="mobile-menu-2"
                         >
                             {router.pathname === "/" && (
@@ -226,9 +226,9 @@ const Navbar = () => {
                     </div>
                     <div
                         ref={popupRef}
-                        className="h-screen md:h-[50vh] z-40 -translate-y-[150vh] gap-4 transition-all duration-500 absolute top-16 w-[100%] bg-white overflow-hidden"
+                        className="h-screen md:h-[50vh]  -translate-y-[150vh] gap-4 transition-all duration-500 absolute top-16 w-[100%] bg-white overflow-hidden"
                     >
-                        <div className="md:grid gap-2 md:gap-4 md:grid-cols-5 lg:grid-cols-5 px-4 md:px-0 pt-20 md:pt-0 justify-items-center text-lg z-50 h-full md:flex-none  flex md:justify-start justify-center">
+                        <div className="md:grid gap-2 md:gap-4 md:grid-cols-5 lg:grid-cols-5 px-4 md:px-0 pt-20 md:pt-0 justify-items-center text-lg  h-full md:flex-none  flex md:justify-start justify-center">
                             <Link
                                 href={"/blog"}
                                 className=" col-span-2 hidden md:flex relative"

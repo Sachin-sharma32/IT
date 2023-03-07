@@ -22,6 +22,7 @@ module.exports = {
                 lobster: "Lobster",
                 poppins: "Poppins",
                 roboto: "Roboto",
+                tungsten: "Tungsten",
             },
         },
     },

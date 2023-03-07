@@ -57,6 +57,16 @@ const Home = () => {
                     className=" min-h-[100vh]  overflow-hidden z-40 bg-gradient-to-tr from-blue-50 to-blue-100"
                     id="pricing"
                 >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 1440 320"
+                    >
+                        <path
+                            fill="#d9cdf6"
+                            fill-opacity="1"
+                            d="M0,192L30,208C60,224,120,256,180,245.3C240,235,300,181,360,154.7C420,128,480,128,540,154.7C600,181,660,235,720,266.7C780,299,840,309,900,282.7C960,256,1020,192,1080,176C1140,160,1200,192,1260,197.3C1320,203,1380,181,1410,170.7L1440,160L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"
+                        ></path>
+                    </svg>
                     <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
                         <div
                             style={
@@ -76,7 +86,7 @@ const Home = () => {
                                 Designed for business teams like yours
                             </h2>
                             <p className=" mb-5 font-light text-black sm:text-xl ">
-                                Here at Landwind we focus on markets where
+                                Here at ITXcelerate we focus on markets where
                                 technology, innovation, and capital can unlock
                                 long-term value and drive economic growth.
                             </p>
@@ -799,6 +809,16 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 1440 320"
+                    >
+                        <path
+                            fill="#282828"
+                            fill-opacity="1"
+                            d="M0,192L30,208C60,224,120,256,180,245.3C240,235,300,181,360,154.7C420,128,480,128,540,154.7C600,181,660,235,720,266.7C780,299,840,309,900,282.7C960,256,1020,192,1080,176C1140,160,1200,192,1260,197.3C1320,203,1380,181,1410,170.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+                        ></path>
+                    </svg>
                 </section>
                 <Footer />
             </div>

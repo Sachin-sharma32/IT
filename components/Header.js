@@ -7,16 +7,16 @@ import { motion } from "framer-motion";
 
 const Header = ({ yOffset, prev }) => {
     const ref = useRef(null);
-    const videoRef = useRef(null);
-    useEffect(() => {
-        videoRef.current.playbackRate = ".9";
-    }, []);
+    // const videoRef = useRef(null);
+    // useEffect(() => {
+    //     videoRef.current.playbackRate = ".9";
+    // }, []);
 
     return (
         <section
             ref={ref}
             className={`${
-                yOffset < 700 ? "" : "opacity-0"
+                yOffset < 1000 ? "" : "opacity-0"
             } bg-gradient-to-b from-blue-200 to-green-200 min-h-screen fixed left-0 top-0 z-10 w-screen text-white bg-inherit`}
         >
             <motion.div
@@ -24,7 +24,7 @@ const Header = ({ yOffset, prev }) => {
                 whileInView={{ y: [0, 0], opacity: 1 }}
                 className="flex justify-center items-center h-screen w-full sm:p-20 p-6 z-10 relative"
             >
-                <video
+                {/* <video
                     ref={videoRef}
                     autoPlay
                     muted
@@ -32,11 +32,17 @@ const Header = ({ yOffset, prev }) => {
                     className=" brightness-50 absolute w-full min-h-[1000px]"
                 >
                     <source src="/video-1.mp4" type="video/mp4" />
-                </video>
+                </video> */}
+                <img
+                    src="/bs-9.jpg"
+                    className={`absolute w-full min-h-[1000px] brightness-50`}
+                    style={{ transform: `scale(${yOffset * 0.05 + 100}%)` }}
+                    alt=""
+                />
                 <div className="mr-auto place-self-center lg:col-span-7">
                     <h1
-                        style={{ transform: `translateY(${yOffset}px)` }}
-                        className=" mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white z-50"
+                        style={{ transform: `translateY(-${yOffset * 0.5}px)` }}
+                        className=" mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white z-50 "
                     >
                         <span className="text-purple-500">Accelerating</span>{" "}
                         your digital <br />
