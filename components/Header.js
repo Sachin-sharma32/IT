@@ -34,7 +34,7 @@ const Header = ({ yOffset, prev }) => {
                     <source src="/video-1.mp4" type="video/mp4" />
                 </video> */}
                 <img
-                    src="/bs-9.jpg"
+                    src="/im-1.jpg"
                     className={`absolute w-full min-h-[1000px] brightness-50`}
                     style={{ transform: `scale(${yOffset * 0.05 + 100}%)` }}
                     alt=""

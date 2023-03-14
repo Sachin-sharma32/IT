@@ -14,6 +14,7 @@ import EastIcon from "@mui/icons-material/East";
 import Link from "next/link";
 import Header7 from "../components/Header-7";
 import { motion } from "framer-motion";
+import Scrollbar from "smooth-scrollbar";
 
 const Home = () => {
     const [yOffset, setYOffset] = useState(0);
