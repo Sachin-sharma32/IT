@@ -22,7 +22,7 @@ export default function Email({ username = "zenorocha", link }) {
             <Body style={main}>
                 <Container style={container}>
                     <Section style={{}}>
-                        <Img
+                        <Image width={100} height={100} 
                             src={`https://theblogforeverything.s3.amazonaws.com/celerate.jpg`}
                             alt="Vercel"
                             style={logo}
@@ -41,7 +41,7 @@ export default function Email({ username = "zenorocha", link }) {
                         {/* <Section>
                             <Row>
                                 <Column align="right">
-                                    <Img
+                                    <Image width={100} height={100} 
                                         style={avatar}
                                         src={
                                             "https://static.vecteezy.com/system/resources/thumbnails/003/683/447/small/line-stripes-x-alphabet-letter-logo-icon-for-business-and-company-simple-black-and-white-letter-design-for-identity-vector.jpg"
@@ -51,7 +51,7 @@ export default function Email({ username = "zenorocha", link }) {
                                     />
                                 </Column>
                                 <Column align="center">
-                                    <Img
+                                    <Image width={100} height={100} 
                                         src={`https://theblogforeverything.s3.amazonaws.com/pngwing.com+(1).png`}
                                         width="50"
                                         height="50"
@@ -59,7 +59,7 @@ export default function Email({ username = "zenorocha", link }) {
                                     />
                                 </Column>
                                 <Column align="left">
-                                    <Img
+                                    <Image width={100} height={100} 
                                         style={avatar}
                                         src={
                                             "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/dtokjerhk1dxyludtlwc"

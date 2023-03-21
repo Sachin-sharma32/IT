@@ -1,5 +1,4 @@
 import { render } from "@react-email/render";
-import nodemailer from "nodemailer";
 import Email from "../../react-email-starter/emails/yelp";
 import sendEmail from "../../utils/verifyEmail";
 import createConnection from "../../utils/mongoose";

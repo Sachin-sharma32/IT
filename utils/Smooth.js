@@ -6,7 +6,7 @@ const Smooth = ({ children }) => {
         <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 2 }}
+            transition={{ duration: 1 }}
         >
             {children}
         </motion.div>

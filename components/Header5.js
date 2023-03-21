@@ -1,338 +1,313 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import useOnScreen from "../utils/useOnScreen";
 import { motion } from "framer-motion";
+import { gsap, Power1 } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+import Image from "next/image";
+import { QuotePara } from "../utils/Styles";
+import { Rating } from "@mui/material";
 
 const Header5 = ({ yOffset, header5Ref }) => {
-    const childRef = useRef(null);
-    const isOnScreen = useOnScreen(header5Ref);
-    console.log(header5Ref.current?.getBoundingClientRect().top);
-    useEffect(() => {
-        if (
-            header5Ref.current.getBoundingClientRect().bottom -
-                window.innerHeight <
-            0
-        ) {
-            childRef.current.classList.remove("fixed");
-            childRef.current.classList.add("absolute");
-            childRef.current.classList.remove("top-0");
-            childRef.current.classList.add("bottom-0");
-        } else if (header5Ref.current.getBoundingClientRect().top < 0) {
-            childRef.current.classList.add("fixed");
-            childRef.current.classList.remove("absolute");
-            childRef.current.classList.add("bottom-0");
-            childRef.current.classList.add("top-0");
-        } else {
-            childRef.current.classList.remove("fixed");
-            childRef.current.classList.remove("bottom-0");
-        }
-    }, [yOffset]);
-    const data = [
-        {
-            title: "&quot;Working with IT Xcelerate was a game-changer for my business. They developed a custom software solution that streamlined our operations and increased our efficiency. The team was professional, responsive, and delivered the project on time and on budget. I highly recommend their services!&quot;",
-            author: "John D.",
-            position: "CEO of Reddhr",
-        },
-        {
-            title: "&quot;sachin is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS sachin.&quot;",
-            author: "Micheal Gough",
-            position: "CEO of Google",
-        },
-        {
-            title: "&quot;IT Xcelerate has been an invaluable partner for our business. They have helped us navigate complex IT challenges and provided us with innovative solutions to improve our operations. Their team is professional, knowledgeable, and always goes the extra mile to ensure our satisfaction. I highly recommend IT Xcelerate to any business looking for top-notch IT services.&quot;",
-            author: "Tom L.",
-            position: "COO of JKL Logistics",
-        },
-        {
-            title: "&quot;I was impressed with IT Xcelerate&apos;s attention to detail and ability to understand our unique business needs. They provided us with a customized mobile app that has been a game-changer for our customer engagement and retention. I would recommend IT Xcelerate to any business looking to leverage technology to improve their operations..&quot;",
-            author: "Rachel S.",
-            position: "Owner of GHI Restaurant",
-        },
-        {
-            title: "&quot;I&apos;ve been working with IT Xcelerate for years and they have consistently provided high-quality IT support and solutions. Their team is knowledgeable, responsive, and always goes above and beyond to ensure our technology needs are met. I highly recommend IT Xcelerate to any business looking for reliable IT services.&quot;",
-            author: "Mark R.",
-            position: "CFO of TBFE",
-        },
-        {
-            title: "  &quot;IT Xcelerate exceeded my expectations for our web development project. They not only created a beautiful and functional website, but they also provided excellent customer service throughout the entire process. I would definitely use them again for future projects.&quot;",
-            author: "Sarah T.",
-            position: "Marketing Manager at MulberryStudio",
-        },
-    ];
-    return (
-        <div className="path-top">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path
-                    className=" fill-green-100"
-                    fill-opacity="1"
-                    d="M0,160L30,170.7C60,181,120,203,180,218.7C240,235,300,245,360,250.7C420,256,480,256,540,245.3C600,235,660,213,720,186.7C780,160,840,128,900,106.7C960,85,1020,75,1080,101.3C1140,128,1200,192,1260,213.3C1320,235,1380,213,1410,202.7L1440,192L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
-                ></path>
-            </svg>
-            <section
-                ref={header5Ref}
-                className=" z-40 md:h-[320vh] h-[200vh]  lg:h-[420vh] relative flex justify-center  text-black bg-green-100"
-                id="testimonials"
-            >
-                <div
-                    ref={childRef}
-                    style={
-                        header5Ref.current?.getBoundingClientRect().top <= 0
-                            ? {
-                                  transform: `${`translateX(${
-                                      header5Ref.current?.getBoundingClientRect()
-                                          .top * 3
-                                  }px)`}`,
-                              }
-                            : {
-                                  transform: `${`translateX(0px)`}`,
-                              }
-                    }
-                    className=" flex top-0 h-screen gap-10"
+  const ref = useRef(null);
+  const [num, setNum] = useState(0);
+  // useEffect(()=>{
+  //     if(typeof window !== 'undefined'){
+  //         const sections = gsap.utils.toArray(".section");
+  //         gsap.to(sections,{
+  //             xPercent: -100 * (sections.length - 1),
+  //             ease: "none",
+  //             scrollTrigger: {
+  //                 trigger: ".container",
+  //                 pin:true,
+  //                 scrub:1,
+  //                 end: "+=100",
+  //             }
+  //         });
+  //     }
+  // },[])
+  useEffect(() => {
+    const t1 = gsap.to(".header5", {
+      scrollTrigger: {
+        trigger: ".header5",
+        scroller: "body",
+        start: "top bottom",
+      },
+      y: 0,
+      rotate: 0,
+      duration: 0.05,
+      stagger: 0.05,
+    });
+    gsap.to(".header5Text", {
+      scrollTrigger: {
+        trigger: ".header5Text",
+        scroller: "body",
+        start: "top center",
+      },
+      y: 0,
+      rotate: 0,
+      duration: 1,
+      stagger: 0.05,
+    });
+    return () => {
+      t1.kill();
+    };
+  }, []);
+  const data = [
+    {
+      title:
+        "Working with IT Xcelerate was a game-changer for my business. They developed a custom software solution that streamlined our operations and increased our efficiency. The team was professional, responsive, and delivered the project on time and on budget. I highly recommend their services!",
+      author: "John D.",
+      position: "CEO of Reddhr",
+    },
+    {
+      title:
+        "sachin is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS sachin.",
+      author: "Micheal Gough",
+      position: "CEO of Google",
+    },
+    {
+      title:
+        "IT Xcelerate has been an invaluable partner for our business. They have helped us navigate complex IT challenges and provided us with innovative solutions to improve our operations. Their team is professional, knowledgeable, and always goes the extra mile to ensure our satisfaction. I highly recommend IT Xcelerate to any business looking for top-notch IT services.",
+      author: "Tom L.",
+      position: "COO of JKL Logistics",
+    },
+    {
+      title:
+        "I was impressed with IT Xcelerate&apos;s attention to detail and ability to understand our unique business needs. They provided us with a customized mobile app that has been a game-changer for our customer engagement and retention. I would recommend IT Xcelerate to any business looking to leverage technology to improve their operations..",
+      author: "Rachel S.",
+      position: "Owner of GHI Restaurant",
+    },
+    {
+      title:
+        "Ive been working with IT Xcelerate for years and they have consistently provided high-quality IT support and solutions. Their team is knowledgeable, responsive, and always goes above and beyond to ensure our technology needs are met. I highly recommend IT Xcelerate to any business looking for reliable IT services.",
+      author: "Mark R.",
+      position: "CFO of TBFE",
+    },
+    {
+      title:
+        "&quot;IT Xcelerate exceeded my expectations for our web development project. They not only created a beautiful and functional website, but they also provided excellent customer service throughout the entire process. I would definitely use them again for future projects.&quot;",
+      author: "Sarah T.",
+      position: "Marketing Manager at MulberryStudio",
+    },
+  ];
+  return (
+    <section
+      className="cursor-none  z-40 h-[200vh] w-screen py-20  flex flex-col gap-20 items-center justify-center relative text-tertiary bg-fourth"
+      id="testimonials"
+      ref={ref}
+    >
+      <div className="flex flex-col justify-center items-center sm:px-20 gap-10">
+        <div className=" overflow-hidden w-full h-full">
+          <h3 className=" font-monumentRegular text-2xl md:text-5xl px-2 md:px-10 text-center">
+            {"What our clients have to say".split("").map((word) => {
+              return word === " " ? (
+                <span
+                  className="header5 inline-block transition-all duration-300"
+                  style={{ transform: "translateY(-100px)" }}
                 >
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 2 }}
-                        exit={{ opacity: 0 }}
-                        className={` flex flex-col justify-center  w-[100vw] items-center absolute top-1/2 -translate-y-1/2 -translate-x-1/2 `}
-                    >
-                        <svg
-                            className="h-12 mx-auto mb-3 text-black"
-                            viewBox="0 0 24 27"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                                fill="currentColor"
-                            />
-                        </svg>
-                        <blockquote>
-                            <p className="text-base font-medium text-black md:text-2xl w-[90vw]">
-                                &quot;Working with IT Xcelerate was a
-                                game-changer for my business. They developed a
-                                custom software solution that streamlined our
-                                operations and increased our efficiency. The
-                                team was professional, responsive, and delivered
-                                the project on time and on budget. I highly
-                                recommend their services!&quot;
-                            </p>
-                        </blockquote>
-                        <figcaption className="flex items-center justify-center mt-6 space-x-3">
-                            <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                                <div className="pr-3 font-medium text-black ">
-                                    John D.
-                                </div>
-                                <div className="pl-3 text-sm font-light text-black">
-                                    CEO of Reddhr
-                                </div>
-                            </div>
-                        </figcaption>
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 2 }}
-                        exit={{ opacity: 0 }}
-                        className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[60vw]`}
-                    >
-                        <svg
-                            className="h-12 mx-auto mb-3 text-black text-black"
-                            viewBox="0 0 24 27"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                                fill="currentColor"
-                            />
-                        </svg>
-                        <blockquote>
-                            <p className="text-base font-medium text-black md:text-2xl w-[90vw]">
-                                &quot;sachin is just awesome. It contains tons
-                                of predesigned components and pages starting
-                                from login screen to complex dashboard. Perfect
-                                choice for your next SaaS sachin.&quot;
-                            </p>
-                        </blockquote>
-                        <figcaption className="flex items-center justify-center mt-6 space-x-3">
-                            <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                                <div className="pr-3 font-medium text-black ">
-                                    Micheal Gough
-                                </div>
-                                <div className="pl-3 text-sm font-light text-black">
-                                    CEO at Google
-                                </div>
-                            </div>
-                        </figcaption>
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 2 }}
-                        exit={{ opacity: 0 }}
-                        className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[160vw]`}
-                    >
-                        <svg
-                            className="h-12 mx-auto mb-3 text-black text-black"
-                            viewBox="0 0 24 27"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                                fill="currentColor"
-                            />
-                        </svg>
-                        <blockquote>
-                            <p className="text-base font-medium text-black md:text-2xl w-[90vw]">
-                                &quot;IT Xcelerate has been an invaluable
-                                partner for our business. They have helped us
-                                navigate complex IT challenges and provided us
-                                with innovative solutions to improve our
-                                operations. Their team is professional,
-                                knowledgeable, and always goes the extra mile to
-                                ensure our satisfaction. I highly recommend IT
-                                Xcelerate to any business looking for top-notch
-                                IT services.&quot;
-                            </p>
-                        </blockquote>
-                        <figcaption className="flex items-center justify-center mt-6 space-x-3">
-                            <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                                <div className="pr-3 font-medium text-black ">
-                                    Tom L.
-                                </div>
-                                <div className="pl-3 text-sm font-light text-black">
-                                    COO of JKL Logistics
-                                </div>
-                            </div>
-                        </figcaption>
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 2 }}
-                        exit={{ opacity: 0 }}
-                        className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[260vw]`}
-                    >
-                        <svg
-                            className="h-12 mx-auto mb-3 text-black text-black"
-                            viewBox="0 0 24 27"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                                fill="currentColor"
-                            />
-                        </svg>
-                        <blockquote>
-                            <p className="text-base font-medium text-black md:text-2xl w-[90vw]">
-                                &quot;I was impressed with IT Xcelerate&apos;s
-                                attention to detail and ability to understand
-                                our unique business needs. They provided us with
-                                a customized mobile app that has been a
-                                game-changer for our customer engagement and
-                                retention. I would recommend IT Xcelerate to any
-                                business looking to leverage technology to
-                                improve their operations..&quot;
-                            </p>
-                        </blockquote>
-                        <figcaption className="flex items-center justify-center mt-6 space-x-3">
-                            <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                                <div className="pr-3 font-medium text-black ">
-                                    Rachel S.
-                                </div>
-                                <div className="pl-3 text-sm font-light text-black">
-                                    Owner of GHI Restaurant
-                                </div>
-                            </div>
-                        </figcaption>
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 2 }}
-                        exit={{ opacity: 0 }}
-                        className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[360vw]`}
-                    >
-                        <svg
-                            className="h-12 mx-auto mb-3 text-black text-black"
-                            viewBox="0 0 24 27"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                                fill="currentColor"
-                            />
-                        </svg>
-                        <blockquote>
-                            <p className="text-base font-medium text-black md:text-2xl w-[90vw]">
-                                &quot;I&apos;ve been working with IT Xcelerate
-                                for years and they have consistently provided
-                                high-quality IT support and solutions. Their
-                                team is knowledgeable, responsive, and always
-                                goes above and beyond to ensure our technology
-                                needs are met. I highly recommend IT Xcelerate
-                                to any business looking for reliable IT
-                                services.&quot;
-                            </p>
-                        </blockquote>
-                        <figcaption className="flex items-center justify-center mt-6 space-x-3">
-                            <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                                <div className="pr-3 font-medium text-black ">
-                                    Mark R.
-                                </div>
-                                <div className="pl-3 text-sm font-light text-black">
-                                    CFO of TBFE
-                                </div>
-                            </div>
-                        </figcaption>
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 2 }}
-                        exit={{ opacity: 0 }}
-                        className={` flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 translate-x-[460vw]`}
-                    >
-                        <svg
-                            className="h-12 mx-auto mb-3 text-black text-black"
-                            viewBox="0 0 24 27"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                                fill="currentColor"
-                            />
-                        </svg>
-                        <blockquote>
-                            <p className="text-base font-medium text-black md:text-2xl w-[90vw]">
-                                &quot;IT Xcelerate exceeded my expectations for
-                                our web development project. They not only
-                                created a beautiful and functional website, but
-                                they also provided excellent customer service
-                                throughout the entire process. I would
-                                definitely use them again for future
-                                projects.&quot;
-                            </p>
-                        </blockquote>
-                        <figcaption className="flex items-center justify-center mt-6 space-x-3">
-                            <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                                <div className="pr-3 font-medium text-black ">
-                                    Sarah T.
-                                </div>
-                                <div className="pl-3 text-sm font-light text-black">
-                                    Marketing Manager at MulberryStudio
-                                </div>
-                            </div>
-                        </figcaption>
-                    </motion.div>
-                </div>
-            </section>
+                  &nbsp;
+                </span>
+              ) : (
+                <span
+                  className=" header5 inline-block transition-all duration-300 bg-gradient-to-r from-tertiary to- text-transparent bg-clip-text"
+                  style={{ transform: "translateY(-100px)" }}
+                >
+                  {word}
+                </span>
+              );
+            })}
+          </h3>
         </div>
-    );
+        <div className=" relative px-14 ">
+          <p className=" text-xl font-heebo quotePara">
+            ITXcelerate is a company that knows how to turn technology into
+            business success. Their innovative solutions and exceptional service
+            make them a top choice for companies looking to excel in the digital
+            age.
+          </p>
+        </div>
+      </div>
+      <div className="w-full  pb-10 md:pb-0 overflow-x-scroll overflow-y-hidden md:overflow-x-hidden md:h-fit flex flex-col gap-10">
+        <div
+          className=" flex md:gap-[50px] w-[600vw] md:w-[300vw] transition-all md:h-fit h-full duration-1000"
+          style={{ transform: `translateX(calc(-100vw * ${num}))` }}
+        >
+          {data.map((item, index) => (
+            <div
+              key={index}
+              className="w-[100vw] md:w-[50vw] h-full px-4 md:px-0"
+            >
+              <div
+                className={` flex flex-col justify-center h-[400px] gap-10 items-center bg-secondary text-tertiary p-4 md:p-10 rounded-3xl`}
+              >
+                <blockquote className="flex flex-col gap-2">
+                  <Rating name="size-medium" defaultValue={5} readOnly />
+                  <q className="cursor-none text-base font-medium  md:text-2xl">
+                    {item.title}
+                  </q>
+                </blockquote>
+                <figcaption className="cursor-none flex self-start">
+                  <div className="cursor-none flex  flex-col">
+                    <div className="cursor-none font-medium font-monumentRegular text-primary">
+                      {item.author}
+                    </div>
+                    <div className="cursor-none font-light text-lg">
+                      {item.position}
+                    </div>
+                  </div>
+                </figcaption>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className=" gap-10  justify-center hidden md:flex -translate-y-10 ">
+        <div
+          className="cursor-none  w-20 h-20 hover:bg-primary rounded-full group relative flex justify-center items-center border-white border-[1px] hover:border-none "
+          onClick={() => {
+            if (num > 0) {
+              setNum(num - 1);
+            } else {
+              setNum(2);
+            }
+          }}
+        >
+          <svg
+            className="cursor-none o-ui-arrow stroke-white -rotate-[225deg] group-hover:stroke-black  w-fit scale-50"
+            width="64"
+            height="64"
+            viewBox="0 0 64 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {" "}
+            <path
+              d="M3.10162 3.10156L62.9999 62.9999"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              initial="hidden"
+              animate="visible"
+            ></path>{" "}
+            <path
+              d="M63 1.00001L63 63L0.999989 63"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              initial="hidden"
+              animate="visible"
+            ></path>{" "}
+          </svg>
+        </div>
+        <div
+          className="cursor-none  w-20 h-20 hover:bg-primary rounded-full group relative flex justify-center items-center border-white border-[1px] hover:border-none "
+          onClick={() => {
+            if (num < 2) {
+              setNum(num + 1);
+            } else {
+              setNum(0);
+            }
+          }}
+        >
+          <svg
+            className="cursor-none o-ui-arrow stroke-white -rotate-45 group-hover:stroke-black  w-fit scale-50"
+            width="64"
+            height="64"
+            viewBox="0 0 64 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {" "}
+            <path
+              d="M3.10162 3.10156L62.9999 62.9999"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              initial="hidden"
+              animate="visible"
+            ></path>{" "}
+            <path
+              d="M63 1.00001L63 63L0.999989 63"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              initial="hidden"
+              animate="visible"
+            ></path>{" "}
+          </svg>
+        </div>
+      </div>
+      <div className="flex gap-10 md:hidden justify-center -translate-y-10">
+        <div
+          className="cursor-none  w-20 h-20 hover:bg-primary rounded-full group relative flex justify-center items-center border-white border-[1px] hover:border-none "
+          onClick={() => {
+            if (num > 0) {
+              setNum(num - 1);
+            } else {
+              setNum(5);
+            }
+          }}
+        >
+          <svg
+            className="cursor-none o-ui-arrow stroke-white -rotate-[225deg] group-hover:stroke-black  w-fit scale-50"
+            width="64"
+            height="64"
+            viewBox="0 0 64 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {" "}
+            <path
+              d="M3.10162 3.10156L62.9999 62.9999"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              initial="hidden"
+              animate="visible"
+            ></path>{" "}
+            <path
+              d="M63 1.00001L63 63L0.999989 63"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              initial="hidden"
+              animate="visible"
+            ></path>{" "}
+          </svg>
+        </div>
+        <div
+          className="cursor-none  w-20 h-20 hover:bg-primary rounded-full group relative flex justify-center items-center border-white border-[1px] hover:border-none "
+          onClick={() => {
+            if (num < 5) {
+              setNum(num + 1);
+            } else {
+              setNum(0);
+            }
+          }}
+        >
+          <svg
+            className="cursor-none o-ui-arrow stroke-white -rotate-45 group-hover:stroke-black  w-fit scale-50"
+            width="64"
+            height="64"
+            viewBox="0 0 64 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {" "}
+            <path
+              d="M3.10162 3.10156L62.9999 62.9999"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              initial="hidden"
+              animate="visible"
+            ></path>{" "}
+            <path
+              d="M63 1.00001L63 63L0.999989 63"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              initial="hidden"
+              animate="visible"
+            ></path>{" "}
+          </svg>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Header5;

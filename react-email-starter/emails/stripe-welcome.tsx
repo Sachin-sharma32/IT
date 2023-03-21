@@ -23,7 +23,7 @@ export default function Email() {
       <Body style={main}>
         <Container style={container}>
           <Section style={box}>
-            <Img
+            <Image width={100} height={100} 
               src={`${baseUrl}/static/stripe-logo.png`}
               width="49"
               height="21"
