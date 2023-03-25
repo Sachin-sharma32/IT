@@ -103,7 +103,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="cursor-none  relative z-[60] w-screen " ref={navRef}>
+    <div className="cursor-none  relative z-[60] w-[100vw] " ref={navRef}>
       <nav
         style={
           yOffset > prev
@@ -144,7 +144,7 @@ const Navbar = () => {
               </li>
             ))}
           </div>
-          <div className="cursor-none flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto h-full overflow-hidden bg-secondary text-white">
+          <div className="cursor-none flex flex-wrap items-center justify-between px-4 mx-auto h-full overflow-hidden bg-secondary w-screen text-white">
             <Link href="/" className="cursor-none h-[20px] overflow-hidden">
               <Image
                 width={100}

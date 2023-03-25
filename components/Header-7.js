@@ -118,9 +118,9 @@ const Header7 = () => {
         className="cursor-none  bg-blend-difference fixed -translate-y-1/2 pointer-events-none  z-[1000] h-10 text- flex flex-col gap-4"
         ref={box}
       >
-        <div className="cursor-none bg-primary rounded-full px-10 py-1 w-fit">
+        <div className="cursor-none bg-primary rounded-full font-monumentRegular px-10 py-1 w-fit">
           {" "}
-          Behance
+          ITXCELERATE
         </div>
         <div className="cursor-none  bg-opacity-50 px-1 pb-1 flex py-1 flex-col gap-1 bg-tertiary relative rounded-md">
           <div className="cursor-none flex gap-2 pl-2">
