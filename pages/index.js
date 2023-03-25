@@ -18,6 +18,7 @@ import Cursor from "../components/Cursor";
 import { Expo, Power1 } from "gsap";
 import { gsap } from "gsap";
 import Image from "next/image";
+import Header8 from "../components/header-8";
 
 const Home = () => {
   const [yOffset, setYOffset] = useState(0);
@@ -71,6 +72,7 @@ const Home = () => {
         <Header5 yOffset={yOffset} prev={prev} header5Ref={header5Ref} />
         <Header7 />
         <Header6 yOffset={yOffset} prev={prev} />
+        {/* <Header8 /> */}
         <section
           ref={newRef}
           className="cursor-none  min-h-[100vh] w-screen  overflow-hidden z-40 bg-fourth text-tertiary"

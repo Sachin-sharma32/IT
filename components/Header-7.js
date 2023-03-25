@@ -163,7 +163,7 @@ const Header7 = () => {
         </h2>
         <div className="cursor-none hidden md:flex py-32 sm:grid md:grid-cols-2 justify-items-center justify-center  lg:grid-cols-3 gap-10 px-4 md:px-10 w-screen  overflow-scroll header-4">
           {data.map((group, i) => (
-            <div key={i} className={`parallax-${i} flex flex-col gap-10 `}>
+            <div key={i} className={`flex flex-col gap-10 `}>
               {group.map((item, j) => (
                 <div
                   ref={cardRefs.current[j]}

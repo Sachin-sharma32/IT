@@ -62,9 +62,9 @@ const Header5 = ({ yOffset, header5Ref }) => {
     },
     {
       title:
-        "sachin is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS sachin.",
+        "Itxclerate is just awesome. It contains tons of components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS project.",
       author: "Micheal Gough",
-      position: "CEO of Google",
+      position: "CEO of Reddhr",
     },
     {
       title:
@@ -86,7 +86,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
     },
     {
       title:
-        "&quot;IT Xcelerate exceeded my expectations for our web development project. They not only created a beautiful and functional website, but they also provided excellent customer service throughout the entire process. I would definitely use them again for future projects.&quot;",
+        "IT Xcelerate exceeded my expectations for our web development project. They not only created a beautiful and functional website, but they also provided excellent customer service throughout the entire process. I would definitely use them again for future projects.",
       author: "Sarah T.",
       position: "Marketing Manager at MulberryStudio",
     },

@@ -52,6 +52,7 @@ const Header6 = ({ yOffset, prev }) => {
         trigger: ".header6",
         scroller: "body",
         start: "top bottom",
+        // markers: true,
       },
       y: 0,
       rotate: 0,
