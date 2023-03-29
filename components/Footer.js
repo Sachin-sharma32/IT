@@ -6,8 +6,13 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { setHovering } from "../redux/slices";
 
 const Footer = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
   const legal = [
     {
       name: "Privacy Policy",
@@ -79,14 +84,26 @@ const Footer = () => {
     },
   ];
   return (
-    <footer className="cursor-none  z-50 bg-secondary text-white px-10 w-screen">
+    <footer
+      className={`cursor-none  z-[0] bg-secondary text-white px-10 w-screen bottom-0 ${
+        router.pathname === "/" ? "fixed" : ""
+      }`}
+    >
       <div className="cursor-none max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10 z-50">
         <div className="cursor-none grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-3 justify-items-center z-50 pb-10">
           <div className="cursor-none  w-full sm:w-fit">
             <h3 className="cursor-none mb-6 text-sm font-semibold  uppercase font-monumentRegular">
               Company
             </h3>
-            <ul className="cursor-none text-primary">
+            <ul
+              className="cursor-none text-primary"
+              onMouseEnter={() => {
+                dispatch(setHovering(true));
+              }}
+              onMouseLeave={() => {
+                dispatch(setHovering(false));
+              }}
+            >
               {company.map((item, i) => (
                 <li
                   key={i}
@@ -112,7 +129,15 @@ const Footer = () => {
             <h3 className="cursor-none mb-6 text-sm font-semibold  uppercase dark: font-monumentRegular">
               Help center
             </h3>
-            <ul className="cursor-none ">
+            <ul
+              className="cursor-none "
+              onMouseEnter={() => {
+                dispatch(setHovering(true));
+              }}
+              onMouseLeave={() => {
+                dispatch(setHovering(false));
+              }}
+            >
               {help.map((item, i) => (
                 <li
                   key={i}
@@ -138,7 +163,15 @@ const Footer = () => {
             <h3 className="cursor-none mb-6 text-sm font-semibold  uppercase dark: font-monumentRegular">
               Legal
             </h3>
-            <ul className="cursor-none ">
+            <ul
+              className="cursor-none "
+              onMouseEnter={() => {
+                dispatch(setHovering(true));
+              }}
+              onMouseLeave={() => {
+                dispatch(setHovering(false));
+              }}
+            >
               {legal.map((item, i) => (
                 <li
                   key={i}
@@ -177,7 +210,15 @@ const Footer = () => {
           <span className="cursor-none block text-center text-tertiary text-xl">
             © 2023 ITXcelerate™. All Rights Reserved.
           </span>
-          <ul className="cursor-none flex justify-center mt-5 space-x-5">
+          <ul
+            className="cursor-none flex justify-center mt-5 space-x-5"
+            onMouseEnter={() => {
+              dispatch(setHovering(true));
+            }}
+            onMouseLeave={() => {
+              dispatch(setHovering(false));
+            }}
+          >
             <li>
               <a
                 href="https://t.me/+RveSAODvj0hjYTZl"

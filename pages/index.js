@@ -15,12 +15,16 @@ import Header7 from "../components/Header-7";
 import { motion } from "framer-motion";
 import Scrollbar from "smooth-scrollbar";
 import Cursor from "../components/Cursor";
-import { Expo, Power1 } from "gsap";
-import { gsap } from "gsap";
+import { gsap, Power1 } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 import Image from "next/image";
 import Header8 from "../components/header-8";
+import { useDispatch } from "react-redux";
+import { setHovering } from "../redux/slices";
 
 const Home = () => {
+  const dispatch = useDispatch();
   const [yOffset, setYOffset] = useState(0);
   const [prev, setPrev] = useState(0);
   const newRef = useRef(null);
@@ -42,15 +46,48 @@ const Home = () => {
   }, [yOffset]);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const t1 = gsap.timeline();
-      t1.to(".reveal", {
-        translateY: 0,
-        duration: 1,
-        stagger: 0.5,
-        ease: Power1.easeInOut,
-      });
-    }
+    const t1 = gsap.to(".revealI1", {
+      scrollTrigger: {
+        trigger: ".revealI1",
+        scroller: "body",
+        start: "center center",
+      },
+      y: 0,
+      duration: 1,
+    });
+    gsap.to(".revealI2", {
+      scrollTrigger: {
+        trigger: ".revealI2",
+        scroller: "body",
+        start: "top center",
+      },
+      stagger: 0.5,
+      y: 0,
+      duration: 1,
+    });
+    gsap.to(".revealI3", {
+      scrollTrigger: {
+        trigger: ".revealI3",
+        scroller: "body",
+        start: "top center",
+      },
+      stagger: 0.5,
+      y: 0,
+      duration: 1,
+    });
+    gsap.to(".revealI4", {
+      scrollTrigger: {
+        trigger: ".revealI4",
+        scroller: "body",
+        start: "top center",
+      },
+      stagger: 0.5,
+      y: 0,
+      duration: 1,
+    });
+    return () => {
+      t1.kill();
+    };
   }, []);
 
   // const options = {
@@ -61,7 +98,7 @@ const Home = () => {
   // }, []);
 
   return (
-    <div className="cursor-none  min-h-[100vh] flex container cursor-none">
+    <div className="cursor-none  min-h-[100vh] flex container mb-[90vh]">
       <div className="cursor-none flex flex-col">
         <div id="home"></div>
         <Navbar yOffset={yOffset} prev={prev} />
@@ -79,19 +116,17 @@ const Home = () => {
           id="pricing"
         >
           <div className="cursor-none max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
-            <div
-              // style={
-              //   isOnScreen && newRef.current?.getBoundingClientRect().top >= 0
-              //     ? {
-              //         transform: `translateY(${
-              //           -newRef.current?.getBoundingClientRect().top * 1
-              //         }px)`,
-              //       }
-              //     : {}
-              // }
-              className="cursor-none mx-auto mb-8 text-center lg:mb-12 w-full"
-            >
-              <h2 className="cursor-none mb-4 font-extrabold tracking-tight font-monumentRegular text-2xl md:text-4xl w-full">
+            <div className="cursor-none mx-auto mb-8 text-center lg:mb-12 w-full overflow-hidden">
+              <h2
+                className="cursor-none mb-4 font-extrabold tracking-tight font-monumentRegular text-2xl md:text-4xl w-full revealI1"
+                style={{ transform: "translateY(100px)" }}
+                onMouseEnter={() => {
+                  dispatch(setHovering(true));
+                }}
+                onMouseLeave={() => {
+                  dispatch(setHovering(false));
+                }}
+              >
                 Designed for business teams like yours
               </h2>
             </div>
@@ -113,21 +148,31 @@ const Home = () => {
               >
                 <div className="cursor-none card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] sm:w-[380px]  w-inherit">
                   <div className="cursor-none  h-fit overflow-hidden">
-                    <h3 className="cursor-none mb-4 font-monumentRegular text-2xl font-semibold">
-                      Basic Plan
-                    </h3>
+                    <div className=" overflow-hidden">
+                      <h3
+                        className="cursor-none mb-4 font-monumentRegular text-2xl font-semibold revealI2"
+                        style={{ transform: "translateY(100px)" }}
+                      >
+                        Basic Plan
+                      </h3>
+                    </div>
+                  </div>
+                  <div className=" overflow-hidden">
+                    <p
+                      className="cursor-none font-light sm:text-lg revealI2"
+                      style={{ transform: "translateY(100px)" }}
+                    >
+                      Best option for personal small and medium size projects.
+                    </p>
                   </div>
 
-                  <p className="cursor-none font-light sm:text-lg ">
-                    Best option for personal small and medium size projects.
-                  </p>
-                  <div className="cursor-none flex items-baseline justify-center my-8">
-                    <span className="cursor-none mr-2 text-5xl font-monumentRegular text-primary">
+                  <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
+                    <span
+                      className="cursor-none mr-2 text-5xl font-monumentRegular text-primary inline-block revealI2"
+                      style={{ transform: "translateY(100px)" }}
+                    >
                       $199
                     </span>
-                    {/* <span className="cursor-none ">
-                                            month
-                                        </span> */}
                   </div>
                   <ul
                     role="list"
@@ -319,6 +364,12 @@ const Home = () => {
                   <Link
                     href="/contact"
                     className="cursor-none  rounded-full bg-secondary hover:bg-primary   text-white hover:text-secondary transition-all duration-300 font-medium  text-lg px-4 lg:px-5 py-2 lg:py-2.5 md:mr-2 lg:mr-0 "
+                    onMouseEnter={() => {
+                      dispatch(setHovering(true));
+                    }}
+                    onMouseLeave={() => {
+                      dispatch(setHovering(false));
+                    }}
                   >
                     Let&apos;s Talk
                   </Link>
@@ -326,19 +377,29 @@ const Home = () => {
               </motion.div>
               <div className="cursor-none  card  origin-bottom-right  h-[550px] w-[300px] sm:w-[380px]">
                 <div className="cursor-none card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-inherit">
-                  <h3 className="cursor-none mb-4 font-monumentRegular text-2xl font-semibold">
-                    Advanced Plan
-                  </h3>
-                  <p className="cursor-none font-light sm:text-lg ">
-                    Best option for medium to large size projects.
-                  </p>
-                  <div className="cursor-none flex items-baseline justify-center my-8">
-                    <span className="cursor-none mr-2 text-5xl text-primary font-monumentRegular">
+                  <div className=" overflow-hidden">
+                    <h3
+                      className="cursor-none mb-4 font-monumentRegular text-2xl font-semibold revealI3"
+                      style={{ transform: "translateY(100px)" }}
+                    >
+                      Advanced Plan
+                    </h3>
+                  </div>
+                  <div className=" overflow-hidden">
+                    <p
+                      className="cursor-none font-light sm:text-lg revealI3"
+                      style={{ transform: "translateY(100px)" }}
+                    >
+                      Best option for personal medium to large size projects.
+                    </p>
+                  </div>
+                  <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
+                    <span
+                      className="cursor-none mr-2 text-5xl font-monumentRegular text-primary inline-block revealI3"
+                      style={{ transform: "translateY(100px)" }}
+                    >
                       $499
                     </span>
-                    {/* <span className="cursor-none ">
-                                            month
-                                        </span> */}
                   </div>
                   <ul
                     role="list"
@@ -530,6 +591,12 @@ const Home = () => {
                   <Link
                     href="/contact"
                     className="cursor-none  rounded-full bg-secondary hover:bg-primary   text-white hover:text-secondary transition-all duration-300 font-medium  text-lg px-4 lg:px-5 py-2 lg:py-2.5 md:mr-2 lg:mr-0 "
+                    onMouseEnter={() => {
+                      dispatch(setHovering(true));
+                    }}
+                    onMouseLeave={() => {
+                      dispatch(setHovering(false));
+                    }}
                   >
                     Let&apos;s Talk
                   </Link>
@@ -551,19 +618,29 @@ const Home = () => {
                 className="cursor-none  card  origin-bottom-left  h-[550px] w-[300px] sm:w-[380px]"
               >
                 <div className="cursor-none card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-inherit">
-                  <h3 className="cursor-none mb-4 font-monumentRegular text-2xl font-semibold">
-                    Pro Plan
-                  </h3>
-                  <p className="cursor-none font-light sm:text-lg ">
-                    Best option for large scale serious product.
-                  </p>
-                  <div className="cursor-none flex items-baseline justify-center my-8">
-                    <span className="cursor-none mr-2 text-5xl font-monumentRegular text-primary">
+                  <div className=" overflow-hidden">
+                    <h3
+                      className="cursor-none mb-4 font-monumentRegular text-2xl font-semibold revealI4"
+                      style={{ transform: "translateY(100px)" }}
+                    >
+                      Pro Plan
+                    </h3>
+                  </div>
+                  <div className=" overflow-hidden">
+                    <p
+                      className="cursor-none font-light sm:text-lg revealI4"
+                      style={{ transform: "translateY(100px)" }}
+                    >
+                      Best option for large scale serious project
+                    </p>
+                  </div>
+                  <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
+                    <span
+                      className="cursor-none mr-2 text-5xl font-monumentRegular text-primary inline-block revealI4"
+                      style={{ transform: "translateY(100px)" }}
+                    >
                       $999
                     </span>
-                    {/* <span className="cursor-none ">
-                                            month
-                                        </span> */}
                   </div>
                   <ul
                     role="list"
@@ -756,6 +833,12 @@ const Home = () => {
                   <Link
                     href="/contact"
                     className="cursor-none  rounded-full bg-secondary hover:bg-primary   text-white hover:text-secondary transition-all duration-300 font-medium  text-lg px-4 lg:px-5 py-2 lg:py-2.5 md:mr-2 lg:mr-0 "
+                    onMouseEnter={() => {
+                      dispatch(setHovering(true));
+                    }}
+                    onMouseLeave={() => {
+                      dispatch(setHovering(false));
+                    }}
                   >
                     Let&apos;s Talk
                   </Link>

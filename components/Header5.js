@@ -7,8 +7,15 @@ gsap.registerPlugin(ScrollTrigger);
 import Image from "next/image";
 import { QuotePara } from "../utils/Styles";
 import { Rating } from "@mui/material";
+import { useDispatch } from "react-redux";
+import {
+  setHovering,
+  setHoveringLeft,
+  setHoveringRight,
+} from "../redux/slices";
 
 const Header5 = ({ yOffset, header5Ref }) => {
+  const dispatch = useDispatch();
   const ref = useRef(null);
   const [num, setNum] = useState(0);
   // useEffect(()=>{
@@ -99,7 +106,15 @@ const Header5 = ({ yOffset, header5Ref }) => {
     >
       <div className="flex flex-col justify-center items-center sm:px-20 gap-10">
         <div className=" overflow-hidden w-full h-full">
-          <h3 className=" font-monumentRegular text-2xl md:text-5xl px-2 md:px-10 text-center">
+          <h3
+            className=" font-monumentRegular text-2xl md:text-5xl px-2 md:px-10 text-center"
+            onMouseEnter={() => {
+              dispatch(setHovering(true));
+            }}
+            onMouseLeave={() => {
+              dispatch(setHovering(false));
+            }}
+          >
             {"What our clients have to say".split("").map((word) => {
               return word === " " ? (
                 <span
@@ -140,6 +155,35 @@ const Header5 = ({ yOffset, header5Ref }) => {
             >
               <div
                 className={` flex flex-col justify-center h-[400px] gap-10 items-center bg-secondary text-tertiary p-4 md:p-10 rounded-3xl`}
+                onMouseEnter={() => {
+                  if (index % 2 === 0) {
+                    dispatch(setHoveringLeft(true));
+                  } else {
+                    dispatch(setHoveringRight(true));
+                  }
+                }}
+                onMouseLeave={() => {
+                  if (index % 2 === 0) {
+                    dispatch(setHoveringLeft(false));
+                  } else {
+                    dispatch(setHoveringRight(false));
+                  }
+                }}
+                onClick={() => {
+                  if (index % 2 === 0) {
+                    if (num > 0) {
+                      setNum(num - 1);
+                    } else {
+                      setNum(5);
+                    }
+                  } else {
+                    if (num < 5) {
+                      setNum(num + 1);
+                    } else {
+                      setNum(0);
+                    }
+                  }
+                }}
               >
                 <blockquote className="flex flex-col gap-2">
                   <Rating name="size-medium" defaultValue={5} readOnly />

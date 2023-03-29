@@ -5,6 +5,8 @@ import { Power1 } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { setHovering } from "../redux/slices";
 
 const Header3 = () => {
   const header3Ref = useRef(null);
@@ -27,15 +29,13 @@ const Header3 = () => {
   //     return ()=>ctx.revert();
   // },[])
 
+  const dispatch = useDispatch();
   useEffect(() => {
     let t1 = gsap.to(".header3Reveal", {
       scrollTrigger: {
         trigger: ".headingBox",
         scroller: "body",
-        // markers: true,
-        start: "top bottom",
-        scrub: true,
-        // pin: true,
+        start: "center center",
       },
       y: 0,
       duration: 1,
@@ -51,7 +51,7 @@ const Header3 = () => {
       },
       y: 0,
       duration: 1,
-      stagger: 0.5,
+      stagger: 0.1,
       ease: Power1.easeInOut,
       delay: 0,
     });
@@ -106,19 +106,47 @@ const Header3 = () => {
               style={{ right: "200px" }}
             />
             <Image
-              width={1000}
-              height={1000}
+              width={5000}
+              height={5000}
               src="/png-5.png"
-              className="cursor-none right-20 md:hidden z-0 absolute scale-[1.5] top-0 flowers w-[2000px]"
+              className="cursor-none right-10 md:hidden z-0 absolute scale-[1.5] top-0 flowers w-[2000px]"
               style={{ right: "200px" }}
             />
             <div className="cursor-none text-tertiary">
               <div className="cursor-none  overflow-hidden headingBox">
                 <h2
-                  style={{ transform: `translateY(100px)` }}
-                  className="cursor-none mb-4 transition-all font-monumentBold header3Reveal duration-500 text-xl sm:text-4xl heading-3 px-4 sm:px-0 font-extrabold tracking-tight text-black"
+                  className="cursor-none mb-4 transition-all font-monumentBold duration-500 text-xl sm:text-4xl heading-3 px-4 sm:px-0 font-extrabold tracking-tight text-black"
+                  onMouseEnter={() => {
+                    dispatch(setHovering(true));
+                  }}
+                  onMouseLeave={() => {
+                    dispatch(setHovering(false));
+                  }}
                 >
-                  Why choose IT Xcelerate for Web App Development ?
+                  <div className=" overflow-hidden">
+                    <span
+                      className=" inline-block header3Reveal"
+                      style={{ transform: `translateY(100px)` }}
+                    >
+                      Why choose IT
+                    </span>
+                  </div>
+                  <div className=" overflow-hidden">
+                    <span
+                      className=" inline-block header3Reveal"
+                      style={{ transform: `translateY(100px)` }}
+                    >
+                      Xcelerate for Web
+                    </span>
+                  </div>
+                  <div className=" overflow-hidden">
+                    <span
+                      className=" inline-block header3Reveal"
+                      style={{ transform: `translateY(100px)` }}
+                    >
+                      App Development ?
+                    </span>
+                  </div>
                 </h2>
               </div>
               <ul

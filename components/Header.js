@@ -8,8 +8,13 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { Power4, Power1 } from "gsap";
 import Marquee from "react-fast-marquee";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+import { useDispatch } from "react-redux";
+import { setHovering } from "../redux/slices";
 
 const Header = ({ yOffset, prev }) => {
+  const dispatch = useDispatch();
   const ref = useRef(null);
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -26,6 +31,14 @@ const Header = ({ yOffset, prev }) => {
         stagger: 0.5,
         delay: 2,
         ease: Power1.easeInOut,
+      });
+      gsap.to(".revealH1", {
+        scrollTrigger: {
+          trigger: ".revealH1",
+          start: "center center",
+          scrub: true,
+        },
+        scale: 0.5,
       });
     }, ref);
 
@@ -69,15 +82,21 @@ const Header = ({ yOffset, prev }) => {
         yOffset < 1000 ? "" : "opacity-0"
       } bg-secondary h-screen left-0 top-0 z-10 w-screen text-white flex items-center flex-col`}
     >
-      <div className="cursor-none flex-col-reverse sm:flex-row flex justify-center gap-20 sm:justify-between sm:gap-0 mt-32 px-20 w-full h-screen items-center">
+      <div className="cursor-none revealH1 flex-col-reverse sm:flex-row flex justify-center gap-20 sm:justify-between sm:gap-0 mt-32 px-20 w-full h-screen items-center">
         <div className="">
           <h1
             // style={{ transform: `translateY(-${yOffset * 0.5}px)` }}
             className="cursor-none  text-4xl leading-none w-full tracking-tight font-monumentRegular md:text-5xl xl:text-6xl dark:text-white z-50"
+            onMouseEnter={() => {
+              dispatch(setHovering(true));
+            }}
+            onMouseLeave={() => {
+              dispatch(setHovering(false));
+            }}
           >
             <div className="cursor-none  overflow-hidden">
               <span
-                className="cursor-none text-primary reveal inline-block"
+                className="cursor-none text-primary reveal inline-block "
                 style={{ transform: "translateY(1000px)" }}
               >
                 Accelerating
@@ -109,10 +128,7 @@ const Header = ({ yOffset, prev }) => {
             </div>
           </h1>
         </div>
-        <div
-          className="cursor-none  w-full flex justify-center"
-          style={{ transform: `translateY(-${yOffset * 0.5}px)` }}
-        >
+        <div className="cursor-none  w-full flex justify-center revealH1">
           <svg
             className="cursor-none o-ui-arrow stroke-white -rotate-90 scale-[2] sm:scale-[3] md:scale-[4]"
             width="64"

@@ -8,7 +8,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { client } from "../sanity";
 import query from "../queries/getAllPosts";
 import { useDispatch } from "react-redux";
-import { setPosts } from "../redux/slices";
+import { setHovering, setPosts } from "../redux/slices";
 import gsap from "gsap";
 import { Power4, Power1 } from "gsap";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -85,9 +85,9 @@ const Navbar = () => {
       gsap.to(".show", {
         x: 0,
         opacity: 1,
-        duration: 1.5,
-        stagger: 0.25,
-        ease: Power1.easeInOut,
+        duration: 1,
+        stagger: 0.1,
+        ease: Power1.easeOut,
         delay: 0.5,
       });
       gsap.to(".showVer", {
@@ -95,8 +95,8 @@ const Navbar = () => {
         opacity: 1,
         duration: 1.5,
         stagger: 0.25,
-        ease: Power1.easeInOut,
-        delay: 2,
+        ease: Power1.easeOut,
+        delay: 1,
       });
     }, navRef);
     return () => ctx.revert();
@@ -160,6 +160,12 @@ const Navbar = () => {
               <Link
                 href="/contact"
                 className="cursor-none hidden sm:flex  rounded-full bg-primary hover:bg-tertiary  text-black transition-all duration-300 font-medium  text-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-14 md:mr-0"
+                onMouseEnter={() => {
+                  dispatch(setHovering(true));
+                }}
+                onMouseLeave={() => {
+                  dispatch(setHovering(false));
+                }}
               >
                 Let&apos;s Talk
               </Link>
@@ -184,6 +190,12 @@ const Navbar = () => {
                     <li
                       key={section.id}
                       className="cursor-none  flex items-center h-full linked cursor-none overflow-hidden   z-[1000] px-6 hover:border-tertiary transition-all duration-1000 border-secondary "
+                      onMouseEnter={() => {
+                        dispatch(setHovering(true));
+                      }}
+                      onMouseLeave={() => {
+                        dispatch(setHovering(false));
+                      }}
                     >
                       <Li
                         activeClass="active"
@@ -235,6 +247,12 @@ const Navbar = () => {
           href="/contact"
           className="cursor-none absolute sm:hidden top-[21px] left-4 bg-opacity-50 w-[200px] text-center  rounded-full bg-primary hover:bg-tertiary  text-black transition-all duration-300 font-medium  text-lg px-4 lg:px-5 py-1 lg:py-2.5 mr-14"
           onClick={toggleShow}
+          onMouseEnter={() => {
+            dispatch(setHovering(true));
+          }}
+          onMouseLeave={() => {
+            dispatch(setHovering(false));
+          }}
         >
           Let&apos;s Talk
         </Link>
@@ -263,7 +281,15 @@ const Navbar = () => {
             <h3 className="cursor-none mb-6 text-xl font-semibold  uppercase pl-2   md:text-start">
               Company
             </h3>
-            <ul className="cursor-none  grid md:grid-cols-1 justify-items-start w-full">
+            <ul
+              className="cursor-none  grid md:grid-cols-1 justify-items-start w-full"
+              onMouseEnter={() => {
+                dispatch(setHovering(true));
+              }}
+              onMouseLeave={() => {
+                dispatch(setHovering(false));
+              }}
+            >
               <li className="cursor-none mb-4 md:w-[500px]">
                 <Link
                   href="/next"
@@ -318,7 +344,15 @@ const Navbar = () => {
             <h3 className="cursor-none mb-6 text-xl font-semibold  uppercase pl-2 text-cen md:text-start">
               Help center
             </h3>
-            <ul className="cursor-none  grid md:grid-cols-1 justify-items-start">
+            <ul
+              className="cursor-none  grid md:grid-cols-1 justify-items-start"
+              onMouseEnter={() => {
+                dispatch(setHovering(true));
+              }}
+              onMouseLeave={() => {
+                dispatch(setHovering(false));
+              }}
+            >
               <li className="cursor-none mb-4">
                 <a
                   href="https://t.me/+RveSAODvj0hjYTZl"
@@ -376,7 +410,15 @@ const Navbar = () => {
             <h3 className="cursor-none mb-6 text-xl font-semibold  uppercase dark: pl-2">
               Legal
             </h3>
-            <ul className="cursor-none  grid md:grid-cols-1 justify-items-start">
+            <ul
+              className="cursor-none  grid md:grid-cols-1 justify-items-start"
+              onMouseEnter={() => {
+                dispatch(setHovering(true));
+              }}
+              onMouseLeave={() => {
+                dispatch(setHovering(false));
+              }}
+            >
               <li className="cursor-none mb-4">
                 <Link
                   href="/privacy"
@@ -435,12 +477,12 @@ const Navbar = () => {
         <button
           data-collapse-toggle="mobile-menu-2"
           type="button"
-          className="cursor-none inline-flex absolute top-4 sm:right-24 right-14 md:right-20   items-center p-2 ml-1 text-sm text-secondary bg-primary bg-opacity-50 rounded-full lg:hidden hover:bg-secondary focus:outline-none focus:ring-2  hover:text-primary transition-all duration-300"
+          className="cursor-none absolute top-4 sm:right-24 right-14 md:right-20 group   items-center p-2 ml-1 text-sm text-secondary bg-primary bg-opacity-50 rounded-full hover:bg-secondary focus:outline-none focus:ring-2  hover:text-primary transition-all duration-300"
           aria-controls="mobile-menu-2"
           aria-expanded="false"
           onClick={toggleShow}
         >
-          <CloseIcon />
+          <CloseIcon className=" group-hover:rotate-180 transition-all duration-300" />
         </button>
       </div>
     </div>

@@ -9,8 +9,11 @@ import { gsap } from "gsap";
 import { Power1 } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+import { useDispatch } from "react-redux";
+import { setHovering } from "../redux/slices";
 
 const Header6 = ({ yOffset, prev }) => {
+  const dispatch = useDispatch();
   const containerRef = useRef();
   const isOnScreen = useOnScreen(containerRef);
   const [selected, setSelected] = useState(4);
@@ -78,7 +81,7 @@ const Header6 = ({ yOffset, prev }) => {
   return (
     <section
       ref={containerRef}
-      className="cursor-none bg-white  z-0 h-[180vh] md:flex items-center w-screen py-20  px-2 md:px-10 relative"
+      className="cursor-none bg-white  z-10 h-[180vh] md:flex items-center w-screen py-20  px-2 md:px-10 relative"
       id="faqs"
     >
       <div className="cursor-none max-w-screen-xl pb-8 mx-auto lg:pb-24 lg:px-6 flex justify-center flex-col py-20">
@@ -95,6 +98,12 @@ const Header6 = ({ yOffset, prev }) => {
           //         : {}
           // },
           className="cursor-none mb-6 text-[28px] md:text-3xl overflow-hidden heading-6 md:px-10 font-extrabold tracking-tight text-center z-0 text-black lg:mb-8 font-monumentRegular"
+          onMouseEnter={() => {
+            dispatch(setHovering(true));
+          }}
+          onMouseLeave={() => {
+            dispatch(setHovering(false));
+          }}
         >
           {"Frequently Asked Questions".split("").map((word) => {
             return word === " " ? (
@@ -156,10 +165,10 @@ const Header6 = ({ yOffset, prev }) => {
       </div>
       <div className="cursor-none  w-full h-screen max-h-screen"></div>
       <Image
-        width={100}
-        height={100}
-        src="/png-4.png"
-        className="cursor-none hidden md:flex absolute w-[300px] top-52 right-10"
+        width={1000}
+        height={1000}
+        src="/new-1.png"
+        className="cursor-none hidden md:flex absolute w-[500px] top-52 -right-10"
       />
     </section>
   );

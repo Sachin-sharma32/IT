@@ -9,8 +9,11 @@ import Marquee from "react-fast-marquee";
 import { gsap, Power1 } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+import { useDispatch } from "react-redux";
+import { setHovering } from "../redux/slices";
 
 const Header4 = ({ yOffset, prev }) => {
+  const dispatch = useDispatch();
   const [counter, setCounter] = useState(1);
   const data = [
     [
@@ -111,12 +114,20 @@ const Header4 = ({ yOffset, prev }) => {
 
   return (
     <section
-      className="cursor-none z-[50] px-2 sm:px-6 md:px-10 py-20 w-screen "
+      className="cursor-none z-30 bg-[#f8f8f8] px-2 sm:px-6 md:px-10 py-20 w-screen "
       id="achievements"
       ref={ref}
     >
       <div className="cursor-none flex flex-col gap-10 relative justify-center items-center w-full">
-        <div className=" overflow-hidden w-full">
+        <div
+          className=" overflow-hidden w-full"
+          onMouseEnter={() => {
+            dispatch(setHovering(true));
+          }}
+          onMouseLeave={() => {
+            dispatch(setHovering(false));
+          }}
+        >
           <h3 className="cursor-none text-xl sm:text-2xl md:text-5xl font-bold heading-7 text-secondary md:text-inherit font-monumentBold  text-center px-0 hover:skew-x-12 hover:scale-110 transition-all duration-500">
             {"Web App Technologies We Use".split("").map((word) => {
               return word === " " ? (
@@ -160,7 +171,7 @@ const Header4 = ({ yOffset, prev }) => {
                   <div key={i}>
                     <div
                       style={{ visibility: "hidden" }}
-                      className="cursor-none  bg-blend-difference fixed -translate-y-1/2 pointer-events-none  z-[1000] h-10 text-black flex flex-col gap-4"
+                      className="cursor-none  bg-blend-difference fixed -translate-y-1/2 pointer-events-none  z-10 h-10 text-black flex flex-col gap-4"
                       ref={box}
                     >
                       <div className="cursor-none  rounded-full px-10 py-1 w-fit bg-primary font-monumentRegular">
@@ -193,17 +204,17 @@ const Header4 = ({ yOffset, prev }) => {
                       }}
                       onMouseLeave={handleMouseLeave}
                       className={classNames(
-                        "shadow-lg rounded-lg p-10 justify-center flex overflow-hidden gap-2 w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] flex-col items-center hover:text-secondary  grayscale hover:scale-110 transition-all hover:grayscale-0 duration-500 hover:-translate-y-4"
+                        "shadow-lg rounded-lg p-10 group justify-center flex overflow-hidden gap-2 w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] flex-col items-center hover:text-secondary  grayscale hover:scale-110 transition-all hover:grayscale-0 duration-500 hover:-translate-y-4"
                       )}
                     >
                       <div
                         ref={scaleRef}
-                        className="cursor-none absolute rounded-full bg-primary ro top-0 left-0 opacity-20 h-[1px] w-[1px]  transition-all duration-1000"
-                        style={
-                          isHovering && element === i
-                            ? { transform: "scale(60000%)" }
-                            : {}
-                        }
+                        className="cursor-none absolute group-hover:scale-[60000%] rounded-full bg-primary ro top-0 left-0 opacity-20 h-[1px] w-[1px]  transition-all duration-1000"
+                        // style={
+                        //   isHovering && element === i
+                        //     ? { transform: "scale(60000%)" }
+                        //     : {}
+                        // }
                       ></div>
                       <div className="cursor-none bg-tertiary p-10 rounded-full">
                         <img

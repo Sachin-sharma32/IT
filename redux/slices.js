@@ -6,6 +6,9 @@ const initialState = {
   message: "",
   posts: [],
   cursorVisible: true,
+  hovering: false,
+  hoveringRight: false,
+  hoveringLeft: false,
 };
 
 const baseSlice = createSlice({
@@ -29,9 +32,27 @@ const baseSlice = createSlice({
       state.cursorVisible = action.payload;
       console.log(state.cursorVisible);
     },
+    setHovering: (state, action) => {
+      state.hovering = action.payload;
+      console.log(state.hovering);
+    },
+    setHoveringRight: (state, action) => {
+      state.hoveringRight = action.payload;
+    },
+    setHoveringLeft: (state, action) => {
+      state.hoveringLeft = action.payload;
+    },
   },
 });
 
-export const { setError, setSuccess, setMessage, setPosts, setCursorVisible } =
-  baseSlice.actions;
+export const {
+  setError,
+  setSuccess,
+  setMessage,
+  setPosts,
+  setCursorVisible,
+  setHovering,
+  setHoveringLeft,
+  setHoveringRight,
+} = baseSlice.actions;
 export default baseSlice.reducer;
