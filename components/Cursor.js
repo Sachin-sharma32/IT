@@ -25,13 +25,13 @@ const Cursor = () => {
     <div>
       {cursorVisible && (
         <div
-          className={`cursor-none  bg-blend-difference fixed  transition-transform duration-1000  -translate-x-1/2 flex justify-center items-center -translate-y-1/2 pointer-events-none  z-[1000] ${
-            hovering ? "bg-primary scale-50" : "bg-black"
-          } w-4 h-4  rounded-full ${
-            hoveringLeft || hoveringRight
+          className={`${
+            (hoveringLeft || hoveringRight)
               ? "scale-[6] bg-[#ebfc6e]"
               : "bg-black"
-          }`}
+          } cursor-none  bg-blend-difference fixed  transition-transform duration-1000  -translate-x-1/2 flex justify-center items-center -translate-y-1/2 pointer-events-none  z-[1000] ${
+            hovering ? "bg-primary scale-50" : "bg-black"
+          } w-4 h-4  rounded-full `}
           ref={dotOutline}
         >
           <div className=" relative">
