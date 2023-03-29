@@ -2,101 +2,101 @@ import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import Smooth from "../utils/Smooth";
 import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { Power1 } from "gsap";
-gsap.registerPlugin(ScrollTrigger);
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+// import { Power1 } from "gsap";
+// gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  useEffect(() => {
-    let t1 = gsap.to(".image-right-0", {
-      scrollTrigger: {
-        trigger: ".image-right-0",
-        scroller: "body",
-        // markers: true,
-        start: "top top",
-        // scrub: true,
-        // pin: true,
-      },
-      x: 0,
-      duration: 1,
-      ease: Power1.easeInOut,
-      delay: 0,
-    });
-    gsap.to(".image-right-1", {
-      scrollTrigger: {
-        trigger: ".image-right-1",
-        scroller: "body",
-        // markers: true,
-        start: "top top",
-        // scrub: true,
-        // pin: true,
-      },
-      x: 0,
-      duration: 1,
-      ease: Power1.easeInOut,
-      delay: 0,
-    });
-    gsap.to(".image-right-2", {
-      scrollTrigger: {
-        trigger: ".image-right-2",
-        scroller: "body",
-        // markers: true,
-        start: "top top",
-        // scrub: true,
-        // pin: true,
-      },
-      x: 0,
-      duration: 1,
-      ease: Power1.easeInOut,
-      delay: 0,
-    });
-    gsap.to(".image-right-3", {
-      scrollTrigger: {
-        trigger: ".image-right-3",
-        scroller: "body",
-        // markers: true,
-        start: "top top",
-        // scrub: true,
-        // pin: true,
-      },
-      x: 0,
-      duration: 1,
-      ease: Power1.easeInOut,
-      delay: 0,
-    });
-    gsap.to(".image-right-4", {
-      scrollTrigger: {
-        trigger: ".image-right-4",
-        scroller: "body",
-        // markers: true,
-        start: "top top",
-        // scrub: true,
-        // pin: true,
-      },
-      x: 0,
-      duration: 1,
-      ease: Power1.easeInOut,
-      delay: 0,
-    });
-    gsap.to(".image-right-5", {
-      scrollTrigger: {
-        trigger: ".image-right-5",
-        scroller: "body",
-        // markers: true,
-        start: "top top",
-        // scrub: true,
-        // pin: true,
-      },
-      x: 0,
-      duration: 1,
-      ease: Power1.easeInOut,
-      delay: 0,
-    });
-    return () => {
-      t1.kill();
-    };
-  }, []);
+  // useEffect(() => {
+  //   let t1 = gsap.to(".image-right-0", {
+  //     scrollTrigger: {
+  //       trigger: ".image-right-0",
+  //       scroller: "body",
+  //       // markers: true,
+  //       start: "top top",
+  //       // scrub: true,
+  //       // pin: true,
+  //     },
+  //     x: 0,
+  //     duration: 1,
+  //     ease: Power1.easeInOut,
+  //     delay: 0,
+  //   });
+  //   gsap.to(".image-right-1", {
+  //     scrollTrigger: {
+  //       trigger: ".image-right-1",
+  //       scroller: "body",
+  //       // markers: true,
+  //       start: "top top",
+  //       // scrub: true,
+  //       // pin: true,
+  //     },
+  //     x: 0,
+  //     duration: 1,
+  //     ease: Power1.easeInOut,
+  //     delay: 0,
+  //   });
+  //   gsap.to(".image-right-2", {
+  //     scrollTrigger: {
+  //       trigger: ".image-right-2",
+  //       scroller: "body",
+  //       // markers: true,
+  //       start: "top top",
+  //       // scrub: true,
+  //       // pin: true,
+  //     },
+  //     x: 0,
+  //     duration: 1,
+  //     ease: Power1.easeInOut,
+  //     delay: 0,
+  //   });
+  //   gsap.to(".image-right-3", {
+  //     scrollTrigger: {
+  //       trigger: ".image-right-3",
+  //       scroller: "body",
+  //       // markers: true,
+  //       start: "top top",
+  //       // scrub: true,
+  //       // pin: true,
+  //     },
+  //     x: 0,
+  //     duration: 1,
+  //     ease: Power1.easeInOut,
+  //     delay: 0,
+  //   });
+  //   gsap.to(".image-right-4", {
+  //     scrollTrigger: {
+  //       trigger: ".image-right-4",
+  //       scroller: "body",
+  //       // markers: true,
+  //       start: "top top",
+  //       // scrub: true,
+  //       // pin: true,
+  //     },
+  //     x: 0,
+  //     duration: 1,
+  //     ease: Power1.easeInOut,
+  //     delay: 0,
+  //   });
+  //   gsap.to(".image-right-5", {
+  //     scrollTrigger: {
+  //       trigger: ".image-right-5",
+  //       scroller: "body",
+  //       // markers: true,
+  //       start: "top top",
+  //       // scrub: true,
+  //       // pin: true,
+  //     },
+  //     x: 0,
+  //     duration: 1,
+  //     ease: Power1.easeInOut,
+  //     delay: 0,
+  //   });
+  //   return () => {
+  //     t1.kill();
+  //   };
+  // }, []);
   const data = [
     {
       title:
@@ -166,21 +166,25 @@ const About = () => {
               } relative h-fit w-fit flex items-center flex-col `}
             >
               {i % 2 === 0 ? (
-                <Image
+                <motion.img
+                  initial={{ x: 500 }}
+                  whileInView={{ x: 0 }}
+                  transition={{ duration: 1 }}
                   width={500}
                   height={500}
                   src={item.image}
                   className={`brightness-50 h-full hidden md:flex image-right-${i}`}
-                  style={{ transform: "translateX(500px)" }}
                   alt=""
                 />
               ) : (
-                <Image
+                <motion.img
+                  initial={{ x: -500 }}
+                  whileInView={{ x: 0 }}
+                  transition={{ duration: 1 }}
                   width={500}
                   height={500}
                   src={item.image}
                   className={`brightness-50 h-full hidden md:flex image-right-${i}`}
-                  style={{ transform: "translateX(-500px)" }}
                   alt=""
                 />
               )}
