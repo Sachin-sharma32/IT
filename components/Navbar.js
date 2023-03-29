@@ -481,6 +481,12 @@ const Navbar = () => {
           aria-controls="mobile-menu-2"
           aria-expanded="false"
           onClick={toggleShow}
+          onMouseEnter={() => {
+                  dispatch(setHovering(true));
+                }}
+                onMouseLeave={() => {
+                  dispatch(setHovering(false));
+                }}
         >
           <CloseIcon className=" group-hover:rotate-180 transition-all duration-300" />
         </button>
