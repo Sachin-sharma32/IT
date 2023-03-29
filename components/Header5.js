@@ -174,10 +174,10 @@ const Header5 = ({ yOffset, header5Ref }) => {
                     if (num > 0) {
                       setNum(num - 1);
                     } else {
-                      setNum(5);
+                      setNum(2);
                     }
                   } else {
-                    if (num < 5) {
+                    if (num < 2) {
                       setNum(num + 1);
                     } else {
                       setNum(0);
