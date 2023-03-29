@@ -15,6 +15,7 @@ import { setHovering } from "../redux/slices";
 const Header4 = ({ yOffset, prev }) => {
   const dispatch = useDispatch();
   const [counter, setCounter] = useState(1);
+  const circle = useRef(null);
   const data = [
     [
       { name: "Python", image: "/python.png" },
@@ -58,13 +59,11 @@ const Header4 = ({ yOffset, prev }) => {
     setElement(i);
     setIsHovering(true);
     setHoverPosition({ x: e.clientX, y: e.clientY });
-    box.current.style.visibility = "visible";
   };
 
   const handleMouseLeave = () => {
     setIsHovering(false);
     setHoverPosition({ x: null, y: null });
-    box.current.style.visibility = "hidden";
   };
 
   setTimeout(() => {
@@ -81,18 +80,6 @@ const Header4 = ({ yOffset, prev }) => {
   const [count, setCount] = useState(0);
   console.log(count);
   const imageRef = useRef(null);
-
-  const box = useRef(null);
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     window.addEventListener("mousemove", (e) => {
-  //       console.log(box);
-  //       box.current.style.left = `${e.clientX + 30}px`;
-  //       // box.current.style.transition = `all .1s ease-out`;
-  //       box.current.style.top = `${e.clientY}px`;
-  //     });
-  //   }
-  // }, []);
 
   useEffect(() => {
     const t1 = gsap.to(".header4", {
@@ -111,13 +98,31 @@ const Header4 = ({ yOffset, prev }) => {
       t1.kill();
     };
   }, []);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("mousemove", (e) => {
+        const decX = e.clientX / window.innerWidth;
+        const decY = e.clientY / window.innerHeight;
+        circle.current.style.transform = `translate(${-decX * 10}%, ${
+          -decY * 10
+        }%)`;
+      });
+    }
+  }, []);
 
   return (
     <section
-      className="cursor-none z-30 bg-[#f8f8f8] px-2 sm:px-6 md:px-10 py-20 w-screen "
+      className="cursor-none z-30 bg-[#f8f8f8] px-2 sm:px-6 md:px-10 py-20 w-screen relative "
       id="achievements"
       ref={ref}
     >
+      <Image
+        src="/circle.png"
+        width={1000}
+        height={1000}
+        className="w-[500px] h-[500px] z-[100] absolute top-[-90px] right-[-80px]"
+        ref={circle}
+      />
       <div className="cursor-none flex flex-col gap-10 relative justify-center items-center w-full">
         <div
           className=" overflow-hidden w-full"
@@ -155,10 +160,10 @@ const Header4 = ({ yOffset, prev }) => {
               direction={j % 2 === 0 ? "right" : "left"}
               gradient={false}
               speed={50}
-              className="flex gap-10 min-w-screen overflow-hidden"
+              className="flex gap-10 min-w-screen overflow-hidden z-40"
             >
               <div
-                className="flex gap-10 py-10 overflow-visible"
+                className="flex gap-10 py-10"
                 style={{
                   transform: `${
                     j % 2 === 0
@@ -168,66 +173,33 @@ const Header4 = ({ yOffset, prev }) => {
                 }}
               >
                 {groups.map((item, i) => (
-                  <div key={i}>
+                  <div
+                    ref={cardRefs.current[i]}
+                    value={i}
+                    key={i}
+                    onMouseEnter={(e) => {
+                      handleMouseEnter(e, i);
+                    }}
+                    onMouseLeave={handleMouseLeave}
+                    className={classNames(
+                      "shadow-lg rounded-lg p-10 group justify-center flex overflow-hidden gap-2 w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] flex-col items-center hover:text-secondary  grayscale hover:scale-110 transition-all hover:grayscale-0 duration-500 hover:-translate-y-4"
+                    )}
+                  >
                     <div
-                      style={{ visibility: "hidden" }}
-                      className="cursor-none  bg-blend-difference fixed -translate-y-1/2 pointer-events-none  z-10 h-10 text-black flex flex-col gap-4"
-                      ref={box}
-                    >
-                      <div className="cursor-none  rounded-full px-10 py-1 w-fit bg-primary font-monumentRegular">
-                        {" "}
-                        {item.name}
-                      </div>
-                      <div className="cursor-none  bg-opacity-50 px-1 pb-1 flex py-1 flex-col gap-1 bg-tertiary relative rounded-md">
-                        <div className="cursor-none flex gap-2 pl-2">
-                          <div className="cursor-none  w-2 h-2 bg-primary rounded-full"></div>
-                          <div className="cursor-none  w-2 h-2 bg-primary rounded-full"></div>
-                          <div className="cursor-none  w-2 h-2 bg-primary rounded-full"></div>
-                        </div>
-                        <Image
-                          width={100}
-                          height={100}
-                          src={`/bs-${counter}.jpg`}
-                          className="cursor-none  w-80"
-                        />
-                      </div>
+                      ref={scaleRef}
+                      className="cursor-none absolute group-hover:scale-[60000%] rounded-full bg-primary ro top-0 left-0 opacity-20 h-[1px] w-[1px]  transition-all duration-1000"
+                    ></div>
+                    <div className="cursor-none bg-tertiary p-10 rounded-full">
+                      <img
+                        ref={imageRef}
+                        src={item.image}
+                        alt=""
+                        className="cursor-none w-12 transition-all duration-300"
+                      />
                     </div>
-                    <div
-                      ref={cardRefs.current[i]}
-                      value={i}
-                      key={i}
-                      // animate={{ y: [100, 0] }}
-                      // transition={{ duration: 1 }}
-                      // onMouseEnter={handleMouseEnter}
-                      onMouseEnter={(e) => {
-                        handleMouseEnter(e, i);
-                      }}
-                      onMouseLeave={handleMouseLeave}
-                      className={classNames(
-                        "shadow-lg rounded-lg p-10 group justify-center flex overflow-hidden gap-2 w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] flex-col items-center hover:text-secondary  grayscale hover:scale-110 transition-all hover:grayscale-0 duration-500 hover:-translate-y-4"
-                      )}
-                    >
-                      <div
-                        ref={scaleRef}
-                        className="cursor-none absolute group-hover:scale-[60000%] rounded-full bg-primary ro top-0 left-0 opacity-20 h-[1px] w-[1px]  transition-all duration-1000"
-                        // style={
-                        //   isHovering && element === i
-                        //     ? { transform: "scale(60000%)" }
-                        //     : {}
-                        // }
-                      ></div>
-                      <div className="cursor-none bg-tertiary p-10 rounded-full">
-                        <img
-                          ref={imageRef}
-                          src={item.image}
-                          alt=""
-                          className="cursor-none w-12 transition-all duration-300"
-                        />
-                      </div>
-                      <h5 className="cursor-none text-2xl uppercase font-monumentRegular text-center">
-                        {item.name}
-                      </h5>
-                    </div>
+                    <h5 className="cursor-none text-2xl uppercase font-monumentRegular text-center">
+                      {item.name}
+                    </h5>
                   </div>
                 ))}
               </div>
