@@ -159,7 +159,7 @@ const Navbar = () => {
               />
             </Link>
             <div></div>
-            <div className="cursor-none flex items-center lg:order-2 gap-2 ">
+            <div className="cursor-none ss flex items-center lg:order-2 gap-2 ">
               <Link
                 href="/contact"
                 className="cursor-none hidden sm:flex  rounded-full bg-primary hover:bg-tertiary  text-black transition-all duration-300 font-medium  text-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-14 md:mr-0"
