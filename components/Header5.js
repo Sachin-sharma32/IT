@@ -107,7 +107,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
       <div className="flex flex-col justify-center items-center sm:px-20 gap-10">
         <div className=" overflow-hidden w-full h-full">
           <h3
-            className="hidden md:flex font-monumentRegular text-2xl md:text-5xl px-2 md:px-10 text-center"
+            className="hidden md:flex font-satoshi text-2xl md:text-5xl px-2 md:px-10 text-center"
             onMouseEnter={() => {
               dispatch(setHovering(true));
             }}
@@ -134,7 +134,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
             })}
           </h3>
           <h3
-            className="md:hidden font-monumentRegular text-2xl md:text-5xl px-2 md:px-10 text-center"
+            className="md:hidden font-satoshi text-2xl md:text-5xl px-2 md:px-10 text-center"
             onMouseEnter={() => {
               dispatch(setHovering(true));
             }}
@@ -204,7 +204,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                 </blockquote>
                 <figcaption className="cursor-none flex self-start">
                   <div className="cursor-none flex  flex-col">
-                    <div className="cursor-none font-medium font-monumentRegular text-primary">
+                    <div className="cursor-none font-medium font-satoshi text-primary">
                       {item.author}
                     </div>
                     <div className="cursor-none font-light text-lg">

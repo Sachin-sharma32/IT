@@ -29,7 +29,7 @@ const Esg = () => {
             alt=""
             className="cursor-none  brightness-75 md:w-[34%] h-[33%] w-screen md:h-full"
           />
-          <h1 className="cursor-none absolute top-1/2  left-10 text-4xl md:text-5xl w-[50%] font-monumentRegular text-white -translate-y-1/2 leading-[1.4] font-extrabold">
+          <h1 className="cursor-none absolute top-1/2  left-10 text-4xl md:text-5xl w-[50%] font-satoshi text-white -translate-y-1/2 leading-[1.4] font-extrabold">
             Building a equitable and sustainable digital future.
           </h1>
         </div>
@@ -40,9 +40,7 @@ const Esg = () => {
             transition={{ duration: 1 }}
             className="cursor-none  border-2 border-primary  rounded-tl-none rounded-br-none md:rounded-bl-[100px] md:rounded-tr-[100px] rounded-bl-[50px] rounded-tr-[50px] p-6 md:p-10 flex flex-col gap-4"
           >
-            <h2 className="cursor-none  text-5xl font-monumentRegular">
-              OUR PURPOSE
-            </h2>
+            <h2 className="cursor-none  text-5xl font-satoshi">OUR PURPOSE</h2>
             <p className="cursor-none text-lg ">
               We&apos;re committed to making a positive impact on the
               environment, society, and governance through our business
@@ -51,7 +49,7 @@ const Esg = () => {
           </motion.div>
         </div>
         <div className="cursor-none flex flex-col gap-10">
-          <h2 className="cursor-none   text-3xl font-monumentRegular text-center">
+          <h2 className="cursor-none   text-3xl font-satoshi text-center">
             ENVIRONMENTAL COMMITMENT
           </h2>
           <div className="cursor-none flex gap-10 justify-center flex-col md:flex-row items-center">
@@ -85,7 +83,7 @@ const Esg = () => {
           </div>
         </div>
         <div className="cursor-none flex flex-col gap-10">
-          <h2 className="cursor-none   text-3xl font-monumentRegular text-center">
+          <h2 className="cursor-none   text-3xl font-satoshi text-center">
             SOCIAL RESPONSIBILITIES
           </h2>
           <div className="cursor-none flex gap-10 justify-center flex-col md:flex-row items-center">
@@ -133,7 +131,7 @@ const Esg = () => {
           </div>
         </div>
         <div className="cursor-none flex flex-col gap-10">
-          <h2 className="cursor-none   text-3xl font-monumentRegular text-center">
+          <h2 className="cursor-none   text-3xl font-satoshi text-center">
             GOVERNANCE POLICIES
           </h2>
           <div className="cursor-none flex gap-10 justify-center flex-col md:flex-row items-center">

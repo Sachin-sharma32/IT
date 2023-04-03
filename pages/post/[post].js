@@ -42,7 +42,7 @@ const Post = () => {
               className={` text-secondary px-4 md:px-10 py-4 md:py-8 flex flex-col lg:flex-row lg:gap-10`}
             >
               <div className="cursor-none  w-[100%] lg-[70%] pt-10">
-                <h1 className="cursor-none font-monumentRegular  mt-2 md:mt-8 text-3xl md:text-4xl bg-gradient-to-r from-secondary to-primary text-transparent bg-clip-text">
+                <h1 className="cursor-none font-satoshi  mt-2 md:mt-8 text-3xl md:text-4xl bg-gradient-to-r from-secondary to-primary text-transparent bg-clip-text">
                   {post.title}
                 </h1>
                 <div

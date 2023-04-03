@@ -7,7 +7,7 @@ const SlaveryStatement = () => {
   return (
     <Smooth>
       <div className="cursor-none  bg-secondary h-[40vh] flex items-end">
-        <h1 className="cursor-none  text-2xl md:text-5xl text-white mb-10 ml-10 uppercase font-monumentRegular">
+        <h1 className="cursor-none  text-2xl md:text-5xl text-white mb-10 ml-10 uppercase font-satoshi">
           MODERN SLAVERY STATEMENT
         </h1>
       </div>
@@ -18,7 +18,7 @@ const SlaveryStatement = () => {
           transition={{ duration: 1 }}
           className="cursor-none  border-2 border-primary  rounded-tl-none rounded-br-none md:rounded-bl-[100px] md:rounded-tr-[100px] rounded-bl-[50px] rounded-tr-[50px] p-6 md:p-10 flex flex-col gap-4"
         >
-          <p  className="cursor-none text-lg ">
+          <p className="cursor-none text-lg ">
             IT Xcelerate is committed to preventing and eradicating modern
             slavery in all forms within our operations and supply chain. We
             recognize the responsibility that comes with our role as a business
@@ -36,7 +36,7 @@ const SlaveryStatement = () => {
       </button>
       <div className="cursor-none flex flex-col p-10 gap-8 leading-[1.9] font-[400] text-[#444444] mt-10">
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Our Commitment to Tackling Modern Slavery
           </h2>
           <p className="text-justify">
@@ -57,7 +57,7 @@ const SlaveryStatement = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Supply Chain Risk Assessment
           </h2>
           <p className="text-justify">
@@ -71,7 +71,7 @@ const SlaveryStatement = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Supplier Compliance
           </h2>
           <p className="text-justify">
@@ -85,7 +85,7 @@ const SlaveryStatement = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Due Diligence
           </h2>
           <p className="text-justify">
@@ -93,7 +93,7 @@ const SlaveryStatement = () => {
             risk-based approach to assess and manage modern slavery risks within
             our supply chain.
           </p>
-          <p  className="cursor-none  italic">
+          <p className="cursor-none  italic">
             {" "}
             Our due diligence program includes the following steps:
           </p>
@@ -115,10 +115,10 @@ const SlaveryStatement = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Training and Awareness
           </h2>
-          <p  className="cursor-none  italic">
+          <p className="cursor-none  italic">
             We provide training to our employees and suppliers to raise
             awareness about modern slavery and its impact. Our training covers
             the identification of modern slavery risks, how to report any
@@ -127,7 +127,7 @@ const SlaveryStatement = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Reporting Modern Slavery Concerns
           </h2>
           <p className="text-justify">

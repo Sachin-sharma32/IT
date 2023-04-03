@@ -6,7 +6,7 @@ const Privacy = () => {
   return (
     <Smooth className="cursor-none ">
       <div className="cursor-none  bg-secondary h-[40vh] flex items-end">
-        <h1 className="cursor-none  text-3xl sm:text-5xl text-white mb-10 ml-10 uppercase font-monumentRegular">
+        <h1 className="cursor-none  text-3xl sm:text-5xl text-white mb-10 ml-10 uppercase font-satoshi">
           PRIVACY STATEMENT
         </h1>
       </div>
@@ -20,7 +20,7 @@ const Privacy = () => {
       </button>
       <div className="cursor-none  flex flex-col p-4 sm:p-10 gap-8 leading-[1.9] font-[400] text-secondary mt-20">
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Information We Collect
           </h2>
           <p className="text-justify">
@@ -40,7 +40,7 @@ const Privacy = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             How We Use Your Information
           </h2>
           <p className="text-justify">
@@ -52,7 +52,7 @@ const Privacy = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Links to Third-Party Websites
           </h2>
           <p className="text-justify">
@@ -73,7 +73,7 @@ const Privacy = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Data Security
           </h2>
           <p className="text-justify">
@@ -92,7 +92,7 @@ const Privacy = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Cookies and Other Tracking Technologies
           </h2>
           <p className="text-justify">
@@ -111,7 +111,7 @@ const Privacy = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Links to Third-Party Websites
           </h2>
           <p className="text-justify">
@@ -122,7 +122,7 @@ const Privacy = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Changes to This Privacy Statement
           </h2>
           <p className="text-justify">

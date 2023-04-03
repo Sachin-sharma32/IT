@@ -83,10 +83,10 @@ const Header = ({ yOffset, prev }) => {
       } bg-secondary h-screen left-0 top-0 z-10 w-screen text-white flex items-center flex-col`}
     >
       <div className="cursor-none revealH1 flex-col-reverse sm:flex-row flex justify-center gap-20 sm:justify-between sm:gap-0 mt-32 px-20 w-full h-screen items-center">
-        <div className="">
+        <div className="w-full text-center">
           <h1
             // style={{ transform: `translateY(-${yOffset * 0.5}px)` }}
-            className="cursor-none  text-4xl leading-none w-full tracking-tight font-monumentRegular md:text-5xl xl:text-6xl dark:text-white z-50"
+            className="cursor-none  text-3xl font-extrabold leading-none w-full tracking-tight font-satoshi md:text-7xl xl:text-7xl dark:text-white z-50"
             onMouseEnter={() => {
               dispatch(setHovering(true));
             }}
@@ -96,7 +96,7 @@ const Header = ({ yOffset, prev }) => {
           >
             <div className="cursor-none  overflow-hidden">
               <span
-                className="cursor-none text-primary reveal inline-block "
+                className="cursor-none text-primary reveal inline-block"
                 style={{ transform: "translateY(1000px)" }}
               >
                 Accelerating
@@ -169,7 +169,7 @@ const Header = ({ yOffset, prev }) => {
                 // style={{
                 //   transform: `translateX(${-yOffset - 10}px)`,
                 // }}
-                className="cursor-none flex gap-20 px-10 dark:text-tertiary font-monumentRegular text-3xl md:text-5xl overflow-hidden"
+                className="cursor-none flex gap-20 px-10 dark:text-tertiary font-satoshi font-extrabold text-3xl md:text-7xl overflow-hidden"
               >
                 DESIGNING THE FUTURE OF TECHNOLOGY
               </div>

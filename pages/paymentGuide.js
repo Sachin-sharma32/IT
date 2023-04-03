@@ -7,7 +7,7 @@ const PaymentGuide = () => {
   return (
     <Smooth>
       <div className="cursor-none  bg-secondary h-[40vh] flex items-end">
-        <h1 className="cursor-none  text-xl md:text-5xl text-white mb-10 ml-10 uppercase font-monumentRegular">
+        <h1 className="cursor-none  text-xl md:text-5xl text-white mb-10 ml-10 uppercase font-satoshi">
           PAYMENT GUIDE FOR SUPPLIERS
         </h1>
       </div>
@@ -18,7 +18,7 @@ const PaymentGuide = () => {
           transition={{ duration: 1 }}
           className="cursor-none  border-2 border-primary  rounded-tl-none rounded-br-none md:rounded-bl-[100px] md:rounded-tr-[100px] rounded-bl-[50px] rounded-tr-[50px] p-6 md:p-10 flex flex-col gap-4"
         >
-          <p  className="cursor-none text-lg ">
+          <p className="cursor-none text-lg ">
             At IT Xcelerate, we are dedicated to building and maintaining strong
             relationships with our suppliers. We understand that timely payment
             is essential to maintaining these relationships, and we have
@@ -37,7 +37,7 @@ const PaymentGuide = () => {
       </button>
       <div className="cursor-none flex flex-col p-10 gap-8 leading-[1.9] font-[400] text-[#444444] mt-10">
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Payment Terms
           </h2>
           <p className="text-justify">
@@ -50,14 +50,12 @@ const PaymentGuide = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
-            Invoicing
-          </h2>
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">Invoicing</h2>
           <p className="text-justify">
             All suppliers must submit invoices electronically to
             sachin2sharma001@gmail.com.
           </p>
-          <p  className="cursor-none  italic">
+          <p className="cursor-none  italic">
             Invoices should include the following information:
           </p>
           <p className="text-justify">
@@ -89,7 +87,7 @@ const PaymentGuide = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Payment Methods
           </h2>
           <p className="text-justify">
@@ -101,7 +99,7 @@ const PaymentGuide = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Late Payments
           </h2>
           <p className="text-justify">
@@ -113,10 +111,10 @@ const PaymentGuide = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Changes to This Policy
           </h2>
-          <p  className="cursor-none  italic">
+          <p className="cursor-none  italic">
             We reserve the right to modify this Payment Guide for Suppliers at
             any time without prior notice. Your continued work with IT Xcelerate
             after any changes to this page constitutes your acceptance of the

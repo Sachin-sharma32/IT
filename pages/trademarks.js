@@ -6,7 +6,7 @@ const Trademarks = () => {
   return (
     <Smooth>
       <div className="cursor-none  bg-secondary h-[40vh] flex items-end text-secondary">
-        <h1 className="cursor-none  text-3xl md:text-5xl text-white mb-10 ml-10 uppercase font-monumentRegular">
+        <h1 className="cursor-none  text-3xl md:text-5xl text-white mb-10 ml-10 uppercase font-satoshi">
           TRADEMARKS
         </h1>
       </div>
@@ -28,7 +28,7 @@ const Trademarks = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Prohibited Uses
           </h2>
           <p className="text-justify">
@@ -48,7 +48,7 @@ const Trademarks = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Reporting Trademark Infringement
           </h2>
           <p className="text-justify">
@@ -60,7 +60,7 @@ const Trademarks = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Third-Party Trademarks
           </h2>
           <p className="text-justify">
@@ -71,7 +71,7 @@ const Trademarks = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Changes to This Policy
           </h2>
           <p className="text-justify">
@@ -82,7 +82,7 @@ const Trademarks = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Links to Third-Party Websites
           </h2>
           <p className="text-justify">
@@ -93,7 +93,7 @@ const Trademarks = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
             Changes to This Privacy Statement
           </h2>
           <p className="text-justify">

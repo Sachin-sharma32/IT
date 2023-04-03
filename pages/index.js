@@ -118,7 +118,7 @@ const Home = () => {
           <div className="cursor-none max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
             <div className="cursor-none mx-auto mb-8 text-center lg:mb-12 w-full overflow-hidden">
               <h2
-                className="cursor-none mb-4 font-extrabold tracking-tight font-monumentRegular text-2xl md:text-4xl w-full revealI1"
+                className="cursor-none mb-4 font-extrabold tracking-tight font-satoshi text-2xl md:text-4xl w-full revealI1"
                 style={{ transform: "translateY(100px)" }}
                 onMouseEnter={() => {
                   dispatch(setHovering(true));
@@ -150,7 +150,7 @@ const Home = () => {
                   <div className="cursor-none  h-fit overflow-hidden">
                     <div className=" overflow-hidden">
                       <h3
-                        className="cursor-none mb-4 font-monumentRegular text-2xl font-semibold revealI2"
+                        className="cursor-none mb-4 font-satoshi text-2xl font-semibold revealI2"
                         style={{ transform: "translateY(100px)" }}
                       >
                         Basic Plan
@@ -168,7 +168,7 @@ const Home = () => {
 
                   <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
                     <span
-                      className="cursor-none mr-2 text-5xl font-monumentRegular text-primary inline-block revealI2"
+                      className="cursor-none mr-2 text-5xl font-satoshi text-primary inline-block revealI2"
                       style={{ transform: "translateY(100px)" }}
                     >
                       $199
@@ -379,7 +379,7 @@ const Home = () => {
                 <div className="cursor-none card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-inherit">
                   <div className=" overflow-hidden">
                     <h3
-                      className="cursor-none mb-4 font-monumentRegular text-2xl font-semibold revealI3"
+                      className="cursor-none mb-4 font-satoshi text-2xl font-semibold revealI3"
                       style={{ transform: "translateY(100px)" }}
                     >
                       Advanced Plan
@@ -395,7 +395,7 @@ const Home = () => {
                   </div>
                   <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
                     <span
-                      className="cursor-none mr-2 text-5xl font-monumentRegular text-primary inline-block revealI3"
+                      className="cursor-none mr-2 text-5xl font-satoshi text-primary inline-block revealI3"
                       style={{ transform: "translateY(100px)" }}
                     >
                       $499
@@ -620,7 +620,7 @@ const Home = () => {
                 <div className="cursor-none card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-inherit">
                   <div className=" overflow-hidden">
                     <h3
-                      className="cursor-none mb-4 font-monumentRegular text-2xl font-semibold revealI4"
+                      className="cursor-none mb-4 font-satoshi text-2xl font-semibold revealI4"
                       style={{ transform: "translateY(100px)" }}
                     >
                       Pro Plan
@@ -636,7 +636,7 @@ const Home = () => {
                   </div>
                   <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
                     <span
-                      className="cursor-none mr-2 text-5xl font-monumentRegular text-primary inline-block revealI4"
+                      className="cursor-none mr-2 text-5xl font-satoshi text-primary inline-block revealI4"
                       style={{ transform: "translateY(100px)" }}
                     >
                       $999
