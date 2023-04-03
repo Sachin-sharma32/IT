@@ -86,7 +86,7 @@ const Header = ({ yOffset, prev }) => {
         <div className="w-full text-center">
           <h1
             // style={{ transform: `translateY(-${yOffset * 0.5}px)` }}
-            className="cursor-none  text-3xl font-extrabold leading-none w-full tracking-tight font-satoshi md:text-7xl xl:text-7xl dark:text-white z-50"
+            className="cursor-none  text-3xl font-bold leading-none w-full tracking-tight font-monumentRegular md:text-5xl xl:text-5xl dark:text-white z-50"
             onMouseEnter={() => {
               dispatch(setHovering(true));
             }}
@@ -169,7 +169,7 @@ const Header = ({ yOffset, prev }) => {
                 // style={{
                 //   transform: `translateX(${-yOffset - 10}px)`,
                 // }}
-                className="cursor-none flex gap-20 px-10 dark:text-tertiary font-satoshi font-extrabold text-3xl md:text-7xl overflow-hidden"
+                className="cursor-none flex gap-20 px-10 dark:text-tertiary font-monumentRegular font- text-3xl md:text-5xl overflow-hidden"
               >
                 DESIGNING THE FUTURE OF TECHNOLOGY
               </div>

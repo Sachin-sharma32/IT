@@ -108,7 +108,7 @@ const Contact = () => {
             >
               <div className="cursor-none flex flex-col gap-6 text-secondary">
                 <h3>Contact us</h3>
-                <div className="cursor-none flex text-3xl font-satoshi items-center gap-4">
+                <div className="cursor-none flex text-3xl font-monumentRegular items-center gap-4">
                   <UpcomingIcon className="cursor-none  text-5xl text-primary" />
                   <h1 className="cursor-none  translate-y-1">
                     Send an enquiry
@@ -251,7 +251,7 @@ const Contact = () => {
           )}
         </Formik>
         <div className="cursor-none flex w-full flex-col text-xl px-4 gap-20 text-secondary justify-center">
-          <div className="cursor-none  border-b flex gap-10 pb-4 w-full font-satoshi items-center">
+          <div className="cursor-none  border-b flex gap-10 pb-4 w-full font-monumentRegular items-center">
             <PhoneEnabledIcon className="cursor-none  text-5xl text-primary" />
             <h3>Or call us directly</h3>
           </div>

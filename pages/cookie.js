@@ -6,7 +6,7 @@ const Cookie = () => {
   return (
     <Smooth>
       <div className="cursor-none  bg-secondary h-[40vh] flex items-end text-secondary">
-        <h1 className="cursor-none  text-2xl md:text-5xl text-white mb-10 ml-10 uppercase font-satoshi">
+        <h1 className="cursor-none  text-2xl md:text-5xl text-white mb-10 ml-10 uppercase font-monumentRegular">
           COOKIE POLICY
         </h1>
       </div>
@@ -20,7 +20,7 @@ const Cookie = () => {
       </button>
       <div className="cursor-none flex flex-col p-10 gap-8 leading-[1.9] font-[400]  mt-10">
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
+          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
             What Are Cookies?
           </h2>
           <p className="text-justify">
@@ -33,7 +33,7 @@ const Cookie = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
+          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
             How We Use Cookies
           </h2>
           <p className="text-justify">
@@ -60,7 +60,7 @@ const Cookie = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
+          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
             Types of Cookies We Use
           </h2>
           <p className="text-justify">
@@ -96,7 +96,7 @@ const Cookie = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
+          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
             Managing Your Cookies
           </h2>
           <p className="text-justify">
@@ -107,7 +107,7 @@ const Cookie = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
+          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
             Third-Party Cookies
           </h2>
           <p className="cursor-none  italic">
@@ -124,7 +124,7 @@ const Cookie = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
+          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
             Changes to This Cookie Policy
           </h2>
           <p className="text-justify">

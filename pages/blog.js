@@ -19,7 +19,7 @@ const BlogContainer = ({ posts }) => {
   return (
     <div className="cursor-none  w-screen">
       <div className="cursor-none  bg-secondary min-h-[40vh] flex items-end">
-        <h1 className="cursor-none  text-5xl text-white mb-10 ml-10 font-satoshi uppercase">
+        <h1 className="cursor-none  text-5xl text-white mb-10 ml-10 font-monumentRegular uppercase">
           BLOGS
         </h1>
       </div>

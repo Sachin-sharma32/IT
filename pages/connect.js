@@ -6,7 +6,7 @@ const Connect = () => {
   return (
     <Smooth>
       <div className="cursor-none  bg-secondary h-[40vh] flex items-end text-secondary">
-        <h1 className="cursor-none  text-5xl text-white mb-10 ml-10 uppercase font-satoshi">
+        <h1 className="cursor-none  text-5xl text-white mb-10 ml-10 uppercase font-monumentRegular">
           CONTACT US
         </h1>
       </div>

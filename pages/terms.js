@@ -5,7 +5,7 @@ const Terms = () => {
   return (
     <Smooth>
       <div className="cursor-none  bg-secondary h-[40vh] flex items-end text-secondary">
-        <h1 className="cursor-none  text-2xl md:text-5xl text-white mb-10 ml-10 uppercase font-satoshi">
+        <h1 className="cursor-none  text-2xl md:text-5xl text-white mb-10 ml-10 uppercase font-monumentRegular">
           TERMS TO USE
         </h1>
       </div>
@@ -19,7 +19,7 @@ const Terms = () => {
       </button>
       <div className="cursor-none flex flex-col p-10 gap-8 leading-[1.9] font-[400]  mt-10">
         <div>
-          <h2 className="cursor-none  text-lg font-satoshi">
+          <h2 className="cursor-none  text-lg font-monumentRegular">
             Intellectual Property Rights
           </h2>
           <p className="text-justify">
@@ -30,7 +30,7 @@ const Terms = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg font-satoshi">
+          <h2 className="cursor-none  text-lg font-monumentRegular">
             Accuracy Of Information
           </h2>
           <p className="text-justify">
@@ -42,7 +42,7 @@ const Terms = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg font-satoshi">
+          <h2 className="cursor-none  text-lg font-monumentRegular">
             Links to Third-Party Websites
           </h2>
           <p className="text-justify">
@@ -54,7 +54,7 @@ const Terms = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg font-satoshi">
+          <h2 className="cursor-none  text-lg font-monumentRegular">
             Disclaimer of Warranties
           </h2>
           <p className="text-justify">
@@ -67,7 +67,7 @@ const Terms = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg font-satoshi">
+          <h2 className="cursor-none  text-lg font-monumentRegular">
             Limitation Of Liability
           </h2>
           <p className="text-justify">
@@ -78,7 +78,9 @@ const Terms = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg font-satoshi">Governing Law</h2>
+          <h2 className="cursor-none  text-lg font-monumentRegular">
+            Governing Law
+          </h2>
           <p className="text-justify">
             These terms and conditions shall be governed by and construed in
             accordance with the laws of [jurisdiction]. Any dispute arising out
@@ -87,7 +89,7 @@ const Terms = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg font-satoshi">
+          <h2 className="cursor-none  text-lg font-monumentRegular">
             Changes To These Terms
           </h2>
           <p className="text-justify">

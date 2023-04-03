@@ -115,7 +115,7 @@ const Header7 = () => {
         className="cursor-none  bg-blend-difference fixed -translate-y-1/2 pointer-events-none  z-[1000] h-10 text- flex flex-col gap-4"
         ref={box}
       >
-        <div className="cursor-none bg-primary rounded-full font-satoshi px-10 py-1 w-fit">
+        <div className="cursor-none bg-primary rounded-full font-monumentRegular px-10 py-1 w-fit">
           {" "}
           ITXCELERATE
         </div>
@@ -131,7 +131,7 @@ const Header7 = () => {
             src={`/slider-${counter}.jpg`}
             className="cursor-none  w-80 brightness-50"
           />
-          <p className=" absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 font-satoshi text-white">
+          <p className=" absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 font-monumentRegular text-white">
             {counter === 1 && "WEB"}
             {counter === 2 && "MOBILE"}
             {counter === 3 && "DEPLOYMENT"}
@@ -219,7 +219,7 @@ const Header7 = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1, x: [200, 0] }}
                 transition={{ duration: 1, delay: 0.1 }}
-                className="cursor-none text-2xl   uppercase text-center font-satoshi"
+                className="cursor-none text-2xl   uppercase text-center font-monumentRegular"
               >
                 {item.name}
               </motion.h5>
@@ -252,7 +252,7 @@ const Header7 = () => {
                   />
                 </div>
               </div>
-              <h5 className="cursor-none text-2xl   uppercase text-center font-satoshi">
+              <h5 className="cursor-none text-2xl   uppercase text-center font-monumentRegular">
                 {item.name}
               </h5>
             </div>

@@ -92,7 +92,7 @@ const Footer = () => {
       <div className="cursor-none max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10 z-50">
         <div className="cursor-none grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-3 justify-items-center z-50 pb-10">
           <div className="cursor-none  w-full sm:w-fit">
-            <h3 className="cursor-none mb-6 text-sm font-semibold  uppercase font-satoshi">
+            <h3 className="cursor-none mb-6 text-sm font-semibold  uppercase font-monumentRegular">
               Company
             </h3>
             <ul
@@ -126,7 +126,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="cursor-none mb-6 text-sm font-semibold  uppercase dark: font-satoshi">
+            <h3 className="cursor-none mb-6 text-sm font-semibold  uppercase dark: font-monumentRegular">
               Help center
             </h3>
             <ul
@@ -160,7 +160,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="cursor-none ">
-            <h3 className="cursor-none mb-6 text-sm font-semibold  uppercase dark: font-satoshi">
+            <h3 className="cursor-none mb-6 text-sm font-semibold  uppercase dark: font-monumentRegular">
               Legal
             </h3>
             <ul

@@ -7,7 +7,7 @@ const PaymentGuide = () => {
   return (
     <Smooth>
       <div className="cursor-none  bg-secondary h-[40vh] flex items-end">
-        <h1 className="cursor-none  text-xl md:text-5xl text-white mb-10 ml-10 uppercase font-satoshi">
+        <h1 className="cursor-none  text-xl md:text-5xl text-white mb-10 ml-10 uppercase font-monumentRegular">
           PAYMENT GUIDE FOR SUPPLIERS
         </h1>
       </div>
@@ -37,7 +37,7 @@ const PaymentGuide = () => {
       </button>
       <div className="cursor-none flex flex-col p-10 gap-8 leading-[1.9] font-[400] text-[#444444] mt-10">
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
+          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
             Payment Terms
           </h2>
           <p className="text-justify">
@@ -50,7 +50,9 @@ const PaymentGuide = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-satoshi">Invoicing</h2>
+          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+            Invoicing
+          </h2>
           <p className="text-justify">
             All suppliers must submit invoices electronically to
             sachin2sharma001@gmail.com.
@@ -87,7 +89,7 @@ const PaymentGuide = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
+          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
             Payment Methods
           </h2>
           <p className="text-justify">
@@ -99,7 +101,7 @@ const PaymentGuide = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
+          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
             Late Payments
           </h2>
           <p className="text-justify">
@@ -111,7 +113,7 @@ const PaymentGuide = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
+          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
             Changes to This Policy
           </h2>
           <p className="cursor-none  italic">

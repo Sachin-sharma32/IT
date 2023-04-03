@@ -7,7 +7,7 @@ const SlaveryStatement = () => {
   return (
     <Smooth>
       <div className="cursor-none  bg-secondary h-[40vh] flex items-end">
-        <h1 className="cursor-none  text-2xl md:text-5xl text-white mb-10 ml-10 uppercase font-satoshi">
+        <h1 className="cursor-none  text-2xl md:text-5xl text-white mb-10 ml-10 uppercase font-monumentRegular">
           MODERN SLAVERY STATEMENT
         </h1>
       </div>
@@ -36,7 +36,7 @@ const SlaveryStatement = () => {
       </button>
       <div className="cursor-none flex flex-col p-10 gap-8 leading-[1.9] font-[400] text-[#444444] mt-10">
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
+          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
             Our Commitment to Tackling Modern Slavery
           </h2>
           <p className="text-justify">
@@ -57,7 +57,7 @@ const SlaveryStatement = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
+          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
             Supply Chain Risk Assessment
           </h2>
           <p className="text-justify">
@@ -71,7 +71,7 @@ const SlaveryStatement = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
+          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
             Supplier Compliance
           </h2>
           <p className="text-justify">
@@ -85,7 +85,7 @@ const SlaveryStatement = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
+          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
             Due Diligence
           </h2>
           <p className="text-justify">
@@ -115,7 +115,7 @@ const SlaveryStatement = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
+          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
             Training and Awareness
           </h2>
           <p className="cursor-none  italic">
@@ -127,7 +127,7 @@ const SlaveryStatement = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-satoshi">
+          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
             Reporting Modern Slavery Concerns
           </h2>
           <p className="text-justify">
