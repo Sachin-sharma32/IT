@@ -115,7 +115,7 @@ const Home = () => {
           className="cursor-none  min-h-[100vh] w-screen  z-40 bg-fourth text-tertiary"
           id="pricing"
         >
-          <div className="cursor-none max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
+          <div className="cursor-none ss max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
             <div className="cursor-none mx-auto mb-8 text-center lg:mb-12 w-full overflow-hidden">
               <h2
                 className="cursor-none mb-4 font-extrabold tracking-tight font-satoshi text-2xl md:text-4xl w-full revealI1"
