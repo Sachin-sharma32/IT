@@ -153,7 +153,7 @@ const Navbar = () => {
                 width={100}
                 height={100}
                 src="/logo-1.png"
-                className="cursor-none  w-48  absolute -top-[57px] md:-top-[60px] left-20 show "
+                className="cursor-none  w-48  absolute -top-[57px] md:-top-[59px] left-20 show "
                 alt="ITXcelerate logo"
                 style={{ transform: "translateX(-1000px)" }}
               />
