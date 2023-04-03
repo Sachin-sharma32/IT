@@ -28,7 +28,7 @@ const Header9 = () => {
       <div className=" flex flex-col gap-4 text-black text-base w-full md:w-[60%]">
         {[0, 1, 2, 3].map((item, i) => (
           <div
-            className={`bg-[#e7e7e7] md:p-8 p-4  rounded-lg group flex border border-black flex-col gap-10 h-[250px] sticky `}
+            className={`bg-[#e7e7e7] md:p-8 p-4  rounded-lg group flex border border-black flex-col gap-10 h-[250px] md:h-[300px] sticky `}
             style={{ top: `${80 + i * 20}px` }}
           >
             <div className="flex gap-6">
