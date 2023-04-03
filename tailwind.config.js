@@ -31,6 +31,7 @@ module.exports = {
         tungsten: "Tungsten",
         monumentRegular: "Monument-regular",
         monumentBold: "Monument-bold",
+        satoshi: "Satoshi",
         gilroy1: ["Gilroy-1", "sans-serif"],
         gilroy2: ["Gilroy-2", "sans-serif"],
         gilroy3: ["Gilroy-3", "sans-serif"],

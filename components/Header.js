@@ -166,9 +166,9 @@ const Header = ({ yOffset, prev }) => {
               speed={50}
             >
               <div
-                style={{
-                  transform: `translateX(${-yOffset - 10}px)`,
-                }}
+                // style={{
+                //   transform: `translateX(${-yOffset - 10}px)`,
+                // }}
                 className="cursor-none flex gap-20 px-10 dark:text-tertiary font-monumentRegular text-3xl md:text-5xl overflow-hidden"
               >
                 DESIGNING THE FUTURE OF TECHNOLOGY

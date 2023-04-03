@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }) {
   const { scrollYProgress } = useScroll();
 
   return (
-    <div className="cursor-none  selection:bg-tertiary overflow-x-hidden font-roboto scroll-smooth bg-[#f8f8f8]">
+    <div className="cursor-none overflow-x-clip  selection:bg-tertiary  font-satoshi scroll-smooth bg-[#f8f8f8]">
       <Head>
         <title>ITXcelerate - {pageProps.title}</title>
         <link rel="icon" type="image/png" href={`/logo-3.png`} />
@@ -83,11 +83,7 @@ function MyApp({ Component, pageProps }) {
             )}
             {/* <Scroll/> */}
             <Component {...pageProps} />
-            {router.pathname === "/" ? (
-              ""
-            ) : (
-              <Footer />
-            )}
+            {router.pathname === "/" ? "" : <Footer />}
             {/* <Social /> */}
           </Smooth>
         </StyledEngineProvider>

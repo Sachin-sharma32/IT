@@ -60,7 +60,7 @@ const Header3 = () => {
         trigger: ".flowers",
         scroller: "body",
         start: "top bottom",
-        scrub: true,
+        scrub: 5,
       },
       right: "300px",
       duration: 1,
@@ -84,7 +84,7 @@ const Header3 = () => {
 
   return (
     <div
-      className="cursor-none  z-40 px-2 sm:px-4 md:px-10 w-screen bg-[#17383a] relative pb-20"
+      className="cursor-none overflow-hidden  z-40 px-2 sm:px-4 md:px-10 w-screen bg-[#17383a] relative pb-20"
       ref={header3Ref}
     >
       <section
@@ -102,7 +102,7 @@ const Header3 = () => {
               width={1000}
               height={1000}
               src="/png-5.png"
-              className="cursor-none hidden md:flex absolute scale-[1.5] top-0 flowers w-[2000px]"
+              className="cursor-none hidden md:flex absolute scale-[1.5] top-0 Is w-[2000px]"
               style={{ right: "200px" }}
             />
             <Image

@@ -63,6 +63,10 @@
   font-family: 'Gilroy-9';
   src: url("../public/Gilroy-Black.ttf");
 }
+@font-face {
+  font-family: 'Satoshi';
+  src: url("../public/Satoshi-Regular.otf");
+}
 
 
 .arrow-img{
@@ -78,6 +82,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     overflow: overlay;
     color: inherit;
+    display: unset;
   }
   
 a {

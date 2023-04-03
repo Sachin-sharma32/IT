@@ -22,6 +22,7 @@ import Image from "next/image";
 import Header8 from "../components/header-8";
 import { useDispatch } from "react-redux";
 import { setHovering } from "../redux/slices";
+import Header9 from "../components/Header-9";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -98,7 +99,7 @@ const Home = () => {
   // }, []);
 
   return (
-    <div className="cursor-none  min-h-[100vh] flex container mb-[90vh]">
+    <div className="cursor-none  min-h-[100vh] flex container mb-[90vh] max-w-[100vw]">
       <div className="cursor-none flex flex-col">
         <div id="home"></div>
         <Navbar yOffset={yOffset} prev={prev} />
@@ -106,11 +107,12 @@ const Home = () => {
         <Header3 yOffset={yOffset} prev={prev} />
         <Header4 yOffset={yOffset} prev={prev} />
         <Header5 yOffset={yOffset} prev={prev} header5Ref={header5Ref} />
+        <Header9 />
         <Header7 />
         <Header6 yOffset={yOffset} prev={prev} />
         <section
           ref={newRef}
-          className="cursor-none  min-h-[100vh] w-screen  overflow-hidden z-40 bg-fourth text-tertiary"
+          className="cursor-none  min-h-[100vh] w-screen  z-40 bg-fourth text-tertiary"
           id="pricing"
         >
           <div className="cursor-none max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">

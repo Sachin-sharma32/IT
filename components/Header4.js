@@ -165,13 +165,13 @@ const Header4 = ({ yOffset, prev }) => {
             >
               <div
                 className="flex gap-10 py-10 overflow-y-visible"
-                style={{
-                  transform: `${
-                    j % 2 === 0
-                      ? `translateX(${yOffset * 0.1}px)`
-                      : `translateX(${-yOffset * 0.1}px)`
-                  }`,
-                }}
+                // style={{
+                //   transform: `${
+                //     j % 2 === 0
+                //       ? `translateX(${yOffset * 0.1}px)`
+                //       : `translateX(${-yOffset * 0.1}px)`
+                //   }`,
+                // }}
               >
                 {groups.map((item, i) => (
                   <motion.div
@@ -186,9 +186,7 @@ const Header4 = ({ yOffset, prev }) => {
                     }}
                     onMouseLeave={handleMouseLeave}
                     className={classNames(
-                      `${
-                        i % 2 === 0 ? " md:translate-y-6" : ""
-                      } shadow-lg backdrop:opacity-20 backdrop-blur-3xl rounded-lg p-10 group justify-center flex overflow-hidden gap-2 w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[250px] md:h-[250px] flex-col items-center hover:text-secondary  grayscale hover:scale-110 transition-all bg-white hover:grayscale-0 duration-500 hover:-translate-y-4`
+                      ` shadow-lg backdrop:opacity-20 backdrop-blur-3xl rounded-lg p-10 group justify-center flex overflow-hidden gap-2 w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[250px] md:h-[250px] flex-col items-center hover:text-secondary  grayscale hover:scale-110 transition-all bg-white hover:grayscale-0 duration-500 hover:-translate-y-4`
                     )}
                   >
                     <div

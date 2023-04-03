@@ -146,7 +146,7 @@ const container = {
     backgroundColor: "white",
     borderRadius: "20px",
     margin: "40px auto",
-    overflow: "hidden",
+    // overflow: "hidden",
 };
 
 const logo = {

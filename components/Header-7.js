@@ -109,7 +109,7 @@ const Header7 = () => {
   }, []);
 
   return (
-    <div className="cursor-none flex flex-col z-30  relative justify-center items-center p-2 md:px-10 py-10 md:py-20 w-screen bg-secondary">
+    <div className="cursor-none flex flex-col z-30  relative justify-center items-center p-2 md:px-10 py-10 md:py-20 w-screen bg-gradient-to-r from-[#0199b1] to-[#7cd957]">
       <div
         style={{ visibility: "hidden" }}
         className="cursor-none  bg-blend-difference fixed -translate-y-1/2 pointer-events-none  z-[1000] h-10 text- flex flex-col gap-4"
@@ -186,7 +186,7 @@ const Header7 = () => {
         </h2>
         <div className="cursor-none hidden py-10 sm:grid md:grid-cols-3 justify-items-center justify-center  lg:grid-cols-3 gap-10 px-4 md:px-10 w-screen  overflow-scroll header-4">
           {data.map((item, i) => (
-            <div
+            <motion.div
               ref={cardRefs.current[i]}
               onMouseEnter={(e) => {
                 handleMouseEnter(e, i);
@@ -215,10 +215,15 @@ const Header7 = () => {
                   />
                 </div>
               </div>
-              <h5 className="cursor-none text-2xl   uppercase text-center font-monumentRegular">
+              <motion.h5
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, x: [200, 0] }}
+                transition={{ duration: 1, delay: 0.1 }}
+                className="cursor-none text-2xl   uppercase text-center font-monumentRegular"
+              >
                 {item.name}
-              </h5>
-            </div>
+              </motion.h5>
+            </motion.div>
           ))}
         </div>
         <div className="cursor-none md:hidden py-32 gap-10 px-4 md:px-10 h-full w-screen flex overflow-x-scroll header-4">
