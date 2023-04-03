@@ -113,7 +113,7 @@ const Header6 = ({ yOffset, prev }) => {
           })}{" "}
         </h2>
         <h2
-          className="cursor-none mb-6 text-[28px] md:text-3xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0 text-black lg:mb-8 font-monumentRegular"
+          className="cursor-none md:hidden mb-6 text-[28px] md:text-3xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0 text-black lg:mb-8 font-monumentRegular"
           onMouseEnter={() => {
             dispatch(setHovering(true));
           }}
@@ -163,6 +163,7 @@ const Header6 = ({ yOffset, prev }) => {
           ))}
         </div>
       </div>
+      <div className="w-full"></div>
       <Image
         width={1000}
         height={1000}
