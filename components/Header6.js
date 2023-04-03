@@ -81,12 +81,12 @@ const Header6 = ({ yOffset, prev }) => {
   return (
     <section
       ref={containerRef}
-      className="cursor-none bg-white  z-10 h-[180vh] md:flex items-center w-screen py-20  px-2 md:px-10 relative"
+      className="cursor-none bg-white  z-10 h-fit md:h-[180vh] md:flex items-center w-screen md:py-20 py-10 px-2 md:px-10 relative"
       id="faqs"
     >
       <div className="cursor-none max-w-screen-xl pb-8 mx-auto lg:pb-24 lg:px-6 flex justify-center flex-col py-20">
         <h2
-          className="cursor-none mb-6 text-[28px] md:text-3xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0 text-black lg:mb-8 font-monumentRegular"
+          className="cursor-none hidden md:flex justify-center mb-6 text-[28px] md:text-3xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0 text-black lg:mb-8 font-monumentRegular"
           onMouseEnter={() => {
             dispatch(setHovering(true));
           }}
@@ -111,6 +111,17 @@ const Header6 = ({ yOffset, prev }) => {
               </span>
             );
           })}{" "}
+        </h2>
+        <h2
+          className="cursor-none mb-6 text-[28px] md:text-3xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0 text-black lg:mb-8 font-monumentRegular"
+          onMouseEnter={() => {
+            dispatch(setHovering(true));
+          }}
+          onMouseLeave={() => {
+            dispatch(setHovering(false));
+          }}
+        >
+          Frequently Asked Questions
         </h2>
         <div className="cursor-none  mx-auto px-4 md:px-14 font-gilroy4">
           {data.map((item, i) => (
@@ -152,7 +163,6 @@ const Header6 = ({ yOffset, prev }) => {
           ))}
         </div>
       </div>
-      <div className="cursor-none  w-full h-screen max-h-screen"></div>
       <Image
         width={1000}
         height={1000}

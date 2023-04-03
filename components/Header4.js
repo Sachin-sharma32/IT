@@ -110,7 +110,7 @@ const Header4 = ({ yOffset, prev }) => {
 
   return (
     <section
-      className="cursor-none z-30 bg-[#f8f8f8] pb-20 h-[155vh] md:h-[200vh] px-2 sm:px-6 md:px-10 py-20 w-screen relative "
+      className="cursor-none z-30 bg-[#f8f8f8] pb-20 h-[120vh] md:h-[200vh] px-2 sm:px-6 md:px-10 py-10 md:py-20 w-screen relative "
       id="achievements"
       ref={ref}
     >
