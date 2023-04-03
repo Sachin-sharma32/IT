@@ -300,7 +300,7 @@ a {
 .heading-7{
   -webkit-text-fill-color: #184e50;
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #f8f8f8;
+  -webkit-text-stroke-color: transparent;
 }
 .heading-3{
   -webkit-text-fill-color: #d9ffe5;

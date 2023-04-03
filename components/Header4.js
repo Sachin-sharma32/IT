@@ -22,25 +22,23 @@ const Header4 = ({ yOffset, prev }) => {
       { name: "Docker", image: "/docker.png" },
       { name: "ReactJS", image: "/react.png" },
       { name: "MongoDB", image: "/mongodb.png" },
+      { name: "Kubernetes", image: "/kubernetes.png" },
+      { name: "Firebase", image: "/firebase.png" },
     ],
     [
-      { name: "Kubernetes", image: "/kubernetes.png" },
       { name: "NodeJS", image: "/nodejs.png" },
       { name: "AWS", image: "/aws.png" },
       { name: "PHP", image: "/php.png" },
-    ],
-    [
       { name: "Java", image: "/java.png" },
       { name: "Ruby", image: "/ruby.png" },
-      { name: "React Native", image: "/reactnative.png" },
-      { name: "angular", image: "/angular.png" },
+      { name: ".NET", image: "/net.png" },
     ],
     [
+      { name: "React Native", image: "/reactnative.png" },
+      { name: "angular", image: "/angular.png" },
       { name: "swift", image: "/swift.png" },
       { name: "kotlin", image: "/kotlin.png" },
       { name: "Rails", image: "/rails.png" },
-      { name: "Firebase", image: "/firebase.png" },
-      { name: ".NET", image: "/net.png" },
     ],
   ];
   const [isHovering, setIsHovering] = useState(false);
@@ -112,7 +110,7 @@ const Header4 = ({ yOffset, prev }) => {
 
   return (
     <section
-      className="cursor-none z-30 bg-[#f8f8f8] px-2 sm:px-6 md:px-10 py-20 w-screen relative "
+      className="cursor-none z-30 bg-[#f8f8f8] pb-20 h-[155vh] md:h-[200vh] px-2 sm:px-6 md:px-10 py-20 w-screen relative "
       id="achievements"
       ref={ref}
     >
@@ -120,7 +118,7 @@ const Header4 = ({ yOffset, prev }) => {
         src="/circle.png"
         width={1000}
         height={1000}
-        className="w-[500px] h-[500px] z-[100] absolute top-[-90px] right-[-80px]"
+        className="w-[500px] h-[500px] z-[-10] absolute top-[-90px] right-[-80px]"
         ref={circle}
       />
       <div className="cursor-none flex flex-col gap-10 relative justify-center items-center w-full">
@@ -133,7 +131,7 @@ const Header4 = ({ yOffset, prev }) => {
             dispatch(setHovering(false));
           }}
         >
-          <h3 className="cursor-none text-xl sm:text-2xl md:text-5xl font-bold heading-7 text-secondary md:text-inherit font-monumentBold  text-center px-0 hover:skew-x-12 hover:scale-110 transition-all duration-500">
+          <h3 className="cursor-none hidden mx-auto flex justify-center text-center md:flex text-xl sm:text-2xl md:text-5xl font-bold heading-7 text-secondary md:text-inherit font-monumentBold  text-center px-0 hover:skew-x-12 hover:scale-110 transition-all duration-500">
             {"Web App Technologies We Use".split("").map((word) => {
               return word === " " ? (
                 <span
@@ -152,18 +150,21 @@ const Header4 = ({ yOffset, prev }) => {
               );
             })}
           </h3>
+          <h3 className="cursor-none md:hidden text-2xl  font-bold heading-7 text-secondary md:text-inherit font-monumentBold  text-center px-0 hover:skew-x-12 hover:scale-110 transition-all duration-500">
+            Web App Technologies We Use
+          </h3>
         </div>
-        <div className="cursor-none overflow-hidden grid grid-rows-4 gap-2  overflow-x-scroll header-4 w-screen sm:px-4 md:px-10 py-4">
+        <div className="cursor-none overflow-hidden grid grid-rows-4  overflow-x-scroll header-4 w-screen sm:px-4 md:px-10 py-4">
           {data.map((groups, j) => (
             <Marquee
               key={j}
               direction={j % 2 === 0 ? "right" : "left"}
               gradient={false}
               speed={50}
-              className="flex gap-10 min-w-screen overflow-hidden z-40"
+              className={`flex gap-10 min-w-screen z-40 overflow-y-visible`}
             >
               <div
-                className="flex gap-10 py-10"
+                className="flex gap-10 py-10 overflow-y-visible"
                 style={{
                   transform: `${
                     j % 2 === 0
@@ -173,7 +174,10 @@ const Header4 = ({ yOffset, prev }) => {
                 }}
               >
                 {groups.map((item, i) => (
-                  <div
+                  <motion.div
+                    initial={{ opacity: 0, y: "100px" }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1 }}
                     ref={cardRefs.current[i]}
                     value={i}
                     key={i}
@@ -182,12 +186,14 @@ const Header4 = ({ yOffset, prev }) => {
                     }}
                     onMouseLeave={handleMouseLeave}
                     className={classNames(
-                      "shadow-lg rounded-lg p-10 group justify-center flex overflow-hidden gap-2 w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] flex-col items-center hover:text-secondary  grayscale hover:scale-110 transition-all hover:grayscale-0 duration-500 hover:-translate-y-4"
+                      `${
+                        i % 2 === 0 ? " md:translate-y-6" : ""
+                      } shadow-lg backdrop:opacity-20 backdrop-blur-3xl rounded-lg p-10 group justify-center flex overflow-hidden gap-2 w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[250px] md:h-[250px] flex-col items-center hover:text-secondary  grayscale hover:scale-110 transition-all bg-white hover:grayscale-0 duration-500 hover:-translate-y-4`
                     )}
                   >
                     <div
                       ref={scaleRef}
-                      className="cursor-none absolute group-hover:scale-[60000%] rounded-full bg-primary ro top-0 left-0 opacity-20 h-[1px] w-[1px]  transition-all duration-1000"
+                      className="cursor-none absolute group-hover:translate-y-0 group-hover:translate-x-0 rounded-full bg-primary ro top-0 left-0 opacity-20 h-full w-full scale-150 -translate-y-[300px] -translate-x-[300px]  transition-all duration-1000"
                     ></div>
                     <div className="cursor-none bg-tertiary p-10 rounded-full">
                       <img
@@ -200,7 +206,7 @@ const Header4 = ({ yOffset, prev }) => {
                     <h5 className="cursor-none text-2xl uppercase font-monumentRegular text-center">
                       {item.name}
                     </h5>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </Marquee>

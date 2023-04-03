@@ -109,7 +109,7 @@ const Header7 = () => {
   }, []);
 
   return (
-    <div className="cursor-none flex flex-col z-30  relative justify-center items-center p-2 md:px-10 py-20 w-screen bg-secondary">
+    <div className="cursor-none flex flex-col z-30  relative justify-center items-center p-2 md:px-10 py-10 md:py-20 w-screen bg-secondary">
       <div
         style={{ visibility: "hidden" }}
         className="cursor-none  bg-blend-difference fixed -translate-y-1/2 pointer-events-none  z-[1000] h-10 text- flex flex-col gap-4"
@@ -128,9 +128,16 @@ const Header7 = () => {
           <Image
             width={100}
             height={100}
-            src={`/bs-${counter}.jpg`}
-            className="cursor-none  w-80"
+            src={`/slider-${counter}.jpg`}
+            className="cursor-none  w-80 brightness-50"
           />
+          <p className=" absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 font-monumentRegular text-white">
+            {counter === 1 && "WEB"}
+            {counter === 2 && "MOBILE"}
+            {counter === 3 && "DEPLOYMENT"}
+            {counter === 4 && "CLOUD"}
+            {counter === 5 && "EXCELLENCE"}
+          </p>
         </div>
       </div>
       <motion.div
@@ -140,7 +147,7 @@ const Header7 = () => {
         className="cursor-none text- sm:text-lg  flex flex-col gap-0 md:gap-10"
       >
         <h2
-          className="cursor-none  text-2xl md:text-5xl heading-7 font-bold h-[50px] md:h-[50px] font-monumentBold overflow-hidden text-center px-4 sm:px-0  transition-all duration-500"
+          className="cursor-none hidden md:flex mx-auto  text-2xl md:text-5xl  font-bold h-[50px] md:h-[50px] font-monumentBold overflow-hidden text-center px-4 sm:px-0  transition-all duration-500"
           onMouseEnter={() => {
             dispatch(setHovering(true));
           }}
@@ -165,6 +172,17 @@ const Header7 = () => {
               </span>
             );
           })}
+        </h2>
+        <h2
+          className="cursor-none md:hidden  text-4xl md:text-5xl text-primary font-bold  md:h-[50px] font-monumentBold md:overflow-hidden text-center px-4 sm:px-0  transition-all duration-500"
+          onMouseEnter={() => {
+            dispatch(setHovering(true));
+          }}
+          onMouseLeave={() => {
+            dispatch(setHovering(false));
+          }}
+        >
+          Industries We Cater
         </h2>
         <div className="cursor-none hidden py-10 sm:grid md:grid-cols-3 justify-items-center justify-center  lg:grid-cols-3 gap-10 px-4 md:px-10 w-screen  overflow-scroll header-4">
           {data.map((item, i) => (

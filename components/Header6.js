@@ -86,18 +86,7 @@ const Header6 = ({ yOffset, prev }) => {
     >
       <div className="cursor-none max-w-screen-xl pb-8 mx-auto lg:pb-24 lg:px-6 flex justify-center flex-col py-20">
         <h2
-          // style={
-          //     isOnScreen &&
-          //     containerRef.current?.getBoundingClientRect().top >= 0
-          //         ? {
-          //               transform: `translateY(${
-          //                   -containerRef.current?.getBoundingClientRect()
-          //                       .top * 0.4
-          //               }px)`,
-          //           }
-          //         : {}
-          // },
-          className="cursor-none mb-6 text-[28px] md:text-3xl overflow-hidden heading-6 md:px-10 font-extrabold tracking-tight text-center z-0 text-black lg:mb-8 font-monumentRegular"
+          className="cursor-none mb-6 text-[28px] md:text-3xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0 text-black lg:mb-8 font-monumentRegular"
           onMouseEnter={() => {
             dispatch(setHovering(true));
           }}
@@ -115,7 +104,7 @@ const Header6 = ({ yOffset, prev }) => {
               </span>
             ) : (
               <span
-                className=" header6 inline-block transition-all duration-300 bg-gradient-to-r from-tertiary to- text-transparent bg-clip-text"
+                className=" header6 inline-block transition-all duration-300 "
                 style={{ transform: "translateY(100px)" }}
               >
                 {word}
@@ -147,15 +136,15 @@ const Header6 = ({ yOffset, prev }) => {
               >
                 <div
                   className={`h-6 md:h-14 w-[1px] bg-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ${
-                    selected === i ? "max-h-0" : "max-h-[1000px]"
+                    selected === i ? "max-h-0" : "max-h-[300px]"
                   }`}
                 ></div>
                 <div className="cursor-none  h-[1px] w-6 md:w-14 bg-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
               </div>
               <div
                 className={` col-span-4 text-lg text-black h-auto ${
-                  selected === i ? "max-h-[1000px]" : "max-h-0"
-                } transition-all duration-1000 overflow-hidden`}
+                  selected === i ? "max-h-[300px]" : "max-h-0"
+                } transition-all duration-500 overflow-hidden`}
               >
                 {item.details}
               </div>

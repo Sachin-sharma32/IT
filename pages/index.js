@@ -103,13 +103,11 @@ const Home = () => {
         <div id="home"></div>
         <Navbar yOffset={yOffset} prev={prev} />
         <Header yOffset={yOffset} prev={prev} />
-        {/* <Header2 yOffset={yOffset} prev={prev} /> */}
         <Header3 yOffset={yOffset} prev={prev} />
         <Header4 yOffset={yOffset} prev={prev} />
         <Header5 yOffset={yOffset} prev={prev} header5Ref={header5Ref} />
         <Header7 />
         <Header6 yOffset={yOffset} prev={prev} />
-        {/* <Header8 /> */}
         <section
           ref={newRef}
           className="cursor-none  min-h-[100vh] w-screen  overflow-hidden z-40 bg-fourth text-tertiary"

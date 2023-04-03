@@ -36,7 +36,7 @@ const Header = ({ yOffset, prev }) => {
         scrollTrigger: {
           trigger: ".revealH1",
           start: "center center",
-          scrub: true,
+          scrub: 3,
         },
         scale: 0.5,
       });

@@ -100,14 +100,14 @@ const Header5 = ({ yOffset, header5Ref }) => {
   ];
   return (
     <section
-      className="cursor-none  z-40 h-[200vh] w-screen py-20  flex flex-col gap-20 items-center justify-center relative text-tertiary bg-fourth"
+      className="cursor-none  z-40  md:h-[200vh] w-screen py-20  flex flex-col gap-20 items-center justify-center relative text-tertiary bg-fourth"
       id="testimonials"
       ref={ref}
     >
       <div className="flex flex-col justify-center items-center sm:px-20 gap-10">
         <div className=" overflow-hidden w-full h-full">
           <h3
-            className=" font-monumentRegular text-2xl md:text-5xl px-2 md:px-10 text-center"
+            className="hidden md:flex font-monumentRegular text-2xl md:text-5xl px-2 md:px-10 text-center"
             onMouseEnter={() => {
               dispatch(setHovering(true));
             }}
@@ -133,8 +133,19 @@ const Header5 = ({ yOffset, header5Ref }) => {
               );
             })}
           </h3>
+          <h3
+            className="md:hidden font-monumentRegular text-2xl md:text-5xl px-2 md:px-10 text-center"
+            onMouseEnter={() => {
+              dispatch(setHovering(true));
+            }}
+            onMouseLeave={() => {
+              dispatch(setHovering(false));
+            }}
+          >
+            What Our Clients Have To Say
+          </h3>
         </div>
-        <div className=" relative px-14 ">
+        <div className=" relative px-4 pl-14  md:px-14 ">
           <p className=" text-xl font-heebo quotePara">
             ITXcelerate is a company that knows how to turn technology into
             business success. Their innovative solutions and exceptional service
@@ -246,78 +257,6 @@ const Header5 = ({ yOffset, header5Ref }) => {
           className="cursor-none  w-20 h-20 hover:bg-primary rounded-full group relative flex justify-center items-center border-white border-[1px] hover:border-none "
           onClick={() => {
             if (num < 2) {
-              setNum(num + 1);
-            } else {
-              setNum(0);
-            }
-          }}
-        >
-          <svg
-            className="cursor-none o-ui-arrow stroke-white -rotate-45 group-hover:stroke-black  w-fit scale-50"
-            width="64"
-            height="64"
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {" "}
-            <path
-              d="M3.10162 3.10156L62.9999 62.9999"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              initial="hidden"
-              animate="visible"
-            ></path>{" "}
-            <path
-              d="M63 1.00001L63 63L0.999989 63"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              initial="hidden"
-              animate="visible"
-            ></path>{" "}
-          </svg>
-        </div>
-      </div>
-      <div className="flex gap-10 md:hidden justify-center -translate-y-10">
-        <div
-          className="cursor-none  w-20 h-20 hover:bg-primary rounded-full group relative flex justify-center items-center border-white border-[1px] hover:border-none "
-          onClick={() => {
-            if (num > 0) {
-              setNum(num - 1);
-            } else {
-              setNum(5);
-            }
-          }}
-        >
-          <svg
-            className="cursor-none o-ui-arrow stroke-white -rotate-[225deg] group-hover:stroke-black  w-fit scale-50"
-            width="64"
-            height="64"
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {" "}
-            <path
-              d="M3.10162 3.10156L62.9999 62.9999"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              initial="hidden"
-              animate="visible"
-            ></path>{" "}
-            <path
-              d="M63 1.00001L63 63L0.999989 63"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              initial="hidden"
-              animate="visible"
-            ></path>{" "}
-          </svg>
-        </div>
-        <div
-          className="cursor-none  w-20 h-20 hover:bg-primary rounded-full group relative flex justify-center items-center border-white border-[1px] hover:border-none "
-          onClick={() => {
-            if (num < 5) {
               setNum(num + 1);
             } else {
               setNum(0);

@@ -103,7 +103,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="cursor-none  relative z-[60] w-[100vw] " ref={navRef}>
+    <div
+      className="cursor-none  relative z-[60] w-[100vw] bg-black "
+      ref={navRef}
+    >
       <nav
         style={
           yOffset > prev
@@ -111,7 +114,7 @@ const Navbar = () => {
             : { transform: `translateY(0px)` }
         }
         className={`
-                  b h-16 border-gray-200 fixed top-0 left-0 w-full transition-all duration-500 `}
+                  b h-20 border-gray-200 fixed top-0 left-0 w-full transition-all duration-500  `}
         ref={newRef}
       >
         <div className="cursor-none  h-full ">
@@ -144,13 +147,13 @@ const Navbar = () => {
               </li>
             ))}
           </div>
-          <div className="cursor-none flex flex-wrap items-center justify-between px-4 mx-auto h-full overflow-hidden bg-secondary w-screen text-white">
+          <div className="cursor-none flex flex-wrap items-center justify-between mx-auto h-full overflow-hidden bg-secondary px-20 pl-52 w-screen text-white">
             <Link href="/" className="cursor-none h-[20px] overflow-hidden">
               <Image
                 width={100}
                 height={100}
                 src="/logo-1.png"
-                className="cursor-none  w-48  absolute -top-[67px] left-4 show"
+                className="cursor-none  w-48  absolute -top-[57px] md:-top-[60px] left-20 show "
                 alt="ITXcelerate logo"
                 style={{ transform: "translateX(-1000px)" }}
               />
@@ -185,11 +188,11 @@ const Navbar = () => {
               id="mobile-menu-2"
             >
               {router.pathname === "/" && (
-                <ul className="cursor-none flex mt-4 font-medium lg:flex-row lg:mt-0 h-full text-white">
+                <ul className="cursor-none flex mt-4 font-medium lg:flex-row lg:mt-0 h-full ">
                   {sections.map((section, i) => (
                     <li
                       key={section.id}
-                      className="cursor-none  flex items-center h-full linked cursor-none overflow-hidden   z-[1000] px-6 hover:border-tertiary transition-all duration-1000 border-secondary "
+                      className="cursor-none  flex items-center h-full linked overflow-hidden   z-[1000] px-4 hover:border-tertiary transition-all duration-1000 border-secondary "
                       onMouseEnter={() => {
                         dispatch(setHovering(true));
                       }}
@@ -207,7 +210,7 @@ const Navbar = () => {
                         href={`#${section.id}`}
                         className={`${
                           active === i ? "text-white" : "text-white"
-                        } py-2 pl-3 pr-4 show cursor-none  h-full flex items-center hover:text-secondary z-[1000] rounded lg:bg-transparent  transition-all duration-300  lg:p-0 dark:`}
+                        } pl-3 pr-4 show cursor-none hover:text-secondary delay-300  h-full flex items-center  z-[1000] rounded lg:bg-transparent  transition-all duration-300  lg:p-0 dark:`}
                         aria-current="page"
                         onClick={() => {
                           setActive(i);
@@ -482,11 +485,11 @@ const Navbar = () => {
           aria-expanded="false"
           onClick={toggleShow}
           onMouseEnter={() => {
-                  dispatch(setHovering(true));
-                }}
-                onMouseLeave={() => {
-                  dispatch(setHovering(false));
-                }}
+            dispatch(setHovering(true));
+          }}
+          onMouseLeave={() => {
+            dispatch(setHovering(false));
+          }}
         >
           <CloseIcon className=" group-hover:rotate-180 transition-all duration-300" />
         </button>

@@ -22,7 +22,7 @@ const Cursor = () => {
   const dot = useRef(null);
   const dotOutline = useRef(null);
   return (
-    <div>
+    <div className=" hidden sm:flex">
       {cursorVisible && (
         <div
           className={` cursor-none  bg-blend-difference fixed   transition-transform duration-1000  -translate-x-1/2 flex justify-center items-center -translate-y-1/2 pointer-events-none  z-[1000] ${
