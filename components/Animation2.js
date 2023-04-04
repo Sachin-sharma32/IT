@@ -30,7 +30,7 @@ const Animation2 = () => {
           style={{ opacity: opacity2, width: width2 }}
           className="w-[40%] text-3xl"
         >
-          Transform your digital presence with IT Xcelerate's innovative
+          Transform your digital presence with IT Xcelerate&apos;s innovative
           solutions.
         </motion.p>
         <motion.div
