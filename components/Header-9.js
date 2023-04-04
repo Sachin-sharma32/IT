@@ -93,7 +93,7 @@ const Header9 = () => {
             className={` shadow-lg backdrop:opacity-20 backdrop-blur-3xl rounded-lg p-4 group justify-center grid grid-cols-3 overflow-hidden gap-2 w-fit h-fit items-center hover:text-secondary  hover:scale-110 transition-all bg-[#e7e7e7] duration-500 justify-items-center hover:-translate-y-4`}
           >
             {active.map((item, i) => (
-              <div className="w-fit">
+              <div className="w-fit" key={i}>
                 <div className="cursor-none bg-white p-4 w-20 h-20 rounded-full">
                   <img
                     src={`${item?.image}`}

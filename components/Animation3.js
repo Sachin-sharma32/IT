@@ -51,8 +51,8 @@ const Animation3 = () => {
               style={{ opacity: opacity3 }}
               className="w-full text-3xl text-center"
             >
-              Transform your digital presence with IT Xcelerate's innovative
-              solutions
+              Transform your digital presence with IT Xcelerate&apos;s
+              innovative solutions
             </motion.p>
           </motion.div>
         </div>
