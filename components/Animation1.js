@@ -1,0 +1,48 @@
+import React, { useRef } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
+import Image from "next/image";
+
+const Animation1 = () => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"],
+  });
+  const scale = useTransform(scrollYProgress, [0.1, 0.4], [1, 2.5]);
+  const x = useTransform(
+    scrollYProgress,
+    [0.1, 0.4, 0.6, 0.8],
+    ["0%", "-30%", "-30%", "30%"]
+  );
+  const opacity = useTransform(scrollYProgress, [0.5, 0.7, 0.8], [1, 1, 0]);
+  const opacity2 = useTransform(
+    scrollYProgress,
+    [0, 0.4, 0.6, 0.9],
+    [0, 0, 1, 0]
+  );
+  return (
+    <div className="h-[300vh]" ref={targetRef}>
+      <motion.div
+        style={{ scale, x, opacity, y: "-50%" }}
+        className="sticky top-1/2 w-screen flex justify-center"
+      >
+        <div className=" relative w-full h-full flex items-center justify-center">
+          <Image
+            width={1000}
+            height={1000}
+            src={"/main-screen.svg"}
+            className=" h-52"
+          />
+          <motion.p
+            style={{ opacity: opacity2 }}
+            className="w-[150px] text-sm absolute top-1/2 -translate-y-1/2 right-[20%]"
+          >
+            Build for flow Spin up a new branch for any sized project in seconds
+          </motion.p>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
+export default Animation1;

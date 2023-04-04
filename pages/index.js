@@ -23,6 +23,7 @@ import Header8 from "../components/header-8";
 import { useDispatch } from "react-redux";
 import { setHovering } from "../redux/slices";
 import Header9 from "../components/Header-9";
+import Header10 from "../components/Header10";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -104,6 +105,7 @@ const Home = () => {
         <div id="home"></div>
         <Navbar yOffset={yOffset} prev={prev} />
         <Header yOffset={yOffset} prev={prev} />
+        <Header10 />
         <Header3 yOffset={yOffset} prev={prev} />
         <Header4 yOffset={yOffset} prev={prev} />
         <Header5 yOffset={yOffset} prev={prev} header5Ref={header5Ref} />

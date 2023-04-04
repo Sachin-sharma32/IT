@@ -1,8 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import useOnScreen from "../utils/useOnScreen";
 import { motion } from "framer-motion";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import classNames from "classnames";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
@@ -52,7 +50,6 @@ const Header4 = ({ yOffset, prev }) => {
     console.log(scaleRef.current);
     scaleRef.current.style.backgroundColor = "white";
     scaleRef.current.classList.add("left-0");
-    console.log(cardRefs?.current[i].current?.getBoundingClientRect());
     console.log(e);
     setElement(i);
     setIsHovering(true);
@@ -96,7 +93,7 @@ const Header4 = ({ yOffset, prev }) => {
       t1.kill();
     };
   }, []);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("mousemove", (e) => {
         const decX = e.clientX / window.innerWidth;

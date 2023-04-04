@@ -2,7 +2,7 @@ import React from "react";
 
 const Header9 = () => {
   return (
-    <div className=" bg-[#1d1f21] z-40 min-h-fit pb-20 p-4 md:p-20 text-white flex md:flex-row flex-col gap-10 w-screen">
+    <div className=" bg-secondary z-40 min-h-fit pb-20 p-4 md:p-20 text-white flex md:flex-row flex-col gap-10 w-screen">
       <div className="md:w-[40%] w-[100%]  flex flex-col gap-6 md:sticky h-[300px] top-32">
         <div className="bg-white rounded-full text-black w-fit px-4 font-thin">
           Expertise
