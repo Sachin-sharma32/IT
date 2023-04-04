@@ -102,14 +102,13 @@ const Home = () => {
   return (
     <div className="cursor-none  min-h-[100vh] flex container mb-[90vh] max-w-[100vw]">
       <div className="cursor-none flex flex-col">
-        <div id="home"></div>
         <Navbar yOffset={yOffset} prev={prev} />
         <Header yOffset={yOffset} prev={prev} />
         <Header10 />
         <Header3 yOffset={yOffset} prev={prev} />
-        <Header4 yOffset={yOffset} prev={prev} />
-        <Header5 yOffset={yOffset} prev={prev} header5Ref={header5Ref} />
+        {/* <Header4 yOffset={yOffset} prev={prev} /> */}
         <Header9 />
+        <Header5 yOffset={yOffset} prev={prev} header5Ref={header5Ref} />
         <Header7 />
         <Header6 yOffset={yOffset} prev={prev} />
         <section

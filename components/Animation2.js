@@ -30,7 +30,8 @@ const Animation2 = () => {
           style={{ opacity: opacity2, width: width2 }}
           className="w-[40%] text-3xl"
         >
-          Build for flow Spin up a new branch for any sized project in seconds
+          Transform your digital presence with IT Xcelerate's innovative
+          solutions.
         </motion.p>
         <motion.div
           style={{
@@ -42,14 +43,15 @@ const Animation2 = () => {
           <Image
             width={1000}
             height={1000}
-            src={"/main-screen.svg"}
-            className="w-[100%]"
+            src={"/rahul-6.jpg"}
+            className="w-[100%] h-[400px] rounded-xl"
           />
           <motion.p
             style={{ opacity: opacity3 }}
             className="w-[40%] text-3xl absolute top-1/2 -right-[50%] -translate-y-1/2"
           >
-            Build for flow Spin up a new branch for any sized project in seconds
+            Transforming businesses with innovative IT services that drive
+            growth, efficiency, and success.
           </motion.p>
         </motion.div>
       </motion.div>

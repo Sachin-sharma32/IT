@@ -312,6 +312,11 @@ a {
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #17383a;
 }
+.heading-10{
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: .01px;
+  -webkit-text-stroke-color: #ffffff;
+}
 .heading-5{
   -webkit-text-fill-color: #d9ffe5;
   -webkit-text-stroke-width: 2px;

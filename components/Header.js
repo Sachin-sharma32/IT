@@ -1,10 +1,7 @@
-import Link from "next/link";
 import React, { useEffect, useRef, useLayoutEffect } from "react";
-import sendMail from "../utils/verifyEmail";
-import axios from "axios";
 import Typewriter from "typewriter-effect";
-import { motion } from "framer-motion";
-// import {gsap} from "gsap";
+import { motion, useTransform, useScroll } from "framer-motion";
+
 import gsap from "gsap";
 import { Power4, Power1 } from "gsap";
 import Marquee from "react-fast-marquee";
@@ -12,10 +9,19 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import { useDispatch } from "react-redux";
 import { setHovering } from "../redux/slices";
+import Image from "next/image";
 
 const Header = ({ yOffset, prev }) => {
-  const dispatch = useDispatch();
   const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end end"],
+  });
+  const x = useTransform(scrollYProgress, [0, 0.4], ["500px", "0px"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.7, 1], [0, 0, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [4, 1]);
+
+  const dispatch = useDispatch();
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       gsap.from(".marquee", {
@@ -38,7 +44,7 @@ const Header = ({ yOffset, prev }) => {
           start: "center center",
           scrub: 3,
         },
-        scale: 0.5,
+        // scale: 0.5,
       });
     }, ref);
 
@@ -78,15 +84,30 @@ const Header = ({ yOffset, prev }) => {
   return (
     <section
       ref={ref}
-      className={`${
-        yOffset < 1000 ? "" : "opacity-0"
-      } bg-secondary h-screen left-0 top-0 z-10 w-screen text-white flex items-center flex-col`}
+      className={` bg-secondary h-screen  md:h-[200vh] left-0 top-0 z-[10] w-screen text-white flex relative items-center flex-col`}
     >
-      <div className="cursor-none revealH1 flex-col-reverse sm:flex-row flex justify-center gap-20 sm:justify-between sm:gap-0 mt-32 px-20 w-full h-screen items-center">
-        <div className="w-full text-center">
-          <h1
+      <div className="hidden md:flex sticky top-0 w-full h-screen">
+        <div className=" relative h-full w-full ">
+          <Image
+            src={"/rahul-4.png"}
+            width={2000}
+            height={2000}
+            className="w-full"
+          />
+          <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 min-w-screen h-screen -translate-y-1/2 flex items-center justify-center">
+            <motion.div
+              style={{ scale }}
+              className="border-[600px] border-secondary  box-content w-[400px] h-[400px] rounded-full"
+            ></motion.div>
+          </div>
+        </div>
+      </div>
+      <div className="cursor-none w-screen px-20 md:px-20 revealH1 justify-center  flex-col-reverse sm:flex-row flex gap-20 sm:justify-between sm:gap-0 mt-32 h-screen md:h-[200vh] items-center">
+        <div className="w-full ">
+          <motion.h1
+            style={{ opacity }}
             // style={{ transform: `translateY(-${yOffset * 0.5}px)` }}
-            className="cursor-none  text-3xl font-bold leading-none w-full tracking-tight font-monumentRegular md:text-5xl xl:text-5xl dark:text-white z-50"
+            className="cursor-none text-3xl font-bold text-center md:text-left leading-none w-full tracking-tight font-satoshi md:text-5xl xl:text-5xl dark:text-white z-50"
             onMouseEnter={() => {
               dispatch(setHovering(true));
             }}
@@ -94,7 +115,7 @@ const Header = ({ yOffset, prev }) => {
               dispatch(setHovering(false));
             }}
           >
-            <div className="cursor-none  overflow-hidden">
+            <div className="cursor-none h-full overflow-hidden">
               <span
                 className="cursor-none text-primary reveal inline-block"
                 style={{ transform: "translateY(1000px)" }}
@@ -126,9 +147,12 @@ const Header = ({ yOffset, prev }) => {
                 />
               </span>
             </div>
-          </h1>
+          </motion.h1>
         </div>
-        <div className="cursor-none  w-full flex justify-center revealH1">
+        <motion.div
+          style={{ opacity }}
+          className="cursor-none  w-full flex justify-center md:justify-end md:mr-20 revealH1"
+        >
           <svg
             className="cursor-none o-ui-arrow stroke-white -rotate-90 scale-[2] sm:scale-[3] md:scale-[4]"
             width="64"
@@ -155,7 +179,7 @@ const Header = ({ yOffset, prev }) => {
               animate="visible"
             ></motion.path>{" "}
           </svg>
-        </div>
+        </motion.div>
       </div>
       <div className="cursor-none  z-40 bg-black marquee">
         <section className="cursor-none  ">

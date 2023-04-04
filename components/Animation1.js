@@ -35,9 +35,11 @@ const Animation1 = () => {
           />
           <motion.p
             style={{ opacity: opacity2 }}
-            className="w-[150px] text-sm absolute top-1/2 -translate-y-1/2 right-[20%]"
+            className="w-[150px] text-sm text-white absolute top-1/2 -translate-y-1/2 right-[20%]"
           >
-            Build for flow Spin up a new branch for any sized project in seconds
+            <div className="text-3xl font-bold">BUILD.</div>
+            <div className="text-3xl font-bold text-primary">DEPLOY.</div>
+            <div className="text-3xl heading-10 font-extrabold">REINOVATE.</div>
           </motion.p>
         </div>
       </motion.div>

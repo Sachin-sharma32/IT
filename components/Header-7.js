@@ -109,7 +109,7 @@ const Header7 = () => {
   }, []);
 
   return (
-    <div className="cursor-none flex flex-col z-30  relative justify-center items-center p-2 md:px-10 py-10 md:py-20 w-screen bg-gradient-to-r from-[#0199b1] to-[#7cd957]">
+    <div className="cursor-none flex flex-col z-30  relative justify-center items-center p-2 md:px-10 py-10 md:py-20 w-screen bg-secondary">
       <div
         style={{ visibility: "hidden" }}
         className="cursor-none  bg-blend-difference fixed -translate-y-1/2 pointer-events-none  z-[1000] h-10 text- flex flex-col gap-4"

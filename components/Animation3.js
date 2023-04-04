@@ -21,7 +21,7 @@ const Animation3 = () => {
         <div className=" sticky top-1/2 -translate-y-1/2 w-screen h-[500px]">
           <motion.div
             style={{ width, left: left2 }}
-            className=" flex flex-col gap-4 absolute top-1/2 -translate-y-1/2  -translate-x-1/2 h-[300px]"
+            className=" flex flex-col gap-4 absolute top-1/2 -translate-y-1/2  -translate-x-1/2 h-[400px]"
           >
             <Image
               src={"/rahul-1.jpg"}
@@ -29,14 +29,17 @@ const Animation3 = () => {
               width={1000}
               height={1000}
             />
-            <motion.p style={{ opacity: opacity3 }} className=" text-3xl">
-              Build for flow Spin up a new branch for any sized project in
-              seconds
+            <motion.p
+              style={{ opacity: opacity3 }}
+              className=" text-3xl w-full text-center"
+            >
+              At an affordable price, we strive to deliver unparalleled service
+              excellence
             </motion.p>
           </motion.div>
           <motion.div
             style={{ left, width }}
-            className=" flex flex-col gap-4 absolute top-1/2 h-[300px] -translate-y-1/2 -translate-x-1/2"
+            className=" flex flex-col gap-4 absolute top-1/2 h-[400px] -translate-y-1/2 -translate-x-1/2"
           >
             <Image
               src={"/rahul-2.jpg"}
@@ -44,9 +47,12 @@ const Animation3 = () => {
               width={1000}
               height={1000}
             />
-            <motion.p style={{ opacity: opacity3 }} className="w-full text-3xl">
-              Build for flow Spin up a new branch for any sized project in
-              seconds
+            <motion.p
+              style={{ opacity: opacity3 }}
+              className="w-full text-3xl text-center"
+            >
+              Transform your digital presence with IT Xcelerate's innovative
+              solutions
             </motion.p>
           </motion.div>
         </div>
