@@ -112,7 +112,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
           className=" overflow-hidden w-full h-full"
         >
           <h3
-            className="hidden md:flex font-satoshi uppercase text-2xl md:text-7xl font-bold px-2 md:px-10 text-center"
+            className="hidden md:flex font-satoshi font-extrabold uppercase text-2xl md:text-7xl font-bold px-2 md:px-10 text-center"
             onMouseEnter={() => {
               dispatch(setHovering(true));
             }}
@@ -139,7 +139,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
             })}
           </h3>
           <h3
-            className="md:hidden font-satoshi uppercase text-2xl md:text-5xl px-2 md:px-10 text-center"
+            className="md:hidden font-satoshi font-extrabold uppercase text-2xl md:text-5xl px-2 md:px-10 text-center"
             onMouseEnter={() => {
               dispatch(setHovering(true));
             }}
@@ -217,7 +217,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                 </blockquote>
                 <figcaption className="cursor-none flex self-start">
                   <div className="cursor-none flex  flex-col">
-                    <div className="cursor-none font-medium font-monumentRegular text-primary">
+                    <div className="cursor-none font-medium font-satoshi font-extrabold text-primary">
                       {item.author}
                     </div>
                     <div className="cursor-none font-light text-lg">

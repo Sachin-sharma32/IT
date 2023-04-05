@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useLayoutEffect } from "react";
 import Typewriter from "typewriter-effect";
 import { motion, useTransform, useScroll } from "framer-motion";
+import Spline from "@splinetool/react-spline";
 
 import gsap from "gsap";
 import { Power4, Power1 } from "gsap";
@@ -112,7 +113,7 @@ const Header = ({ yOffset, prev }) => {
           <motion.h1
             style={{ opacity }}
             // style={{ transform: `translateY(-${yOffset * 0.5}px)` }}
-            className="cursor-none uppercase text-3xl font-bold text-center md:text-left leading-none w-full tracking-tight font-satoshi md:text-5xl xl:text-5xl dark:text-white z-50"
+            className="cursor-none uppercase text-3xl font-bold text-center md:text-left leading-none w-full tracking-tight font-satoshi font-extrabold md:text-5xl xl:text-5xl dark:text-white z-50"
             onMouseEnter={() => {
               dispatch(setHovering(true));
             }}
@@ -200,7 +201,7 @@ const Header = ({ yOffset, prev }) => {
                 // style={{
                 //   transform: `translateX(${-yOffset - 10}px)`,
                 // }}
-                className="cursor-none flex gap-20 px-10 dark:text-tertiary font-monumentRegular font- text-3xl md:text-5xl overflow-hidden"
+                className="cursor-none flex gap-20 px-10 dark:text-tertiary font-satoshi font-extrabold font- text-3xl md:text-5xl overflow-hidden"
               >
                 DESIGNING THE FUTURE OF TECHNOLOGY
               </div>

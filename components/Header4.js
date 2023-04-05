@@ -198,7 +198,7 @@ const Header4 = ({ yOffset, prev }) => {
                         className="cursor-none w-12 transition-all duration-300"
                       />
                     </div>
-                    <h5 className="cursor-none text-2xl uppercase font-monumentRegular text-center">
+                    <h5 className="cursor-none text-2xl uppercase font-satoshi font-extrabold text-center">
                       {item.name}
                     </h5>
                   </motion.div>

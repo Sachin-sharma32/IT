@@ -15,10 +15,24 @@ const Animation2 = () => {
     [0, 1, 1, 0]
   );
   const opacity2 = useTransform(scrollYProgress, [0.2, 0.3], [1, 0]);
-  const width = useTransform(scrollYProgress, [0.3, 0.4, .5], ["60%", "100%", "60%"]);
+  const width = useTransform(
+    scrollYProgress,
+    [0.3, 0.4, 0.5],
+    ["100%", "100%", "100%"]
+  );
   const opacity3 = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
   const width2 = useTransform(scrollYProgress, [0.3, 0.4], ["40%", "0%"]);
   const x = useTransform(scrollYProgress, [0.4, 0.5], ["0%", "-80%"]);
+
+  const data = [
+    "Competitive pricing and flexible engagement models to suit diverse budgets and project scopes.",
+    "Transparent communication and regular updates throughout the development cycle.",
+    "Robust testing and quality assurance processes to ensure high-performance and reliability.",
+    "Timely delivery and efficient project management.",
+    "Strong focus on user experience and intuitive design.",
+    "Customized solutions tailored to meet specific business needs and requirements.",
+    "Experienced team of developers with expertise in the latest technologies.",
+  ];
 
   return (
     <div className=" h-[500vh]" ref={targetRef}>
@@ -28,10 +42,9 @@ const Animation2 = () => {
       >
         <motion.p
           style={{ opacity: opacity2, width: width2 }}
-          className="w-[40%] text-3xl"
+          className="w-[70%] text-4xl uppercase font-bold"
         >
-          Transform your digital presence with IT Xcelerate&apos;s innovative
-          solutions.
+          Why Choose <span className="text-primary">US</span>
         </motion.p>
         <motion.div
           style={{
@@ -46,13 +59,26 @@ const Animation2 = () => {
             src={"/rahul-6.jpg"}
             className="w-[100%] h-[400px] rounded-xl"
           />
-          <motion.p
+          <motion.ul
             style={{ opacity: opacity3 }}
-            className="w-[60%] text-3xl absolute top-1/2 -right-[70%] -translate-y-1/2"
+            className="w-[80%] text-3xl absolute top-1/2 right-[-90%] -translate-y-1/2 space-y-5 text-white"
           >
-            Transforming businesses with innovative IT services that drive
-            growth, efficiency, and success.
-          </motion.p>
+            {data.map((item, i) => (
+              <li key={i} className="cursor-none">
+                <div className="flex gap-3 items-start header3Points">
+                  <Image
+                    width={100}
+                    height={100}
+                    src="https://www.greenit-solution.de/wp-content/themes/greenit/dist/images/icon-bullet-18-muted.3b1a73.svg"
+                    className="cursor-none  w-4"
+                  />
+                  <span className="cursor-none text-base font-medium leading-tight  ">
+                    {item}
+                  </span>
+                </div>
+              </li>
+            ))}
+          </motion.ul>
         </motion.div>
       </motion.div>
     </div>

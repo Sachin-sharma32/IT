@@ -24,8 +24,8 @@ const Header10 = () => {
         className="h-[60vh] top-[100px] z-40 w-screen flex justify-center mt-20 text-center"
         style={{ opacity, scale, position }}
       >
-        <h2 className=" uppercase text-8xl font-monumentRegular">
-          Development <br /> Reimagined.
+        <h2 className=" uppercase text-8xl font-satoshi font-extrabold">
+          Development <br /> <span className="text-primary">Reimagined.</span>
         </h2>
       </motion.div>
       <Animation1 />

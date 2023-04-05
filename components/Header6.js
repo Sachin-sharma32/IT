@@ -78,7 +78,7 @@ const Header6 = ({ yOffset, prev }) => {
   return (
     <section
       ref={containerRef}
-      className="cursor-none bg-white  z-10 h-fit md:h-[180vh] md:flex items-center w-screen md:py-20 py-10 px-2 md:px-10 relative"
+      className="cursor-none bg-fourth  z-10 h-fit md:h-[180vh] md:flex items-center w-screen md:py-20 py-10 px-2 md:px-10 relative"
       id="faqs"
     >
       <div className="cursor-none max-w-screen-xl pb-8 mx-auto lg:pb-24 lg:px-6 flex justify-center flex-col py-20">
@@ -86,7 +86,7 @@ const Header6 = ({ yOffset, prev }) => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, x: [-100, 0] }}
           transition={{ duration: 1 }}
-          className="cursor-none hidden md:flex uppercase justify-center mb-6 text-[28px] md:text-5xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0 text-black lg:mb-8"
+          className="cursor-none hidden md:flex uppercase text-white justify-center mb-6 text-[28px] md:text-5xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0 text-white lg:mb-8"
           onMouseEnter={() => {
             dispatch(setHovering(true));
           }}
@@ -94,7 +94,7 @@ const Header6 = ({ yOffset, prev }) => {
             dispatch(setHovering(false));
           }}
         >
-          {"Frequently Asked Questions".split("").map((word) => {
+          {"Frequently Asked".split("").map((word) => {
             return word === " " ? (
               <span
                 className="header6 inline-block transition-all duration-300"
@@ -111,9 +111,26 @@ const Header6 = ({ yOffset, prev }) => {
               </span>
             );
           })}{" "}
+          {" Questions".split("").map((word) => {
+            return word === " " ? (
+              <span
+                className="header6 inline-block transition-all duration-300"
+                style={{ transform: "translateY(100px)" }}
+              >
+                &nbsp;
+              </span>
+            ) : (
+              <span
+                className=" header6 inline-block transition-all duration-300 text-primary"
+                style={{ transform: "translateY(100px)" }}
+              >
+                {word}
+              </span>
+            );
+          })}{" "}
         </motion.div>
         <h2
-          className="cursor-none md:hidden mb-6 text-[28px] md:text-3xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0 text-black lg:mb-8"
+          className="cursor-none md:hidden mb-6 text-[28px] md:text-3xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0 text-white lg:mb-8"
           onMouseEnter={() => {
             dispatch(setHovering(true));
           }}
@@ -130,7 +147,7 @@ const Header6 = ({ yOffset, prev }) => {
               whileInView={{ opacity: 1, x: [-100, 0] }}
               transition={{ duration: 1 }}
               key={i}
-              className={`text-lg md:text-2xl text-gray-500 ${
+              className={`text-lg md:text-2xl text-white ${
                 i == 0 && "border-t"
               } border-b py-6 grid grid-cols-5 justify-items-end`}
             >
@@ -143,20 +160,20 @@ const Header6 = ({ yOffset, prev }) => {
                 </p>
               </div>
               <div
-                className="cursor-none  w-10 h-10 md:w-20 md:h-20 hover:bg-primary rounded-full relative border-black border-[1px] hover:border-none "
+                className="cursor-none  w-10 h-10 md:w-20 md:h-20 hover:bg-primary rounded-full relative border-white border-[1px] hover:border-none "
                 onClick={() => {
                   selected === i ? setSelected(null) : setSelected(i);
                 }}
               >
                 <div
-                  className={`h-6 md:h-14 w-[1px] bg-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ${
+                  className={`h-6 md:h-14 w-[1px] bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ${
                     selected === i ? "max-h-0" : "max-h-[300px]"
                   }`}
                 ></div>
-                <div className="cursor-none  h-[1px] w-6 md:w-14 bg-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="cursor-none  h-[1px] w-6 md:w-14 bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
               </div>
               <div
-                className={` col-span-4 text-lg text-black h-auto ${
+                className={` col-span-4 text-lg text-white h-auto ${
                   selected === i ? "max-h-[300px] pt-4" : "max-h-0"
                 } transition-all duration-500 overflow-hidden`}
               >

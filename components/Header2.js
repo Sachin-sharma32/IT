@@ -15,7 +15,7 @@ const Header2 = ({ yOffset, prev }) => {
               style={{
                 transform: `translateX(${-yOffset - 10}px)`,
               }}
-              className="cursor-none flex gap-20 px-10 dark:text-tertiary font-monumentRegular text-5xl overflow-hidden"
+              className="cursor-none flex gap-20 px-10 dark:text-tertiary font-satoshi font-extrabold text-5xl overflow-hidden"
             >
               DESIGNING THE FUTURE OF TECHNOLOGY
             </div>

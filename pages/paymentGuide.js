@@ -7,7 +7,7 @@ const PaymentGuide = () => {
   return (
     <Smooth>
       <div className="cursor-none  bg-secondary h-[40vh] flex items-end">
-        <h1 className="cursor-none  text-xl md:text-5xl text-white mb-10 ml-10 uppercase font-monumentRegular">
+        <h1 className="cursor-none  text-xl md:text-5xl text-white mb-10 ml-10 uppercase font-satoshi font-extrabold">
           PAYMENT GUIDE FOR SUPPLIERS
         </h1>
       </div>
@@ -37,7 +37,7 @@ const PaymentGuide = () => {
       </button>
       <div className="cursor-none flex flex-col p-10 gap-8 leading-[1.9] font-[400] text-[#444444] mt-10">
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi font-extrabold">
             Payment Terms
           </h2>
           <p className="text-justify">
@@ -50,7 +50,7 @@ const PaymentGuide = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi font-extrabold">
             Invoicing
           </h2>
           <p className="text-justify">
@@ -89,7 +89,7 @@ const PaymentGuide = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi font-extrabold">
             Payment Methods
           </h2>
           <p className="text-justify">
@@ -101,7 +101,7 @@ const PaymentGuide = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi font-extrabold">
             Late Payments
           </h2>
           <p className="text-justify">
@@ -113,7 +113,7 @@ const PaymentGuide = () => {
           </p>
         </div>
         <div>
-          <h2 className="cursor-none  text-lg mb-2 font-monumentRegular">
+          <h2 className="cursor-none  text-lg mb-2 font-satoshi font-extrabold">
             Changes to This Policy
           </h2>
           <p className="cursor-none  italic">

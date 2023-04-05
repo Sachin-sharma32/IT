@@ -24,6 +24,7 @@ import { useDispatch } from "react-redux";
 import { setHovering } from "../redux/slices";
 import Header9 from "../components/Header-9";
 import Header10 from "../components/Header10";
+import Header11 from "../components/header11";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -100,12 +101,12 @@ const Home = () => {
   // }, []);
 
   return (
-    <div className="cursor-none  min-h-[100vh] flex container mb-[90vh] max-w-[100vw]">
-      <div className="cursor-none flex flex-col">
+    <div className="  min-h-[100vh] flex container mb-[90vh] max-w-[100vw]">
+      <div className="flex flex-col">
         <Navbar yOffset={yOffset} prev={prev} />
         <Header yOffset={yOffset} prev={prev} />
         <Header10 />
-        <Header3 yOffset={yOffset} prev={prev} />
+        {/* <Header3 yOffset={yOffset} prev={prev} /> */}
         {/* <Header4 yOffset={yOffset} prev={prev} /> */}
         <Header9 />
         <Header5 yOffset={yOffset} prev={prev} header5Ref={header5Ref} />
@@ -113,7 +114,7 @@ const Home = () => {
         <Header6 yOffset={yOffset} prev={prev} />
         <section
           ref={newRef}
-          className="cursor-none  min-h-[100vh] w-screen  z-40 bg-fourth text-tertiary"
+          className="cursor-none  min-h-[100vh] w-screen  z-40 bg-secondary text-white"
           id="pricing"
         >
           <div className="cursor-none ss max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
@@ -128,7 +129,8 @@ const Home = () => {
                   dispatch(setHovering(false));
                 }}
               >
-                Designed for business teams like yours
+                Designed for business teams{" "}
+                <span className="text-primary">like yours</span>
               </h2>
             </div>
             <div className="cursor-none px-10 justify-center text-secondary space-y-8 justify-items-center grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0 z-40">
@@ -154,7 +156,7 @@ const Home = () => {
                   <div className="cursor-none  h-fit overflow-hidden">
                     <div className=" overflow-hidden">
                       <h3
-                        className="cursor-none mb-4 font-satoshi text-3xl uppercase font-extrabold revealI2"
+                        className="cursor-none mb-4 font-satoshi font-extrabold text-3xl uppercase font-extrabold revealI2"
                         style={{ transform: "translateY(100px)" }}
                       >
                         Basic Plan
@@ -172,7 +174,7 @@ const Home = () => {
 
                   <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
                     <span
-                      className="cursor-none mr-2 text-5xl font-satoshi text-primary inline-block revealI2"
+                      className="cursor-none mr-2 text-5xl font-satoshi font-extrabold text-primary inline-block revealI2"
                       style={{ transform: "translateY(100px)" }}
                     >
                       $199
@@ -388,7 +390,7 @@ const Home = () => {
                 <div className="cursor-none card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-inherit">
                   <div className=" overflow-hidden">
                     <h3
-                      className="cursor-none mb-4 font-satoshi text-3xl uppercase font-semibold revealI3"
+                      className="cursor-none mb-4 font-satoshi font-extrabold text-3xl uppercase font-semibold revealI3"
                       style={{ transform: "translateY(100px)" }}
                     >
                       Advanced Plan
@@ -404,7 +406,7 @@ const Home = () => {
                   </div>
                   <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
                     <span
-                      className="cursor-none mr-2 text-5xl font-satoshi text-primary inline-block revealI3"
+                      className="cursor-none mr-2 text-5xl font-satoshi font-extrabold text-primary inline-block revealI3"
                       style={{ transform: "translateY(100px)" }}
                     >
                       $499
@@ -632,7 +634,7 @@ const Home = () => {
                 <div className="cursor-none card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-inherit">
                   <div className=" overflow-hidden">
                     <h3
-                      className="cursor-none mb-4 font-satoshi text-3xl uppercase font-semibold revealI4"
+                      className="cursor-none mb-4 font-satoshi font-extrabold text-3xl uppercase font-semibold revealI4"
                       style={{ transform: "translateY(100px)" }}
                     >
                       Pro Plan
@@ -648,7 +650,7 @@ const Home = () => {
                   </div>
                   <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
                     <span
-                      className="cursor-none mr-2 text-5xl font-satoshi text-primary inline-block revealI4"
+                      className="cursor-none mr-2 text-5xl font-satoshi font-extrabold text-primary inline-block revealI4"
                       style={{ transform: "translateY(100px)" }}
                     >
                       $999

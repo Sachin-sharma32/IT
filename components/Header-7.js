@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import { useDispatch } from "react-redux";
 import { setHovering } from "../redux/slices";
+import Spline from "@splinetool/react-spline";
 
 const Header7 = () => {
   const dispatch = useDispatch();
@@ -109,13 +110,13 @@ const Header7 = () => {
   }, []);
 
   return (
-    <div className="cursor-none flex flex-col z-30  relative justify-center items-center p-2 md:px-10 py-10 md:py-20 w-screen bg-secondary">
+    <div className="cursor-none flex flex-col z-30 h-fit relative justify-center items-center p-2 md:px-10 py-10 md:py-20 w-screen bg-secondary">
       <div
         style={{ visibility: "hidden" }}
         className="cursor-none  bg-blend-difference fixed -translate-y-1/2 pointer-events-none  z-[1000] h-10 text- flex flex-col gap-4"
         ref={box}
       >
-        <div className="cursor-none bg-primary rounded-full font-satoshi font-extrabold px-10 py-1 w-fit">
+        <div className="cursor-none bg-primary rounded-full font-satoshi font-extrabold font-extrabold px-10 py-1 w-fit">
           {" "}
           ITXCELERATE
         </div>
@@ -131,7 +132,7 @@ const Header7 = () => {
             src={`/slider-${counter}.jpg`}
             className="cursor-none  w-80 brightness-50"
           />
-          <p className=" absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 font-satoshi font-extrabold text-white">
+          <p className=" absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 font-satoshi font-extrabold font-extrabold text-white">
             {counter === 1 && "WEB"}
             {counter === 2 && "MOBILE"}
             {counter === 3 && "DEPLOYMENT"}
@@ -145,7 +146,7 @@ const Header7 = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, x: [-100, 0] }}
           transition={{ duration: 1 }}
-          className="cursor-none hidden md:flex mx-auto  text-2xl md:text-7xl  font-bold uppercase font-satoshi overflow-hidden text-center px-4 sm:px-0 "
+          className="cursor-none hidden md:flex mx-auto  text-2xl md:text-7xl  font-bold uppercase font-satoshi font-extrabold overflow-hidden text-center px-4 sm:px-0 "
           onMouseEnter={() => {
             dispatch(setHovering(true));
           }}
@@ -153,7 +154,7 @@ const Header7 = () => {
             dispatch(setHovering(false));
           }}
         >
-          {"Industries We Cater".split("").map((word) => {
+          {"Industries We ".split("").map((word) => {
             return word === " " ? (
               <span
                 className="header7 inline-block transition-all duration-300"
@@ -163,7 +164,24 @@ const Header7 = () => {
               </span>
             ) : (
               <span
-                className=" header7 inline-block transition-all duration-300 bg-gradient-to-r from-tertiary to- text-transparent bg-clip-text"
+                className=" header7 inline-block transition-all duration-300 text-white"
+                style={{ transform: "translateY(100px)" }}
+              >
+                {word}
+              </span>
+            );
+          })}
+          {"CATER".split("").map((word) => {
+            return word === " " ? (
+              <span
+                className="header7 inline-block transition-all duration-300"
+                style={{ transform: "translateY(100px)" }}
+              >
+                &nbsp;
+              </span>
+            ) : (
+              <span
+                className=" header7 inline-block transition-all duration-300 text-primary"
                 style={{ transform: "translateY(100px)" }}
               >
                 {word}
@@ -172,7 +190,7 @@ const Header7 = () => {
           })}
         </motion.h2>
         <h2
-          className="cursor-none md:hidden  text-4xl md:text-5xl text-primary uppercase font-bold  md:h-[50px] font-satoshi md:overflow-hidden text-center px-4 sm:px-0  transition-all duration-500"
+          className="cursor-none md:hidden  text-4xl md:text-5xl text-primary uppercase font-bold  md:h-[50px] font-satoshi font-extrabold md:overflow-hidden text-center px-4 sm:px-0  transition-all duration-500"
           onMouseEnter={() => {
             dispatch(setHovering(true));
           }}
@@ -217,7 +235,7 @@ const Header7 = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1, x: [200, 0] }}
                 transition={{ duration: 1, delay: 0.1 }}
-                className="cursor-none text-2xl   uppercase text-center font-satoshi font-extrabold"
+                className="cursor-none text-2xl   uppercase text-center font-satoshi font-extrabold font-extrabold"
               >
                 {item.name}
               </motion.h5>
@@ -250,12 +268,18 @@ const Header7 = () => {
                   />
                 </div>
               </div>
-              <h5 className="cursor-none text-2xl   uppercase text-center font-satoshi font-extrabold">
+              <h5 className="cursor-none text-2xl   uppercase text-center font-satoshi font-extrabold font-extrabold">
                 {item.name}
               </h5>
             </div>
           ))}
         </div>
+      </div>
+      <div className="h-screen w-screen relative overflow-hidden hidden lg:flex 2xl:hidden">
+        <Spline
+          className=" h-screen w-screen absolute top-1/2 -translate-y-[87%] left-1/2 -translate-x-[70%] z-50"
+         scene="https://prod.spline.design/wLFgE289qdMerm8r/scene.splinecode"
+        />
       </div>
     </div>
   );

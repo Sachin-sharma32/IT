@@ -29,7 +29,7 @@ const Invest = () => {
             transition={{ duration: 1 }}
             className="cursor-none  border-2 border-primary  rounded-tl-none rounded-br-none md:rounded-bl-[100px] md:rounded-tr-[100px] rounded-bl-[50px] rounded-tr-[50px] p-6 md:p-10 flex flex-col gap-4"
           >
-            <h2 className="cursor-none  text-lg md:text-4xl font-monumentRegular">
+            <h2 className="cursor-none  text-lg md:text-4xl font-satoshi font-extrabold">
               THANK YOU FOR SHOWING YOU INTEREST
             </h2>
             <p className="cursor-none text-lg ">

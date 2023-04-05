@@ -25,7 +25,7 @@ const Animation3 = () => {
           >
             <Image
               src={"/rahul-9.jpg"}
-              className="h-[900vh] w-full rounded-3xl"
+              className=" w-full h-full rounded-3xl"
               width={1000}
               height={1000}
             />

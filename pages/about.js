@@ -134,7 +134,7 @@ const About = () => {
       <div className="cursor-none  pb-32 leading-[1.9] font-[400] text-secondary">
         <div className="cursor-none  min-h-screen flex gap-10 flex-col">
           <div className="cursor-none  bg-secondary min-h-[40vh] flex items-end">
-            <h1 className="cursor-none  text-4xl sm:text-5xl text-white mb-10 ml-10 uppercase font-monumentRegular">
+            <h1 className="cursor-none  text-4xl sm:text-5xl text-white mb-10 ml-10 uppercase font-satoshi font-extrabold font-extrabold">
               About Us
             </h1>
           </div>
@@ -145,7 +145,7 @@ const About = () => {
               transition={{ duration: 1 }}
               className="cursor-none  border-2 border-primary  rounded-tl-none rounded-br-none md:rounded-bl-[100px] md:rounded-tr-[100px] rounded-bl-[50px] rounded-tr-[50px] p-6 md:p-10 flex flex-col gap-4"
             >
-              <h2 className="cursor-none  text-5xl font-monumentRegular">
+              <h2 className="cursor-none  text-5xl font-satoshi font-extrabold font-extrabold">
                 OUR PURPOSE
               </h2>
               <p className="cursor-none text-lg ">
@@ -173,7 +173,7 @@ const About = () => {
                   width={500}
                   height={500}
                   src={item.image}
-                  className={`brightness-50 h-full hidden md:flex image-right-${i}`}
+                  className={`brightness-50 h-full hidden md:flex rounded-2xl image-right-${i}`}
                   alt=""
                 />
               ) : (
@@ -184,7 +184,7 @@ const About = () => {
                   width={500}
                   height={500}
                   src={item.image}
-                  className={`brightness-50 h-full hidden md:flex image-right-${i}`}
+                  className={`brightness-50 h-full hidden md:flex rounded-2xl image-right-${i}`}
                   alt=""
                 />
               )}
@@ -192,10 +192,10 @@ const About = () => {
                 width={100}
                 height={100}
                 src={item.image}
-                className="cursor-none brightness-50 h-full w-[100%] md:hidden"
+                className="cursor-none brightness-50 h-full rounded-b-none w-[100%] rounded-2xl md:hidden"
                 alt=""
               />
-              <div className="cursor-none bg-gradient-to-r bg-white shadow-lg w-full md:w-[50vw] p-4 md:p-10  h-fit text-lg">
+              <div className="cursor-none bg-gradient-to-r rounded-t-none sm:rounded-t-2xl rounded-2xl bg-white shadow-lg w-full md:w-[50vw] p-4 md:p-10  h-fit text-lg">
                 {item.title}
               </div>
             </div>

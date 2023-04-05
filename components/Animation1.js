@@ -31,11 +31,11 @@ const Animation1 = () => {
             width={300}
             height={300}
             src={"/rahul-7.png"}
-            className=""
+            className=" rounded-xl"
           />
           <motion.p
             style={{ opacity: opacity2 }}
-            className="w-[150px] text-sm text-white absolute top-1/2 -translate-y-1/2 right-[20%]"
+            className="w-[150px] text-sm text-white absolute top-1/2 -translate-y-1/2 right-[22%]"
           >
             <div className="text-3xl font-bold">BUILD.</div>
             <div className="text-3xl font-bold text-primary">DEPLOY.</div>

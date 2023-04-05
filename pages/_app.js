@@ -17,6 +17,7 @@ import { motion, useScroll } from "framer-motion";
 import Smooth from "../utils/Smooth";
 import Cursor from "../components/Cursor";
 import Scroll from "../components/Scroll";
+import Header11 from "../components/header11";
 
 if (!global.setImmediate) {
   global.setImmediate = setTimeout;
@@ -27,7 +28,7 @@ function MyApp({ Component, pageProps }) {
   const { scrollYProgress } = useScroll();
 
   return (
-    <div className="cursor-none overflow-x-clip  selection:bg-tertiary  font-satoshi scroll-smooth bg-[#f8f8f8]">
+    <div className=" overflow-x-clip  selection:bg-tertiary cursor-none font-satoshi scroll-smooth bg-[#f8f8f8]">
       <Head>
         <title>ITXcelerate - {pageProps.title}</title>
         <link rel="icon" type="image/png" href={`/logo-3.png`} />
@@ -58,7 +59,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <motion.div
         style={{ scaleX: scrollYProgress }}
-        className="cursor-none progress-bar z-[100] rounded-full"
+        className=" progress-bar z-[100] rounded-full"
       />
       <Provider store={store}>
         <StyledEngineProvider injectFirst>
@@ -70,7 +71,7 @@ function MyApp({ Component, pageProps }) {
               ""
             ) : (
               <div
-                className="cursor-none  fixed bottom-[16px] hidden sm:flex right-6 text-white z-50 bg-black overflow-hidden rounded-lg  scroll-smooth hover:shadow-lg"
+                className="  fixed bottom-[16px] hidden sm:flex right-6 text-white z-50 bg-black overflow-hidden rounded-lg  scroll-smooth hover:shadow-lg"
                 onClick={() => {
                   window.scrollTo({
                     top: 0,
@@ -78,7 +79,7 @@ function MyApp({ Component, pageProps }) {
                   });
                 }}
               >
-                <KeyboardArrowUpIcon className="cursor-none w-10 h-10 hover:-translate-y-1 transition-all duration-300" />
+                <KeyboardArrowUpIcon className=" w-10 h-10 hover:-translate-y-1 transition-all duration-300" />
               </div>
             )}
             {/* <Scroll/> */}
