@@ -206,6 +206,7 @@ const Header12 = () => {
               setActive(null);
               box.current.style.visibility = "hidden";
             }}
+            key={i}
           >
             <div
               className={`text-xl relative  text-white h-full flex items-center transition-all duration-1000 justify-center ${
