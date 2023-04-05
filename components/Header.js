@@ -88,6 +88,7 @@ const Header = ({ yOffset, prev }) => {
   return (
     <section
       ref={ref}
+      id="home"
       className={` bg-secondary h-screen  md:h-[200vh] left-0 top-0 z-[10] w-screen text-white flex relative items-center flex-col`}
     >
       <div className="hidden md:flex sticky top-0 w-full h-screen">

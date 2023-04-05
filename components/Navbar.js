@@ -57,7 +57,7 @@ const Navbar = () => {
   const sections = [
     { name: "HOME", id: "home" },
     { name: "FEATURES", id: "features" },
-    { name: "TECHNOLOGIES", id: "achievements" },
+    { name: "TECHNOLOGIES", id: "technologies" },
     { name: "TESTIMONIALS", id: "testimonials" },
     { name: "FAQs", id: "faqs" },
     { name: "PRICING", id: "pricing" },

@@ -76,7 +76,10 @@ const Header9 = () => {
     ],
   ];
   return (
-    <div className=" bg-secondary z-50 min-h-fit pb-20 p-4 md:p-20 text-white flex md:flex-row flex-col gap-10 w-screen">
+    <div
+      className=" bg-secondary z-50 min-h-fit pb-20 p-4 md:p-20 text-white flex md:flex-row flex-col gap-10 w-screen"
+      id="technologies"
+    >
       <div
         style={{ visibility: "hidden" }}
         className="cursor-none  bg-blend-difference fixed -translate-y-1/2 pointer-events-none  z-[1000] h-10 text- flex flex-col gap-4 bg-transparent"
