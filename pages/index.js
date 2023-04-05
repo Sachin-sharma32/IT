@@ -24,7 +24,6 @@ import { useDispatch } from "react-redux";
 import { setHovering } from "../redux/slices";
 import Header9 from "../components/Header-9";
 import Header10 from "../components/Header10";
-import Header11 from "../components/header11";
 
 const Home = () => {
   const dispatch = useDispatch();

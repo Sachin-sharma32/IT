@@ -17,7 +17,6 @@ import { motion, useScroll } from "framer-motion";
 import Smooth from "../utils/Smooth";
 import Cursor from "../components/Cursor";
 import Scroll from "../components/Scroll";
-import Header11 from "../components/header11";
 
 if (!global.setImmediate) {
   global.setImmediate = setTimeout;
