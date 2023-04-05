@@ -56,12 +56,12 @@ const Animation2 = () => {
           <Image
             width={1000}
             height={1000}
-            src={"/rahul-6.jpg"}
+            src={"/rahul-15.jpeg"}
             className="w-[100%] h-[400px] rounded-xl"
           />
           <motion.ul
             style={{ opacity: opacity3 }}
-            className="w-[80%] text-3xl absolute top-1/2 right-[-90%] -translate-y-1/2 space-y-5 text-white"
+            className="w-[80%] text-3xl absolute top-1/2 right-[-85%] -translate-y-1/2 space-y-5 text-white"
           >
             {data.map((item, i) => (
               <li key={i} className="cursor-none">

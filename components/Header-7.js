@@ -110,7 +110,7 @@ const Header7 = () => {
   }, []);
 
   return (
-    <div className="cursor-none flex flex-col z-30 h-fit relative justify-center items-center p-2 md:px-10 py-10 md:py-20 w-screen bg-secondary">
+    <div className="cursor-none flex lg:hidden flex-col z-30 h-fit relative justify-center items-center p-2 md:px-10 py-10 md:py-20 w-screen bg-secondary">
       <div
         style={{ visibility: "hidden" }}
         className="cursor-none  bg-blend-difference fixed -translate-y-1/2 pointer-events-none  z-[1000] h-10 text- flex flex-col gap-4"
@@ -275,11 +275,11 @@ const Header7 = () => {
           ))}
         </div>
       </div>
-      <div className="h-screen w-screen relative overflow-hidden hidden lg:flex 2xl:hidden">
-        <Spline
+      <div className="h-screen w-screen relative overflow-hidden hidden">
+        {/* <Spline
           className=" h-screen w-screen absolute top-1/2 -translate-y-[87%] left-1/2 -translate-x-[70%] z-50"
-         scene="https://prod.spline.design/wLFgE289qdMerm8r/scene.splinecode"
-        />
+          scene="https://prod.spline.design/wLFgE289qdMerm8r/scene.splinecode"
+        /> */}
       </div>
     </div>
   );

@@ -120,7 +120,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
               dispatch(setHovering(false));
             }}
           >
-            {"What our clients have to say".split("").map((word) => {
+            {"What our clients".split("").map((word) => {
               return word === " " ? (
                 <span
                   className="header5 inline-block transition-all duration-300"
@@ -130,7 +130,24 @@ const Header5 = ({ yOffset, header5Ref }) => {
                 </span>
               ) : (
                 <span
-                  className=" header5 inline-block transition-all duration-300 bg-gradient-to-r from-tertiary to- text-transparent bg-clip-text"
+                  className=" header5 inline-block transition-all duration-300 text-white"
+                  style={{ transform: "translateY(-100px)" }}
+                >
+                  {word}
+                </span>
+              );
+            })}
+            {" have to say".split("").map((word) => {
+              return word === " " ? (
+                <span
+                  className="header5 inline-block transition-all duration-300"
+                  style={{ transform: "translateY(-100px)" }}
+                >
+                  &nbsp;
+                </span>
+              ) : (
+                <span
+                  className=" header5 inline-block transition-all duration-300 text-primary"
                   style={{ transform: "translateY(-100px)" }}
                 >
                   {word}

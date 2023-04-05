@@ -24,6 +24,7 @@ import { useDispatch } from "react-redux";
 import { setHovering } from "../redux/slices";
 import Header9 from "../components/Header-9";
 import Header10 from "../components/Header10";
+import Header12 from "../components/Header12";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -110,6 +111,7 @@ const Home = () => {
         <Header9 />
         <Header5 yOffset={yOffset} prev={prev} header5Ref={header5Ref} />
         <Header7 />
+        <Header12 />
         <Header6 yOffset={yOffset} prev={prev} />
         <section
           ref={newRef}
