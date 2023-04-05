@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 const Header9 = () => {
   const [active, setActive] = useState([]);
@@ -17,8 +18,10 @@ const Header9 = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("mousemove", (e) => {
-        box.current.style.left = `${e.clientX + 30}px`;
-        box.current.style.top = `${e.clientY}px`;
+        if (box?.current?.style) {
+          box.current.style.left = `${e.clientX + 30}px`;
+          box.current.style.top = `${e.clientY}px`;
+        }
       });
     }
   }, []);
@@ -109,32 +112,51 @@ const Header9 = () => {
         </div>
       </div>
       <div className="md:w-[40%] w-[100%]  flex flex-col gap-6 md:sticky h-[300px] top-32">
-        <div className="bg-white rounded-full text-black w-fit px-4 font-thin">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, x: [-100, 0] }}
+          transition={{ duration: 1 }}
+          className="bg-white uppercase font-bold rounded-full text-secondary w-fit px-4 "
+        >
           Expertise
-        </div>
-        <h2 className="md:text-5xl text-3xl font-semibold">
-          HOW CAN <span className="text-[#819090]">I HELP</span>
-        </h2>
-        <p>
-          I specialise in offering bespoke web design and Webflow development
-          services to small and big businesses alike. My aim is to help
-          businesses establish a strong online presence and connect with their
-          target audience effectively.
-        </p>
-        <div className="flex gap-4">
+        </motion.div>
+        <motion.h2
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, y: [100, 0] }}
+          transition={{ duration: 1 }}
+          className="md:text-5xl text-3xl font-semibold"
+        >
+          HOW CAN <span className="text-primary">WE HELP</span>
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, y: [100, 0] }}
+          transition={{ duration: 1 }}
+        >
+          We specialise in offering bespoke WebApp development services to small
+          and big businesses alike. Our aim is to help businesses establish a
+          strong online presence and connect with their target audience
+          effectively.
+        </motion.p>
+        {/* <div className="flex gap-4">
           <div className="bg-white rounded-full text-black w-fit px-4 font-thin">
             Expertise
           </div>
           <div className="bg-white rounded-full text-black w-fit px-4 font-thin">
             Expertise
           </div>
-        </div>
+        </div> */}
       </div>
-      <div className=" flex flex-col gap-4 text-black text-base w-full md:w-[60%]">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, x: [100, 0] }}
+        transition={{ duration: 1 }}
+        className=" flex flex-col gap-4 text-black text-base w-full md:w-[60%]"
+      >
         {data.map((item, i) => (
           <div
             key={i}
-            className={`bg-[#e7e7e7] md:p-8 p-4  rounded-lg group flex border border-black flex-col gap-10 h-[250px] md:h-[300px] sticky `}
+            className={`bg-white md:p-8 p-4  rounded-lg group flex border border-black flex-col gap-10 h-[250px] md:h-[300px] sticky `}
             style={{ top: `${80 + i * 20}px` }}
             onMouseEnter={(e) => {
               handleMouseEnter(e, i);
@@ -159,10 +181,10 @@ const Header9 = () => {
                   {item.title}
                 </h3>
                 <div className="flex gap-2">
-                  <p className="bg-red-500 group-hover:rotate-0 transition-all duration-300 px-4 w-fit rounded-full text-white md:text-base text-xs -rotate-[4deg]">
+                  <p className="bg-primary group-hover:rotate-0 transition-all duration-300 px-4 w-fit rounded-full text-white md:text-base text-xs -rotate-[4deg]">
                     {item.tags[0]}
                   </p>
-                  <p className="bg-black group-hover:rotate-0 transition-all duration-300 px-4 w-fit rounded-full text-white md:text-base text-xs rotate-[4deg]">
+                  <p className="bg-secondary group-hover:rotate-0 transition-all duration-300 px-4 w-fit rounded-full text-white md:text-base text-xs rotate-[4deg]">
                     {item.tags[1]}
                   </p>
                   <p className="border-2 group-hover:rotate-0 hidden md:flex transition-all duration-300 border-black text-black px-4 w-fit rounded-full md:text-base text-xs -rotate-[4deg]">
@@ -174,7 +196,7 @@ const Header9 = () => {
             <p className=" text-sm md:text-base">{item.desc}</p>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

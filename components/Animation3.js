@@ -24,8 +24,8 @@ const Animation3 = () => {
             className=" flex flex-col gap-4 absolute top-1/2 -translate-y-1/2  -translate-x-1/2 h-[400px]"
           >
             <Image
-              src={"/rahul-1.jpg"}
-              className="h-full w-full rounded-3xl"
+              src={"/rahul-9.jpg"}
+              className="h-[900vh] w-full rounded-3xl"
               width={1000}
               height={1000}
             />

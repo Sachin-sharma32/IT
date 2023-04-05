@@ -12,6 +12,7 @@ import { setHovering, setPosts } from "../redux/slices";
 import gsap from "gsap";
 import { Power4, Power1 } from "gsap";
 import MenuIcon from "@mui/icons-material/Menu";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [active, setActive] = useState(0);
@@ -160,18 +161,26 @@ const Navbar = () => {
             </Link>
             <div></div>
             <div className="cursor-none ss flex items-center lg:order-2 gap-2 ">
-              <Link
-                href="/contact"
-                className="cursor-none hidden sm:flex  rounded-full bg-primary hover:bg-tertiary  text-black transition-all duration-300 font-medium  text-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-14 md:mr-0"
-                onMouseEnter={() => {
-                  dispatch(setHovering(true));
-                }}
-                onMouseLeave={() => {
-                  dispatch(setHovering(false));
-                }}
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                drag
+                dragConstraints={{ left: -100, right: 100 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                Let&apos;s Talk
-              </Link>
+                <Link
+                  href="/contact"
+                  className="cursor-none hidden sm:flex  rounded-full bg-primary hover:bg-tertiary  text-black transition-all duration-300 font-medium  text-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-14 md:mr-0"
+                  onMouseEnter={() => {
+                    dispatch(setHovering(true));
+                  }}
+                  onMouseLeave={() => {
+                    dispatch(setHovering(false));
+                  }}
+                >
+                  Let&apos;s Talk
+                </Link>
+              </motion.div>
               <button
                 data-collapse-toggle="mobile-menu-2"
                 type="button"

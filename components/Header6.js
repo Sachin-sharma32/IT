@@ -1,8 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import useOnScreen from "../utils/useOnScreen";
 import Image from "next/image";
 import { gsap } from "gsap";
@@ -11,6 +7,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import { useDispatch } from "react-redux";
 import { setHovering } from "../redux/slices";
+import { motion } from "framer-motion";
 
 const Header6 = ({ yOffset, prev }) => {
   const dispatch = useDispatch();
@@ -85,8 +82,11 @@ const Header6 = ({ yOffset, prev }) => {
       id="faqs"
     >
       <div className="cursor-none max-w-screen-xl pb-8 mx-auto lg:pb-24 lg:px-6 flex justify-center flex-col py-20">
-        <h2
-          className="cursor-none hidden md:flex justify-center mb-6 text-[28px] md:text-3xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0 text-black lg:mb-8 font-monumentRegular"
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, x: [-100, 0] }}
+          transition={{ duration: 1 }}
+          className="cursor-none hidden md:flex uppercase justify-center mb-6 text-[28px] md:text-5xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0 text-black lg:mb-8"
           onMouseEnter={() => {
             dispatch(setHovering(true));
           }}
@@ -111,9 +111,9 @@ const Header6 = ({ yOffset, prev }) => {
               </span>
             );
           })}{" "}
-        </h2>
+        </motion.div>
         <h2
-          className="cursor-none md:hidden mb-6 text-[28px] md:text-3xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0 text-black lg:mb-8 font-monumentRegular"
+          className="cursor-none md:hidden mb-6 text-[28px] md:text-3xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0 text-black lg:mb-8"
           onMouseEnter={() => {
             dispatch(setHovering(true));
           }}
@@ -125,7 +125,10 @@ const Header6 = ({ yOffset, prev }) => {
         </h2>
         <div className="cursor-none  mx-auto px-4 md:px-14 font-gilroy4">
           {data.map((item, i) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, x: [-100, 0] }}
+              transition={{ duration: 1 }}
               key={i}
               className={`text-lg md:text-2xl text-gray-500 ${
                 i == 0 && "border-t"
@@ -154,22 +157,29 @@ const Header6 = ({ yOffset, prev }) => {
               </div>
               <div
                 className={` col-span-4 text-lg text-black h-auto ${
-                  selected === i ? "max-h-[300px]" : "max-h-0"
+                  selected === i ? "max-h-[300px] pt-4" : "max-h-0"
                 } transition-all duration-500 overflow-hidden`}
               >
                 {item.details}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
       <div className="w-full"></div>
-      <Image
-        width={1000}
-        height={1000}
-        src="/new-1.png"
-        className="cursor-none hidden md:flex absolute w-[500px] top-52 -right-10"
-      />
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, x: [100, 0] }}
+        transition={{ duration: 1 }}
+        className="w-fit h-fit absolute top-52 -right-10 md:flex hidden"
+      >
+        <Image
+          width={1000}
+          height={1000}
+          src="/new-1.png"
+          className="cursor-none w-[500px]"
+        />
+      </motion.div>
     </section>
   );
 };

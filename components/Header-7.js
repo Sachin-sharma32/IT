@@ -96,7 +96,7 @@ const Header7 = () => {
       scrollTrigger: {
         trigger: ".header7",
         scroller: "body",
-        start: "top center",
+        start: "bottom bottom",
       },
       y: 0,
       rotate: 0,
@@ -115,7 +115,7 @@ const Header7 = () => {
         className="cursor-none  bg-blend-difference fixed -translate-y-1/2 pointer-events-none  z-[1000] h-10 text- flex flex-col gap-4"
         ref={box}
       >
-        <div className="cursor-none bg-primary rounded-full font-monumentRegular px-10 py-1 w-fit">
+        <div className="cursor-none bg-primary rounded-full font-satoshi font-extrabold px-10 py-1 w-fit">
           {" "}
           ITXCELERATE
         </div>
@@ -131,7 +131,7 @@ const Header7 = () => {
             src={`/slider-${counter}.jpg`}
             className="cursor-none  w-80 brightness-50"
           />
-          <p className=" absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 font-monumentRegular text-white">
+          <p className=" absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 font-satoshi font-extrabold text-white">
             {counter === 1 && "WEB"}
             {counter === 2 && "MOBILE"}
             {counter === 3 && "DEPLOYMENT"}
@@ -140,14 +140,12 @@ const Header7 = () => {
           </p>
         </div>
       </div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1, y: [50, 0] }}
-        transition={{ duration: 1.5 }}
-        className="cursor-none text- sm:text-lg  flex flex-col gap-0 md:gap-10"
-      >
-        <h2
-          className="cursor-none hidden md:flex mx-auto  text-2xl md:text-5xl  font-bold h-[50px] md:h-[50px] font-monumentBold overflow-hidden text-center px-4 sm:px-0  transition-all duration-500"
+      <div className="cursor-none text- sm:text-lg  flex flex-col gap-0 md:gap-10">
+        <motion.h2
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, x: [-100, 0] }}
+          transition={{ duration: 1 }}
+          className="cursor-none hidden md:flex mx-auto  text-2xl md:text-7xl  font-bold uppercase font-satoshi overflow-hidden text-center px-4 sm:px-0 "
           onMouseEnter={() => {
             dispatch(setHovering(true));
           }}
@@ -172,9 +170,9 @@ const Header7 = () => {
               </span>
             );
           })}
-        </h2>
+        </motion.h2>
         <h2
-          className="cursor-none md:hidden  text-4xl md:text-5xl text-primary font-bold  md:h-[50px] font-monumentBold md:overflow-hidden text-center px-4 sm:px-0  transition-all duration-500"
+          className="cursor-none md:hidden  text-4xl md:text-5xl text-primary uppercase font-bold  md:h-[50px] font-satoshi md:overflow-hidden text-center px-4 sm:px-0  transition-all duration-500"
           onMouseEnter={() => {
             dispatch(setHovering(true));
           }}
@@ -219,7 +217,7 @@ const Header7 = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1, x: [200, 0] }}
                 transition={{ duration: 1, delay: 0.1 }}
-                className="cursor-none text-2xl   uppercase text-center font-monumentRegular"
+                className="cursor-none text-2xl   uppercase text-center font-satoshi font-extrabold"
               >
                 {item.name}
               </motion.h5>
@@ -252,13 +250,13 @@ const Header7 = () => {
                   />
                 </div>
               </div>
-              <h5 className="cursor-none text-2xl   uppercase text-center font-monumentRegular">
+              <h5 className="cursor-none text-2xl   uppercase text-center font-satoshi font-extrabold">
                 {item.name}
               </h5>
             </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

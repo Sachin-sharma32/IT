@@ -17,9 +17,13 @@ const Header = ({ yOffset, prev }) => {
     target: ref,
     offset: ["start start", "end end"],
   });
-  const x = useTransform(scrollYProgress, [0, 0.4], ["500px", "0px"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.7, 1], [0, 0, 1]);
-  const scale = useTransform(scrollYProgress, [0, 1], [4, 1]);
+  const x = useTransform(scrollYProgress, [0.5, 0.7], ["0px", "-100px"]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.5, 0.6, 0.7, 0.8, 0.9],
+    [0, 0, 0, 0, 0, 1]
+  );
+  const scale = useTransform(scrollYProgress, [0, 0.5], [4, 1]);
 
   const dispatch = useDispatch();
   useLayoutEffect(() => {
@@ -107,7 +111,7 @@ const Header = ({ yOffset, prev }) => {
           <motion.h1
             style={{ opacity }}
             // style={{ transform: `translateY(-${yOffset * 0.5}px)` }}
-            className="cursor-none text-3xl font-bold text-center md:text-left leading-none w-full tracking-tight font-satoshi md:text-5xl xl:text-5xl dark:text-white z-50"
+            className="cursor-none uppercase text-3xl font-bold text-center md:text-left leading-none w-full tracking-tight font-satoshi md:text-5xl xl:text-5xl dark:text-white z-50"
             onMouseEnter={() => {
               dispatch(setHovering(true));
             }}
@@ -151,34 +155,36 @@ const Header = ({ yOffset, prev }) => {
         </div>
         <motion.div
           style={{ opacity }}
-          className="cursor-none  w-full flex justify-center md:justify-end md:mr-20 revealH1"
+          className="cursor-none   w-full flex justify-center md:justify-end md:mr-20 revealH1"
         >
-          <svg
-            className="cursor-none o-ui-arrow stroke-white -rotate-90 scale-[2] sm:scale-[3] md:scale-[4]"
-            width="64"
-            height="64"
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {" "}
-            <motion.path
-              d="M3.10162 3.10156L62.9999 62.9999"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              variants={variants1}
-              initial="hidden"
-              animate="visible"
-            ></motion.path>{" "}
-            <motion.path
-              d="M63 1.00001L63 63L0.999989 63"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              variants={variants2}
-              initial="hidden"
-              animate="visible"
-            ></motion.path>{" "}
-          </svg>
+          <motion.div>
+            <svg
+              className="cursor-none o-ui-arrow stroke-white -rotate-90 scale-[2] sm:scale-[3] md:scale-[4]"
+              width="64"
+              height="64"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {" "}
+              <motion.path
+                d="M3.10162 3.10156L62.9999 62.9999"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                variants={variants1}
+                initial="hidden"
+                animate="visible"
+              ></motion.path>{" "}
+              <motion.path
+                d="M63 1.00001L63 63L0.999989 63"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                variants={variants2}
+                initial="hidden"
+                animate="visible"
+              ></motion.path>{" "}
+            </svg>
+          </motion.div>
         </motion.div>
       </div>
       <div className="cursor-none  z-40 bg-black marquee">

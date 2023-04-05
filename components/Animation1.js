@@ -28,10 +28,10 @@ const Animation1 = () => {
       >
         <div className=" relative w-full h-full flex items-center justify-center">
           <Image
-            width={1000}
-            height={1000}
-            src={"/main-screen.svg"}
-            className=" h-52"
+            width={300}
+            height={300}
+            src={"/rahul-7.png"}
+            className=""
           />
           <motion.p
             style={{ opacity: opacity2 }}

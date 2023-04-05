@@ -105,9 +105,14 @@ const Header5 = ({ yOffset, header5Ref }) => {
       ref={ref}
     >
       <div className="flex flex-col justify-center items-center sm:px-20 gap-10">
-        <div className=" overflow-hidden w-full h-full">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, x: [-100, 0] }}
+          transition={{ duration: 1 }}
+          className=" overflow-hidden w-full h-full"
+        >
           <h3
-            className="hidden md:flex font-monumentRegular text-2xl md:text-5xl px-2 md:px-10 text-center"
+            className="hidden md:flex font-satoshi uppercase text-2xl md:text-7xl font-bold px-2 md:px-10 text-center"
             onMouseEnter={() => {
               dispatch(setHovering(true));
             }}
@@ -134,7 +139,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
             })}
           </h3>
           <h3
-            className="md:hidden font-monumentRegular text-2xl md:text-5xl px-2 md:px-10 text-center"
+            className="md:hidden font-satoshi uppercase text-2xl md:text-5xl px-2 md:px-10 text-center"
             onMouseEnter={() => {
               dispatch(setHovering(true));
             }}
@@ -144,14 +149,19 @@ const Header5 = ({ yOffset, header5Ref }) => {
           >
             What Our Clients Have To Say
           </h3>
-        </div>
+        </motion.div>
         <div className=" relative px-4 pl-14  md:px-14 ">
-          <p className=" text-xl font-heebo quotePara">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, y: [100, 0] }}
+            transition={{ duration: 1 }}
+            className=" text-xl font-heebo quotePara mx-auto max-w-[1000px]"
+          >
             ITXcelerate is a company that knows how to turn technology into
             business success. Their innovative solutions and exceptional service
             make them a top choice for companies looking to excel in the digital
             age.
-          </p>
+          </motion.p>
         </div>
       </div>
       <div className="w-full  pb-10 md:pb-0 overflow-x-scroll overflow-y-hidden md:overflow-x-hidden md:h-fit flex flex-col gap-10">
@@ -160,7 +170,10 @@ const Header5 = ({ yOffset, header5Ref }) => {
           style={{ transform: `translateX(calc(-100vw * ${num}))` }}
         >
           {data.map((item, index) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, x: [-100, 0] }}
+              transition={{ duration: 1 }}
               key={index}
               className="w-[100vw] md:w-[50vw] h-full px-4 md:px-0"
             >
@@ -213,7 +226,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
                   </div>
                 </figcaption>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

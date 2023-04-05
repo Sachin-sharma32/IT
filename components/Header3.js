@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, stagger } from "framer-motion";
 import gsap from "gsap";
 import { Power1 } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -98,13 +98,22 @@ const Header3 = () => {
             /> */}
         <div className="cursor-none max-w-screen-xl sm:px-4 mx-auto space-y-12 lg:space-y-20 lg:px-4 z-20">
           <div className="cursor-none items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16 z-20">
-            <Image
-              width={1000}
-              height={1000}
-              src="/png-5.png"
-              className="cursor-none hidden md:flex absolute scale-[1.5] top-0 Is w-[2000px]"
-              style={{ right: "200px" }}
-            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, x: [100, -200] }}
+              transition={{
+                duration: 2,
+              }}
+              className=" absolute top-0 w-fit hidden md:flex cursor-none"
+            >
+              <Image
+                width={1000}
+                height={1000}
+                src="/png-5.png"
+                className="scale-[1.5] w-[2000px]"
+                style={{ right: "200px" }}
+              />
+            </motion.div>
             <Image
               width={5000}
               height={5000}
@@ -112,10 +121,13 @@ const Header3 = () => {
               className="cursor-none right-10 md:hidden z-0 absolute scale-[1.5] top-0 flowers w-[2000px]"
               style={{ right: "200px" }}
             />
-            <div className="cursor-none text-tertiary">
+            <div className="cursor-none text-white">
               <div className="cursor-none  overflow-hidden headingBox">
-                <h2
-                  className="cursor-none mb-4 transition-all font-monumentBold duration-500 text-xl sm:text-4xl heading-3 px-4 sm:px-0 font-extrabold tracking-tight text-black"
+                <motion.h2
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1, x: [-100, 0] }}
+                  transition={{ duration: 1 }}
+                  className="cursor-none mb-4 uppercase  text-xl sm:text-5xl  px-4 sm:px-0 font-extrabold tracking-tight text-white"
                   onMouseEnter={() => {
                     dispatch(setHovering(true));
                   }}
@@ -147,14 +159,24 @@ const Header3 = () => {
                       App Development ?
                     </span>
                   </div>
-                </h2>
+                </motion.h2>
               </div>
               <ul
                 role="list"
                 className="cursor-none pt-8 space-y-5 px-4 border-t border-tertiary my-7"
               >
                 {data.map((item, i) => (
-                  <li key={i} className="cursor-none overflow-hidden">
+                  <motion.li
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1, x: [-100, 0] }}
+                    transition={{
+                      duration: 1,
+                      staggerChildren: 0.1,
+                      delayChildren: 0.3,
+                    }}
+                    key={i}
+                    className="cursor-none overflow-hidden"
+                  >
                     <div
                       className="flex gap-3 items-start header3Points"
                       style={{ transform: "translateY(200px)" }}
@@ -169,7 +191,7 @@ const Header3 = () => {
                         {item}
                       </span>
                     </div>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </div>
