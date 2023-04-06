@@ -190,7 +190,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
           {data.map((item, index) => (
             <motion.div
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, x: [-100, 0] }}
+              whileInView={{ opacity: 1, y: [50, 0] }}
               transition={{ duration: 1 }}
               key={index}
               className="w-[100vw] md:w-[50vw] h-full px-4 md:px-0"
