@@ -13,6 +13,7 @@ import {
   setHoveringLeft,
   setHoveringRight,
 } from "../redux/slices";
+import Marquee from "react-fast-marquee";
 
 const Header5 = ({ yOffset, header5Ref }) => {
   const dispatch = useDispatch();
@@ -247,7 +248,7 @@ const Header5 = ({ yOffset, header5Ref }) => {
           ))}
         </div>
       </div>
-      <div className=" gap-10  justify-center hidden md:flex -translate-y-10 ">
+      <div className=" gap-10  justify-center hidden md:flex -translate-y-10">
         <div
           className="cursor-none  w-20 h-20 hover:bg-primary rounded-full group relative flex justify-center items-center border-white border-[1px] hover:border-none "
           onClick={() => {

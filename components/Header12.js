@@ -103,7 +103,7 @@ const Header12 = () => {
   }, []);
 
   return (
-    <div className=" w-screen min-h-screen p-20 z-50 bg-secondary flex flex-col gap-32 justify-center items-center">
+    <div className=" w-screen hidden md:flex min-h-screen p-20 z-50 bg-secondary flex flex-col gap-10 justify-center items-center">
       <div
         style={{ visibility: "hidden" }}
         className="cursor-none  bg-blend-difference fixed -translate-y-1/2 pointer-events-none  z-[1000] h-10 text- flex flex-col gap-4"
@@ -192,12 +192,15 @@ const Header12 = () => {
       >
         Industries We Cater
       </h2>
-      <div className="flex w-full h-[450px] justify-center items-center">
+      <div className="flex w-full gap-2 h-[250px] justify-center items-center">
         {data.map((item, i) => (
-          <div
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, y: [100, 0] }}
+            transition={{ duration: 1, delay: i * 0.1 }}
             className={`${
-              i !== 10 ? "border-r" : ""
-            } h-full w-fit flex items-center justify-center`}
+              i !== 10 ? "" : ""
+            } h-full w-fit flex items-center justify-center border border-[1.5px] bg-fourth text-white rounded-3xl overflow-hidden`}
             onMouseEnter={() => {
               setActive(i);
               box.current.style.visibility = "visible";
@@ -209,7 +212,7 @@ const Header12 = () => {
             key={i}
           >
             <div
-              className={`text-xl relative  text-white h-full flex items-center transition-all duration-1000 justify-center ${
+              className={`font-extrabold relative h-full flex items-center transition-all duration-1000 justify-center ${
                 active === i ? "w-[400px]" : "w-[90px]"
               }`}
             >
@@ -217,7 +220,7 @@ const Header12 = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className={` -rotate-90 uppercase min-w-[400px] z-[500]  text-center ${
+                className={` -rotate-90 uppercase min-w-[250px] z-[500]  text-center pl-4 ${
                   active === i ? "hidden" : "flex"
                 }`}
               >
@@ -236,7 +239,7 @@ const Header12 = () => {
                       src={item.image}
                       width={1000}
                       height={1000}
-                      className={`brightness-50 h-full min-w-[400px]`}
+                      className={`brightness-50 h-full min-w-[300px]`}
                     />
                   </motion.div>
                   <motion.div
@@ -245,14 +248,14 @@ const Header12 = () => {
                     whileInView={{ opacity: 1 }}
                     className={`${
                       active === i ? "flex" : "hidden"
-                    } transition-all duration-300 absolute top-1/2 w-[90%] text-justify text-white -translate-x-1/2 -translate-y-1/2 left-1/2`}
+                    } transition-all duration-300 absolute font-normal text-xs bottom-0 w-[90%] text-justify text-white -translate-x-1/2 mb-4 left-1/2`}
                   >
                     {item.desc}
                   </motion.div>
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

@@ -106,7 +106,7 @@ const Home = () => {
         <Navbar yOffset={yOffset} prev={prev} />
         <Header yOffset={yOffset} prev={prev} />
         <Header10 />
-        {/* <Header3 yOffset={yOffset} prev={prev} /> */}
+        <Header3 yOffset={yOffset} prev={prev} />
         {/* <Header4 yOffset={yOffset} prev={prev} /> */}
         <Header9 />
         <Header5 yOffset={yOffset} prev={prev} header5Ref={header5Ref} />
@@ -153,7 +153,7 @@ const Home = () => {
                 }
                 className="cursor-none  card origin-bottom-right  h-[550px] w-[300px] sm:w-[380px] flex"
               >
-                <div className="cursor-none card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] sm:w-[380px]  w-inherit">
+                <div className="cursor-none card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] sm:w-[380px]  w-inherit">
                   <div className="cursor-none  h-fit overflow-hidden">
                     <div className=" overflow-hidden">
                       <h3
@@ -268,7 +268,7 @@ const Home = () => {
                     <EastIcon />
                   </div>
                 </div>
-                <div className="cursor-none card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-inherit">
+                <div className="cursor-none card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] w-inherit">
                   <ul
                     role="list"
                     className="cursor-none mb-8 space-y-4 text-left"
@@ -388,7 +388,7 @@ const Home = () => {
                 transition={{ duration: 1 }}
                 className="cursor-none  card  origin-bottom-right  h-[550px] w-[300px] sm:w-[380px]"
               >
-                <div className="cursor-none card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-inherit">
+                <div className="cursor-none card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] w-inherit">
                   <div className=" overflow-hidden">
                     <h3
                       className="cursor-none mb-4 font-satoshi font-extrabold text-3xl uppercase font-semibold revealI3"
@@ -500,7 +500,7 @@ const Home = () => {
                     <EastIcon />
                   </div>
                 </div>
-                <div className="cursor-none card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-inherit">
+                <div className="cursor-none card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] w-inherit">
                   <ul
                     role="list"
                     className="cursor-none mb-8 space-y-4 text-left"
@@ -632,7 +632,7 @@ const Home = () => {
                 }
                 className="cursor-none  card  origin-bottom-left  h-[550px] w-[300px] sm:w-[380px]"
               >
-                <div className="cursor-none card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-inherit">
+                <div className="cursor-none card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] w-inherit">
                   <div className=" overflow-hidden">
                     <h3
                       className="cursor-none mb-4 font-satoshi font-extrabold text-3xl uppercase font-semibold revealI4"
@@ -744,7 +744,7 @@ const Home = () => {
                     <EastIcon />
                   </div>
                 </div>
-                <div className="cursor-none card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-white shadow-xl rounded-lg h-[550px] w-inherit">
+                <div className="cursor-none card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] w-inherit">
                   <ul
                     role="list"
                     className="cursor-none mb-8 space-y-4 text-left"

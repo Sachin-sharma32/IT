@@ -81,12 +81,12 @@ const Header6 = ({ yOffset, prev }) => {
       className="cursor-none bg-fourth  z-10 h-fit md:h-[180vh] md:flex items-center w-screen md:py-20 py-10 px-2 md:px-10 relative"
       id="faqs"
     >
-      <div className="cursor-none max-w-screen-xl pb-8 mx-auto lg:pb-24 lg:px-6 flex justify-center flex-col py-20">
+      <div className="cursor-none max-w-screen-xl text-white pb-8 mx-auto lg:pb-24 lg:px-6 flex justify-center flex-col py-20">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, x: [-100, 0] }}
           transition={{ duration: 1 }}
-          className="cursor-none hidden md:flex uppercase text-white justify-center mb-6 text-[28px] md:text-5xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0 text-white lg:mb-8"
+          className="cursor-none hidden md:flex uppercase  justify-center mb-6 text-[28px] md:text-5xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0  lg:mb-8"
           onMouseEnter={() => {
             dispatch(setHovering(true));
           }}
@@ -130,7 +130,7 @@ const Header6 = ({ yOffset, prev }) => {
           })}{" "}
         </motion.div>
         <h2
-          className="cursor-none md:hidden mb-6 text-[28px] md:text-3xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0 text-white lg:mb-8"
+          className="cursor-none md:hidden mb-6 text-[28px] md:text-3xl overflow-hidden md:px-10 font-extrabold tracking-tight text-center z-0  lg:mb-8"
           onMouseEnter={() => {
             dispatch(setHovering(true));
           }}
@@ -140,16 +140,19 @@ const Header6 = ({ yOffset, prev }) => {
         >
           Frequently Asked Questions
         </h2>
-        <div className="cursor-none  mx-auto px-4 md:px-14 font-gilroy4">
+        <div className="cursor-none flex flex-col gap-6  mx-auto px-4 md:px-14">
           {data.map((item, i) => (
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, x: [-100, 0] }}
-              transition={{ duration: 1 }}
+              initial={{ opacity: 0, scale: 1.2 }}
+              whileInView={{ opacity: 1, x: [-100, 0], scale: 1 }}
+              transition={{ duration: 1, yOffset: 100 }}
               key={i}
-              className={`text-lg md:text-2xl text-white ${
-                i == 0 && "border-t"
-              } border-b py-6 grid grid-cols-5 justify-items-end`}
+              className={`text-lg md:text-xl  ${
+                i == 0 && ""
+              }  p-6 rounded-3xl grid grid-cols-5 group justify-items-end  bg-secondary text-white`}
+              onClick={() => {
+                selected === i ? setSelected(null) : setSelected(i);
+              }}
             >
               <div className="cursor-none overflow-hidden flex gap-10 justify-between w-full col-span-4 items-center">
                 <p
@@ -159,21 +162,16 @@ const Header6 = ({ yOffset, prev }) => {
                   {item.title}
                 </p>
               </div>
-              <div
-                className="cursor-none  w-10 h-10 md:w-20 md:h-20 hover:bg-primary rounded-full relative border-white border-[1px] hover:border-none "
-                onClick={() => {
-                  selected === i ? setSelected(null) : setSelected(i);
-                }}
-              >
+              <div className="cursor-none  w-10 h-10 md:w-20 md:h-20 group-hover:bg-primary group-hover:border-primary rounded-full relative border-white border-[1.5px] hover:border-none ">
                 <div
-                  className={`h-6 md:h-14 w-[1px] bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ${
+                  className={`h-6 md:h-14 w-[1.5px] bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ${
                     selected === i ? "max-h-0" : "max-h-[300px]"
                   }`}
                 ></div>
-                <div className="cursor-none  h-[1px] w-6 md:w-14 bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="cursor-none  h-[1.5px] w-6 md:w-14 bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
               </div>
               <div
-                className={` col-span-4 text-lg text-white h-auto ${
+                className={` col-span-4 text-lg  h-auto ${
                   selected === i ? "max-h-[300px] pt-4" : "max-h-0"
                 } transition-all duration-500 overflow-hidden`}
               >

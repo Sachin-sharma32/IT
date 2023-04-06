@@ -18,7 +18,7 @@ const Header10 = () => {
     return pos > 0.5 ? "relative" : "relative";
   });
   return (
-    <div className="min-h-[100vh]  w-screen z-40 bg-secondary text-white p-10 flex items-center gap-20 flex-col ">
+    <div className="min-h-[100vh] hidden lg:flex  w-screen z-40 bg-secondary text-white p-10 items-center gap-20 flex-col ">
       <motion.div
         ref={containerRef}
         className="h-[60vh] top-[100px] z-40 w-screen flex justify-center mt-20 text-center"

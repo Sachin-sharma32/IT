@@ -98,7 +98,7 @@ const Contact = () => {
         >
           {(props) => (
             <Form
-              className="cursor-none  w-full sm:w-full gap-10 flex flex-col rounded-lg font-gilroy4 text-secondary"
+              className="cursor-none  w-full sm:w-full gap-10 flex flex-col rounded-lg  text-secondary"
               onMouseEnter={() => {
                 dispatch(setCursorVisible(false));
               }}
@@ -260,24 +260,22 @@ const Contact = () => {
               src="bs-1.jpg"
               className="cursor-none  h-52 w-52 self-center"
             />
-            <p className="cursor-none  font-gilroy4">
+            <p className="cursor-none  ">
               Rahul Sharma from the sales team is happy to help you with all
               your questions.
             </p>
             <div>
               <div className="cursor-none flex gap-4">
                 <h3 className="cursor-none  w-20">Phone</h3>
-                <p className="cursor-none  font-gilroy4">+91 9876543210</p>
+                <p className="cursor-none  ">+91 9876543210</p>
               </div>
               <div className="cursor-none flex gap-4">
                 <h3 className="cursor-none  w-20">Fax</h3>
-                <p className="cursor-none  font-gilroy4">+91 9876543210</p>
+                <p className="cursor-none  ">+91 9876543210</p>
               </div>
               <div className="cursor-none flex gap-4">
                 <h3 className="cursor-none  w-20">E-mal</h3>
-                <p className="cursor-none  font-gilroy4">
-                  info@itxcelerate.com
-                </p>
+                <p className="cursor-none  ">info@itxcelerate.com</p>
               </div>
             </div>
           </div>
@@ -286,11 +284,11 @@ const Contact = () => {
               <FolderIcon className="cursor-none  text-5xl text-primary" />
               <h3>Hardware Purchase template</h3>
             </div>
-            <div className="cursor-none  font-gilroy4 ">
+            <div className="cursor-none   ">
               If you wish, you can use our hardware purchase Excel template for
               your upload:
             </div>
-            <ol className="cursor-none  font-gilroy4 list-decimal list-inside">
+            <ol className="cursor-none   list-decimal list-inside">
               <li>Download template</li>
               <li>Enter product details</li>
               <li>Upload completed list</li>

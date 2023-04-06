@@ -128,7 +128,7 @@ const Header4 = ({ yOffset, prev }) => {
             dispatch(setHovering(false));
           }}
         >
-          <h3 className="cursor-none hidden mx-auto flex justify-center text-center md:flex text-xl sm:text-2xl md:text-5xl font-bold heading-7 text-secondary md:text-inherit font-monumentBold  text-center px-0 hover:skew-x-12 hover:scale-110 transition-all duration-500">
+          <h3 className="cursor-none hidden mx-auto flex justify-center text-center md:flex text-xl sm:text-2xl md:text-5xl font-bold heading-7 text-secondary md:text-inherit   text-center px-0 hover:skew-x-12 hover:scale-110 transition-all duration-500">
             {"Web App Technologies We Use".split("").map((word) => {
               return word === " " ? (
                 <span
@@ -147,7 +147,7 @@ const Header4 = ({ yOffset, prev }) => {
               );
             })}
           </h3>
-          <h3 className="cursor-none md:hidden text-2xl  font-bold heading-7 text-secondary md:text-inherit font-monumentBold  text-center px-0 hover:skew-x-12 hover:scale-110 transition-all duration-500">
+          <h3 className="cursor-none md:hidden text-2xl  font-bold heading-7 text-secondary md:text-inherit   text-center px-0 hover:skew-x-12 hover:scale-110 transition-all duration-500">
             Web App Technologies We Use
           </h3>
         </div>

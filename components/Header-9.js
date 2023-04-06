@@ -85,7 +85,7 @@ const Header9 = () => {
         className="cursor-none  bg-blend-difference fixed -translate-y-1/2 pointer-events-none  z-[1000] h-10 text- flex flex-col gap-4 bg-transparent"
         ref={box}
       >
-        <div className="cursor-none bg-black rounded-full font-monumentRegular px-10 py-1 w-fit">
+        <div className="cursor-none bg-black rounded-full  px-10 py-1 w-fit">
           {" "}
           ITXCELERATE
         </div>
@@ -106,7 +106,7 @@ const Header9 = () => {
                     className="cursor-none w-12 transition-all duration-300"
                   />
                 </div>
-                {/* <h5 className="cursor-none text-2xl uppercase font-monumentRegular text-center text-black">
+                {/* <h5 className="cursor-none text-2xl uppercase  text-center text-black">
                   {item?.name}
                 </h5> */}
               </div>
@@ -159,7 +159,7 @@ const Header9 = () => {
         {data.map((item, i) => (
           <div
             key={i}
-            className={`bg-white md:p-8 p-4  rounded-lg group flex border border-black flex-col gap-10 h-[250px] md:h-[300px] sticky `}
+            className={`bg-fourth md:p-8 p-4  rounded-lg group flex border border-white text-white flex-col gap-10 h-[250px] md:h-[300px] sticky `}
             style={{ top: `${80 + i * 20}px` }}
             onMouseEnter={(e) => {
               handleMouseEnter(e, i);
@@ -181,7 +181,7 @@ const Header9 = () => {
                   <p className="bg-secondary group-hover:rotate-0 transition-all duration-300 px-4 w-fit rounded-full text-white md:text-base text-xs rotate-[4deg]">
                     {item.tags[1]}
                   </p>
-                  <p className="border-2 group-hover:rotate-0 hidden md:flex transition-all duration-300 border-black text-black px-4 w-fit rounded-full md:text-base text-xs -rotate-[4deg]">
+                  <p className="border-2 group-hover:rotate-0 hidden md:flex transition-all duration-300 border-white text-white px-4 w-fit rounded-full md:text-base text-xs -rotate-[4deg]">
                     {item.tags[2]}
                   </p>
                 </div>

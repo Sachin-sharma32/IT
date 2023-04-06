@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useLayoutEffect } from "react";
+import React, { useEffect, useRef, useLayoutEffect, useState } from "react";
 import Typewriter from "typewriter-effect";
-import { motion, useTransform, useScroll } from "framer-motion";
+import { motion, useTransform, useScroll, useInView } from "framer-motion";
 import Spline from "@splinetool/react-spline";
 
 import gsap from "gsap";
@@ -14,6 +14,10 @@ import Image from "next/image";
 
 const Header = ({ yOffset, prev }) => {
   const ref = useRef(null);
+  const [active, setActive] = useState(0);
+  const [hover, setHover] = useState(false);
+  const arrowRef = useRef(null);
+  const isInView = useInView(arrowRef);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
@@ -21,9 +25,10 @@ const Header = ({ yOffset, prev }) => {
   const x = useTransform(scrollYProgress, [0.5, 0.7], ["0px", "-100px"]);
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.5, 0.6, 0.7, 0.8, 0.9],
-    [0, 0, 0, 0, 0, 1]
+    [0, 0.5, 0.6, 0.7, 0.8],
+    [0, 0, 0, 0, 1]
   );
+  const opacity2 = useTransform(scrollYProgress, [0, 0.5, 0.6], [1, 1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [4, 1]);
 
   const dispatch = useDispatch();
@@ -86,6 +91,20 @@ const Header = ({ yOffset, prev }) => {
     },
   };
 
+  const data = [
+    { title: "3+", desc: "years in buisness" },
+    { title: "7+", desc: "of industry experience" },
+    { title: "300+", desc: "projects completed" },
+    { title: "500+", desc: "employees worldwide" },
+  ];
+
+  setTimeout(() => {
+    if (active < 3) {
+      setActive(active + 1);
+    } else {
+      setActive(0);
+    }
+  }, 2000);
   return (
     <section
       ref={ref}
@@ -94,12 +113,14 @@ const Header = ({ yOffset, prev }) => {
     >
       <div className="hidden md:flex sticky top-0 w-full h-screen">
         <div className=" relative h-full w-full ">
-          <Image
-            src={"/rahul-4.png"}
-            width={2000}
-            height={2000}
-            className="w-full"
-          />
+          <motion.div style={{ opacity: opacity2 }} className="w-full h-full">
+            <Image
+              src={"/rahul-4.png"}
+              width={2000}
+              height={2000}
+              className="w-full"
+            />
+          </motion.div>
           <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 min-w-screen h-screen -translate-y-1/2 flex items-center justify-center">
             <motion.div
               style={{ scale }}
@@ -108,41 +129,42 @@ const Header = ({ yOffset, prev }) => {
           </div>
         </div>
       </div>
-      <div className="cursor-none w-screen px-20 md:px-20 revealH1 justify-center  flex-col-reverse sm:flex-row flex gap-20 sm:justify-between sm:gap-0 mt-32 h-screen md:h-[200vh] items-center">
-        <div className="w-full ">
-          <motion.h1
-            style={{ opacity }}
-            // style={{ transform: `translateY(-${yOffset * 0.5}px)` }}
-            className="cursor-none uppercase text-3xl font-bold text-center md:text-left leading-none w-full tracking-tight font-satoshi font-extrabold md:text-5xl xl:text-5xl dark:text-white z-50"
-            onMouseEnter={() => {
-              dispatch(setHovering(true));
-            }}
-            onMouseLeave={() => {
-              dispatch(setHovering(false));
-            }}
-          >
-            <div className="cursor-none h-full overflow-hidden">
-              <span
-                className="cursor-none text-primary reveal inline-block"
-                style={{ transform: "translateY(1000px)" }}
-              >
-                Accelerating
-              </span>
-            </div>
-            <div className="cursor-none  overflow-hidden">
-              <span
-                className="cursor-none reveal inline-block"
-                style={{ transform: "translateY(100%)" }}
-              >
-                your digital
-              </span>
-            </div>
-            <div className="cursor-none  overflow-hidden">
-              <span
-                className="cursor-none  reveal inline-block"
-                style={{ transform: "translateY(100%)" }}
-              >
-                <Typewriter
+      <div className="cursor-none  h-screen w-screen px-20 md:px-20 revealH1 justify-center z-50 flex-col-reverse sm:flex-col flex  sm:justify-center gap-32 items-center">
+        <div className="flex flex-col gap-20">
+          <div className="w-full">
+            <motion.h1
+              style={{ opacity }}
+              // style={{ transform: `translateY(-${yOffset * 0.5}px)` }}
+              className="cursor-none uppercase text-5xl flex flex-col md:flex-row justify-center gap-4 md:text-left leading-none w-full tracking-tight font-satoshi font-extrabold md:text-5xl xl:text-6xl dark:text-white z-50"
+              onMouseEnter={() => {
+                dispatch(setHovering(true));
+              }}
+              onMouseLeave={() => {
+                dispatch(setHovering(false));
+              }}
+            >
+              <div className="cursor-none h-full overflow-hidden">
+                <span
+                  className="cursor-none text-primary reveal inline-block"
+                  style={{ transform: "translateY(1000px)" }}
+                >
+                  Accelerating
+                </span>
+              </div>
+              <div className="cursor-none  overflow-hidden">
+                <span
+                  className="cursor-none reveal inline-block"
+                  style={{ transform: "translateY(100%)" }}
+                >
+                  your digital
+                </span>
+              </div>
+              <div className="cursor-none  overflow-hidden">
+                <span
+                  className="cursor-none  reveal inline-block"
+                  style={{ transform: "translateY(100%)" }}
+                >
+                  {/* <Typewriter
                   options={{
                     strings: ["success."],
                     autoStart: true,
@@ -150,46 +172,69 @@ const Header = ({ yOffset, prev }) => {
                     pauseFor: 2500,
                   }}
                   className="cursor-none text-white z-50"
-                />
-              </span>
+                /> */}
+                  SUCCESS
+                </span>
+              </div>
+            </motion.h1>
+          </div>
+          <motion.div
+            style={{ opacity }}
+            className="cursor-none  w-full flex justify-center items-center gap-10 revealH1"
+            onMouseEnter={() => {
+              setHover(true);
+            }}
+            onMouseLeave={() => {
+              setHover(false);
+            }}
+          >
+            <div className="flex flex-col gap-1 w-[170px] items-center">
+              <h2 className="text-7xl font-thin text-primary">
+                {data[active].title}
+              </h2>
+              <p className=" text-">{data[active].desc}</p>
             </div>
-          </motion.h1>
-        </div>
-        <motion.div
-          style={{ opacity }}
-          className="cursor-none   w-full flex justify-center md:justify-end md:mr-20 revealH1"
-        >
-          <motion.div>
-            <svg
-              className="cursor-none o-ui-arrow stroke-white -rotate-90 scale-[2] sm:scale-[3] md:scale-[4]"
-              width="64"
-              height="64"
-              viewBox="0 0 64 64"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {" "}
-              <motion.path
-                d="M3.10162 3.10156L62.9999 62.9999"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                variants={variants1}
-                initial="hidden"
-                animate="visible"
-              ></motion.path>{" "}
-              <motion.path
-                d="M63 1.00001L63 63L0.999989 63"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                variants={variants2}
-                initial="hidden"
-                animate="visible"
-              ></motion.path>{" "}
-            </svg>
+            <motion.div ref={arrowRef}>
+              <svg
+                className="cursor-none o-ui-arrow stroke-white -rotate-90 stroke-2 scale-[1]"
+                width="64"
+                height="64"
+                viewBox="0 0 64 64"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {" "}
+                <motion.path
+                  d="M3.10162 3.10156L62.9999 62.9999"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  variants={variants1}
+                  initial={{ opacity: 0, pathLength: 0 }}
+                  animate={{ opacity: 1, pathLength: isInView ? 1 : 0 }}
+                  transition={{
+                    duration: 2,
+                    ease: "easeInOut",
+                    delay: 1,
+                  }}
+                ></motion.path>{" "}
+                <motion.path
+                  d="M63 1.00001L63 63L0.999989 63"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  initial={{ opacity: 0, pathLength: 0 }}
+                  animate={{ opacity: 1, pathLength: isInView ? 1 : 0 }}
+                  transition={{
+                    duration: 2,
+                    ease: "easeInOut",
+                    delay: 1,
+                  }}
+                ></motion.path>{" "}
+              </svg>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
-      <div className="cursor-none  z-40 bg-black marquee">
+      <div className="cursor-none  z-40 bg-fourth marquee absolute bottom-0">
         <section className="cursor-none  ">
           <div className="cursor-none  p-4 z-40 w-screen">
             <Marquee
@@ -201,7 +246,7 @@ const Header = ({ yOffset, prev }) => {
                 // style={{
                 //   transform: `translateX(${-yOffset - 10}px)`,
                 // }}
-                className="cursor-none flex gap-20 px-10 dark:text-tertiary font-satoshi font-extrabold font- text-3xl md:text-5xl overflow-hidden"
+                className="cursor-none flex gap-0 px-10 dark:text-tertiary font-satoshi font-extrabold font- text-3xl md:text-7xl overflow-hidden"
               >
                 DESIGNING THE FUTURE OF TECHNOLOGY
               </div>
