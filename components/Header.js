@@ -92,10 +92,10 @@ const Header = ({ yOffset, prev }) => {
   };
 
   const data = [
-    { title: "3+", desc: "years in buisness" },
-    { title: "7+", desc: "of industry experience" },
-    { title: "300+", desc: "projects completed" },
-    { title: "500+", desc: "employees worldwide" },
+    { title: "3+", desc: "Years in buisness" },
+    { title: "7+", desc: "Of industry experience" },
+    { title: "300+", desc: "Projects completed" },
+    { title: "50+", desc: "Employees worldwide" },
   ];
 
   setTimeout(() => {
@@ -150,18 +150,14 @@ const Header = ({ yOffset, prev }) => {
                 >
                   Accelerating
                 </span>
-              </div>
-              <div className="cursor-none  overflow-hidden">
                 <span
-                  className="cursor-none reveal inline-block"
+                  className="cursor-none ml-3 reveal inline-block"
                   style={{ transform: "translateY(100%)" }}
                 >
                   your digital
                 </span>
-              </div>
-              <div className="cursor-none  overflow-hidden">
                 <span
-                  className="cursor-none  reveal inline-block"
+                  className="cursor-none ml-3 reveal inline-block"
                   style={{ transform: "translateY(100%)" }}
                 >
                   {/* <Typewriter
@@ -174,6 +170,7 @@ const Header = ({ yOffset, prev }) => {
                   className="cursor-none text-white z-50"
                 /> */}
                   SUCCESS
+                  <span className="bg-primary w-6 rounded-full ml-1 animate-pulse inline-block h-1"></span>
                 </span>
               </div>
             </motion.h1>

@@ -101,7 +101,7 @@ const Home = () => {
   // }, []);
 
   return (
-    <div className="  min-h-[100vh] flex container mb-[90vh] max-w-[100vw]">
+    <div className="  min-h-[100vh] flex container mb-[600px] max-w-[100vw]">
       <div className="flex flex-col">
         <Navbar yOffset={yOffset} prev={prev} />
         <Header yOffset={yOffset} prev={prev} />
@@ -153,11 +153,11 @@ const Home = () => {
                 }
                 className="cursor-none  card origin-bottom-right  h-[550px] w-[300px] sm:w-[380px] flex"
               >
-                <div className="cursor-none card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] sm:w-[380px]  w-inherit">
+                <div className="cursor-none card__side card__side--front flex gap-10 flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] sm:w-[380px]  w-inherit">
                   <div className="cursor-none  h-fit overflow-hidden">
                     <div className=" overflow-hidden">
                       <h3
-                        className="cursor-none mb-4 font-satoshi font-extrabold text-3xl uppercase font-extrabold revealI2"
+                        className="cursor-none mb-4 font-satoshi font-extrabold text-primary text-3xl uppercase font-extrabold revealI2"
                         style={{ transform: "translateY(100px)" }}
                       >
                         Basic Plan
@@ -172,15 +172,14 @@ const Home = () => {
                       Best option for personal small and medium size projects.
                     </p>
                   </div>
-
-                  <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
+                  {/* <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
                     <span
                       className="cursor-none mr-2 text-5xl font-satoshi font-extrabold text-primary inline-block revealI2"
                       style={{ transform: "translateY(100px)" }}
                     >
                       $199
                     </span>
-                  </div>
+                  </div> */}
                   <ul
                     role="list"
                     className="cursor-none mb-8 space-y-4 text-left"
@@ -388,10 +387,10 @@ const Home = () => {
                 transition={{ duration: 1 }}
                 className="cursor-none  card  origin-bottom-right  h-[550px] w-[300px] sm:w-[380px]"
               >
-                <div className="cursor-none card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] w-inherit">
+                <div className="cursor-none card__side card__side--front gap-10 flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] w-inherit">
                   <div className=" overflow-hidden">
                     <h3
-                      className="cursor-none mb-4 font-satoshi font-extrabold text-3xl uppercase font-semibold revealI3"
+                      className="cursor-none mb-4 font-satoshi font-extrabold text-primary text-3xl uppercase font-semibold revealI3"
                       style={{ transform: "translateY(100px)" }}
                     >
                       Advanced Plan
@@ -405,14 +404,14 @@ const Home = () => {
                       Best option for personal medium to large size projects.
                     </p>
                   </div>
-                  <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
+                  {/* <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
                     <span
                       className="cursor-none mr-2 text-5xl font-satoshi font-extrabold text-primary inline-block revealI3"
                       style={{ transform: "translateY(100px)" }}
                     >
                       $499
                     </span>
-                  </div>
+                  </div> */}
                   <ul
                     role="list"
                     className="cursor-none mb-8 space-y-4 text-left"
@@ -632,10 +631,10 @@ const Home = () => {
                 }
                 className="cursor-none  card  origin-bottom-left  h-[550px] w-[300px] sm:w-[380px]"
               >
-                <div className="cursor-none card__side card__side--front flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] w-inherit">
+                <div className="cursor-none card__side card__side--front gap-10 flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] w-inherit">
                   <div className=" overflow-hidden">
                     <h3
-                      className="cursor-none mb-4 font-satoshi font-extrabold text-3xl uppercase font-semibold revealI4"
+                      className="cursor-none mb-4 font-satoshi font-extrabold text-primary text-3xl uppercase font-semibold revealI4"
                       style={{ transform: "translateY(100px)" }}
                     >
                       Pro Plan
@@ -649,14 +648,14 @@ const Home = () => {
                       Best option for large scale serious project
                     </p>
                   </div>
-                  <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
+                  {/* <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
                     <span
                       className="cursor-none mr-2 text-5xl font-satoshi font-extrabold text-primary inline-block revealI4"
                       style={{ transform: "translateY(100px)" }}
                     >
                       $999
                     </span>
-                  </div>
+                  </div> */}
                   <ul
                     role="list"
                     className="cursor-none mb-8 space-y-4 text-left"

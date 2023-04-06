@@ -85,7 +85,7 @@ const Footer = () => {
   ];
   return (
     <footer
-      className={`cursor-none  z-[0] bg-secondary text-white px-10 w-screen bottom-0 ${
+      className={`cursor-none h-[600px]  z-[0] bg-secondary text-white px-10 w-screen bottom-0 ${
         router.pathname === "/" ? "fixed" : ""
       }`}
     >
