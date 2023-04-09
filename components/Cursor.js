@@ -25,7 +25,7 @@ const Cursor = () => {
     <div className=" hidden sm:flex">
       {cursorVisible && (
         <div
-          className={` cursor-none  bg-blend-difference fixed   transition-transform duration-1000  -translate-x-1/2 flex justify-center items-center -translate-y-1/2 pointer-events-none  z-[1000] ${
+          className={` cursor-none  bg-blend-difference fixed   transition-transform duration-1000  -translate-x-1/2 flex justify-center items-center -translate-y-1/2 pointer-events-none  z-[2500] ${
             hovering ? "bg-primary scale-50" : ""
           } w-4 h-4  rounded-full ${
             hoveringLeft || hoveringRight

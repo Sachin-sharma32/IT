@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useLayoutEffect, useState } from "react";
 import Typewriter from "typewriter-effect";
 import { motion, useTransform, useScroll, useInView } from "framer-motion";
-import Spline from "@splinetool/react-spline";
 
 import gsap from "gsap";
 import { Power4, Power1 } from "gsap";
@@ -124,7 +123,7 @@ const Header = ({ yOffset, prev }) => {
           <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 min-w-screen h-screen -translate-y-1/2 flex items-center justify-center">
             <motion.div
               style={{ scale }}
-              className="border-[600px] border-secondary  box-content w-[400px] h-[400px] rounded-full"
+              className="border-[1000px] border-secondary  box-content w-[600px] h-[600px] rounded-full"
             ></motion.div>
           </div>
         </div>

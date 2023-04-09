@@ -13,7 +13,7 @@ const Header6 = ({ yOffset, prev }) => {
   const dispatch = useDispatch();
   const containerRef = useRef();
   const isOnScreen = useOnScreen(containerRef);
-  const [selected, setSelected] = useState(4);
+  const [selected, setSelected] = useState(null);
 
   const data = [
     {
@@ -91,7 +91,7 @@ const Header6 = ({ yOffset, prev }) => {
             dispatch(setHovering(true));
           }}
           onMouseLeave={() => {
-            dispatch(setHovering(false));
+            // dispatch(setHovering(false));
           }}
         >
           {"Frequently Asked".split("").map((word) => {
@@ -175,9 +175,9 @@ const Header6 = ({ yOffset, prev }) => {
                 <div className="cursor-none  h-[1.5px] w-6 md:w-5 bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
               </div>
               <div
-                className={` col-span-4 text-lg  h-auto ${
+                className={` col-span-5 text-lg  h-auto ${
                   selected === i ? "max-h-[300px] pt-4" : "max-h-0"
-                } transition-all duration-500 overflow-hidden ml-[50px]`}
+                } transition-all duration-500 overflow-hidden  `}
               >
                 {item.details}
               </div>

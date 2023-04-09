@@ -9,6 +9,7 @@ const initialState = {
   hovering: false,
   hoveringRight: false,
   hoveringLeft: false,
+  show: false,
 };
 
 const baseSlice = createSlice({
@@ -42,6 +43,9 @@ const baseSlice = createSlice({
     setHoveringLeft: (state, action) => {
       state.hoveringLeft = action.payload;
     },
+    setShow: (state, active) =>{
+      state.show = active.payload;
+    }
   },
 });
 
@@ -54,5 +58,6 @@ export const {
   setHovering,
   setHoveringLeft,
   setHoveringRight,
+  setShow
 } = baseSlice.actions;
 export default baseSlice.reducer;

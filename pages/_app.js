@@ -17,6 +17,7 @@ import { motion, useScroll } from "framer-motion";
 import Smooth from "../utils/Smooth";
 import Cursor from "../components/Cursor";
 import Scroll from "../components/Scroll";
+import Contact2 from "../components/Contact";
 
 if (!global.setImmediate) {
   global.setImmediate = setTimeout;
@@ -69,16 +70,20 @@ function MyApp({ Component, pageProps }) {
             {router.pathname === "/contact" ? (
               ""
             ) : (
-              <div
-                className="  fixed bottom-[16px] hidden sm:flex right-6 text-white z-50 bg-black overflow-hidden rounded-lg  scroll-smooth hover:shadow-lg"
-                onClick={() => {
-                  window.scrollTo({
-                    top: 0,
-                    behavior: "smooth",
-                  });
-                }}
-              >
-                <KeyboardArrowUpIcon className=" w-10 h-10 hover:-translate-y-1 transition-all duration-300" />
+              <div>
+                <div
+                  className="  fixed bottom-[16px] hidden sm:flex right-6 text-white z-50 bg-black overflow-hidden rounded-lg  scroll-smooth hover:shadow-lg"
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 0,
+                      behavior: "smooth",
+                    });
+                  }}
+                >
+                  <KeyboardArrowUpIcon className=" w-10 h-10 hover:-translate-y-1 transition-all duration-300" />
+                </div>
+
+                <Contact2 />
               </div>
             )}
             {/* <Scroll/> */}

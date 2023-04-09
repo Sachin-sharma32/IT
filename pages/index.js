@@ -1,9 +1,7 @@
 import React, { use, useEffect, useRef, useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Header2 from "../components/Header2";
 import Navbar from "../components/Navbar";
-import { useInView } from "react-intersection-observer";
 import Header3 from "../components/Header3";
 import Header4 from "../components/Header4";
 import Header5 from "../components/Header5";
@@ -13,12 +11,9 @@ import EastIcon from "@mui/icons-material/East";
 import Link from "next/link";
 import Header7 from "../components/Header-7";
 import { motion } from "framer-motion";
-import Scrollbar from "smooth-scrollbar";
-import Cursor from "../components/Cursor";
 import { gsap, Power1 } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-import Image from "next/image";
 import Header8 from "../components/header-8";
 import { useDispatch } from "react-redux";
 import { setHovering } from "../redux/slices";
@@ -34,6 +29,18 @@ const Home = () => {
   const header5Ref = useRef(null);
   const isOnScreen = useOnScreen(newRef);
   console.log(isOnScreen);
+
+  const cardFunction = (i) => {
+    let cardState;
+    if (i === 0) {
+      cardState = { opacity: 1, x: [-100, 0] };
+    } else if (i === 1) {
+      cardState = { opacity: 1, y: [100, 0] };
+    } else {
+      cardState = { opacity: 1, x: [100, 0] };
+    }
+    return cardState;
+  };
 
   const handleScroll = () => {
     setYOffset(window.pageYOffset);
@@ -93,12 +100,62 @@ const Home = () => {
     };
   }, []);
 
-  // const options = {
-  //     damping: 0.05,
-  // };
-  // useEffect(() => {
-  //     Scrollbar.init(document.querySelector('.container'), options);
-  // }, []);
+  const data = [
+    {
+      title: "Basic Plan",
+      desc: "Best option for personal small and medium size projects.",
+      list_front: [
+        "5-6 Pages",
+        "Small Business, Portfolio",
+        "Responsive Design and mobile optimization",
+        "Embed photos, videos and music in your project",
+        "One language only",
+      ],
+      list_back: [
+        "Basic SEO and Google Analytics",
+        "Lightweight design with Material UI",
+        "Includes web hosting and domain (.com) for 1 year",
+        "Includes email accounts setup",
+        "Includes traning and support via email or call",
+      ],
+    },
+    {
+      title: "Advanced Plan",
+      desc: "Best option for personal medium to large size projects.",
+      list_front: [
+        "9-12 Pages",
+        "Small Business, Portfolio, Blog",
+        "Responsive Design and mobile optimization",
+        "Embed photos, videos and music in your project",
+        "Bilingual (2 languages)",
+      ],
+      list_back: [
+        "Basic SEO and Google Analytics",
+        "Lightweight design with Material UI",
+        "Includes web hosting and domain (.com) for 1 year",
+        "Includes email accounts setup",
+        "Includes traning and support via email or call",
+      ],
+    },
+    {
+      title: "Pro Plan",
+      desc: "Best option for large scale serious project",
+      list_front: [
+        "15-50 Pages",
+        "Blog, protfolio, eCatalogue",
+        "Responsive Design and mobile optimization",
+        "Embed photos, videos and music in your project",
+        "Upto 4 languages",
+      ],
+      list_back: [
+        "Advanced SEO and Google Analytics",
+        "Complex web designs using cutting edge tools",
+        "Includes email accounts setup",
+        "Includes traning and support via email or call or video conference.",
+        "Includes web hosting and domain (.com) for 1 year",
+      ],
+    },
+  ];
 
   return (
     <div className="  min-h-[100vh] flex container mb-[600px] max-w-[100vw]">
@@ -135,520 +192,43 @@ const Home = () => {
               </h2>
             </div>
             <div className="cursor-none px-10 justify-center text-secondary space-y-8 justify-items-center grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0 z-40">
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, x: [-100, 0] }}
-                transition={{ duration: 1 }}
-                style={
-                  typeof window !== "undefined" &&
-                  window.innerWidth > 1000 &&
-                  newRef.current?.getBoundingClientRect().top <= 0
-                    ? {
-                        transform: `rotate(${
-                          newRef.current?.getBoundingClientRect().top * 0.01
-                        }deg)`,
-                        transformStyle: "preserve-3d",
-                      }
-                    : {}
-                }
-                className="cursor-none  card origin-bottom-right  h-[550px] w-[300px] sm:w-[380px] flex"
-              >
-                <div className="cursor-none card__side card__side--front flex gap-10 flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] sm:w-[380px]  w-inherit">
-                  <div className="cursor-none  h-fit overflow-hidden">
+              {data.map((item, i) => (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={cardFunction(i)}
+                  transition={{ duration: 1 }}
+                  style={
+                    typeof window !== "undefined" &&
+                    window.innerWidth > 1000 &&
+                    newRef.current?.getBoundingClientRect().top <= 0
+                      ? {
+                          transform: `rotate(${
+                            -newRef.current?.getBoundingClientRect().top * 0.01
+                          }deg)`,
+                          transformStyle: "preserve-3d",
+                        }
+                      : {}
+                  }
+                  className="cursor-none  card  origin-bottom-left  h-[550px] w-[300px] sm:w-[380px]"
+                >
+                  <div className="cursor-none card__side card__side--front gap-10 flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] w-inherit">
                     <div className=" overflow-hidden">
                       <h3
-                        className="cursor-none mb-4 font-satoshi font-extrabold text-primary text-3xl uppercase font-extrabold revealI2"
+                        className="cursor-none mb-4 font-satoshi font-extrabold text-primary text-3xl uppercase font-semibold revealI4"
                         style={{ transform: "translateY(100px)" }}
                       >
-                        Basic Plan
+                        {item.title}
                       </h3>
                     </div>
-                  </div>
-                  <div className=" overflow-hidden">
-                    <p
-                      className="cursor-none font-light sm:text-lg revealI2"
-                      style={{ transform: "translateY(100px)" }}
-                    >
-                      Best option for personal small and medium size projects.
-                    </p>
-                  </div>
-                  {/* <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
-                    <span
-                      className="cursor-none mr-2 text-5xl font-satoshi font-extrabold text-primary inline-block revealI2"
-                      style={{ transform: "translateY(100px)" }}
-                    >
-                      $199
-                    </span>
-                  </div> */}
-                  <ul
-                    role="list"
-                    className="cursor-none mb-8 space-y-4 text-left"
-                  >
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
+                    <div className=" overflow-hidden">
+                      <p
+                        className="cursor-none font-light sm:text-lg revealI4"
+                        style={{ transform: "translateY(100px)" }}
                       >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>5-6 Pages</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Small Business, Portfolio</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Responsive Design and mobile optimization</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>
-                        Embed photos, videos and music in your project
-                      </span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>One language only</span>
-                    </li>
-                  </ul>
-                  <div className="cursor-none  absolute bottom-0 right-0 flex gap-1 items-center hover:gap-2 transition-all duration-300   focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:  ">
-                    See All
-                    <EastIcon />
-                  </div>
-                </div>
-                <div className="cursor-none card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] w-inherit">
-                  <ul
-                    role="list"
-                    className="cursor-none mb-8 space-y-4 text-left"
-                  >
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Basic SEO and Google Analytics</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Lightweight design with Material UI</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>
-                        Includes web hosting and domain (.com) for 1 year
-                      </span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Includes email accounts setup</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>
-                        Includes traning and support via email or call
-                      </span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Go live within 1 week</span>
-                    </li>
-                  </ul>
-                  <Link
-                    href="/contact"
-                    className="cursor-none  rounded-full bg-secondary hover:bg-primary   text-white hover:text-secondary transition-all duration-300 font-medium  text-lg px-4 lg:px-5 py-2 lg:py-2.5 md:mr-2 lg:mr-0 "
-                    onMouseEnter={() => {
-                      dispatch(setHovering(true));
-                    }}
-                    onMouseLeave={() => {
-                      dispatch(setHovering(false));
-                    }}
-                  >
-                    Let&apos;s Talk
-                  </Link>
-                </div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, y: [100, 0] }}
-                transition={{ duration: 1 }}
-                className="cursor-none  card  origin-bottom-right  h-[550px] w-[300px] sm:w-[380px]"
-              >
-                <div className="cursor-none card__side card__side--front gap-10 flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] w-inherit">
-                  <div className=" overflow-hidden">
-                    <h3
-                      className="cursor-none mb-4 font-satoshi font-extrabold text-primary text-3xl uppercase font-semibold revealI3"
-                      style={{ transform: "translateY(100px)" }}
-                    >
-                      Advanced Plan
-                    </h3>
-                  </div>
-                  <div className=" overflow-hidden">
-                    <p
-                      className="cursor-none font-light sm:text-lg revealI3"
-                      style={{ transform: "translateY(100px)" }}
-                    >
-                      Best option for personal medium to large size projects.
-                    </p>
-                  </div>
-                  {/* <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
-                    <span
-                      className="cursor-none mr-2 text-5xl font-satoshi font-extrabold text-primary inline-block revealI3"
-                      style={{ transform: "translateY(100px)" }}
-                    >
-                      $499
-                    </span>
-                  </div> */}
-                  <ul
-                    role="list"
-                    className="cursor-none mb-8 space-y-4 text-left"
-                  >
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>9-12 Pages</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Small Business, Portfolio, Blog</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Responsive Design and mobile optimization</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>
-                        Embed photos, videos and music in your project
-                      </span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Bilingual (2 languages)</span>
-                    </li>
-                  </ul>
-                  <div className="cursor-none  absolute bottom-0 right-0 flex gap-1 items-center hover:gap-2 transition-all duration-300   focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:  ">
-                    See All
-                    <EastIcon />
-                  </div>
-                </div>
-                <div className="cursor-none card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] w-inherit">
-                  <ul
-                    role="list"
-                    className="cursor-none mb-8 space-y-4 text-left"
-                  >
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Basic SEO and Google Analytics</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Lightweight design with Material UI</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>
-                        Includes web hosting and domain (.com) for 1 year
-                      </span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Includes email accounts setup</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>
-                        Includes traning and support via email or call
-                      </span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Go live within 1 week</span>
-                    </li>
-                  </ul>
-                  <Link
-                    href="/contact"
-                    className="cursor-none  rounded-full bg-secondary hover:bg-primary   text-white hover:text-secondary transition-all duration-300 font-medium  text-lg px-4 lg:px-5 py-2 lg:py-2.5 md:mr-2 lg:mr-0 "
-                    onMouseEnter={() => {
-                      dispatch(setHovering(true));
-                    }}
-                    onMouseLeave={() => {
-                      dispatch(setHovering(false));
-                    }}
-                  >
-                    Let&apos;s Talk
-                  </Link>
-                </div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, x: [100, 0] }}
-                transition={{ duration: 1 }}
-                style={
-                  typeof window !== "undefined" &&
-                  window.innerWidth > 1000 &&
-                  newRef.current?.getBoundingClientRect().top <= 0
-                    ? {
-                        transform: `rotate(${
-                          -newRef.current?.getBoundingClientRect().top * 0.01
-                        }deg)`,
-                        transformStyle: "preserve-3d",
-                      }
-                    : {}
-                }
-                className="cursor-none  card  origin-bottom-left  h-[550px] w-[300px] sm:w-[380px]"
-              >
-                <div className="cursor-none card__side card__side--front gap-10 flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] w-inherit">
-                  <div className=" overflow-hidden">
-                    <h3
-                      className="cursor-none mb-4 font-satoshi font-extrabold text-primary text-3xl uppercase font-semibold revealI4"
-                      style={{ transform: "translateY(100px)" }}
-                    >
-                      Pro Plan
-                    </h3>
-                  </div>
-                  <div className=" overflow-hidden">
-                    <p
-                      className="cursor-none font-light sm:text-lg revealI4"
-                      style={{ transform: "translateY(100px)" }}
-                    >
-                      Best option for large scale serious project
-                    </p>
-                  </div>
-                  {/* <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
+                        {item.desc}
+                      </p>
+                    </div>
+                    {/* <div className="cursor-none flex items-baseline justify-center my-8 overflow-hidden">
                     <span
                       className="cursor-none mr-2 text-5xl font-satoshi font-extrabold text-primary inline-block revealI4"
                       style={{ transform: "translateY(100px)" }}
@@ -656,208 +236,71 @@ const Home = () => {
                       $999
                     </span>
                   </div> */}
-                  <ul
-                    role="list"
-                    className="cursor-none mb-8 space-y-4 text-left"
-                  >
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>15-50 Pages</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Blog, protfolio, eCatalogue</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Responsive Design and mobile optimization</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>
-                        Embed photos, videos and music in your project
-                      </span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Upto 4 languages</span>
-                    </li>
-                  </ul>
-                  <div className="cursor-none  absolute bottom-0 right-0 flex gap-1 items-center hover:gap-2 transition-all duration-300   focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:  ">
-                    See All
-                    <EastIcon />
+                    <ul
+                      role="list"
+                      className="cursor-none mb-8 space-y-4 text-left"
+                    >
+                      {item.list_front.map((item, i) => (
+                        <li className="cursor-none flex items-center space-x-3">
+                          <svg
+                            className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </svg>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="cursor-none  absolute bottom-0 right-0 flex gap-1 items-center hover:gap-2 transition-all duration-300   focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:  ">
+                      See All
+                      <EastIcon />
+                    </div>
                   </div>
-                </div>
-                <div className="cursor-none card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] w-inherit">
-                  <ul
-                    role="list"
-                    className="cursor-none mb-8 space-y-4 text-left"
-                  >
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Advanced SEO and Google Analytics</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Complex web designs using cutting edge tools</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>
-                        Includes web hosting and domain (.com) for 1 year
-                      </span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Includes email accounts setup</span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>
-                        Includes traning and support via email or call or video
-                        conference.
-                      </span>
-                    </li>
-                    <li className="cursor-none flex items-center space-x-3">
-                      <svg
-                        className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Go live within 2 week</span>
-                    </li>
-                  </ul>
-                  <Link
-                    href="/contact"
-                    className="cursor-none  rounded-full bg-secondary hover:bg-primary   text-white hover:text-secondary transition-all duration-300 font-medium  text-lg px-4 lg:px-5 py-2 lg:py-2.5 md:mr-2 lg:mr-0 "
-                    onMouseEnter={() => {
-                      dispatch(setHovering(true));
-                    }}
-                    onMouseLeave={() => {
-                      dispatch(setHovering(false));
-                    }}
-                  >
-                    Let&apos;s Talk
-                  </Link>
-                </div>
-              </motion.div>
+                  <div className="cursor-none card__side card__side--back justify-between flex flex-col max-w-lg p-6 mx-auto text-center xl:p-8 bg-fourth text-white shadow-xl rounded-lg h-[550px] w-inherit">
+                    <ul
+                      role="list"
+                      className="cursor-none mb-8 space-y-4 text-left"
+                    >
+                      {item.list_back.map((item, i) => (
+                        <li className="cursor-none flex items-center space-x-3">
+                          <svg
+                            className="cursor-none flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </svg>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      href="/contact"
+                      className="cursor-none  rounded-full bg-secondary hover:bg-primary   text-white hover:text-secondary transition-all duration-300 font-medium  text-lg px-4 lg:px-5 py-2 lg:py-2.5 md:mr-2 lg:mr-0 "
+                      onMouseEnter={() => {
+                        dispatch(setHovering(true));
+                      }}
+                      onMouseLeave={() => {
+                        dispatch(setHovering(false));
+                      }}
+                    >
+                      Let&apos;s Talk
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

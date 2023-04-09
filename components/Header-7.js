@@ -7,7 +7,6 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import { useDispatch } from "react-redux";
 import { setHovering } from "../redux/slices";
-import Spline from "@splinetool/react-spline";
 
 const Header7 = () => {
   const dispatch = useDispatch();

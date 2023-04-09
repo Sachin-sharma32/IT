@@ -105,13 +105,13 @@ const Navbar = () => {
 
   return (
     <div
-      className="cursor-none  relative z-[60] w-[100vw] bg-black "
+      className="cursor-none  relative z-[2000] w-[100vw] bg-black "
       ref={navRef}
     >
       <nav
         style={
           yOffset > prev
-            ? { transform: `translateY(${-yOffset * 10}px)` }
+            ? { transform: `translateY(${-yOffset}px)` }
             : { transform: `translateY(0px)` }
         }
         className={`
@@ -159,7 +159,6 @@ const Navbar = () => {
                 style={{ transform: "translateX(-1000px)" }}
               />
             </Link>
-            <div></div>
             <div className="cursor-none ss flex items-center lg:order-2 gap-2 ">
               <motion.div
                 whileHover={{ scale: 1.1 }}
@@ -193,11 +192,11 @@ const Navbar = () => {
               </button>
             </div>
             <div
-              className="cursor-none items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1  h-full"
+              className="cursor-none items-center  justify-between hidden w-full lg:flex lg:w-auto lg:order-1  h-full"
               id="mobile-menu-2"
             >
               {router.pathname === "/" && (
-                <ul className="cursor-none flex mt-4 font-medium lg:flex-row lg:mt-0 h-full ">
+                <ul className="w-full  cursor-none flex mt-4 font-medium lg:flex-row lg:mt-0 h-full ">
                   {sections.map((section, i) => (
                     <li
                       key={section.id}
