@@ -50,7 +50,7 @@ export default function Email({
             <Body style={main}>
                 <Container style={container}>
                     <Section style={{ marginTop: "32px" }}>
-                        <Image width={100} height={100} 
+                        <Img
                             src={`https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/dtokjerhk1dxyludtlwc`}
                             width="40"
                             height="37"
@@ -74,7 +74,7 @@ export default function Email({
                     <Section>
                         <Row>
                             <Column align="right">
-                                <Image width={100} height={100} 
+                                    <Img
                                     style={avatar}
                                     src={
                                         "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/dtokjerhk1dxyludtlwc"
@@ -84,7 +84,7 @@ export default function Email({
                                 />
                             </Column>
                             <Column align="center">
-                                <Image width={100} height={100} 
+                                    <Img
                                     src={`https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/dtokjerhk1dxyludtlwc`}
                                     width="12"
                                     height="9"
@@ -92,7 +92,7 @@ export default function Email({
                                 />
                             </Column>
                             <Column align="left">
-                                <Image width={100} height={100} 
+                                    <Img
                                     style={avatar}
                                     src={
                                         "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/dtokjerhk1dxyludtlwc"

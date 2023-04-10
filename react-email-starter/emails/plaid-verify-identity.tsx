@@ -23,7 +23,7 @@ export default function Email({ validationCode = '144833' }: EmailProps) {
       <Head />
       <Body style={main}>
         <Container style={container}>
-          <Image width={100} height={100} 
+            <Img
             src={`${baseUrl}/static/plaid-logo.png`}
             width="212"
             height="88"

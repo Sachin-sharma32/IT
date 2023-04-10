@@ -63,7 +63,7 @@ export default function Email({
             Hint: You can set a permanent password in Settings & members → My
             account.
           </Text>
-          <Image width={100} height={100} 
+            <Img
             src={`${baseUrl}/static/notion-logo.png`}
             width="32"
             height="32"

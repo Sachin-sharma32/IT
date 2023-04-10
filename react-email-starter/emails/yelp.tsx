@@ -22,7 +22,7 @@ export default function Email({ username = "zenorocha", link }) {
             <Body style={main}>
                 <Container style={container}>
                     <Section style={{}}>
-                        <Image width={100} height={100} 
+                            <Img
                             src={`https://theblogforeverything.s3.amazonaws.com/celerate.jpg`}
                             alt="Vercel"
                             style={logo}

@@ -23,7 +23,7 @@ export default function Email() {
       <Body style={main}>
         <Container style={container}>
           <Section style={box}>
-            <Image width={100} height={100} 
+              <Img
               src={`${baseUrl}/static/stripe-logo.png`}
               width="49"
               height="21"
@@ -31,7 +31,7 @@ export default function Email() {
             />
             <Hr style={hr} />
             <Text style={paragraph}>
-              Thanks for submitting your account information. You're now ready
+              Thanks for submitting your account information. You&nbsp;re now ready
               to make live transactions with Stripe!
             </Text>
             <Text style={paragraph}>
@@ -48,14 +48,14 @@ export default function Email() {
             </Button>
             <Hr style={hr} />
             <Text style={paragraph}>
-              If you haven't finished your integration, you might find our{' '}
+              If you haven&nbsp;t finished your integration, you might find our{' '}
               <Link style={anchor} href="https://stripe.com/docs">
                 docs
               </Link>{' '}
               handy.
             </Text>
             <Text style={paragraph}>
-              Once you're ready to start accepting payments, you'll just need to
+              Once you&nbsp;re ready to start accepting payments, you&nbsp;ll just need to
               use your live{' '}
               <Link
                 style={anchor}
@@ -72,7 +72,7 @@ export default function Email() {
               .
             </Text>
             <Text style={paragraph}>
-              Finally, we've put together a{' '}
+              Finally, we&nbsp;ve put together a{' '}
               <Link
                 style={anchor}
                 href="https://stripe.com/docs/checklist/website"
@@ -82,7 +82,7 @@ export default function Email() {
               to ensure your website conforms to card network standards.
             </Text>
             <Text style={paragraph}>
-              We'll be here to help you with any step along the way. You can
+              We&nbsp;ll be here to help you with any step along the way. You can
               find answers to most questions and get in touch with us on our{' '}
               <Link style={anchor} href="https://support.stripe.com/">
                 support site

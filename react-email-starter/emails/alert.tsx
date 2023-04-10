@@ -14,6 +14,14 @@ import * as React from "react";
 import { Column } from "@react-email/column";
 import { Row } from "@react-email/row";
 
+export interface EmailProps {
+    adminName: string,
+    userName: string,
+    email: string,
+    phone: number,
+    message: string
+}
+
 const baseUrl = process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}`
     : "";
@@ -32,7 +40,7 @@ export default function Email({
             <Body style={main}>
                 <Container style={container}>
                     <Section style={{}}>
-                        <Image width={100} height={100} 
+                        <Img
                             src={`https://theblogforeverything.s3.amazonaws.com/celerate.jpg`}
                             alt="Vercel"
                             style={logo}

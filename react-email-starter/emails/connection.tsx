@@ -25,14 +25,14 @@ export default function Email() {
                 <Container style={container}>
                     <Section>
                         <Column>
-                            <Image width={100} height={100} 
+                            <Img 
                                 style={headerBlue}
                                 src={`${baseUrl}/static/google-play-header.png`}
                                 width="305"
                                 height="28"
                                 alt="Google Play developers header blue transparent"
                             />
-                            <Image width={100} height={100} 
+                            <Img 
                                 style={sectionLogo}
                                 src={`${baseUrl}/static/google-play-logo.png`}
                                 width="155"
@@ -123,7 +123,7 @@ export default function Email() {
                         >
                             <Column style={{ paddingRight: "4px" }}>
                                 <Link href="https://notifications.google.com">
-                                    <Image width={100} height={100} 
+                                        <Img
                                         width="28"
                                         height="28"
                                         src={`${baseUrl}/static/google-play-chat.png`}
@@ -132,7 +132,7 @@ export default function Email() {
                             </Column>
                             <Column style={{ paddingRight: "4px" }}>
                                 <Link href="https://notifications.google.com">
-                                    <Image width={100} height={100} 
+                                        <Img
                                         width="28"
                                         height="28"
                                         src={`${baseUrl}/static/google-play-icon.png`}
@@ -141,7 +141,7 @@ export default function Email() {
                             </Column>
                             <Column style={{ paddingRight: "4px" }}>
                                 <Link href="https://notifications.google.com">
-                                    <Image width={100} height={100} 
+                                        <Img
                                         width="28"
                                         height="28"
                                         src={`${baseUrl}/static/google-play-academy.png`}
@@ -149,7 +149,7 @@ export default function Email() {
                                 </Link>
                             </Column>
                         </Row>
-                        <Image width={100} height={100} 
+                            <Img
                             width="540"
                             height="48"
                             src={`${baseUrl}/static/google-play-footer.png`}
