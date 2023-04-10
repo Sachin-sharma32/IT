@@ -26,7 +26,7 @@ const Animation1 = () => {
         style={{ scale, x, opacity, y: "-50%" }}
         className="sticky top-1/2 w-screen flex justify-center"
       >
-        <div className=" relative w-full h-full flex items-center justify-center">
+        <div className="s relative w-full h-full flex items-center justify-center">
           <Image
             alt="random image"
             width={300}
