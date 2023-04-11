@@ -58,7 +58,7 @@ const MobileFeatures = () => {
 
   return (
     <div
-      className="cursor-none overflow-hidden lg:hidden bg-[url('/rahul-5.png')] bg-cover bg-blend-soft-light  z-40 px-2 sm:px-4 md:px-10 w-screen bg-[#17383a] relative pb-20"
+      className="cursor-none a overflow-hidden lg:hidden bg-[url('/rahul-5.png')] bg-cover bg-blend-soft-light  z-40 px-2 sm:px-4 md:px-10 w-screen bg-[#17383a] relative pb-20"
       ref={header3Ref}
     >
       <section
