@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
-import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
+import { useScroll, useTransform, motion } from "framer-motion";
+/* import image from "next/image"; */
 
 const Animation1 = () => {
   const targetRef = useRef(null);

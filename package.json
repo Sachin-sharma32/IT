@@ -60,6 +60,7 @@
         "smooth-scrollbar": "^8.8.1",
         "styled-components": "^5.3.9",
         "swiper": "^9.1.0",
+        "typescript": "^5.0.4",
         "typewriter-effect": "^2.19.0",
         "yup": "^1.0.1"
     },
