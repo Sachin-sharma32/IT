@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { saveAs } from "file-saver";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import Link from "next/link";
 import { Formik, Form, Field } from "formik";
@@ -34,9 +35,7 @@ const Contact = () => {
       .matches(EMAIL_REGEX, "Provide valid email address")
       .required("This field is required"),
     company: yup.string().required("This field is required"),
-    phone: yup
-      .number()
-      .min(10, "Provide a valid phone number"),
+    phone: yup.number().min(10, "Provide a valid phone number"),
     message: yup.string().required("This field is required"),
   });
 
@@ -261,44 +260,56 @@ const Contact = () => {
             <h3>Or call us directly</h3>
           </div>
           <div className="cursor-none flex flex-col gap-6">
-            <Avatar
-              src="bs-1.jpg"
-              className="cursor-none  h-52 w-52 self-center"
-            />
+            <div
+              className=" w-52 h-52 overflow-hidden bg-orange-500 flex items-center justify-center rounded-full 
+            "
+            >
+              <Image
+                alt="rahul's image"
+                width={500}
+                height={500}
+                src="/rahul.jpg"
+                className="cursor-none self-center rounded-full w-52 -translate-y-1 scale-110"
+              />
+            </div>
             <p className="cursor-none  ">
-              Rahul Sharma from the sales team is happy to help you with all
-              your questions.
+              Rahul Noble is happy to help you with all your questions.
             </p>
             <div>
               <div className="cursor-none flex gap-4">
                 <h3 className="cursor-none  w-20">Phone</h3>
-                <p className="cursor-none  ">+91 9876543210</p>
+                <p className="cursor-none  ">91+ 9521085310</p>
               </div>
               <div className="cursor-none flex gap-4">
-                <h3 className="cursor-none  w-20">Fax</h3>
-                <p className="cursor-none  ">+91 9876543210</p>
+                <h3 className="cursor-none  w-20">Whatsapp</h3>
+                <p className="cursor-none  ">91+ 9521085310</p>
               </div>
               <div className="cursor-none flex gap-4">
-                <h3 className="cursor-none  w-20">E-mal</h3>
-                <p className="cursor-none  ">info@itxcelerate.com</p>
+                <h3 className="cursor-none  w-20">E-mail</h3>
+                <p className="cursor-none  ">contact@itxcelerate.com</p>
               </div>
             </div>
           </div>
           <div className="cursor-none flex flex-col gap-6 ">
             <div className="cursor-none  border-b flex gap-10 pb-4 items-center">
               <FolderIcon className="cursor-none  text-5xl text-primary" />
-              <h3>Hardware Purchase template</h3>
+              <h3 className=" uppercase">Download our Brochure</h3>
             </div>
             <div className="cursor-none   ">
-              If you wish, you can use our hardware purchase Excel template for
-              your upload:
+              If you wish, you can download our brochure to get a better
+              understanding about our business.
             </div>
-            <ol className="cursor-none   list-decimal list-inside">
+            {/* <ol className="cursor-none   list-decimal list-inside">
               <li>Download template</li>
               <li>Enter product details</li>
               <li>Upload completed list</li>
-            </ol>
-            <button className="cursor-none  bg-secondary transition-all duration-300 text-white py-2 px-10 w-fit border rounded-full hover:bg-inherit hover:text-secondary hover:border border-secondary">
+            </ol> */}
+            <button
+              onClick={() => {
+                saveAs("/brochure.pdf", "brochure.pdf");
+              }}
+              className="cursor-none  bg-secondary transition-all duration-300 text-white py-2 px-10 w-fit border rounded-full hover:bg-inherit hover:text-secondary hover:border border-secondary"
+            >
               Download template
             </button>
           </div>

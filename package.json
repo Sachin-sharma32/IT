@@ -35,6 +35,7 @@
         "@splinetool/runtime": "^0.9.282",
         "axios": "^1.3.4",
         "classnames": "^2.3.2",
+        "file-saver": "^2.0.5",
         "formik": "^2.2.9",
         "framer-motion": "^9.1.6",
         "fs": "^0.0.1-security",
