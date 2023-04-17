@@ -13,7 +13,7 @@ import Plans from "../components/Plans";
 
 const Home = () => {
   return (
-    <div className="  min-h-[100vh] flex container mb-[600px] max-w-[100vw]">
+    <div className="  min-h-[100vh] flex container max-w-[100vw] ">
       <div className="flex flex-col">
         <Navbar />
         <Hero />

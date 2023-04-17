@@ -4,7 +4,6 @@ import React from "react";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -16,8 +15,9 @@ const Footer = () => {
   const router = useRouter();
   return (
     <footer
-      className={`cursor-none h-[600px]  z-[0] bg-secondary text-white px-10 w-screen bottom-0 ${router.pathname === "/" ? "fixed" : ""
-        }`}
+      className={`cursor-none min-h-[600px]  z-[0] bg-fourth pt-20 text-white px-10 w-screen bottom-0 ${
+        router.pathname === "/" ? "" : ""
+      }`}
     >
       <div className="cursor-none max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10 z-50">
         <div className="cursor-none grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-3 justify-items-center z-50 pb-10">

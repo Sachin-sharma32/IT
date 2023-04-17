@@ -2,6 +2,7 @@ import React from "react";
 import Smooth from "../utils/Smooth";
 
 const Careers = () => {
+  const 
   return (
     <Smooth>
       <div className="cursor-none  min-h-screen effect">
@@ -30,3 +31,4 @@ Careers.getInitialProps = async (context) => {
     parameter: "careers",
   };
 };
+const 

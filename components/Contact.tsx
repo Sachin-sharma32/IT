@@ -11,8 +11,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { State } from "../utils/types";
 const Contact2 = () => {
-  const [success, setSuccess] = useState(false)
-  const [message, setMessage] = useState("")
+  const [success, setSuccess] = useState(false);
+  const [message, setMessage] = useState("");
   const dispatch = useDispatch();
   const show = useSelector((state: State) => state.base.show);
   const [checked, setChecked] = useState(false);
@@ -29,9 +29,7 @@ const Contact2 = () => {
       .matches(EMAIL_REGEX, "Provide valid email address")
       .required("This field is required"),
     company: yup.string().required("This field is required"),
-    phone: yup
-      .number()
-      .min(10, "Provide a valid phone number"),
+    phone: yup.number().min(10, "Provide a valid phone number"),
     message: yup.string().required("This field is required"),
   });
 
@@ -54,25 +52,25 @@ const Contact2 = () => {
     message: "",
   };
   return (
-    <div className="">
+    <div className=" hidden md:flex">
       <Snackbar
-          open={success}
-          autoHideDuration={3000}
+        open={success}
+        autoHideDuration={3000}
+        onClose={() => {
+          setSuccess(false);
+        }}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        className="cursor-none mt-10"
+      >
+        <Alert
           onClose={() => {
             setSuccess(false);
           }}
-          anchorOrigin={{ vertical: "top", horizontal: "center" }}
-          className="cursor-none mt-10"
+          severity="success"
         >
-          <Alert
-            onClose={() => {
-              setSuccess(false);
-            }}
-            severity="success"
-          >
-            {message}
-          </Alert>
-        </Snackbar>
+          {message}
+        </Alert>
+      </Snackbar>
       <div
         className={`bg-black w-fit h-fit fixed top-1/2 -translate-y-1/2 -left-[40px] text-white text-sm rounded-b-2xl z-[500] flex justify-center items-center px-6 py-4 -rotate-90 `}
         onClick={() => {
@@ -82,19 +80,22 @@ const Contact2 = () => {
         CONTACT US
       </div>
       <div
-        className={` w-[100vw] h-screen fixed  top-1/2 right-0 -translate-y-1/2 text-white text-sm  z-[500] flex justify-center items-center ${show ? " translate-x-0" : " translate-x-full"
-          } transition-all duration-300`}
+        className={` w-[100vw] h-screen fixed  top-1/2 right-0 -translate-y-1/2 text-white text-sm  z-[500] flex justify-center items-center ${
+          show ? " translate-x-0" : " translate-x-full"
+        } transition-all duration-300`}
       >
         <div
           onClick={() => {
             dispatch(setShow(false));
           }}
-          className={`bg-transparent w-[50%] h-screen relative transition-all delay-300 ease-out ${show ? "opacity-100" : "opacity-0"
-            }`}
+          className={`bg-transparent w-[50%] h-screen relative transition-all delay-300 ease-out ${
+            show ? "opacity-100" : "opacity-0"
+          }`}
         >
           <div
-            className={` absolute bg-black opacity-50 t-0 h-full w-full delay-300 ${show ? "flex" : "hidden"
-              } `}
+            className={` absolute bg-black opacity-50 t-0 h-full w-full delay-300 ${
+              show ? "flex" : "hidden"
+            } `}
           ></div>
         </div>
         <div
@@ -242,8 +243,9 @@ const Contact2 = () => {
                     <div className=" w-fit relative">
                       <div className="border w-10 h-10 rounded-lg border-primary"></div>
                       <div
-                        className={` absolute top-0 bg-primary rounded-lg transition-all duration-300 ${checked ? "opacity-100" : "opacity-0"
-                          }`}
+                        className={` absolute top-0 bg-primary rounded-lg transition-all duration-300 ${
+                          checked ? "opacity-100" : "opacity-0"
+                        }`}
                       >
                         <Image
                           alt="random image"

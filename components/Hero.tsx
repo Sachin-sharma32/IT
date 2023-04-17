@@ -91,7 +91,7 @@ const Hero = () => {
   };
 
   const data = [
-    { title: "3+", desc: "Years in buisness" },
+    { title: "3+", desc: "Years in business" },
     { title: "7+", desc: "Of industry experience" },
     { title: "300+", desc: "Projects completed" },
     { title: "50+", desc: "Employees worldwide" },
@@ -230,9 +230,7 @@ const Hero = () => {
               gradient={false}
               speed={50}
             >
-              <div
-                className="cursor-none flex gap-0 px-10 dark:text-tertiary font-satoshi font-extrabold font- text-3xl md:text-7xl overflow-hidden"
-              >
+              <div className="cursor-none flex gap-0 px-10 dark:text-tertiary font-satoshi font-extrabold font- text-3xl md:text-7xl overflow-hidden">
                 DESIGNING THE FUTURE OF TECHNOLOGY
               </div>
             </Marquee>
