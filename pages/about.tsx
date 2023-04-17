@@ -8,7 +8,6 @@ import Image from "next/image";
 // gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  const 
   // useEffect(() => {
   //   let t1 = gsap.to(".image-right-0", {
   //     scrollTrigger: {
