@@ -17,7 +17,7 @@ const Careers = () => {
 
 export default Careers;
 
-Careers.getInitialProps = async (context) => {
+Careers.getInitialProps = async () => {
   return {
     title: "ITXcelerate - Careers",
     image: "/logo-3.png",

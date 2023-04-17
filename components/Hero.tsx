@@ -17,6 +17,8 @@ const Hero = () => {
   const [hover, setHover] = useState(false);
   const arrowRef = useRef(null);
   const isInView = useInView(arrowRef);
+  const arrowRef2 = useRef(null);
+  const isInView2 = useInView(arrowRef2);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
@@ -42,9 +44,8 @@ const Hero = () => {
       });
       gsap.to(".reveal", {
         y: 0,
-        duration: 1,
+        duration: 1.5,
         stagger: 0.5,
-        delay: 2,
         ease: Power1.easeInOut,
       });
       gsap.to(".revealH1", {
@@ -134,8 +135,7 @@ const Hero = () => {
           <div className="w-full">
             <motion.h1
               style={{ opacity }}
-              // style={{ transform: `translateY(-${yOffset * 0.5}px)` }}
-              className="cursor-none uppercase text-5xl flex flex-col md:flex-row justify-center gap-4 md:text-left leading-none w-full tracking-tight font-satoshi font-extrabold md:text-5xl xl:text-6xl dark:text-white z-50"
+              className="cursor-none uppercase text-5xl hidden md:flex flex-row md:flex-row justify-center gap-4 md:text-left leading-none w-full tracking-tight font-satoshi font-extrabold md:text-5xl xl:text-6xl dark:text-white z-50"
               onMouseEnter={() => {
                 dispatch(setHovering(true));
               }}
@@ -165,10 +165,41 @@ const Hero = () => {
                 </span>
               </div>
             </motion.h1>
+            <motion.h1
+              className="cursor-none uppercase text-5xl flex flex-col md:hidden justify-center gap-4 md:text-left leading-none w-full tracking-tight font-satoshi font-extrabold md:text-5xl xl:text-6xl dark:text-white z-50"
+              onMouseEnter={() => {
+                dispatch(setHovering(true));
+              }}
+              onMouseLeave={() => {
+                dispatch(setHovering(false));
+              }}
+            >
+              <div className="cursor-none h-full overflow-hidden">
+                <span
+                  className="cursor-none text-primary reveal inline-block"
+                  style={{ transform: "translateY(500px)" }}
+                >
+                  Accelerating
+                </span>
+                <span
+                  className="cursor-none ml-3 reveal inline-block"
+                  style={{ transform: "translateY(500px)" }}
+                >
+                  your digital
+                </span>
+                <span
+                  className="cursor-none ml-3 reveal inline-block"
+                  style={{ transform: "translateY(500px)" }}
+                >
+                  SUCCESS
+                  <span className="bg-primary w-6 rounded-full ml-1 animate-pulse inline-block h-1"></span>
+                </span>
+              </div>
+            </motion.h1>
           </div>
           <motion.div
             style={{ opacity }}
-            className="cursor-none  w-full flex justify-center items-center gap-10 revealH1"
+            className="cursor-none hidden  w-full md:flex justify-center items-center gap-10 revealH1"
             onMouseEnter={() => {
               setHover(true);
             }}
@@ -211,6 +242,59 @@ const Hero = () => {
                   strokeLinejoin="round"
                   initial={{ opacity: 0, pathLength: 0 }}
                   animate={{ opacity: 1, pathLength: isInView ? 1 : 0 }}
+                  transition={{
+                    duration: 2,
+                    ease: "easeInOut",
+                    delay: 1,
+                  }}
+                ></motion.path>{" "}
+              </svg>
+            </motion.div>
+          </motion.div>
+          <motion.div
+            className="cursor-none md:hidden w-full flex justify-center items-center gap-10 revealH1"
+            onMouseEnter={() => {
+              setHover(true);
+            }}
+            onMouseLeave={() => {
+              setHover(false);
+            }}
+          >
+            <div className="flex flex-col gap-1 w-[170px] items-center">
+              <h2 className="text-7xl font-thin text-primary">
+                {data[active].title}
+              </h2>
+              <p className=" text-">{data[active].desc}</p>
+            </div>
+            <motion.div ref={arrowRef2}>
+              <svg
+                className="cursor-none o-ui-arrow stroke-white -rotate-90 stroke-2 scale-[1]"
+                width="64"
+                height="64"
+                viewBox="0 0 64 64"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {" "}
+                <motion.path
+                  d="M3.10162 3.10156L62.9999 62.9999"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  variants={variants1}
+                  initial={{ opacity: 0, pathLength: 0 }}
+                  animate={{ opacity: 1, pathLength: isInView2 ? 1 : 0 }}
+                  transition={{
+                    duration: 2,
+                    ease: "easeInOut",
+                    delay: 1,
+                  }}
+                ></motion.path>{" "}
+                <motion.path
+                  d="M63 1.00001L63 63L0.999989 63"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  initial={{ opacity: 0, pathLength: 0 }}
+                  animate={{ opacity: 1, pathLength: isInView2 ? 1 : 0 }}
                   transition={{
                     duration: 2,
                     ease: "easeInOut",
