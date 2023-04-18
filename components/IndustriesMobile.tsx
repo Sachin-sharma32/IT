@@ -25,7 +25,6 @@ const IndustriesMobile = () => {
   const cardRefs = useRef(industriesMobile.map((item) => React.createRef()));
   const [isHovering, setIsHovering] = useState(false);
   const [element, setElement] = useState(null);
-  isHovering, element;
   const [hoverPosition, setHoverPosition] = useState({ x: null, y: null });
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>, j: number) => {
