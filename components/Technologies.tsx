@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Technologies = () => {
   const [active, setActive] = useState([]);
-  console.log(active);
+  active;
   const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>, i: number) => {
     box.current.style.visibility = "visible";
     setActive(technologies[i]);
@@ -99,7 +99,7 @@ const Technologies = () => {
         {technologyCategories.map((item, i) => (
           <div
             key={i}
-            className={`bg-fourth md:p-8 p-4  rounded-lg group flex border border-white text-white flex-col gap-10 h-[250px] md:h-[300px] sticky `}
+            className={`bg-fourth md:p-8 p-4  rounded-lg group flex   text-white flex-col gap-10 h-[250px] md:h-[300px] sticky `}
             style={{ top: `${80 + i * 20}px` }}
             onMouseEnter={(e) => {
               handleMouseEnter(e, i);
@@ -126,7 +126,7 @@ const Technologies = () => {
                   <p className="bg-secondary group-hover:rotate-0 transition-all duration-300 px-4 w-fit rounded-full text-white md:text-base text-xs rotate-[4deg]">
                     {item.tags[1]}
                   </p>
-                  <p className="border-2 group-hover:rotate-0 hidden md:flex transition-all duration-300 border-white text-white px-4 w-fit rounded-full md:text-base text-xs -rotate-[4deg]">
+                  <p className="-2 group-hover:rotate-0 hidden md:flex transition-all duration-300  text-white px-4 w-fit rounded-full md:text-base text-xs -rotate-[4deg]">
                     {item.tags[2]}
                   </p>
                 </div>

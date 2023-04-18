@@ -25,12 +25,12 @@ const IndustriesMobile = () => {
   const cardRefs = useRef(industriesMobile.map((item) => React.createRef()));
   const [isHovering, setIsHovering] = useState(false);
   const [element, setElement] = useState(null);
-  console.log(isHovering, element);
+  isHovering, element;
   const [hoverPosition, setHoverPosition] = useState({ x: null, y: null });
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>, j: number) => {
-    console.log(j);
-    console.log(scaleRef.current);
+    j;
+    scaleRef.current;
     scaleRef.current.style.backgroundColor = "white";
     scaleRef.current.classList.add("left-0");
     setElement(j);

@@ -21,19 +21,29 @@ export default async function connection(req, res) {
           doc,
         },
       });
-      const emails = ["sachin2sharma001@gmail.com"];
-      alertEmail({
-        userName: name,
-        adminName: "Sachin",
-        userEmail: email,
-        adminEmail: "cnrahul.noble@gmail.com",
-        phone,
-        subject: "Query from existing connection.",
-        message: message,
+      const emails = [
+        { adminName: "Sachin", adminEmail: "sachin2sharma001@gmail.com" },
+        { adminName: "Sachin", adminEmail: "sachin@itxcelerate.com" },
+        { adminName: "Rahul", adminEmail: "cnrahul.noble@gmail.com" },
+        { adminName: "Rahul", adminEmail: "rahul.cn@itxcelerate.com" },
+        { adminName: "Team", adminEmail: "contact@itxcelerate.com" },
+        { adminName: "Vishakha", adminEmail: "vishakha@itxcelerate.com" },
+        { adminName: "Vishakha", adminEmail: "vishakha25vs@gmail.com" },
+      ];
+      emails.map((admin) => {
+        alertEmail({
+          userName: name,
+          adminName: admin.adminName,
+          userEmail: email,
+          adminEmail: admin.adminEmail,
+          phone,
+          subject: "Query from existing connection.",
+          message: message,
+        });
       });
       return;
     }
-    const url = `https://www.itxcelerate.com//api/verify?name=${name}&email=${email}&company=${company}&phone=${phone}&message=${message}`;
+    const url = `https://www.itxcelerate.com/api/verify?name=${name}&email=${email}&company=${company}&phone=${phone}&message=${message}`;
     const newURL = url.replace(/ /g, "%20");
     sendEmail({
       email: email,

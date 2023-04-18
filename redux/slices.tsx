@@ -27,15 +27,15 @@ const baseSlice = createSlice({
     },
     setPosts: (state, action) => {
       state.posts = action.payload;
-      console.log(state.posts);
+      state.posts;
     },
     setCursorVisible: (state, action) => {
       state.cursorVisible = action.payload;
-      console.log(state.cursorVisible);
+      state.cursorVisible;
     },
     setHovering: (state, action) => {
       state.hovering = action.payload;
-      console.log(state.hovering);
+      state.hovering;
     },
     setHoveringRight: (state, action) => {
       state.hoveringRight = action.payload;
@@ -43,9 +43,9 @@ const baseSlice = createSlice({
     setHoveringLeft: (state, action) => {
       state.hoveringLeft = action.payload;
     },
-    setShow: (state, active) =>{
+    setShow: (state, active) => {
       state.show = active.payload;
-    }
+    },
   },
 });
 
@@ -58,6 +58,6 @@ export const {
   setHovering,
   setHoveringLeft,
   setHoveringRight,
-  setShow
+  setShow,
 } = baseSlice.actions;
 export default baseSlice.reducer;

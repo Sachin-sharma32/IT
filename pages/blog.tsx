@@ -1,21 +1,21 @@
-import Blog from '../components/Blog'
+import Blog from "../components/Blog";
 import fsPromises from "fs/promises";
 import path from "path";
 import { useEffect, useState } from "react";
-import query from '../queries/getAllPosts';
+import query from "../queries/getAllPosts";
 import { client } from "../sanity";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "../redux/slices";
-import { State } from '../utils/types';
+import { State } from "../utils/types";
 
 const BlogContainer = ({ posts }) => {
   const dispatch = useDispatch();
   dispatch(setPosts(posts));
-  const newPosts = useSelector((state:State) => {
+  const newPosts = useSelector((state: State) => {
     state.base.posts;
   });
-  console.log(newPosts);
-  console.log(posts);
+  newPosts;
+  posts;
 
   return (
     <div className="cursor-none  w-screen">
@@ -37,7 +37,7 @@ export default BlogContainer;
 
 export async function getServerSideProps() {
   const posts = await client.fetch(query);
-  console.log(posts);
+  posts;
 
   return {
     props: { posts },

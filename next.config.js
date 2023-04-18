@@ -25,8 +25,8 @@ const nextConfig = {
       "skU3fU2TdDBukyZxKNtddPuYmboPQuIssHCSApi5VaJXwgCzdFNRErGrgZ0h96mK8py6UQkiPius9an638uuIabDtVeT9SvboNkUCSD6Yc9RaOPXpr4PgDendI5yv0q6h0gDlRNxTqz6MyEUuvgisISINMoGu8OhFQasjUNZ6ANRkRRLLCNm",
     SANITY_PROJECT_ID: "7h45ty04",
     SANITY_DATASET: "production",
-    EMAIL: "sachin.sharma@itxcelerate.com",
-    PASS: "mhqZw4l*",
+    EMAIL: "contact@itxcelerate.com",
+    PASS: "xljefevkntqeqztp",
   },
 };
 

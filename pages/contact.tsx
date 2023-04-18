@@ -16,12 +16,14 @@ import { useDispatch } from "react-redux";
 import { setCursorVisible } from "../redux/slices";
 import Image from "next/image";
 import EmailIcon from "@mui/icons-material/Email";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const Contact = () => {
   const router = useRouter();
   const [success, setSuccess] = useState(false);
   const [message, setMessage] = useState("");
   const [checked, setChecked] = useState(false);
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const EMAIL_REGEX =
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -40,16 +42,18 @@ const Contact = () => {
   });
 
   const submitHandler = async (values, { resetForm }) => {
-    console.log(values);
+    values;
+    setLoading(true);
     const response = await axios.post("/api/connection", values);
-    console.log(response);
+    response;
     if (response.status === 200) {
       setSuccess(true);
       setMessage(response.data.message);
+      setLoading(false);
       resetForm({ values: "" });
       setTimeout(() => {
         router.push("/");
-      }, 2000);
+      }, 4000);
     }
   };
 
@@ -60,24 +64,25 @@ const Contact = () => {
     company: "",
     message: "",
   };
-  console.log(success);
+  success;
   return (
     <Smooth>
       <div className="cursor-none  gap-32 px-4 md:px-10 py-32 min-h-screen w-screen  flex flex-col md:flex-row justify-center  bg-[#f8f8f8]">
         <Snackbar
           open={success}
-          autoHideDuration={3000}
+          autoHideDuration={4000}
           onClose={() => {
             setSuccess(false);
           }}
           anchorOrigin={{ vertical: "top", horizontal: "center" }}
-          className="cursor-none mt-10"
+          className="cursor-none mt-10 z-[3000]"
         >
           <Alert
             onClose={() => {
               setSuccess(false);
             }}
             severity="success"
+            className="md:text-xl translate-y-[15px]"
           >
             {message}
           </Alert>
@@ -248,7 +253,11 @@ const Contact = () => {
                   className="cursor-none mx-auto md:mx-0 mt-14 disabled:opacity-50 rounded-full bg-primary hover:bg-tertiary disabled:hover:bg-primary  text-secondary transition-all duration-300 font-medium  text-3xl flex items-center gap-4 px-4 lg:px-10 py-2 lg:py-4 md:mr-2 lg:mr-0 "
                 >
                   Submit
-                  <EmailIcon className=" text-4xl" />
+                  {loading ? (
+                    <CircularProgress color="success" />
+                  ) : (
+                    <EmailIcon className=" text-4xl" />
+                  )}
                 </button>
               </div>
             </Form>

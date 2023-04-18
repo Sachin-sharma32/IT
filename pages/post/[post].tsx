@@ -5,19 +5,19 @@ import { useRouter } from "next/router";
 import moment from "moment/moment";
 import { client, imageBuilder } from "../../sanity";
 import { PortableText } from "@portabletext/react";
-import RichTextComponent from '../../components/RichTextComponent'
+import RichTextComponent from "../../components/RichTextComponent";
 import { useSelector } from "react-redux";
 import { Avatar } from "@mui/material";
 import { State } from "../../utils/types";
 
 const Post = () => {
   const router = useRouter();
-  console.log(router.query);
-  const posts = useSelector((state:State) => state.base.posts);
-  console.log(posts);
+  router.query;
+  const posts = useSelector((state: State) => state.base.posts);
+  posts;
 
   const currentPost = posts?.filter((item) => {
-    console.log(item._id, router.query.post);
+    item._id, router.query.post;
     return item?._id == router.query.post;
   });
   const post = currentPost[0];
@@ -93,7 +93,7 @@ export default Post;
 //         }
 //     );
 //     const tags = headerPost.tags.map((tag) => tag.title);
-//     console.log(headerPost);
+//     (headerPost);
 //     return {
 //         title: headerPost.title,
 //         image: headerPost?.image?.asset

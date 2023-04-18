@@ -7,7 +7,11 @@ export default async function verify(req, res) {
   const { name, email, company, phone, message } = req.query;
   const exist = await Connection.findOne({ email: email });
   if (exist) {
-    return next(new AppError("Token Expired", 400));
+    return res.status(500).json({
+      status: "Error",
+      message:
+        "Token expired (You have tried verifying using this link in the past). Try making a new request @ https://www.itxclerate.com.",
+    });
   }
   const doc = await Connection.create({
     name,
@@ -16,6 +20,8 @@ export default async function verify(req, res) {
     phone,
     message,
   });
+
+  console.log(doc);
 
   alertEmail({
     userName: name,
@@ -26,5 +32,5 @@ export default async function verify(req, res) {
     subject: "New connection made",
     message: message,
   });
-  res.redirect("https://www.itxcelerate.com");
+  res.redirect("https://www.itxcelerate.com/verified");
 }

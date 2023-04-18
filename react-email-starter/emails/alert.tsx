@@ -39,7 +39,7 @@ export default function Email({
       <Preview>Verify on ITXcelerate</Preview>
       <Body style={main}>
         <Container style={container}>
-          <Section style={{}}>
+          <Section style={{backgroundColor: '#061212'}}>
             <Img
               src={`https://theblogforeverything.s3.amazonaws.com/celerate.jpg`}
               alt="Vercel"

@@ -30,7 +30,7 @@ const Navbar = () => {
   }, []);
 
   const router = useRouter();
-  console.log(router.pathname);
+  router.pathname;
 
   const [yOffset, setYOffset] = useState(0);
   const [prev, setPrev] = useState(0);
@@ -41,7 +41,7 @@ const Navbar = () => {
     yOffset !== undefined && setPrev(yOffset);
   };
 
-  console.log(newRef.current?.getBoundingClientRect().y);
+  newRef.current?.getBoundingClientRect().y;
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
