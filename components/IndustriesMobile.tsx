@@ -25,7 +25,7 @@ const IndustriesMobile = () => {
   const cardRefs = useRef(industriesMobile.map((item) => React.createRef()));
   const [isHovering, setIsHovering] = useState(false);
   const [element, setElement] = useState(null);
-  const [hoverPosition, setHoverPosition] = useState({ x: null, y: null });
+  // const [hoverPosition, setHoverPosition] = useState({ x: null, y: null });
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>, j: number) => {
     j;
@@ -34,13 +34,13 @@ const IndustriesMobile = () => {
     scaleRef.current.classList.add("left-0");
     setElement(j);
     setIsHovering(true);
-    setHoverPosition({ x: e.clientX, y: e.clientY });
+    // setHoverPosition({ x: e.clientX, y: e.clientY });
     box.current.style.visibility = "visible";
   };
 
   const handleMouseLeave = () => {
     setIsHovering(false);
-    setHoverPosition({ x: null, y: null });
+    // setHoverPosition({ x: null, y: null });
     box.current.style.visibility = "hidden";
   };
 
