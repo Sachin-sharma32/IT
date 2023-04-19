@@ -59,7 +59,7 @@ const Contact2 = () => {
     message: "",
   };
   return (
-    <div className=" hidden md:flex">
+    <div className=" hidden md:flex bg-[#f8f8f8]">
       <Snackbar
         open={success}
         autoHideDuration={3000}
@@ -107,7 +107,7 @@ const Contact2 = () => {
           ></div>
         </div>
         <div
-          className={` w-[50%] h-screen bg-white relative flex border-black`}
+          className={` w-[50%] h-screen bg-[#f8f8f8] relative flex border-black`}
         >
           <div className="    h-full w-[20px] bg-gradient-to-b from-secondary  to-primary "></div>
           <div
@@ -158,7 +158,7 @@ const Contact2 = () => {
                           type="text"
                           placeholder=" "
                         />
-                        <div className=" txt peer peer-placeholder-shown:top-[23px] peer-placeholder-shown:scale-100 scale-75 top-0 absolute left-[11px] peer-placeholder-shown:left-[22px] transition-[top,transform,left] delay-[0s,0s,0s] duration-300 bg-[#ffffff]  -translate-y-1/2">
+                        <div className=" txt peer peer-placeholder-shown:top-[23px] peer-placeholder-shown:scale-100 scale-75 top-0 absolute left-[11px] peer-placeholder-shown:left-[22px] transition-[top,transform,left] delay-[0s,0s,0s] duration-300 bg-[#f8f8f8]  -translate-y-1/2">
                           Name*
                         </div>
                       </div>
@@ -177,7 +177,7 @@ const Contact2 = () => {
                           type="text"
                           placeholder=" "
                         />
-                        <div className=" txt peer  peer-placeholder-shown:top-[23px] peer-placeholder-shown:scale-100 scale-75 top-0 absolute left-[11px] peer-placeholder-shown:left-[22px] transition-[top,transform,left] delay-[0s,0s,0s] duration-300 bg-[#ffffff]  -translate-y-1/2">
+                        <div className=" txt peer  peer-placeholder-shown:top-[23px] peer-placeholder-shown:scale-100 scale-75 top-0 absolute left-[11px] peer-placeholder-shown:left-[22px] transition-[top,transform,left] delay-[0s,0s,0s] duration-300 bg-[#f8f8f8]  -translate-y-1/2">
                           Email*
                         </div>
                       </div>
@@ -196,7 +196,7 @@ const Contact2 = () => {
                           type="text"
                           placeholder=" "
                         />
-                        <div className=" txt peer  peer-placeholder-shown:top-[23px] peer-placeholder-shown:scale-100 scale-75 top-0 absolute left-[11px] peer-placeholder-shown:left-[22px] transition-[top,transform,left] delay-[0s,0s,0s] duration-300 bg-[#ffffff]  -translate-y-1/2">
+                        <div className=" txt peer  peer-placeholder-shown:top-[23px] peer-placeholder-shown:scale-100 scale-75 top-0 absolute left-[11px] peer-placeholder-shown:left-[22px] transition-[top,transform,left] delay-[0s,0s,0s] duration-300 bg-[#f8f8f8]  -translate-y-1/2">
                           Company*
                         </div>
                       </div>
@@ -215,7 +215,7 @@ const Contact2 = () => {
                           type="text"
                           placeholder=" "
                         />
-                        <div className=" txt peer peer-placeholder-shown:top-[23px]  peer-placeholder-shown:scale-100 scale-75 top-0 absolute left-[11px] peer-placeholder-shown:left-[22px] transition-[top,transform,left] delay-[0s,0s,0s] duration-300 bg-[#ffffff]  -translate-y-1/2">
+                        <div className=" txt peer peer-placeholder-shown:top-[23px]  peer-placeholder-shown:scale-100 scale-75 top-0 absolute left-[11px] peer-placeholder-shown:left-[22px] transition-[top,transform,left] delay-[0s,0s,0s] duration-300 bg-[#f8f8f8]  -translate-y-1/2">
                           Phone*
                         </div>
                       </div>
@@ -236,7 +236,7 @@ const Contact2 = () => {
                           type="text"
                           placeholder=" "
                         />
-                        <div className=" txt peer peer-placeholder-shown:top-[23px]  peer-placeholder-shown:scale-100 scale-75 top-0 absolute left-[11px] peer-placeholder-shown:left-[22px] transition-[top,transform,left] delay-[0s,0s,0s] duration-300 bg-[#ffffff]  -translate-y-1/2">
+                        <div className=" txt peer peer-placeholder-shown:top-[23px]  peer-placeholder-shown:scale-100 scale-75 top-0 absolute left-[11px] peer-placeholder-shown:left-[22px] transition-[top,transform,left] delay-[0s,0s,0s] duration-300 bg-[#f8f8f8]  -translate-y-1/2">
                           Message
                         </div>
                       </div>

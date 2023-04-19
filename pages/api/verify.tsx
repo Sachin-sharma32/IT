@@ -23,14 +23,25 @@ export default async function verify(req, res) {
 
   console.log(doc);
 
-  alertEmail({
-    userName: name,
-    adminName: "Sachin",
-    userEmail: email,
-    adminEmail: "sachin2sharma001@gmail.com",
-    phone,
-    subject: "New connection made",
-    message: message,
+  const emails = [
+    { adminName: "Sachin", adminEmail: "sachin2sharma001@gmail.com" },
+    { adminName: "Sachin", adminEmail: "sachin@itxcelerate.com" },
+    { adminName: "Rahul", adminEmail: "cnrahul.noble@gmail.com" },
+    { adminName: "Rahul", adminEmail: "rahul.cn@itxcelerate.com" },
+    { adminName: "Team", adminEmail: "contact@itxcelerate.com" },
+    { adminName: "Vishakha", adminEmail: "vishakha@itxcelerate.com" },
+    { adminName: "Vishakha", adminEmail: "vishakha25vs@gmail.com" },
+  ];
+  emails.map((admin) => {
+    alertEmail({
+      userName: name,
+      adminName: admin.adminName,
+      userEmail: email,
+      adminEmail: admin.adminEmail,
+      phone,
+      subject: "Query from existing connection.",
+      message: message,
+    });
   });
   res.redirect("https://www.itxcelerate.com/verified");
 }

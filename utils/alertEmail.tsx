@@ -5,7 +5,6 @@ import Email from "../react-email-starter/emails/alert";
 const alertEmail = (data) => {
   console.log("hello world");
   console.log(process.env.EMAIL, process.env.PASS);
-  console.log(data);
   const transporter = nodemailer.createTransport({
     // host: "smtp.zoho.in",
     host: "smtp.gmail.com",
@@ -32,6 +31,7 @@ const alertEmail = (data) => {
   };
 
   transporter.sendMail(options);
+  console.log(data);
 };
 
 export default alertEmail;
