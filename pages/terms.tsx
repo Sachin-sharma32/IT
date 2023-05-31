@@ -1,5 +1,6 @@
 import React from "react";
 import Smooth from "../utils/Smooth";
+import Print from "../components/Print";
 
 const Terms = () => {
   return (
@@ -9,14 +10,7 @@ const Terms = () => {
           TERMS TO USE
         </h1>
       </div>
-      <button
-        className="cursor-none  bg-gray-500 text-white px-4 py-1 rounded-lg border-2 border-gray-500 hover:bg-white hover:text-black transition-all duration-300 absolute top-[45vh] right-4"
-        onClick={() => {
-          window.print();
-        }}
-      >
-        PRINT
-      </button>
+    <Print/>
       <div className="cursor-none flex flex-col p-10 gap-8 leading-[1.9] font-[400]  mt-10">
         <div>
           <h2 className="cursor-none  text-lg font-satoshi font-extrabold">

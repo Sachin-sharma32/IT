@@ -104,7 +104,7 @@ const Navbar = () => {
 
   return (
     <div
-      className="cursor-none  relative z-[2000] w-[100vw] bg-black "
+      className="cursor-none print:hidden  relative z-[2000] w-[100vw] bg-black "
       ref={navRef}
     >
       <nav

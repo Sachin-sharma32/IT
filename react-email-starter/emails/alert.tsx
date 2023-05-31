@@ -6,7 +6,6 @@ import { Heading } from "@react-email/heading";
 import { Hr } from "@react-email/hr";
 import { Html } from "@react-email/html";
 import { Img } from "@react-email/img";
-import { Link } from "@react-email/link";
 import { Preview } from "@react-email/preview";
 import { Section } from "@react-email/section";
 import { Text } from "@react-email/text";
@@ -63,39 +62,6 @@ export default function Email({
             <Text style={text}>
               Message : <strong>{message}</strong>
             </Text>
-
-            {/* <Section>
-                            <Row>
-                                <Column align="right">
-                                    <Image width={100} height={100} 
-                                        style={avatar}
-                                        src={
-                                            "https://static.vecteezy.com/system/resources/thumbnails/003/683/447/small/line-stripes-x-alphabet-letter-logo-icon-for-business-and-company-simple-black-and-white-letter-design-for-identity-vector.jpg"
-                                        }
-                                        width="64"
-                                        height="64"
-                                    />
-                                </Column>
-                                <Column align="center">
-                                    <Image width={100} height={100} 
-                                        src={`https://theblogforeverything.s3.amazonaws.com/pngwing.com+(1).png`}
-                                        width="50"
-                                        height="50"
-                                        alt="invited you to"
-                                    />
-                                </Column>
-                                <Column align="left">
-                                    <Image width={100} height={100} 
-                                        style={avatar}
-                                        src={
-                                            "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/dtokjerhk1dxyludtlwc"
-                                        }
-                                        width="64"
-                                        height="64"
-                                    />
-                                </Column>
-                            </Row>
-                        </Section> */}
             <Row style={{ marginTop: "30px" }}>
               <Column align="center">
                 <Button pX={20} pY={12} style={btn} href={`tel:+91${phone}`}>

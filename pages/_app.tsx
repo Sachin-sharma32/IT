@@ -63,6 +63,7 @@ function MyApp({ Component, pageProps }) {
       <motion.div
         style={{ scaleX: scrollYProgress }}
         className=" progress-bar z-[100] rounded-full"
+
       />
       <Provider store={store}>
         <StyledEngineProvider injectFirst>

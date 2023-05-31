@@ -59,7 +59,7 @@ const Contact2 = () => {
     message: "",
   };
   return (
-    <div className=" hidden md:flex bg-[#f8f8f8]">
+    <div className=" hidden md:flex bg-[#f8f8f8] overflow-y-scroll contact">
       <Snackbar
         open={success}
         autoHideDuration={3000}

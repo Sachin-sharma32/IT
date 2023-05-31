@@ -2,6 +2,7 @@ import React from "react";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { motion } from "framer-motion";
 import Smooth from "../utils/Smooth";
+import Print from "../components/Print";
 
 const SlaveryStatement = () => {
   return (
@@ -18,7 +19,7 @@ const SlaveryStatement = () => {
           transition={{ duration: 1 }}
           className="cursor-none  border-2 border-primary  rounded-tl-none rounded-br-none md:rounded-bl-[100px] md:rounded-tr-[100px] rounded-bl-[50px] rounded-tr-[50px] p-6 md:p-10 flex flex-col gap-4"
         >
-          <p className="cursor-none text-lg ">
+           <p className="cursor-none text-lg ">
             IT Xcelerate is committed to preventing and eradicating modern
             slavery in all forms within our operations and supply chain. We
             recognize the responsibility that comes with our role as a business
@@ -26,14 +27,7 @@ const SlaveryStatement = () => {
           </p>
         </motion.div>
       </div>
-      <button
-        className="cursor-none  bg-gray-500 text-white px-4 py-1 rounded-lg border-2 border-gray-500 hover:bg-white hover:text-black transition-all duration-300 absolute top-[45vh] right-4"
-        onClick={() => {
-          window.print();
-        }}
-      >
-        PRINT
-      </button>
+    <Print/>
       <div className="cursor-none flex flex-col p-10 gap-8 leading-[1.9] font-[400] text-[#444444] mt-10">
         <div>
           <h2 className="cursor-none  text-lg mb-2 font-satoshi font-extrabold">

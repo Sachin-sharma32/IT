@@ -15,7 +15,7 @@ const Footer = () => {
   const router = useRouter();
   return (
     <footer
-      className={`cursor-none min-h-[600px]  z-[0] bg-fourth pt-20 text-white px-10 w-screen bottom-0 ${
+      className={`cursor-none min-h-[600px] print:hidden  z-[0] bg-fourth pt-20 text-white px-10 w-screen bottom-0 ${
         router.pathname === "/" ? "" : ""
       }`}
     >

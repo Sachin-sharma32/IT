@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
 
+
 const Animation1 = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({

@@ -4,7 +4,6 @@ import Image from "next/image";
 import Animation1 from "./Animation1";
 import Animation2 from "./Animation2";
 import Animation3 from "./Animation3";
-
 const Features = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
