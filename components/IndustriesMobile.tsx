@@ -45,22 +45,19 @@ const IndustriesMobile = () => {
     box.current.style.visibility = "hidden";
   };
 
-  // const box = useRef(null);
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     window.addEventListener("mousemove", (e) => {
-  //       box.current.style.left = `${e.clientX + 30}px`;
-  //       box.current.style.top = `${e.clientY}px`;
-  //     });
-  //   }
-  // }, [box]);
+  const box = useRef(null);
+  useEffect(() => {
+    if (typeof window !== "undefined" && box.current) {
+      const handleMouseMove = (e) => {
+        box.current.style.left = `${e.clientX + 30}px`;
+        box.current.style.top = `${e.clientY}px`;
+      };
 
-  const box = useCallback((node: HTMLElement | null) => {
-    if (node !== null) {
-      window.addEventListener("mousemove", (e) => {
-        node.style.left = `${e.clientX + 30}px`;
-        node.style.top = `${e.clientY}px`;
-      });
+      window.addEventListener("mousemove", handleMouseMove);
+
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+      };
     }
   }, []);
 
