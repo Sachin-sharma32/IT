@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { industriesMobile } from "../utils/devData";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -9,8 +9,10 @@ gsap.registerPlugin(ScrollTrigger);
 import { useDispatch } from "react-redux";
 import { setHovering } from "../redux/slices";
 import IndustryMobile from "./IndustryMobile";
+import { useRouter } from "next/router";
 
 const IndustriesMobile = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const [counter, setCounter] = useState(1);
   setTimeout(() => {
@@ -28,7 +30,6 @@ const IndustriesMobile = () => {
   // const [hoverPosition, setHoverPosition] = useState({ x: null, y: null });
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>, j: number) => {
-    j;
     scaleRef.current;
     scaleRef.current.style.backgroundColor = "white";
     scaleRef.current.classList.add("left-0");
@@ -44,12 +45,21 @@ const IndustriesMobile = () => {
     box.current.style.visibility = "hidden";
   };
 
-  const box = useRef(null);
-  useEffect(() => {
-    if (typeof window !== "undefined") {
+  // const box = useRef(null);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     window.addEventListener("mousemove", (e) => {
+  //       box.current.style.left = `${e.clientX + 30}px`;
+  //       box.current.style.top = `${e.clientY}px`;
+  //     });
+  //   }
+  // }, [box]);
+
+  const box = useCallback((node: HTMLElement | null) => {
+    if (node !== null) {
       window.addEventListener("mousemove", (e) => {
-        box.current.style.left = `${e.clientX + 30}px`;
-        box.current.style.top = `${e.clientY}px`;
+        node.style.left = `${e.clientX + 30}px`;
+        node.style.top = `${e.clientY}px`;
       });
     }
   }, []);

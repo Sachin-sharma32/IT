@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { industries } from "../utils/devData";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { gsap } from "gsap";
@@ -8,8 +8,10 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { setHovering } from "../redux/slices";
 import Industry from "./Industry";
 gsap.registerPlugin(ScrollTrigger);
+import { useRouter } from "next/router";
 
 const Industries = () => {
+  const router = useRouter();
   const [active, setActive] = useState(null);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -39,11 +41,17 @@ const Industries = () => {
     }
   }, 1000);
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("mousemove", (e) => {
+    if (typeof window !== "undefined" && box.current) {
+      const handleMouseMove = (e) => {
         box.current.style.left = `${e.clientX + 30}px`;
         box.current.style.top = `${e.clientY}px`;
-      });
+      };
+
+      window.addEventListener("mousemove", handleMouseMove);
+
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+      };
     }
   }, []);
 

@@ -9,19 +9,25 @@ const Cursor = () => {
   const hovering = useSelector((state: State) => state.base.hovering);
   const hoveringLeft = useSelector((state: State) => state.base.hoveringLeft);
   const hoveringRight = useSelector((state: State) => state.base.hoveringRight);
+  const dot = useRef(null);
+  const dotOutline = useRef(null);
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("mousemove", (e) => {
+    if (typeof window !== "undefined" && dotOutline.current && dot.current) {
+      const handleMouseMove = (e) => {
         dot.current.style.left = `${e.clientX}px`;
         dot.current.style.transition = `all .2s ease-out`;
         dot.current.style.top = `${e.clientY}px`;
         dotOutline.current.style.left = `${e.clientX}px`;
         dotOutline.current.style.top = `${e.clientY}px`;
-      });
+      };
+
+      window.addEventListener("mousemove", handleMouseMove);
+
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+      };
     }
   }, []);
-  const dot = useRef(null);
-  const dotOutline = useRef(null);
   return (
     <div className=" hidden sm:flex z-[1500]">
       {cursorVisible && (

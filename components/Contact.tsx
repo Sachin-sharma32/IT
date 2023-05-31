@@ -59,7 +59,7 @@ const Contact2 = () => {
     message: "",
   };
   return (
-    <div className=" hidden md:flex bg-[#f8f8f8] overflow-y-scroll contact">
+    <div className=" hidden md:flex bg-[#f8f8f8] contact">
       <Snackbar
         open={success}
         autoHideDuration={3000}
@@ -129,7 +129,7 @@ const Contact2 = () => {
           >
             {(props) => (
               <Form
-                className="  w-full sm:w-full gap-10 flex flex-col rounded-lg  text-secondary p-10"
+                className="  w-full sm:w-full overflow-y-scroll gap-10 flex flex-col rounded-lg  text-secondary p-10"
                 onMouseEnter={() => {
                   dispatch(setCursorVisible(false));
                 }}
