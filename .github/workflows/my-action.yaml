@@ -1,12 +1,12 @@
 name: testing github actions
-run-name: ${{github.actor}} is testing github actions
+run-name: ${{ github.actor }} is testing github actions
 on: [push]
 jobs:
   setup-and-check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - use: actions/checkout@v4
-      - use: action/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: action/setup-node@v2
         with:
           node-version: '20'
       - run: npm install -g bats
